@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className={styles.grid}>
                     <div className={styles.column}>
                         <Link href="/" className={styles.logo}>
-                            <img src="/brand/webadish-logo-white.png" alt="Webadish" style={{ height: '32px', width: 'auto', marginBottom: '1rem' }} />
+                            <img src="/brand/webadish-logo-white.png" alt="Webadish" style={{ height: '48px', width: 'auto', marginBottom: '1rem' }} />
                         </Link>
                         <p className={styles.description}>
                             Premium WordPress maintenance, security, and recovery services for agencies and businesses in the UK and Australia.

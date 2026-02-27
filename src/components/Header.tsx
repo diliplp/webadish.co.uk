@@ -36,7 +36,7 @@ const Header = () => {
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.navContainer}>
                 <Link href="/" className={styles.logo}>
-                    <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={140} height={40} style={{ width: 'auto', height: '40px' }} />
+                    <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={210} height={60} style={{ width: 'auto', height: '60px' }} />
                 </Link>
 
                 <nav className={styles.desktopNav}>
