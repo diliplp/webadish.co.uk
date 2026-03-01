@@ -13,6 +13,7 @@ interface HeroProps {
     ctaText?: string;
     ctaLink?: string;
     showTrust?: boolean;
+    showImage?: boolean;
     heroImage?: string;
     heroImageAlt?: string;
 }
@@ -23,6 +24,7 @@ const Hero: React.FC<HeroProps> = ({
     ctaText = 'Request a Security Review',
     ctaLink = '/contact-webadish-web-design',
     showTrust = true,
+    showImage = true,
     heroImage = '/hero-security.svg',
     heroImageAlt = 'Security review illustration'
 }) => {
@@ -56,8 +58,8 @@ const Hero: React.FC<HeroProps> = ({
     return (
         <section className={styles.hero} ref={heroRef}>
             <div className={styles.container}>
-                <div className={styles.heroGrid}>
-                    <div className={styles.heroText}>
+                <div className={`${styles.heroGrid} ${!showImage ? styles.heroGridSingle : ''}`}>
+                    <div className={`${styles.heroText} ${!showImage ? styles.heroTextCentered : ''}`}>
                         <div className={styles.badge}>
                             <ShieldCheck size={16} className={styles.badgeIcon} />
                             <span>#1 WordPress Security & Maintenance Agency</span>
@@ -87,9 +89,11 @@ const Hero: React.FC<HeroProps> = ({
                         )}
                     </div>
 
-                    <div className={styles.heroImageWrapper}>
-                        <Image src={heroImage} alt={heroImageAlt} width={520} height={520} priority />
-                    </div>
+                    {showImage && (
+                        <div className={styles.heroImageWrapper}>
+                            <Image src={heroImage} alt={heroImageAlt} width={520} height={520} priority />
+                        </div>
+                    )}
                 </div>
             </div>
 

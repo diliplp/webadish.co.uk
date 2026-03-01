@@ -1,15 +1,35 @@
-<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="640" rx="48" fill="#05070f" />
-  <circle cx="320" cy="320" r="200" fill="url(#paint0_linear)" />
-  <path d="M320 200C323.866 200 327.701 200.26 331.477 200.766L320 320L220 320C255.348 321.17 287.922 300.28 310.121 268.665L320 200Z" fill="#38bdf8" />
-  <path d="M320 320L420.464 360.241C415.25 379.428 403.303 395.343 386.276 404.236L320 320Z" fill="#2563eb" opacity="0.8" />
-  <path d="M240 420C240 394.386 260.386 374 286 374H354C379.614 374 400 394.386 400 420V456C400 481.614 379.614 502 354 502H286C260.386 502 240 481.614 240 456V420Z" fill="#f8fafc" />
-  <path d="M320 358L374 412" stroke="#111827" stroke-width="24" stroke-linecap="round" />
-  <path d="M320 358L266 412" stroke="#111827" stroke-width="24" stroke-linecap="round" />
+<svg width="700" height="520" viewBox="0 0 700 520" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="paint0_linear" x1="320" y1="120" x2="320" y2="520" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0ea5e9" />
+    <linearGradient id="bg" x1="0" y1="0" x2="700" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a" />
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="circle" x1="70" y1="70" x2="420" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0ea5e9" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="shield" x1="420" y1="120" x2="600" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8" />
       <stop offset="1" stop-color="#1d4ed8" />
     </linearGradient>
   </defs>
+  <rect width="700" height="520" rx="40" fill="url(#bg)" />
+  <circle cx="260" cy="260" r="220" fill="url(#circle)" opacity="0.4" />
+  <path d="M380 120L450 160L430 300L380 420L320 300L300 160Z" fill="#111827" opacity="0.45" />
+  <path d="M360 160L430 200L410 320L360 420L320 320L330 200Z" fill="#0f172a" />
+  <path d="M360 160H410" stroke="#a5b4fc" stroke-width="10" stroke-linecap="round" />
+  <path d="M360 260L410 260" stroke="#a5b4fc" stroke-width="10" stroke-linecap="round" />
+  <path d="M360 320L410 320" stroke="#a5b4fc" stroke-width="10" stroke-linecap="round" />
+  <rect x="150" y="320" width="160" height="160" rx="24" fill="#0f172a" stroke="#1d4ed8" stroke-width="6" />
+  <rect x="170" y="340" width="120" height="100" rx="18" fill="#0f172a" stroke="#38bdf8" stroke-width="4" />
+  <circle cx="230" cy="360" r="28" fill="#38bdf8" stroke="#111827" stroke-width="4" />
+  <path d="M220 360L240 360L240 380L220 380Z" fill="#0f172a" />
+  <path d="M340 150C340 120 360 100 380 100C400 100 420 120 420 150V410C420 430 400 450 380 450C360 450 340 430 340 410V150Z" fill="url(#shield)" stroke="#0f172a" stroke-width="4" />
+  <path d="M370 260L390 260" stroke="#c7d2fe" stroke-width="6" stroke-linecap="round" />
+  <path d="M360 280L390 280" stroke="#c7d2fe" stroke-width="6" stroke-linecap="round" />
+  <path d="M360 300L390 300" stroke="#c7d2fe" stroke-width="6" stroke-linecap="round" />
+  <path d="M360 330L390 330" stroke="#a5b4fc" stroke-width="6" stroke-linecap="round" />
+  <circle cx="500" cy="140" r="28" fill="#0ea5e9" opacity="0.4" />
+  <circle cx="470" cy="420" r="16" fill="#38bdf8" opacity="0.5" />
+  <circle cx="540" cy="360" r="12" fill="#f8fafc" opacity="0.7" />
 </svg>

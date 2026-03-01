@@ -180,7 +180,7 @@ export default function Home() {
         {JSON.stringify(structuredData)}
       </Script>
 
-      <Hero title={heroTitle} subtitle={heroSubtitle} />
+      <Hero title={heroTitle} subtitle={heroSubtitle} showImage={false} />
 
       <TrustSignals />
 
