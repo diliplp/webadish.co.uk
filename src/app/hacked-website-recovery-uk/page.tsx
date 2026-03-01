@@ -12,7 +12,7 @@ export default function RecoveryUK() {
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <h2>Is Your Site Redirecting to Spam?</h2>
             <p style={{ marginBottom: '2rem', fontSize: '1.2rem' }}>
-                Don't panic. We fix hacked WordPress sites daily.
+                Don&apos;t panic. We fix hacked WordPress sites daily.
             </p>
             <div style={{
                 background: 'rgba(239, 68, 68, 0.1)',
@@ -55,7 +55,7 @@ export default function RecoveryUK() {
                 { question: "Will I lose data?", answer: "We take a backup before starting. In most cases, we clean the files rather than deleting them, preserving your content." }
             ]}
             cta={{
-                title: "Don't Let Hackers Win",
+                title: "Don&apos;t Let Hackers Win",
                 subtitle: "Every minute your site is down costs you money and reputation.",
                 btnText: "Start Recovery Now",
                 btnLink: "#contact-section"

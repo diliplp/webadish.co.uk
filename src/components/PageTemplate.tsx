@@ -6,21 +6,36 @@ import ServiceCard from '@/components/ServiceCard';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import type { ReactNode } from 'react';
+
+interface HeroProps {
+    title: string;
+    subtitle: string;
+    ctaText?: string;
+    ctaLink?: string;
+}
+
+interface FeatureItem {
+    title: string;
+    description: string;
+    icon: ReactNode;
+    link: string;
+}
+
+interface FAQItem {
+    question: string;
+    answer: string;
+}
 
 interface PageTemplateProps {
-    hero: {
-        title: string;
-        subtitle: string;
-        ctaText?: string;
-        ctaLink?: string;
-    };
+    hero: HeroProps;
     features?: {
         title: string;
         description: string;
-        items?: any[]; // Allow undefined if empty
+        items?: FeatureItem[];
     };
-    content?: React.ReactNode;
-    faqs?: any[];
+    content?: ReactNode;
+    faqs?: FAQItem[];
     cta?: {
         title?: string;
         subtitle?: string;

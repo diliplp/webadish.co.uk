@@ -1,5 +1,4 @@
 import PageTemplate from '@/components/PageTemplate';
-import { Shield, Cloud, Clock, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

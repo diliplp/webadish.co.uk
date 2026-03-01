@@ -11,16 +11,15 @@ export default function About() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h2>Our Mission</h2>
             <p style={{ marginBottom: '2rem' }}>
-                At Webadish, we believe that website maintenance shouldn't be a headache.
+                At Webadish, we believe that website maintenance shouldn&apos;t be a headache.
                 It started when our founders noticed that business owners were spending more time worrying about
                 updates and hackers than growing their business.
             </p>
 
             <h2>Global Presence, Local Support</h2>
             <p style={{ marginBottom: '2rem' }}>
-                We are a unique agency with teams distributed across the UK and Australia.
-                This "follow-the-sun" model allows us to provide near 24/7 coverage without engaging outsourced call centers.
-                When you talk to us, you're talking to a WordPress expert.
+                We are a unique agency with teams distributed across the UK and Australia. This follow-the-sun model allows us to provide near 24/7 coverage without engaging outsourced call centers.
+                When you talk to us, you&apos;re talking to a WordPress expert.
             </p>
 
             <h2>Our Values</h2>
@@ -36,7 +35,7 @@ export default function About() {
         <PageTemplate
             hero={{
                 title: "About <br /><span style='color: var(--primary)'>Webadish</span>",
-                subtitle: "We're on a mission to make the web a safer place for businesses.",
+                subtitle: "We&apos;re on a mission to make the web a safer place for businesses.",
                 ctaText: "Work With Us"
             }}
             content={content}

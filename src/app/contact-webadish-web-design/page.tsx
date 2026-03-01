@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero';
 import ContactForm from '@/components/ContactForm';
 import FAQ from '@/components/FAQ';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import styles from './page.module.scss';
 import type { Metadata } from 'next';
 

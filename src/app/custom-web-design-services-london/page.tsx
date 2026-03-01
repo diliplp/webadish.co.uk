@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function LondonWebDesign() {
     const content = (
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-            <h2>London's Premium Web Design Agency</h2>
+            <h2>London&apos;s Premium Web Design Agency</h2>
             <p>
                 Based in London? We provide face-to-face consultations and bespoke web design services
                 tailored to the competitive London market. Stand out with a site that performs.
@@ -21,7 +21,7 @@ export default function LondonWebDesign() {
         <PageTemplate
             hero={{
                 title: "Custom Web Design Services <br /><span style='color: var(--primary)'>London</span>",
-                subtitle: "Bespoke digital experiences for London's most ambitious brands.",
+                subtitle: "Bespoke digital experiences for London&apos;s most ambitious brands.",
                 ctaText: "Book London Consultation"
             }}
             content={content}

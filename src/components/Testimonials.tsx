@@ -28,7 +28,7 @@ const Testimonials = () => {
             <div className={styles.container}>
                 <div className={styles.header}>
                     <h2>Trusted by Industry Leaders</h2>
-                    <p>Don't just take our word for it. Here is what our clients have to say.</p>
+                    <p>Don&apos;t just take our word for it. Here is what our clients have to say.</p>
                 </div>
 
                 <div className={styles.grid}>
@@ -39,7 +39,7 @@ const Testimonials = () => {
                                     <Star key={i} size={16} fill="currentColor" />
                                 ))}
                             </div>
-                            <p className={styles.content}>"{testimonial.content}"</p>
+                            <p className={styles.content}>&ldquo;{testimonial.content}&rdquo;</p>
                             <div className={styles.author}>
                                 <div className={styles.info}>
                                     <h4>{testimonial.name}</h4>

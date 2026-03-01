@@ -11,7 +11,7 @@ export default function LondonMarketing() {
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <h2>Grow Your London Business</h2>
             <p>
-                It's not enough to have a website; you need traffic. Our digital marketing strategies
+                It&apos;s not enough to have a website; you need traffic. Our digital marketing strategies
                 are designed to bring qualified leads to your door.
             </p>
         </div>

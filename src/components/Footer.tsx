@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
+import { Mail } from 'lucide-react';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
                 <div className={styles.grid}>
                     <div className={styles.column}>
                         <Link href="/" className={styles.logo}>
-                            <img src="/brand/webadish-logo-white.png" alt="Webadish" style={{ height: '48px', width: 'auto', marginBottom: '1rem' }} />
+                            <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={160} height={48} />
                         </Link>
                         <p className={styles.description}>
                             Premium WordPress maintenance, security, and recovery services for agencies and businesses in the UK and Australia.
@@ -27,7 +28,7 @@ const Footer = () => {
                             <li><Link href="/wordpress-maintenance-uk">WordPress Maintenance</Link></li>
                             <li><Link href="/hacked-website-recovery-uk">Hacked Site Recovery</Link></li>
                             <li><Link href="/web-design-services">Web Design</Link></li>
-                            <li><Link href="/web-hosting-email-services">Hosting & Email</Link></li>
+                            <li><Link href="/web-hosting-email-services">Hosting &amp; Email</Link></li>
                         </ul>
                     </div>
 
@@ -48,7 +49,6 @@ const Footer = () => {
                                 <Mail size={16} />
                                 <a href="mailto:sales@webadish.co.uk">sales@webadish.co.uk</a>
                             </li>
-                            {/* Add phone/address if available, using placeholders for now */}
                         </ul>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                     <p>&copy; {currentYear} Webadish. All rights reserved.</p>
                     <div className={styles.policies}>
                         <Link href="/privacy-policy">Privacy Policy</Link>
-                        <Link href="/terms-conditions">Terms & Conditions</Link>
+                        <Link href="/terms-conditions">Terms &amp; Conditions</Link>
                     </div>
                 </div>
             </div>

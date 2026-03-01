@@ -28,6 +28,71 @@
     }
 }
 
+.highTicketSection {
+    background-color: var(--surface);
+}
+
+.highTicketGrid {
+    display: grid;
+    gap: 1.5rem;
+
+    @include respond-to('md') {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.highlightCard {
+    border: 1px solid #e5e7eb;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.caseStudiesSection {
+    background-color: #fff;
+}
+
+.caseStudyGrid {
+    display: grid;
+    gap: 1.25rem;
+
+    @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.caseStudyCard {
+    border: 1px solid #e5e7eb;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    background: #0f172a;
+    color: #f8fafc;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+    min-height: 240px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.caseStudyResults {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #a5f3fc;
+}
+
 .processSection {
     background-color: var(--surface);
     position: relative;

@@ -11,7 +11,7 @@ export default function WebDev() {
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <h2>Beyond Standard Themes</h2>
             <p>
-                When off-the-shelf solutions aren't enough, we build custom functionality tailored to your specific business needs.
+                When off-the-shelf solutions aren&apos;t enough, we build custom functionality tailored to your specific business needs.
             </p>
         </div>
     );
