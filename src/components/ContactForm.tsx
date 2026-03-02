@@ -14,17 +14,35 @@ const ContactForm = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError(null);
+        setIsSuccess(false);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', website: '', message: '' });
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.error || 'Unable to send message right now.');
+            }
+
+            setIsSuccess(true);
+            setFormData({ name: '', email: '', website: '', message: '' });
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -36,6 +54,12 @@ const ContactForm = () => {
             {isSuccess && (
                 <div className={styles.successMessage}>
                     Thank you! We have received your message and will get back to you shortly.
+                </div>
+            )}
+
+            {error && (
+                <div className={styles.errorMessage}>
+                    {error}
                 </div>
             )}
 
