@@ -23,13 +23,19 @@ const ContactForm = () => {
         setIsSuccess(false);
 
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 20000);
+
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
+                signal: controller.signal
             });
+
+            clearTimeout(timeoutId);
 
             if (!response.ok) {
                 const data = await response.json().catch(() => ({}));
@@ -39,7 +45,11 @@ const ContactForm = () => {
             setIsSuccess(true);
             setFormData({ name: '', email: '', website: '', message: '' });
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+            if (err instanceof Error && err.name === 'AbortError') {
+                setError('Request timed out. Please try again in a moment.');
+            } else {
+                setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+            }
         } finally {
             setIsSubmitting(false);
         }

@@ -40,6 +40,9 @@ export async function POST(request: Request) {
       port,
       secure,
       auth: { user, pass },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000,
     });
 
     await transporter.sendMail({
