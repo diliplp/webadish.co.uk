@@ -1,20 +1,20 @@
-import Hero from '@/components/Hero';
 import ContactForm from '@/components/ContactForm';
 import FAQ from '@/components/FAQ';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, ShieldCheck } from 'lucide-react';
 import styles from './page.module.scss';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'Contact Webadish | Web Design & Security Agency',
-    description: 'Get in touch with Webadish for WordPress maintenance, security audits, and custom web design services.',
-};
+export const metadata = generatePageMetadata({
+    title: 'Contact WebAdish | WordPress Security Experts UK',
+    description: 'Contact WebAdish for WordPress security audits, maintenance plans, malware removal, and emergency hacked site recovery. UK-based WordPress security specialists.',
+    path: '/contact-webadish-web-design',
+});
 
 export default function Contact() {
     const faqs = [
         {
             question: "What are your support hours?",
-            answer: "Our team covers both UK and Australian time zones, effectively providing near 24/7 support for critical issues."
+            answer: "Our UK-based team provides support during business hours with 24/7 monitoring for critical issues. Emergency recovery requests are handled around the clock."
         },
         {
             question: "Do you offer white-label services?",
@@ -22,19 +22,22 @@ export default function Contact() {
         },
         {
             question: "How much does a security audit cost?",
-            answer: "Our basic security review is free for potential maintenance clients. Deep-dive forensic audits start at £1499."
+            answer: "Our basic security review is free for potential maintenance clients. Deep-dive forensic audits start at £1,499."
         }
     ];
 
     return (
         <>
-            <Hero
-                title="Start Your Project With <br /><span style='color: var(--primary)'>Webadish</span>"
-                subtitle="Ready to secure your site or build something new? We're here to help."
-                ctaText="Scroll to Contact"
-                ctaLink="#contact-form"
-                showTrust={false}
-            />
+            <section className={styles.pageHeader}>
+                <div className="container">
+                    <div className={styles.badge}>
+                        <ShieldCheck size={14} />
+                        Free initial consultation
+                    </div>
+                    <h1>Speak to a WordPress <span>Security Expert</span></h1>
+                    <p>Tell us about your site and we&apos;ll come back with a clear, jargon-free plan.</p>
+                </div>
+            </section>
 
             <section className={styles.contactSection} id="contact-form">
                 <div className="container">
@@ -42,8 +45,8 @@ export default function Contact() {
                         <div className={styles.info}>
                             <h2>Get in Touch</h2>
                             <p>
-                                Whether you need emergency recovery or a long-term maintenance partner,
-                                our team is ready to assist.
+                                Whether you need emergency recovery or a long-term security partner,
+                                our UK team is ready to help.
                             </p>
 
                             <div className={styles.details}>
@@ -59,9 +62,15 @@ export default function Contact() {
                                     <Phone className={styles.icon} />
                                     <div>
                                         <h3>Call Us</h3>
-                                        <p>+919998757045</p>
+                                        <p>+44-XXX-XXXX-XXXX</p>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div className={styles.trustList}>
+                                <p>✓ Response within 1 business hour</p>
+                                <p>✓ No long-term lock-in contracts</p>
+                                <p>✓ UK-based security specialists</p>
                             </div>
                         </div>
 

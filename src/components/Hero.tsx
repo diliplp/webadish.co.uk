@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({
                                 <ShieldAlert size={18} style={{ marginRight: '8px' }} />
                                 {ctaText}
                             </Link>
-                            <a href="https://wa.me/919998757045" target="_blank" rel="noopener noreferrer" className="btn btn-emergency">
+                            <a href="https://wa.me/44XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="btn btn-emergency">
                                 <Phone size={18} style={{ marginRight: '8px' }} />
                                 Emergency Help
                             </a>
@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({
 
                         {showTrust && (
                             <div className={styles.trustLabel}>
-                                Trusted by agencies and businesses across UK & Australia
+                                Trusted by agencies and businesses across the United Kingdom
                             </div>
                         )}
                     </div>

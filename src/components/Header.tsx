@@ -1,15 +1,26 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ShieldAlert, Phone } from 'lucide-react';
+import { Menu, X, ShieldAlert, Phone, ChevronDown } from 'lucide-react';
 import styles from './Header.module.scss';
 import { gsap } from 'gsap';
+
+const SERVICE_LINKS = [
+    { href: '/wordpress-security-audit', label: 'Security Audit' },
+    { href: '/wordpress-maintenance-uk', label: 'WordPress Maintenance' },
+    { href: '/hacked-website-recovery-uk', label: 'Hacked Site Recovery' },
+    { href: '/wordpress-malware-removal', label: 'Malware Removal' },
+    { href: '/wordpress-security-retainer', label: 'Security Retainer' },
+    { href: '/web-hosting-email-services', label: 'Secure Hosting' },
+];
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,22 +43,59 @@ const Header = () => {
         }
     }, [isMobileMenuOpen]);
 
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+                setIsServicesOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
     return (
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.navContainer}>
                 <Link href="/" className={styles.logo}>
-                    <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={210} height={60} style={{ width: 'auto', height: '60px' }} />
+                    <Image src="/brand/webadish-logo-white.png" alt="WebAdish" width={245} height={70} style={{ width: 'auto', height: '70px' }} />
                 </Link>
 
                 <nav className={styles.desktopNav}>
-                    <Link href="/wordpress-maintenance-uk">Maintenance</Link>
-                    <Link href="/hacked-website-recovery-uk">Hacked Recovery</Link>
-                    <Link href="/web-design-services">Web Design</Link>
+                    <div
+                        className={styles.dropdown}
+                        ref={dropdownRef}
+                        onMouseEnter={() => setIsServicesOpen(true)}
+                        onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                        <button
+                            className={styles.dropdownTrigger}
+                            onClick={() => setIsServicesOpen(!isServicesOpen)}
+                            aria-expanded={isServicesOpen}
+                        >
+                            Services <ChevronDown size={14} style={{ marginLeft: '4px', transition: 'transform 0.2s', transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+                        </button>
+                        {isServicesOpen && (
+                            <div className={styles.dropdownMenu}>
+                                {SERVICE_LINKS.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => setIsServicesOpen(false)}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                    <Link href="/pricing">Pricing</Link>
+                    <Link href="/case-studies">Case Studies</Link>
+                    <Link href="/blog">Blog</Link>
                     <Link href="/about-webadish-web-agency">About</Link>
                 </nav>
 
                 <div className={styles.ctaGroup}>
-                    <a href="https://wa.me/919998757045" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                    <a href="https://wa.me/44XXXXXXXXXX" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Phone size={16} style={{ marginRight: '8px' }} /> Emergency Help
                     </a>
                     <Link href="/contact-webadish-web-design" className="btn btn-primary">
@@ -65,9 +113,14 @@ const Header = () => {
 
                 <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-                    <Link href="/wordpress-maintenance-uk" onClick={() => setIsMobileMenuOpen(false)}>WordPress Maintenance</Link>
-                    <Link href="/hacked-website-recovery-uk" onClick={() => setIsMobileMenuOpen(false)}>Hacked Site Recovery</Link>
-                    <Link href="/web-design-services" onClick={() => setIsMobileMenuOpen(false)}>Web Design</Link>
+                    {SERVICE_LINKS.map((link) => (
+                        <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
+                    <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
+                    <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                     <Link href="/about-webadish-web-agency" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
                     <Link href="/contact-webadish-web-design" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>
                         Request Security Review

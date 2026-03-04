@@ -1,0 +1,61 @@
+@import '../styles/mixins.scss';
+
+.pageHeader {
+    padding: 7rem 0 3.5rem;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+
+    // Subtle glow accent — matches brand aesthetic without heavy image
+    &::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(ellipse, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.inner {
+    position: relative;
+    max-width: 760px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 100px;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 1.25rem;
+
+    :global(span) {
+        color: var(--primary);
+    }
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #a1a1aa;
+    line-height: 1.65;
+    max-width: 620px;
+    margin: 0;
+}

@@ -9,6 +9,15 @@ interface ContactPayload {
   website?: string;
   message?: string;
   company?: string; // honeypot
+  // UTM tracking
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  gclid?: string;
+  landing_page?: string;
+  referrer?: string;
 }
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
@@ -93,13 +102,37 @@ export async function POST(request: Request) {
     const safeWebsite = escapeHtml(website);
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br/>');
 
+    // UTM tracking data
+    const utmSource = body.utm_source || '';
+    const utmMedium = body.utm_medium || '';
+    const utmCampaign = body.utm_campaign || '';
+    const utmTerm = body.utm_term || '';
+    const utmContent = body.utm_content || '';
+    const gclid = body.gclid || '';
+    const landingPage = body.landing_page || '';
+    const referrer = body.referrer || '';
+
+    const hasUtm = utmSource || utmMedium || utmCampaign || gclid;
+    const utmSection = hasUtm ? `
+        <hr/>
+        <h3>Attribution Data</h3>
+        <p><strong>Source:</strong> ${escapeHtml(utmSource || 'direct')}</p>
+        <p><strong>Medium:</strong> ${escapeHtml(utmMedium || 'none')}</p>
+        <p><strong>Campaign:</strong> ${escapeHtml(utmCampaign || 'none')}</p>
+        ${utmTerm ? `<p><strong>Term:</strong> ${escapeHtml(utmTerm)}</p>` : ''}
+        ${utmContent ? `<p><strong>Content:</strong> ${escapeHtml(utmContent)}</p>` : ''}
+        ${gclid ? `<p><strong>GCLID:</strong> ${escapeHtml(gclid)}</p>` : ''}
+        <p><strong>Landing Page:</strong> ${escapeHtml(landingPage)}</p>
+        <p><strong>Referrer:</strong> ${escapeHtml(referrer || 'direct')}</p>
+    ` : '';
+
     // 1) Notify team inbox
     await transporter.sendMail({
       from: `"${fromName}" <${fromEmail}>`,
       to,
       replyTo: email,
-      subject: `New contact form enquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}`,
+      subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''}`,
+      text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}${hasUtm ? `\n\nSource: ${utmSource}\nMedium: ${utmMedium}\nCampaign: ${utmCampaign}\nLanding Page: ${landingPage}` : ''}`,
       html: `
         <h2>New contact form enquiry</h2>
         <p><strong>Name:</strong> ${safeName}</p>
@@ -107,6 +140,7 @@ export async function POST(request: Request) {
         <p><strong>Website:</strong> ${safeWebsite}</p>
         <p><strong>Message:</strong></p>
         <p>${safeMessage}</p>
+        ${utmSection}
       `,
     });
 

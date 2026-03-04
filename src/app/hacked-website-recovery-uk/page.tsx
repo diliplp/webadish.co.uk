@@ -1,11 +1,12 @@
 import PageTemplate from '@/components/PageTemplate';
 import ContactForm from '@/components/ContactForm';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'Hacked WordPress Site Recovery UK | Emergency Fix',
-    description: 'Emergency hacked WordPress site recovery service in the UK. We clean malware, remove blacklists, and secure your site fast.',
-};
+export const metadata = generatePageMetadata({
+    title: 'Hacked WordPress Site Recovery UK | Emergency Fix in Hours | WebAdish',
+    description: 'Emergency WordPress hacked site recovery for UK businesses. We remove malware, clean backdoors, and restore your site within 4-24 hours. Fixed fee £1,499 with 30-day guarantee.',
+    path: '/hacked-website-recovery-uk',
+});
 
 export default function RecoveryUK() {
     const content = (

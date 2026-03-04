@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'Terms & Conditions | Webadish',
-    description: 'Terms and Conditions for Webadish services.',
-};
+export const metadata = generatePageMetadata({
+    title: 'Terms & Conditions | WebAdish',
+    description: 'Terms and Conditions for WebAdish WordPress security and maintenance services.',
+    path: '/terms-conditions',
+});
 
 export default function Terms() {
     const content = (

@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
+import { track } from '@vercel/analytics';
 import styles from './ContactForm.module.scss';
 
 const ContactForm = () => {
@@ -13,9 +14,34 @@ const ContactForm = () => {
         company: ''
     });
 
+    const [utmData, setUtmData] = useState({
+        utm_source: '',
+        utm_medium: '',
+        utm_campaign: '',
+        utm_term: '',
+        utm_content: '',
+        gclid: '',
+        landing_page: '',
+        referrer: '',
+    });
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        setUtmData({
+            utm_source: params.get('utm_source') || '',
+            utm_medium: params.get('utm_medium') || '',
+            utm_campaign: params.get('utm_campaign') || '',
+            utm_term: params.get('utm_term') || '',
+            utm_content: params.get('utm_content') || '',
+            gclid: params.get('gclid') || '',
+            landing_page: window.location.pathname,
+            referrer: document.referrer || '',
+        });
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -32,7 +58,7 @@ const ContactForm = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, ...utmData }),
                 signal: controller.signal
             });
 
@@ -44,6 +70,11 @@ const ContactForm = () => {
             }
 
             setIsSuccess(true);
+            track('form_submission', {
+                page: utmData.landing_page,
+                source: utmData.utm_source || 'direct',
+                medium: utmData.utm_medium || 'organic',
+            });
             setFormData({ name: '', email: '', website: '', message: '', company: '' });
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {

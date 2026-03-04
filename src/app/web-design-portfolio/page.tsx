@@ -1,10 +1,11 @@
 import PageTemplate from '@/components/PageTemplate';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'Web Design Portfolio | Webadish',
-    description: 'Explore our latest web design and development projects. See how we help businesses grow online.',
-};
+export const metadata = generatePageMetadata({
+    title: 'WordPress Security Portfolio | Client Projects | WebAdish',
+    description: 'View our WordPress security and design portfolio. See how we protect and optimise WordPress sites for UK businesses.',
+    path: '/web-design-portfolio',
+});
 
 export default function Portfolio() {
     const content = (

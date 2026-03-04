@@ -1,10 +1,11 @@
 import PageTemplate from '@/components/PageTemplate';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'WordPress Maintenance Plans UK | Webadish',
-    description: 'Premium WordPress maintenance for UK businesses. Daily backups, updates, security, and 24/7 support.',
-};
+export const metadata = generatePageMetadata({
+    title: 'WordPress Maintenance & Security Plans UK | From £449/month | WebAdish',
+    description: 'Proactive WordPress maintenance plans for UK businesses. Daily backups, weekly security updates, 24/7 monitoring, malware scanning, and GDPR-compliant support from £449/month.',
+    path: '/wordpress-maintenance-uk',
+});
 
 export default function MaintenanceUK() {
     const content = (

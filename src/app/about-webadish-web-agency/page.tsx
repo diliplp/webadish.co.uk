@@ -1,10 +1,11 @@
 import PageTemplate from '@/components/PageTemplate';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'About Webadish Web Agency | UK & Australia',
-    description: 'Learn about Webadish, the agency dedicated to securing and maintaining WordPress websites for businesses globally.',
-};
+export const metadata = generatePageMetadata({
+    title: 'About WebAdish | UK WordPress Security Agency',
+    description: 'WebAdish is a specialist WordPress security agency serving UK businesses. Learn about our mission, team, and security-first approach to WordPress maintenance.',
+    path: '/about-webadish-web-agency',
+});
 
 export default function About() {
     const content = (
@@ -18,7 +19,7 @@ export default function About() {
 
             <h2>Global Presence, Local Support</h2>
             <p style={{ marginBottom: '2rem' }}>
-                We are a unique agency with teams distributed across the UK and Australia. This follow-the-sun model allows us to provide near 24/7 coverage without engaging outsourced call centers.
+                We are a specialist WordPress security agency based in the United Kingdom. Our team provides dedicated coverage during UK business hours with 24/7 monitoring and emergency response capabilities for critical security incidents.
                 When you talk to us, you&apos;re talking to a WordPress expert.
             </p>
 

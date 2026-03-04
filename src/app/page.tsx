@@ -4,51 +4,48 @@ import ServiceCard from '@/components/ServiceCard';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Shield, Hammer, Globe, Code, Zap, Database } from 'lucide-react';
-import Script from 'next/script';
+import StructuredData from '@/components/StructuredData';
+import { Shield, Hammer, Search, Bug, Lock, Database } from 'lucide-react';
 import styles from './page.module.scss';
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
+import { generateOrganizationSchema, generateFAQSchema } from '@/lib/schema';
 
-export const metadata: Metadata = {
-  title: 'WebAdish | High-ticket WordPress Security & Maintenance Retainers',
+export const metadata = generatePageMetadata({
+  title: 'WebAdish | High-Ticket WordPress Security & Maintenance UK',
   description:
-    'Security-first WordPress retainers for UK and Australian brands. Limited high-ticket clients, 24/7 monitoring, emergency recovery, and performance tuning.',
-  metadataBase: new URL('https://www.webadish.co.uk'),
-  openGraph: {
-    title: 'WebAdish | High-ticket WordPress Security & Maintenance Retainers',
-    description:
-      'Security-first WordPress retainers for UK/Australian brands, trusted by agencies and enterprise teams.',
-    url: 'https://www.webadish.co.uk/',
-    siteName: 'WebAdish',
-    locale: 'en_GB',
-    type: 'website'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'WebAdish | High-ticket WordPress Security & Maintenance Retainers',
-    description:
-      'Security-first retainers for ambitious UK & Australian brands. 24/7 monitoring, emergency recovery, custom builds.',
-    site: '@webadish'
-  }
-};
+    'Security-first WordPress retainers for UK businesses. 24/7 monitoring, emergency recovery, malware removal, and maintenance from a specialist WordPress security agency.',
+  path: '/',
+});
 
 const caseStudies = [
   {
-    title: 'Clarke Digital | Global Insurance Portal',
+    title: 'UK Insurance Portal | Enterprise Security Overhaul',
     summary:
-      'Migrated a boutique insurer onto a hardened WordPress stack with stringent compliance checks, uptime SLAs, and monitoring tailored to their London + Sydney teams.',
-    results: '✅ 40% faster incident response · ✅ Zero downtime during the peak renewal period'
+      'Migrated a boutique insurer onto a hardened WordPress stack with stringent compliance checks, uptime SLAs, and round-the-clock monitoring for their London team.',
+    results: '40% faster incident response | Zero downtime during peak renewal period'
   },
   {
-    title: 'Creative London | Premium Membership Hub',
+    title: 'London Creative Agency | Secure Membership Platform',
     summary:
       'Delivered an AI-powered membership portal with multi-layered caching, IP-based access rules, and daily security reviews for sensitive client data.',
-    results: '✅ 4-hour recovery guarantee · ✅ Automated security scorecard shared weekly'
+    results: '4-hour recovery guarantee | Automated weekly security scorecard'
+  },
+  {
+    title: 'E-Commerce Fashion Brand | WooCommerce Security',
+    summary:
+      'Complete WooCommerce security overhaul including PCI compliance, payment gateway hardening, and real-time fraud detection for a high-volume UK retailer.',
+    results: '99.99% uptime achieved | Zero security incidents in 12 months'
   }
 ];
 
 export default function Home() {
   const services = [
+    {
+      title: 'WordPress Security Audit',
+      description: 'Comprehensive vulnerability assessment with detailed remediation report and risk scoring.',
+      icon: <Search size={24} />,
+      link: '/wordpress-security-audit'
+    },
     {
       title: 'WordPress Maintenance',
       description: 'Comprehensive care plans including daily backups, weekly updates, and 24/7 monitoring.',
@@ -57,31 +54,25 @@ export default function Home() {
     },
     {
       title: 'Hacked Site Recovery',
-      description: 'Emergency malware removal and site restoration. We get you back online fast.',
+      description: 'Emergency malware removal and site restoration. We get you back online in hours, not days.',
       icon: <Shield size={24} />,
       link: '/hacked-website-recovery-uk'
     },
     {
-      title: 'Custom Web Design',
-      description: 'High-converting, premium websites designed to position you as an industry leader.',
-      icon: <Globe size={24} />,
-      link: '/web-design-services'
+      title: 'Malware Removal',
+      description: 'Targeted malware scanning, backdoor removal, and site hardening against reinfection.',
+      icon: <Bug size={24} />,
+      link: '/wordpress-malware-removal'
     },
     {
-      title: 'Web Development',
-      description: 'Custom plugin development, API integrations, and complex functionality.',
-      icon: <Code size={24} />,
-      link: '/web-development-services'
+      title: 'Security Retainer',
+      description: 'Dedicated security team, SLA guarantees, and executive reporting for enterprise WordPress sites.',
+      icon: <Lock size={24} />,
+      link: '/wordpress-security-retainer'
     },
     {
-      title: 'Performance Optimization',
-      description: 'Speed up your site to improve SEO rankings and user experience.',
-      icon: <Zap size={24} />,
-      link: '/special-offers'
-    },
-    {
-      title: 'Hosting & Email',
-      description: 'Secure, high-performance hosting tailored for WordPress websites.',
+      title: 'Secure Hosting',
+      description: 'Hardened WordPress hosting with WAF, DDoS protection, and 99.99% uptime SLA.',
       icon: <Database size={24} />,
       link: '/web-hosting-email-services'
     }
@@ -89,31 +80,52 @@ export default function Home() {
 
   const faqs = [
     {
-      question: "How quickly can you fix a hacked website?",
+      question: "How quickly can you fix a hacked WordPress website?",
       answer:
-        "We typically start working immediately upon engagement. Most common malware infections are cleaned within 4-12 hours. Complex cases may take up to 24 hours, but we prioritize getting your site back online safely."
+        "We typically start working immediately upon engagement. Most common malware infections are cleaned within 4-12 hours. Complex cases involving deeply embedded backdoors or database-level compromises may take up to 24 hours, but we prioritise getting your site back online safely."
     },
     {
-      question: 'Do you work with agencies?',
+      question: 'How much does WordPress security cost per month?',
       answer:
-        'Yes! A large portion of our clients are digital agencies who whitelist our maintenance services. We handle the technical support so you can focus on client relationships and growth.'
+        'Our WordPress maintenance plans start at \u00a3449 per month for standard coverage including daily backups, weekly updates, and 24/7 monitoring. For enterprise-grade security retainers with dedicated analysts and SLA guarantees, plans start at \u00a32,999 per month. One-time security audits are available from \u00a31,499.'
     },
     {
-      question: 'What is included in your maintenance plans?',
+      question: 'What happens if my WordPress site gets hacked?',
       answer:
-        'Our core plans include daily cloud backups, weekly plugin/theme/core updates, 24/7 uptime monitoring, security scans, and a monthly report. Higher tiers include speed optimization and unlimited small edits.'
+        'If your site is hacked, we perform emergency containment to stop further damage, scan and remove all malware and backdoors, restore clean files from backups where possible, harden your site against future attacks, and monitor for 30 days post-recovery. Our fixed-fee emergency recovery service costs \u00a31,499.'
     },
     {
-      question: 'Are you based in the UK or Australia?',
+      question: 'Do you work with agencies on a white-label basis?',
       answer:
-        'We have team members in both time zones, allowing us to provide near 24-hour coverage and localized support for clients in both the UK and Australia.'
+        'Yes. A large portion of our clients are digital agencies who white-label our security and maintenance services. We handle the technical security so you can focus on client relationships and growth. All reporting is unbranded and ready for your clients.'
+    },
+    {
+      question: 'What is included in a WordPress security audit?',
+      answer:
+        'Our security audit includes vulnerability scanning of core, plugins, and themes, server configuration review, user permission analysis, database security assessment, SSL and HTTPS verification, malware scanning, and a detailed remediation report with risk scoring and prioritised recommendations.'
+    },
+    {
+      question: 'How do you prevent WordPress sites from being hacked?',
+      answer:
+        'We implement a multi-layered security approach: Web Application Firewall, automated malware scanning, real-time threat monitoring, regular security patching, hardened server configurations, two-factor authentication, login attempt limiting, and regular security audits. Prevention is always more cost-effective than recovery.'
+    },
+    {
+      question: 'Can you secure my WooCommerce store?',
+      answer:
+        'Absolutely. WooCommerce stores require additional security layers to protect customer data and payment information. We implement PCI-compliant configurations, secure payment gateway integration, order data encryption, and fraud detection systems alongside standard WordPress security measures.'
+    },
+    {
+      question: 'Are your services GDPR compliant?',
+      answer:
+        'Yes. All our services are fully GDPR compliant. We store backups in UK/EU data centres, use encrypted connections for all data transfers, and follow strict data handling procedures. We can also help ensure your WordPress site meets GDPR technical requirements.'
     }
   ];
 
   const heroTitle =
     "High-ticket WordPress security for elite teams.<br /><span style='color: var(--primary)'>Stop worrying about WordPress security.</span>";
   const heroSubtitle =
-    'Security-first retainers for UK & Australian brands. Limited intake so we can deliver enterprise-grade guardrails.';
+    'Security-first retainers for UK businesses. Limited intake so we can deliver enterprise-grade guardrails to every client.';
+
   const highTicketHighlights = [
     {
       title: 'Selective client intake',
@@ -130,55 +142,14 @@ export default function Home() {
     }
   ];
 
-  const faqEntities = faqs.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer
-    }
-  }));
-
-  const structuredData = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      name: 'WebAdish',
-      url: 'https://www.webadish.co.uk/',
-      telephone: '+919998757045',
-      email: 'hello@webadish.co.uk',
-      logo: 'https://www.webadish.co.uk/logo.png',
-      description:
-        'High-ticket WordPress maintenance, security, and recovery retainers for UK and Australian businesses.',
-      areaServed: ['United Kingdom', 'Australia'],
-      serviceType: 'WordPress Security & Maintenance',
-      priceRange: '$$$',
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'High-ticket retainers',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Elite WordPress Security Retainer'
-            }
-          }
-        ]
-      }
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqEntities
-    }
+  const schemas = [
+    generateOrganizationSchema(),
+    generateFAQSchema(faqs),
   ];
 
   return (
     <>
-      <Script id="webadish-structured-data" type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </Script>
+      <StructuredData schemas={schemas} />
 
       <Hero title={heroTitle} subtitle={heroSubtitle} showImage={false} />
 
@@ -188,7 +159,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Curated, high-ticket engagements</h2>
-            <p>We partner only with ambitious UK/Australian teams that value security, clarity, and lasting uptime.</p>
+            <p>We partner only with ambitious UK teams that value security, clarity, and lasting uptime.</p>
           </div>
           <div className={styles.highTicketGrid}>
             {highTicketHighlights.map((item) => (
@@ -205,7 +176,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Case studies from retained clients</h2>
-            <p>Security playbooks, uptime SLAs, and measurable results for premium brands.</p>
+            <p>Security playbooks, uptime SLAs, and measurable results for premium UK brands.</p>
           </div>
           <div className={styles.caseStudyGrid}>
             {caseStudies.map((study) => (
@@ -222,8 +193,8 @@ export default function Home() {
       <section className={`${styles.servicesSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Our Core Services</h2>
-            <p>Everything you need to keep your digital presence secure and growing.</p>
+            <h2>WordPress Security Services</h2>
+            <p>Everything you need to keep your WordPress site secure, fast, and resilient.</p>
           </div>
 
           <div className={styles.servicesGrid}>
@@ -237,20 +208,20 @@ export default function Home() {
       <section className={`${styles.processSection} section-padding`}>
         <div className="container">
           <div className={styles.processContent}>
-            <h2>The Webadish Standard</h2>
+            <h2>The WebAdish Standard</h2>
             <p>
               We don&apos;t just fix problems; we prevent them. Our proactive approach combines enterprise-grade security
               tools with expert human oversight.
             </p>
             <ul className={styles.benefitsList}>
               <li>
-                <strong>Security First:</strong> Every decision we make prioritizes the safety of your data.
+                <strong>Security First:</strong> Every decision we make prioritises the safety of your data and your customers&apos; data.
               </li>
               <li>
-                <strong>Speed Obsessed:</strong> We optimize every line of code for maximum performance.
+                <strong>Speed Obsessed:</strong> We optimise every line of code for maximum performance without compromising security.
               </li>
               <li>
-                <strong>Transparent Communication:</strong> No jargon, just clear updates and reports.
+                <strong>Transparent Communication:</strong> No jargon, just clear updates, monthly reports, and honest assessments.
               </li>
             </ul>
           </div>

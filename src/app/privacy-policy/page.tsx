@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-    title: 'Privacy Policy | Webadish',
-    description: 'Privacy Policy for Webadish.',
-};
+export const metadata = generatePageMetadata({
+    title: 'Privacy Policy | WebAdish',
+    description: 'Privacy Policy for WebAdish WordPress security services. How we collect, use, and protect your data.',
+    path: '/privacy-policy',
+});
 
 export default function Privacy() {
     const content = (

@@ -1,6 +1,4 @@
-'use client';
-
-import Hero from '@/components/Hero';
+import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
 import ServiceCard from '@/components/ServiceCard';
 import Testimonials from '@/components/Testimonials';
@@ -53,7 +51,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({
 }) => {
     return (
         <>
-            <Hero {...hero} />
+            <PageHeader title={hero.title} subtitle={hero.subtitle} />
 
             <TrustSignals />
 

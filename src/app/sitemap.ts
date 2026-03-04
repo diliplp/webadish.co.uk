@@ -1,31 +1,23 @@
 import { MetadataRoute } from 'next';
+import { ALL_ROUTES } from '@/lib/routes';
+import { BLOG_POSTS } from '@/data/posts';
+
+const BASE_URL = 'https://www.webadish.co.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://webadish.co.uk';
-    const routes = [
-        '',
-        '/contact-webadish-web-design',
-        '/wordpress-maintenance-uk',
-        '/wordpress-maintenance-australia',
-        '/hacked-website-recovery-uk',
-        '/hacked-website-recovery-australia',
-        '/web-design-services',
-        '/web-development-services',
-        '/branding-services',
-        '/web-hosting-email-services',
-        '/web-design-portfolio',
-        '/special-offers',
-        '/about-webadish-web-agency',
-        '/privacy-policy',
-        '/terms-conditions',
-        '/custom-web-design-services-london',
-        '/digital-marketing-london',
-    ];
-
-    return routes.map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: route === '' ? 1 : 0.8,
+    const pageRoutes = ALL_ROUTES.map((route) => ({
+        url: `${BASE_URL}${route.path}`,
+        lastModified: new Date(route.lastModified),
+        changeFrequency: route.changeFreq as MetadataRoute.Sitemap[number]['changeFrequency'],
+        priority: route.priority,
     }));
+
+    const blogRoutes = BLOG_POSTS.map((post) => ({
+        url: `${BASE_URL}/${post.slug}`,
+        lastModified: new Date(post.dateModified || post.datePublished),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }));
+
+    return [...pageRoutes, ...blogRoutes];
 }
