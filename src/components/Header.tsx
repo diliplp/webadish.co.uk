@@ -21,6 +21,7 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -64,8 +65,13 @@ const Header = () => {
                     <div
                         className={styles.dropdown}
                         ref={dropdownRef}
-                        onMouseEnter={() => setIsServicesOpen(true)}
-                        onMouseLeave={() => setIsServicesOpen(false)}
+                        onMouseEnter={() => {
+                            if (closeTimer.current) clearTimeout(closeTimer.current);
+                            setIsServicesOpen(true);
+                        }}
+                        onMouseLeave={() => {
+                            closeTimer.current = setTimeout(() => setIsServicesOpen(false), 200);
+                        }}
                     >
                         <button
                             className={styles.dropdownTrigger}
