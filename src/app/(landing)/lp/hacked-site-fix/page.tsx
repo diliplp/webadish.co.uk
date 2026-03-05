@@ -82,7 +82,7 @@ export default function HackedSiteLP() {
             flexWrap: 'wrap',
           }}>
             <a
-              href="https://wa.me/44XXXXXXXXXX"
+              href="https://wa.me/441923751614"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-emergency"
