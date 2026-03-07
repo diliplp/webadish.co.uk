@@ -46,7 +46,7 @@ export default function WebDev() {
             }}
             cta={{
                 title: "Need Custom WordPress Security?",
-                subtitle: "Our security developers build solutions that protect your business from evolving threats. Call us on +44 1923 751614 or get in touch for a security consultation."
+                subtitle: "Our security developers build solutions that protect your business from evolving threats. Call us on +44 7344 540450 or get in touch for a security consultation."
             }}
         />
     );

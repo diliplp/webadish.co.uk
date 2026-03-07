@@ -366,7 +366,7 @@ export default function WordPressSecurityRetainer() {
           >
             Need a custom arrangement? Call{' '}
             <strong style={{ color: 'var(--foreground)' }}>
-              +44 1923 751614
+              +44 7344 540450
             </strong>{' '}
             to discuss your requirements.
           </p>

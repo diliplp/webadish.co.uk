@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({
                                 <ShieldAlert size={18} style={{ marginRight: '8px' }} />
                                 {ctaText}
                             </Link>
-                            <a href="https://wa.me/441923751614" target="_blank" rel="noopener noreferrer" className="btn btn-emergency">
+                            <a href="https://wa.me/447344540450" target="_blank" rel="noopener noreferrer" className="btn btn-emergency">
                                 <Phone size={18} style={{ marginRight: '8px' }} />
                                 Emergency Help
                             </a>

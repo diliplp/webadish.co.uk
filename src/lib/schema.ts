@@ -6,7 +6,7 @@ export function generateOrganizationSchema() {
     '@type': 'ProfessionalService',
     name: 'WebAdish',
     url: `${SITE_URL}/`,
-    telephone: '+441923751614',
+    telephone: '+447344540450',
     email: 'sales@webadish.co.uk',
     logo: `${SITE_URL}/brand/webadish-logo-white.png`,
     description:

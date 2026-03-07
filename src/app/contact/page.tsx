@@ -62,7 +62,7 @@ export default function Contact() {
                                     <Phone className={styles.icon} />
                                     <div>
                                         <h3>Call Us</h3>
-                                        <p>+44 1923 751614</p>
+                                        <p>+44 7344 540450</p>
                                     </div>
                                 </div>
                             </div>

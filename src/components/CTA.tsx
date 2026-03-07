@@ -25,7 +25,7 @@ const CTA: React.FC<CTAProps> = ({
                         <Link href={btnLink} className="btn btn-primary">
                             {btnText} <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                         </Link>
-                        <a href="https://wa.me/441923751614" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                        <a href="https://wa.me/447344540450" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                             <Phone size={18} style={{ marginRight: '8px' }} /> Talk to an Expert
                         </a>
                     </div>

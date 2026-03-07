@@ -46,7 +46,7 @@ export default function WebDesign() {
             }}
             cta={{
                 title: "Is Your WordPress Site Secure?",
-                subtitle: "Get a security-first WordPress website that protects your business and your customers. Call us on +44 1923 751614 or request a free security audit today."
+                subtitle: "Get a security-first WordPress website that protects your business and your customers. Call us on +44 7344 540450 or request a free security audit today."
             }}
         />
     );
