@@ -44,6 +44,16 @@ const nextConfig: NextConfig = {
       // Policies
       { source: '/terms', destination: '/terms-conditions', permanent: true },
       { source: '/privacy', destination: '/privacy-policy', permanent: true },
+
+      // Old WordPress 404s from GSC coverage report (2026-03-09)
+      { source: '/ai-trends-for-web-designers', destination: '/blog', permanent: true },
+      { source: '/ai-trends-for-web-designers/', destination: '/blog', permanent: true },
+      { source: '/web-design-development-email-hosting-services', destination: '/web-hosting-email-services', permanent: true },
+      { source: '/web-design-development-email-hosting-services/', destination: '/web-hosting-email-services', permanent: true },
+      { source: '/design', destination: '/web-design-services', permanent: true },
+      { source: '/design/', destination: '/web-design-services', permanent: true },
+      { source: '/support-hosting', destination: '/web-hosting-email-services', permanent: true },
+      { source: '/support-hosting/', destination: '/web-hosting-email-services', permanent: true },
     ];
   },
 };
