@@ -54,6 +54,18 @@ const nextConfig: NextConfig = {
       { source: '/design/', destination: '/web-design-services', permanent: true },
       { source: '/support-hosting', destination: '/web-hosting-email-services', permanent: true },
       { source: '/support-hosting/', destination: '/web-hosting-email-services', permanent: true },
+
+      // WordPress-specific paths (from old WordPress site — fix 404s + 403s in GSC)
+      { source: '/wp-login.php', destination: '/', permanent: true },
+      { source: '/xmlrpc.php', destination: '/', permanent: true },
+      { source: '/wp-admin', destination: '/', permanent: true },
+      { source: '/wp-admin/:path*', destination: '/', permanent: true },
+      { source: '/wp-content/:path*', destination: '/', permanent: true },
+      { source: '/wp-includes/:path*', destination: '/', permanent: true },
+      { source: '/wp-json/:path*', destination: '/', permanent: true },
+      { source: '/feed', destination: '/blog', permanent: true },
+      { source: '/feed/', destination: '/blog', permanent: true },
+      { source: '/?feed=rss2', destination: '/blog', permanent: true },
     ];
   },
 };
