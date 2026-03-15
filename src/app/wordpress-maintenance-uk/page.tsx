@@ -14,11 +14,16 @@ import Link from 'next/link';
 export const metadata = generatePageMetadata({
   title: 'WordPress Maintenance Service UK | Plans from £449/mo | WebAdish',
   description:
-    'WordPress maintenance service for UK businesses. Plans from £449/month covering daily backups, security updates, uptime monitoring, malware scanning, and UK-hours support.',
+    'WordPress maintenance and monitoring service for UK businesses. Plans from £449/month covering 24/7 uptime monitoring, daily backups, security updates, malware scanning, and UK-hours support.',
   path: '/wordpress-maintenance-uk',
 });
 
 const faqItems = [
+  {
+    question: 'What does WordPress monitoring include?',
+    answer:
+      'WordPress monitoring covers several layers: uptime monitoring checks your site is responding every 60 seconds and alerts you within seconds if it goes down; performance monitoring tracks page load times and flags slowdowns; SSL certificate monitoring warns you before your certificate expires; malware monitoring scans files and database entries daily for injected code; and login monitoring detects brute-force attempts. WebAdish provides all of these on every maintenance plan, with 24/7 alerting and a documented incident response process.',
+  },
   {
     question: 'What does a WordPress maintenance service include?',
     answer:
@@ -64,7 +69,7 @@ const faqItems = [
 export default function WordPressMaintenanceUK() {
   const serviceSchema = generateServiceSchema(
     'WordPress Maintenance Service UK',
-    'WordPress maintenance service for UK businesses covering daily backups, security updates, uptime monitoring, malware scanning, and UK-hours support.',
+    'WordPress maintenance and monitoring service for UK businesses. 24/7 uptime monitoring, file integrity checks, SSL monitoring, daily backups, security updates, malware scanning, and UK-hours support.',
     '/wordpress-maintenance-uk',
     'From £449/month'
   );
@@ -119,8 +124,47 @@ export default function WordPressMaintenanceUK() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* WordPress Monitoring UK */}
       <section className="section-padding" style={{ background: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div>
+              <span style={{ display: 'inline-block', background: 'rgba(var(--primary-rgb), 0.1)', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 700, padding: '4px 12px', borderRadius: '20px', marginBottom: '1rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                WordPress Monitoring UK
+              </span>
+              <h2>24/7 WordPress Monitoring — Not Just Uptime Checks</h2>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0 1.5rem' }}>
+                Most hosting providers offer basic uptime monitoring. We go further — monitoring every layer of your WordPress site around the clock, from server response to file integrity to login security.
+              </p>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+                When something changes — whether it&apos;s a malware injection at 3am or an SSL certificate nearing expiry — we&apos;re alerted before you are, and we act immediately. UK businesses on our plans have averaged{' '}
+                <strong style={{ color: '#fff' }}>99.9% uptime</strong> across all monitored sites.
+              </p>
+              <Link href="/contact" className="btn btn-primary">Get Monitoring Set Up</Link>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {[
+                { icon: '📡', title: 'Uptime monitoring every 60 seconds', desc: 'Checks your site is live and responding. Alert within 60 seconds of downtime.' },
+                { icon: '🔐', title: 'SSL certificate monitoring', desc: 'Warns you 30 days before your certificate expires — no surprise outages.' },
+                { icon: '🛡️', title: 'File integrity & malware monitoring', desc: 'Detects unauthorised file changes and injected code before it affects visitors.' },
+                { icon: '⚡', title: 'Performance & response time monitoring', desc: 'Flags slowdowns and time-to-first-byte regressions as soon as they appear.' },
+                { icon: '🔒', title: 'Brute-force login monitoring', desc: 'Detects and blocks automated login attacks targeting wp-login.php.' },
+              ].map((item) => (
+                <div key={item.title} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '10px', padding: '1rem 1.25rem', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: '1.4rem', flexShrink: 0, marginTop: '2px' }}>{item.icon}</span>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.25rem', color: '#f4f4f5' }}>{item.title}</div>
+                    <div style={{ color: '#a1a1aa', fontSize: '0.85rem', lineHeight: 1.5 }}>{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2>WordPress Maintenance Plans UK</h2>
