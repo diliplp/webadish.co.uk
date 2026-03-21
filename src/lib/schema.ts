@@ -10,15 +10,14 @@ export function generateOrganizationSchema() {
     email: 'sales@webadish.co.uk',
     logo: `${SITE_URL}/brand/webadish-logo-white.png`,
     description:
-      'High-ticket WordPress security, maintenance, and recovery retainers for UK businesses.',
+      'Premium WordPress incident response, security retainers, secure hosting, and GDPR-aware recovery for UK businesses.',
     areaServed: 'United Kingdom',
-    serviceType: 'WordPress Security & Maintenance',
+    serviceType: 'WordPress Incident Response & Security',
     priceRange: '$$$',
     foundingDate: '2020',
     knowsAbout: [
       'WordPress Security',
       'Malware Removal',
-      'Website Maintenance',
       'GDPR Compliance',
       'WordPress Hosting',
       'Hacked Website Recovery',
@@ -40,8 +39,8 @@ export function generateOrganizationSchema() {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'WordPress Maintenance Retainer',
-            description: 'Ongoing security monitoring, updates, and maintenance',
+            name: 'WordPress Security Retainer',
+            description: 'Ongoing security monitoring, hardening, reporting, and emergency response readiness',
           },
         },
         {

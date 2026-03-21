@@ -13,9 +13,9 @@ import ContactForm from '@/components/ContactForm';
 
 export const metadata = generatePageMetadata({
   title:
-    'WordPress Security Retainer UK | Enterprise-Grade Protection | WebAdish',
+    'WordPress Security Retainer UK | Monthly Protection for UK Businesses | WebAdish',
   description:
-    'High-ticket WordPress security retainers for UK businesses and agencies. Dedicated security team, SLA guarantees, and executive reporting from £1,000/month.',
+    'Monthly WordPress security retainers for UK businesses and agencies. Monitoring, audits, GDPR-aware support, and priority incident response from £250/month.',
   path: '/wordpress-security-retainer',
 });
 
@@ -65,9 +65,9 @@ const faqItems = [
 export default function WordPressSecurityRetainer() {
   const serviceSchema = generateServiceSchema(
     'WordPress Security Retainer',
-    'Enterprise-grade WordPress security retainers for UK businesses and agencies. Dedicated security team, SLA guarantees, and executive reporting.',
+    'Monthly WordPress security retainers for UK businesses and agencies. Monitoring, audits, priority response, and GDPR-aware support.',
     '/wordpress-security-retainer',
-    'From £1,000/month'
+    'From £250/month'
   );
 
   const faqSchema = generateFAQSchema(faqItems);
@@ -86,8 +86,8 @@ export default function WordPressSecurityRetainer() {
 
       <PageHeader
         title="Enterprise WordPress <br /><span style='color: var(--primary)'>Security Retainer</span>"
-        subtitle="A dedicated security team watching over your WordPress estate around the clock. SLA-backed incident response, executive reporting, and proactive threat management for UK businesses that cannot afford downtime."
-        badge="Enterprise Security Retainer"
+        subtitle="Monthly WordPress security retainers for UK businesses that need continuous monitoring, clearer escalation, and a stronger response posture without hiring in-house."
+        badge="From £250/month"
       />
 
       <TrustSignals />
@@ -107,17 +107,14 @@ export default function WordPressSecurityRetainer() {
                 marginBottom: '1rem',
               }}
             >
-              A WordPress security retainer is an ongoing, contractual
-              partnership with a dedicated security team that provides
-              continuous monitoring, proactive threat management, guaranteed
-              incident response times, and regular reporting for your
-              WordPress environment. Unlike one-off services, a retainer
-              ensures that security expertise is always available when you
-              need it, with SLA-backed response times and a deep
-              understanding of your specific infrastructure. WebAdish
-              retainers are built for UK businesses, agencies, and
-              enterprises that require enterprise-grade WordPress protection
-              without building an in-house security team.
+              A WordPress security retainer is an ongoing protection
+              engagement for your WordPress environment. Unlike a one-off
+              cleanup, a retainer gives your business continuous monitoring,
+              regular reviews, and a named escalation path when suspicious
+              activity or a live incident appears. WebAdish retainers are
+              built for UK businesses, agencies, and eCommerce teams that
+              need stronger operational protection without building an
+              in-house security function.
             </p>
           </div>
         </div>
@@ -152,28 +149,28 @@ export default function WordPressSecurityRetainer() {
           >
             {[
               {
-                title: 'Dedicated Security Analyst',
-                desc: 'A named security professional who knows your infrastructure inside out. Direct Slack or Teams access for real-time communication.',
+                title: 'Named Security Contact',
+                desc: 'A named point of contact who understands your WordPress environment and can coordinate response with context rather than starting from scratch each time.',
               },
               {
                 title: '24/7 Security Monitoring',
                 desc: 'Round-the-clock monitoring of your WordPress installations for intrusion attempts, file changes, brute-force attacks, and anomalous activity.',
               },
               {
-                title: 'Incident Response SLA',
-                desc: 'Guaranteed response times for security incidents. Critical issues are triaged and addressed within hours, not days.',
+                title: 'Priority Incident Escalation',
+                desc: 'Defined response expectations for suspicious behaviour, urgent patching, and live incidents, with stronger response on higher tiers.',
               },
               {
-                title: 'Weekly Security Reports',
-                desc: 'Clear, executive-friendly reports summarising threats blocked, vulnerabilities patched, uptime metrics, and upcoming recommendations.',
+                title: 'Monthly Reporting',
+                desc: 'Clear summaries covering threats reviewed, updates completed, backlog items, and recommended risk-reduction actions.',
               },
               {
-                title: 'Quarterly Penetration Testing',
-                desc: 'Structured penetration tests simulating real-world attacks against your environment, with a detailed findings report and remediation support.',
+                title: 'GDPR-Aware Guidance',
+                desc: 'Where relevant, we flag breach-notification readiness, access control gaps, and data-handling concerns that affect UK GDPR exposure.',
               },
               {
                 title: 'Priority Support',
-                desc: 'Skip the queue. Your requests are handled before non-retainer clients. Includes unlimited small security-related changes and configurations.',
+                desc: 'Skip the standard queue for urgent security questions, suspicious behaviour, and small security-focused changes.',
               },
             ].map((item, index) => (
               <div
@@ -216,144 +213,101 @@ export default function WordPressSecurityRetainer() {
               margin: '0 auto 3rem',
             }}
           >
-            <h2>Choose Your Tier</h2>
+            <h2>Choose Your Monthly Retainer</h2>
             <p>
-              Two retainer levels designed for different scales of operation.
+              Three monthly retainers designed for different levels of risk, complexity, and support expectation.
             </p>
           </div>
 
           <div
             style={{
-              display: 'flex',
+              display: 'grid',
               gap: '2rem',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             }}
           >
-            {/* Professional Tier */}
-            <div
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '1rem',
-                padding: '2.5rem',
-                flex: '1 1 340px',
-                maxWidth: '440px',
-              }}
-            >
-              <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>
-                Professional
-              </h3>
+            {[
+              {
+                name: 'Essential Monitoring',
+                price: '£250',
+                note: 'For smaller commercial websites needing continuous visibility and a dependable escalation path.',
+                items: ['24/7 monitoring', 'Weekly scan review', 'Monthly summary', 'Priority support queue'],
+              },
+              {
+                name: 'Business Protection',
+                price: '£500',
+                note: 'For eCommerce sites and growth-stage businesses with stronger uptime and compliance sensitivity.',
+                items: ['Everything in Essential', 'Quarterly security review', 'GDPR-aware guidance', 'Faster incident escalation'],
+              },
+              {
+                name: 'Continuity Retainer',
+                price: '£800',
+                note: 'For agencies, multi-stakeholder teams, and businesses needing a higher-touch protection rhythm.',
+                items: ['Everything in Business', 'Monthly audit call', 'Dedicated escalation path', 'Support for complex estates'],
+              },
+            ].map((tier, index) => (
               <div
+                key={tier.name}
                 style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 'bold',
-                  margin: '0.75rem 0',
-                }}
-              >
-                £2,999
-                <span style={{ fontSize: '1rem', color: '#a1a1aa' }}>
-                  /month
-                </span>
-              </div>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginTop: '1.5rem',
-                }}
-              >
-                {[
-                  'Up to 5 WordPress sites',
-                  'Dedicated security analyst',
-                  '24/7 monitoring',
-                  '4-hour critical incident SLA',
-                  'Weekly security digest',
-                  'Monthly executive report',
-                  'Quarterly penetration test',
-                  'Priority support queue',
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    style={{ marginBottom: '0.6rem', color: '#a1a1aa' }}
-                  >
-                    &#10003; {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Enterprise Tier */}
-            <div
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--primary)',
-                borderRadius: '1rem',
-                padding: '2.5rem',
-                flex: '1 1 340px',
-                maxWidth: '440px',
-                position: 'relative',
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '-12px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'var(--primary)',
-                  color: 'white',
-                  padding: '0.25rem 1rem',
+                  background: 'var(--surface)',
+                  border: index === 1 ? '1px solid var(--primary)' : '1px solid var(--border)',
                   borderRadius: '1rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
+                  padding: '2.5rem',
+                  position: 'relative',
                 }}
               >
-                Most Popular
-              </div>
-              <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>
-                Enterprise
-              </h3>
-              <div
-                style={{
-                  fontSize: '2.5rem',
-                  fontWeight: 'bold',
-                  margin: '0.75rem 0',
-                }}
-              >
-                £4,999
-                <span style={{ fontSize: '1rem', color: '#a1a1aa' }}>
-                  /month
-                </span>
-              </div>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  marginTop: '1.5rem',
-                }}
-              >
-                {[
-                  'Up to 15 WordPress sites',
-                  'Senior dedicated analyst',
-                  '24/7 monitoring with weekend cover',
-                  '1-hour critical incident SLA',
-                  'Real-time security dashboard',
-                  'Weekly digest + quarterly board reports',
-                  'Quarterly penetration test',
-                  'White-label reports included',
-                  'Unlimited security configuration changes',
-                  'GDPR & PCI compliance support',
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    style={{ marginBottom: '0.6rem', color: '#a1a1aa' }}
+                {index === 1 && (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '-12px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      background: 'var(--primary)',
+                      color: 'white',
+                      padding: '0.25rem 1rem',
+                      borderRadius: '1rem',
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                    }}
                   >
-                    &#10003; {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    Most Popular
+                  </div>
+                )}
+                <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>
+                  {tier.name}
+                </h3>
+                <div
+                  style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    margin: '0.75rem 0',
+                  }}
+                >
+                  {tier.price}
+                  <span style={{ fontSize: '1rem', color: '#a1a1aa' }}>
+                    /month
+                  </span>
+                </div>
+                <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>{tier.note}</p>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    marginTop: '1.5rem',
+                  }}
+                >
+                  {tier.items.map((item, i) => (
+                    <li
+                      key={i}
+                      style={{ marginBottom: '0.6rem', color: '#a1a1aa' }}
+                    >
+                      &#10003; {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <p

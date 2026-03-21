@@ -15,7 +15,7 @@ const Footer = () => {
                             <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={245} height={70} style={{ width: 'auto', height: '52px' }} />
                         </Link>
                         <p className={styles.description}>
-                            Specialist WordPress security agency for UK businesses. High-ticket security retainers, ongoing protection, and emergency response.
+                            Specialist WordPress security agency for UK businesses. High-ticket incident response, monthly security retainers, GDPR-aware recovery, and secure hosting.
                         </p>
                     </div>
 
@@ -37,6 +37,7 @@ const Footer = () => {
                             <li><Link href="/pricing">Pricing</Link></li>
                             <li><Link href="/case-studies">Case Studies</Link></li>
                             <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/gdpr-wordpress-security">GDPR Security</Link></li>
                             <li><Link href="/about-webadish-web-agency">About Us</Link></li>
                             <li><Link href="/contact">Contact</Link></li>
                         </ul>
@@ -56,6 +57,14 @@ const Footer = () => {
                             Reeds Crescent, Watford<br />
                             WD24 4QN
                         </div>
+                        <a
+                            href="https://www.webadish.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ marginTop: '1rem', display: 'inline-block', color: '#d4d4d8', textDecoration: 'none' }}
+                        >
+                            Global protection plans are available on webadish.com
+                        </a>
                     </div>
                 </div>
 

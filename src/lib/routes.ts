@@ -60,6 +60,13 @@ export const CONTENT_ROUTES: RouteConfig[] = [
     lastModified: '2026-03-03',
   },
   {
+    path: '/gdpr-wordpress-security',
+    label: 'GDPR WordPress Security',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    lastModified: '2026-03-21',
+  },
+  {
     path: '/case-studies',
     label: 'Case Studies',
     priority: 0.8,

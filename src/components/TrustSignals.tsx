@@ -4,12 +4,13 @@ import { CheckCircle } from 'lucide-react';
 const TrustSignals = () => {
     const benefits = [
         '20+ Years in Business',
+        '30-Minute Emergency Triage',
+        'UK GDPR Security Focus',
         '24/7 Security Monitoring',
-        'Daily Cloud Backups',
-        'Uptime Guarantee',
-        'Expert UK Support',
-        'Hacked Site Recovery',
-        'Speed Optimization'
+        'BTL ITC Ltd UK Partner',
+        'Cyber Essentials Ready',
+        'ICO Registration Support',
+        'Working Towards ISO 27001'
     ];
 
     return (

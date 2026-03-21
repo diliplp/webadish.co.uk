@@ -38,6 +38,11 @@ const faqItems = [
     answer:
       'It is designed for revenue-generating websites, eCommerce platforms, agencies, and businesses where downtime, data loss, or SEO damage has direct financial consequences.',
   },
+  {
+    question: 'Do you offer monthly retainers as well as incident response?',
+    answer:
+      'Yes. Many UK clients start with a one-time security audit or incident response engagement and then move to a monthly security retainer priced from £250 to £800 per month depending on complexity and response expectations.',
+  },
 ];
 
 export default function Pricing() {
@@ -399,6 +404,82 @@ export default function Pricing() {
             </div>
             <p style={{ margin: 0, fontWeight: 700, color: 'var(--foreground)' }}>
               Not for hobby sites or low-budget fixes
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--surface)' }}
+      >
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3rem' }}>
+            <h2>Monthly Security Retainers</h2>
+            <p>For teams that want ongoing monitoring, faster support, and stronger GDPR-ready operating discipline after recovery.</p>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1.5rem',
+              maxWidth: '960px',
+              margin: '0 auto',
+            }}
+          >
+            {[
+              {
+                name: 'Essential Monitoring',
+                price: '£250/mo',
+                items: ['24/7 monitoring', 'Weekly scan review', 'Monthly summary', 'Priority support queue'],
+              },
+              {
+                name: 'Business Protection',
+                price: '£500/mo',
+                items: ['Everything in Essential', 'Quarterly security review', 'GDPR breach-readiness guidance', 'Faster incident escalation'],
+              },
+              {
+                name: 'Continuity Retainer',
+                price: '£800/mo',
+                items: ['Everything in Business', 'Monthly audit call', 'Dedicated escalation path', 'Support for agencies and complex sites'],
+              },
+            ].map((tier, index) => (
+              <div
+                key={tier.name}
+                style={{
+                  background: 'var(--background)',
+                  border: index === 1 ? '2px solid var(--primary)' : '1px solid var(--border)',
+                  borderRadius: '1rem',
+                  padding: '2rem',
+                }}
+              >
+                <h3 style={{ marginBottom: '0.5rem' }}>{tier.name}</h3>
+                <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>{tier.price}</div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {tier.items.map((item) => (
+                    <li key={item} style={{ marginBottom: '0.75rem', color: '#d4d4d8' }}>
+                      &#10003; {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--background)' }}
+      >
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ marginBottom: '1rem' }}>Security audit pricing</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              Standalone security audits are available from <strong style={{ color: 'var(--foreground)' }}>£1,000 to £3,000</strong> depending on site complexity, plugin footprint, access model, and reporting depth. They are often the cleanest starting point for non-urgent prospects.
+            </p>
+            <p style={{ color: '#d4d4d8', margin: 0 }}>
+              UK GDPR implications, breach-notification readiness, and hosting or access-control weaknesses are included when relevant.
             </p>
           </div>
         </div>
