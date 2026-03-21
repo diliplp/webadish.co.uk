@@ -143,6 +143,11 @@ export default function Pricing() {
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3rem' }}>
             <h2>Based on your situation, we recommend the appropriate level of response.</h2>
+            <p style={{ marginTop: '1rem' }}>
+              <a href="/case-studies" style={{ color: 'var(--primary)' }}>
+                See how we recovered a compromised eCommerce website
+              </a>
+            </p>
           </div>
 
           <div

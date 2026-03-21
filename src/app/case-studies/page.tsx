@@ -9,37 +9,37 @@ import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Case Studies | Client Results | WebAdish',
+  title: 'WordPress Incident Response Case Study | eCommerce Recovery | WebAdish',
   description:
-    'Real results from our WordPress security clients. See how we\'ve protected UK businesses with security audits, maintenance retainers, and emergency recovery.',
+    'Case study: how WebAdish recovered a compromised eCommerce website, removed hidden backdoors, restored operations, and prevented reinfection.',
   path: '/case-studies',
 });
 
 const faqItems = [
   {
-    question: 'Are these real client results?',
+    question: 'Is this based on a real engagement?',
     answer:
-      'Yes. Every case study is based on a real engagement. Client names and identifying details are anonymised to respect confidentiality agreements, but the challenges, solutions, and results are genuine.',
+      'Yes. This case study is based on a real incident response engagement. Client-identifying details are anonymised, but the technical challenge, business impact, and recovery process reflect the actual work performed.',
   },
   {
-    question: 'Can you share more details about a specific case?',
+    question: 'Why did previous cleanup attempts fail?',
     answer:
-      'We are happy to discuss our approach in more detail during a consultation. Depending on the client, we may be able to arrange a reference call with their permission.',
+      'Because only visible malware was removed. The hidden persistence mechanisms and root cause remained in place, which allowed reinfection within days.',
   },
   {
-    question: 'Do you work with businesses in my industry?',
+    question: 'What happened after recovery?',
     answer:
-      'We work with UK businesses across insurance, finance, creative agencies, e-commerce, membership organisations, and professional services. If your business runs on WordPress, we can help. Contact us to discuss your specific requirements.',
+      'The client moved into ongoing security protection with continuous monitoring, regular audits, and priority incident response to reduce future risk.',
   },
 ];
 
 export default function CaseStudies() {
   const serviceSchema = generateServiceSchema(
-    'WordPress Security Case Studies',
-    'Real results from our WordPress security clients. See how WebAdish has protected UK businesses with security audits, maintenance retainers, and emergency recovery.',
+    'WordPress Incident Response Case Study',
+    'Case study showing how WebAdish recovered a compromised eCommerce website, removed hidden access, and prevented reinfection through proper incident response.',
     '/case-studies'
   );
 
@@ -55,474 +55,268 @@ export default function CaseStudies() {
       <StructuredData schemas={[serviceSchema, faqSchema, breadcrumbSchema]} />
 
       <PageHeader
-        title="Client Results That <br /><span style='color: var(--primary)'>Speak for Themselves</span>"
-        subtitle="Real outcomes from real UK businesses. See how our WordPress security expertise has protected revenue, reputation, and peace of mind."
-        badge="Client Case Studies"
+        title="Recovered a Compromised eCommerce Website <br /><span style='color: var(--primary)'>and Prevented Reinfection</span>"
+        subtitle="A real-world example of what proper WordPress incident response looks like when revenue, rankings, and customer trust are at risk."
+        badge="Incident Response Case Study"
       />
 
       <TrustSignals />
 
-      {/* Definition paragraph for AI search */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--background)' }}
-      >
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <p
+          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <h2 style={{ marginBottom: '1.5rem' }}>Snapshot</h2>
+            <div
               style={{
-                fontSize: '1.15rem',
-                lineHeight: '1.8',
-                color: 'var(--foreground)',
-                marginBottom: '1rem',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '1rem',
               }}
             >
-              Our case studies demonstrate the tangible impact of
-              professional WordPress security services for UK businesses
-              across diverse industries. Each study outlines the specific
-              challenge a client faced, the security solution we implemented,
-              and the measurable results achieved. From emergency malware
-              recovery to long-term enterprise security retainers, these
-              outcomes illustrate why businesses trust WebAdish to protect
-              their most critical digital assets.
+              {[
+                ['Client Type', 'eCommerce Website'],
+                ['Issue', 'Malware infection, SEO drop, admin compromise'],
+                ['Impact', 'Revenue disruption, search engine warning'],
+                ['Resolution Time', '48 hours'],
+                ['Engagement Level', 'Incident Response Program (£5K+)'],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
+                  }}
+                >
+                  <div style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--primary)', marginBottom: '0.5rem', fontWeight: 700 }}>
+                    {label}
+                  </div>
+                  <div style={{ color: '#f4f4f5', lineHeight: 1.5 }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>The problem</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8 }}>
+              The client approached us after noticing their website was redirecting users to external spam pages.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', margin: '1.5rem 0' }}>
+              {[
+                'Google had started flagging the site',
+                'Organic traffic dropped significantly',
+                'Admin access was partially compromised',
+                'Previous attempts using plugins failed',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid var(--primary)', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
+              Critical issue: The infection was not limited to visible malware — multiple hidden backdoors existed.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--surface)' }}
-      >
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-              gap: '2rem',
-            }}
-          >
-            {/* Case Study 1: UK Insurance Portal */}
-            <div
-              style={{
-                background: 'var(--background)',
-                border: '1px solid var(--border)',
-                borderRadius: '1rem',
-                padding: '2rem',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  background: 'var(--primary)',
-                  color: 'white',
-                  display: 'inline-block',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  marginBottom: '1rem',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                Insurance & Finance
-              </div>
-              <h3 style={{ marginBottom: '1rem' }}>
-                UK Insurance Portal Migration
-              </h3>
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>What others missed</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8 }}>
+              The client had already attempted cleanup using standard tools and low-cost services.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', margin: '1.5rem 0' }}>
+              {[
+                'Only surface-level malware was removed',
+                'Hidden access points remained',
+                'Reinfection occurred within days',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid #ef4444', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
+              This is a common failure pattern with incomplete recovery approaches.
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Challenge
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  A major UK insurance portal was running on an outdated,
-                  unsecured WordPress installation with multiple known
-                  vulnerabilities. The site handled sensitive customer data
-                  and could not afford a breach.
-                </p>
-              </div>
-
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Solution
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  Full security audit followed by migration to a hardened
-                  WordPress environment with WAF, encrypted backups,
-                  role-based access controls, and ongoing monitoring via our
-                  Professional retainer.
-                </p>
-              </div>
-
-              <div style={{ marginTop: 'auto' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  Results
-                </h4>
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <h2>Our approach</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1.75rem' }}>
+              We handled this as a full security incident, not a basic cleanup.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+              {[
+                {
+                  step: 'Step 1 — Containment',
+                  points: ['Blocked malicious access', 'Isolated compromised components'],
+                },
+                {
+                  step: 'Step 2 — Forensic Analysis',
+                  points: ['Identified entry point', 'Traced persistence mechanisms'],
+                },
+                {
+                  step: 'Step 3 — Complete Cleanup',
+                  points: ['Removed all malware and backdoors', 'Verified file and database integrity'],
+                },
+                {
+                  step: 'Step 4 — Hardening',
+                  points: ['Secured admin access', 'Patched vulnerabilities', 'Improved server-level security'],
+                },
+                {
+                  step: 'Step 5 — Monitoring',
+                  points: ['Implemented tracking and alerts', 'Ensured no reinfection'],
+                },
+              ].map((item) => (
                 <div
+                  key={item.step}
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '0.75rem',
+                    background: 'var(--background)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
                   }}
                 >
-                  {[
-                    { metric: '40%', label: 'Faster incident response' },
-                    { metric: '0', label: 'Downtime since migration' },
-                    { metric: '100%', label: 'GDPR audit compliance' },
-                    { metric: '28', label: 'Vulnerabilities patched' },
-                  ].map((r, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        background: 'var(--surface)',
-                        borderRadius: '0.5rem',
-                        padding: '0.75rem',
-                        textAlign: 'center',
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: '1.5rem',
-                          fontWeight: 'bold',
-                          color: 'var(--primary)',
-                        }}
-                      >
-                        {r.metric}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: '0.8rem',
-                          color: '#a1a1aa',
-                        }}
-                      >
-                        {r.label}
-                      </div>
-                    </div>
-                  ))}
+                  <h3 style={{ marginTop: 0, marginBottom: '0.9rem', fontSize: '1.05rem' }}>{item.step}</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.6rem' }}>
+                    {item.points.map((point) => (
+                      <li key={point} style={{ color: '#d4d4d8' }}>
+                        &#10003; {point}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            </div>
-
-            {/* Case Study 2: London Creative Agency */}
-            <div
-              style={{
-                background: 'var(--background)',
-                border: '1px solid var(--border)',
-                borderRadius: '1rem',
-                padding: '2rem',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  background: 'var(--secondary)',
-                  color: 'white',
-                  display: 'inline-block',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  marginBottom: '1rem',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                Creative Agency
-              </div>
-              <h3 style={{ marginBottom: '1rem' }}>
-                London Creative Agency AI Portal
-              </h3>
-
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Challenge
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  A London-based creative agency launched an AI-powered
-                  membership portal on WordPress. Rapid growth exposed
-                  security gaps, and a breach could have compromised
-                  proprietary AI assets and client data.
-                </p>
-              </div>
-
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Solution
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  Comprehensive security audit, custom WAF rules for the AI
-                  API endpoints, automated security scorecards for each
-                  deployment, and a 4-hour emergency recovery guarantee as
-                  part of our Enterprise retainer.
-                </p>
-              </div>
-
-              <div style={{ marginTop: 'auto' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  Results
-                </h4>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '0.75rem',
-                  }}
-                >
-                  {[
-                    { metric: '4hr', label: 'Recovery guarantee met' },
-                    { metric: '100%', label: 'Automated security scores' },
-                    { metric: '3x', label: 'Faster threat detection' },
-                    { metric: '0', label: 'Data breaches since onboarding' },
-                  ].map((r, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        background: 'var(--surface)',
-                        borderRadius: '0.5rem',
-                        padding: '0.75rem',
-                        textAlign: 'center',
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: '1.5rem',
-                          fontWeight: 'bold',
-                          color: 'var(--primary)',
-                        }}
-                      >
-                        {r.metric}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: '0.8rem',
-                          color: '#a1a1aa',
-                        }}
-                      >
-                        {r.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Case Study 3: E-Commerce Fashion Brand */}
-            <div
-              style={{
-                background: 'var(--background)',
-                border: '1px solid var(--border)',
-                borderRadius: '1rem',
-                padding: '2rem',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  background: '#10b981',
-                  color: 'white',
-                  display: 'inline-block',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '0.5rem',
-                  fontSize: '0.8rem',
-                  fontWeight: 600,
-                  marginBottom: '1rem',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                E-Commerce
-              </div>
-              <h3 style={{ marginBottom: '1rem' }}>
-                Fashion Brand WooCommerce Overhaul
-              </h3>
-
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Challenge
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  A fast-growing UK fashion brand running WooCommerce
-                  experienced a series of attempted card-skimming attacks.
-                  Their checkout process was not PCI compliant, and they had
-                  no security monitoring in place.
-                </p>
-              </div>
-
-              <div style={{ marginBottom: '1.25rem' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  Solution
-                </h4>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  Emergency malware removal, full WooCommerce security
-                  overhaul, PCI DSS alignment, implementation of file
-                  integrity monitoring, and transition to our Pro maintenance
-                  plan with ongoing security hardening.
-                </p>
-              </div>
-
-              <div style={{ marginTop: 'auto' }}>
-                <h4
-                  style={{
-                    color: 'var(--secondary)',
-                    fontSize: '0.9rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  Results
-                </h4>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '0.75rem',
-                  }}
-                >
-                  {[
-                    { metric: '99.99%', label: 'Uptime achieved' },
-                    { metric: 'PCI', label: 'Compliant checkout' },
-                    { metric: '0', label: 'Successful attacks since' },
-                    { metric: '22%', label: 'Checkout conversion increase' },
-                  ].map((r, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        background: 'var(--surface)',
-                        borderRadius: '0.5rem',
-                        padding: '0.75rem',
-                        textAlign: 'center',
-                      }}
-                    >
-                      <div
-                        style={{
-                          fontSize: '1.5rem',
-                          fontWeight: 'bold',
-                          color: 'var(--primary)',
-                        }}
-                      >
-                        {r.metric}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: '0.8rem',
-                          color: '#a1a1aa',
-                        }}
-                      >
-                        {r.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>Results</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>Within 48 hours:</p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              {[
+                'Website fully restored',
+                'No malicious activity detected',
+                'Google warnings removed',
+                'Traffic began recovering',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid var(--primary)', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>After 30 days:</p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem' }}>
+              {[
+                'No reinfection',
+                'Improved performance',
+                'Stable rankings',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid var(--primary)', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>Business impact</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>The client avoided:</p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              {[
+                'Continued revenue loss',
+                'Long-term SEO damage',
+                'Repeated recovery costs',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid #ef4444', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
+              A proper recovery prevented significantly higher losses.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>What happened next</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>
+              After recovery, the client opted for ongoing security protection.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              {[
+                'Continuous monitoring',
+                'Regular audits',
+                'Priority incident response',
+              ].map((item) => (
+                <li key={item} style={{ color: '#d4d4d8', borderLeft: '3px solid var(--primary)', paddingLeft: '1rem' }}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
+              This ensures long-term stability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2>Key takeaway</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8 }}>
+              Most hacked websites are not properly secured after cleanup.
+            </p>
+            <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
+              Without root-cause resolution, reinfection is highly likely.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <FAQ items={faqItems} />
 
-      {/* CTA + Contact */}
       <CTA
-        title="Ready to Be Our Next Success Story?"
-        subtitle="Join the UK businesses that trust WebAdish to protect their WordPress sites. Let us show you what proactive security looks like."
-        btnText="Start Your Project"
-        btnLink="#contact-section"
+        title="Facing a similar issue?"
+        subtitle="Request Emergency Assessment. Response within 30 minutes."
+        btnText="Request Emergency Assessment"
+        btnLink="/contact"
       />
 
-      <section
-        id="contact-section"
-        className="section-padding"
-        style={{ backgroundColor: 'var(--background)' }}
-      >
-        <div className="container">
-          <div
-            style={{
-              maxWidth: '600px',
-              margin: '0 auto',
-              background: 'var(--surface)',
-              borderRadius: '1rem',
-              border: '1px solid var(--border)',
-              padding: '2rem',
-            }}
-          >
-            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
-              Tell Us About Your Project
-            </h2>
-            <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              Describe your WordPress security challenge and we will get back
-              to you with a tailored recommendation.
-            </p>
-            <ContactForm />
-          </div>
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: 0 }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <Link href="/pricing" style={{ color: 'var(--primary)', marginRight: '1.5rem' }}>
+            View Pricing
+          </Link>
+          <Link href="/" style={{ color: 'var(--primary)' }}>
+            Return to Homepage
+          </Link>
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 import styles from './WhatsAppButton.module.scss';
 
 const WHATSAPP_URL =
-  'https://wa.me/447344540450?text=Hi%2C%20I%20need%20help%20with%20my%20WordPress%20site';
+  'https://wa.me/447344540450?text=Hi%2C%20I%20need%20help%20with%20my%20WordPress%20site.%20I%27m%20dealing%20with%20a%20possible%20security%20incident%20and%20need%20an%20emergency%20assessment.';
 
 export default function WhatsAppButton() {
   return (

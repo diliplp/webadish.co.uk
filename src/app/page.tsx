@@ -164,6 +164,11 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2>Select the Level of Response Your Situation Requires</h2>
             <p>Based on your situation, we recommend the appropriate level of response.</p>
+            <p>
+              <Link href="/case-studies" style={{ color: 'var(--primary)' }}>
+                See how we recovered a compromised eCommerce website
+              </Link>
+            </p>
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
