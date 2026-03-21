@@ -59,6 +59,7 @@
     padding: 1.5rem;
     background: var(--surface);
     color: var(--foreground);
+    position: relative;
 
     p {
         color: #a1a1aa;
@@ -70,6 +71,27 @@
         margin-bottom: 0.75rem;
         color: var(--foreground);
     }
+}
+
+.planLabel,
+.planLabelCritical {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.planLabel {
+    background: rgba(var(--primary-rgb), 0.14);
+    color: var(--primary);
+}
+
+.planLabelCritical {
+    background: rgba(239, 68, 68, 0.14);
+    color: #f87171;
 }
 
 .caseStudiesSection {

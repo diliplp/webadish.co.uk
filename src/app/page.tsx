@@ -174,6 +174,7 @@ export default function Home() {
               <p><strong>Does not include deep forensic investigation.</strong></p>
             </article>
             <article className={styles.highlightCard}>
+              <div className={styles.planLabel}>MOST CLIENTS CHOOSE THIS</div>
               <h3>Incident Response Program</h3>
               <p><strong>£4,999 – £7,499</strong></p>
               <p>Complete recovery and protection against reinfection.</p>
@@ -187,6 +188,7 @@ export default function Home() {
               <p><strong>Most businesses choose this to avoid repeat attacks.</strong></p>
             </article>
             <article className={styles.highlightCard}>
+              <div className={styles.planLabelCritical}>FOR BUSINESS-CRITICAL SYSTEMS</div>
               <h3>Business Continuity Protection</h3>
               <p><strong>£8,000 – £12,000+</strong></p>
               <p>For businesses that cannot afford another incident.</p>
