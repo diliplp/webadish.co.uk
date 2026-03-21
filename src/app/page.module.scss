@@ -83,6 +83,50 @@
     }
 }
 
+.compactGrid {
+    display: grid;
+    gap: 1rem;
+
+    @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.compactCard {
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+
+    h3 {
+        margin: 0 0 0.5rem;
+        color: #0f172a;
+        font-size: 1.1rem;
+    }
+
+    p {
+        margin: 0;
+        color: #475569;
+        line-height: 1.65;
+    }
+}
+
+.compactLabel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
 .caseStudyCard {
     border: 1px solid #e5e7eb;
     border-radius: 1.25rem;
@@ -90,7 +134,7 @@
     background: #0f172a;
     color: #f8fafc;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
-    min-height: 240px;
+    min-height: 180px;
     transition: transform 0.2s ease;
 
     &:hover {
@@ -100,6 +144,12 @@
     h3 {
         margin-top: 0;
         margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin: 0;
+        color: #cbd5e1;
+        line-height: 1.7;
     }
 }
 

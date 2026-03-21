@@ -74,15 +74,37 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2>Every minute your site stays compromised, the damage increases.</h2>
           </div>
-          <div className={styles.caseStudyGrid}>
+          <div className={styles.compactGrid}>
             {[
-              'Revenue loss from downtime or broken transactions',
-              'SEO rankings dropping due to malware or blacklisting',
-              'Customer trust permanently damaged',
-              'Attackers may still have hidden access',
+              {
+                label: '01',
+                title: 'Revenue loss',
+                description:
+                  'Downtime, failed checkouts, and broken lead flows can turn a technical issue into an immediate commercial loss.',
+              },
+              {
+                label: '02',
+                title: 'SEO damage',
+                description:
+                  'Malware flags and blacklist warnings can wipe out hard-won rankings and leave you with months of recovery work.',
+              },
+              {
+                label: '03',
+                title: 'Customer trust erosion',
+                description:
+                  'Visitors who see warnings, redirects, or broken pages may not come back, even after the site is restored.',
+              },
+              {
+                label: '04',
+                title: 'Hidden attacker access',
+                description:
+                  'If the root cause is missed, backdoors, rogue users, or cron abuse may still be active long after the visible symptoms disappear.',
+              },
             ].map((item) => (
-              <article key={item} className={styles.caseStudyCard}>
-                <p>{item}</p>
+              <article key={item.title} className={styles.compactCard}>
+                <span className={styles.compactLabel}>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
@@ -185,15 +207,37 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2>Why most hacked websites get compromised again</h2>
           </div>
-          <div className={styles.caseStudyGrid}>
+          <div className={styles.compactGrid}>
             {[
-              'Only visible malware is removed',
-              'Hidden backdoors remain',
-              'No root cause identified',
-              'No long-term protection implemented',
+              {
+                label: '01',
+                title: 'Only visible malware is removed',
+                description:
+                  'Many low-cost cleanups focus on obvious infected files while ignoring persistence hidden deeper in the environment.',
+              },
+              {
+                label: '02',
+                title: 'Hidden backdoors remain',
+                description:
+                  'Attackers often leave alternate access methods in uploads, plugins, databases, or scheduled tasks so they can return later.',
+              },
+              {
+                label: '03',
+                title: 'No root cause is identified',
+                description:
+                  'If nobody confirms how access was gained, the same weakness is left open and the next compromise becomes far more likely.',
+              },
+              {
+                label: '04',
+                title: 'No long-term protection is implemented',
+                description:
+                  'Without monitoring, hardening, and access control improvements, the site goes back online in a vulnerable state.',
+              },
             ].map((item) => (
-              <article key={item} className={styles.caseStudyCard}>
-                <p>{item}</p>
+              <article key={item.title} className={styles.compactCard}>
+                <span className={styles.compactLabel}>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
