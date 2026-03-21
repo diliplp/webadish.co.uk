@@ -42,7 +42,7 @@ export default function Home() {
   const schemas = [generateOrganizationSchema(), generateFAQSchema(faqs)];
 
   const heroTitle =
-    "Your WordPress Site Is Compromised.<br />We Contain, Recover, and Secure It <span style='color: var(--primary)'>Properly.</span>";
+    "Your WordPress Site Is Compromised.<br />We Contain, Recover, and Secure It <span style='color: var(--primary)'>— Completely.</span>";
   const heroSubtitle =
     'Expert incident response for business-critical websites. We eliminate threats at root level and ensure it doesn’t happen again.';
 
@@ -64,7 +64,7 @@ export default function Home() {
       <section className={`${styles.highTicketSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>For businesses where downtime, data loss, and reputation damage are not acceptable.</h2>
+            <h2>For businesses where downtime, data loss, and security failure are not acceptable.</h2>
             <p>Response within 30 minutes for urgent assessments.</p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Home() {
       <section className={`${styles.caseStudiesSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Every minute your site stays compromised, the damage increases.</h2>
+            <h2>Every minute your site remains compromised, the risk and damage increase.</h2>
           </div>
           <div className={styles.compactGrid}>
             {[
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>This is a security incident — not a simple fix</h2>
-            <p>Most providers treat symptoms. We eliminate the cause.</p>
+            <p>Most providers remove symptoms. We eliminate the cause.</p>
           </div>
           <div className={styles.fourPointGrid}>
             {[
@@ -161,7 +161,7 @@ export default function Home() {
       <section className={`${styles.highTicketSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Choose Your Level of Recovery &amp; Protection</h2>
+            <h2>Select the Level of Response Your Situation Requires</h2>
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
@@ -174,7 +174,7 @@ export default function Home() {
               <p><strong>Does not include deep forensic investigation.</strong></p>
             </article>
             <article className={styles.highlightCard}>
-              <div className={styles.planLabel}>MOST CLIENTS CHOOSE THIS</div>
+              <div className={styles.planLabel}>Most clients choose this</div>
               <h3>Incident Response Program</h3>
               <p><strong>£4,999 – £7,499</strong></p>
               <p>Complete recovery and protection against reinfection.</p>
@@ -188,7 +188,7 @@ export default function Home() {
               <p><strong>Most businesses choose this to avoid repeat attacks.</strong></p>
             </article>
             <article className={styles.highlightCard}>
-              <div className={styles.planLabelCritical}>FOR BUSINESS-CRITICAL SYSTEMS</div>
+              <div className={styles.planLabelCritical}>For business-critical systems</div>
               <h3>Business Continuity Protection</h3>
               <p><strong>£8,000 – £12,000+</strong></p>
               <p>For businesses that cannot afford another incident.</p>
@@ -208,7 +208,7 @@ export default function Home() {
       <section className={`${styles.caseStudiesSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Why most hacked websites get compromised again</h2>
+            <h2>Why most hacked websites get compromised again (and why quick fixes fail)</h2>
           </div>
           <div className={styles.compactGrid}>
             {[
@@ -253,7 +253,7 @@ export default function Home() {
       <section className={`${styles.servicesSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>How we handle your incident</h2>
+            <h2>How we handle critical security incidents</h2>
           </div>
           <div className={styles.servicesGrid}>
             {[
@@ -298,6 +298,7 @@ export default function Home() {
               <li>Companies where downtime has real financial impact</li>
             </ul>
             <p><strong>Not suitable for hobby sites or low-risk projects.</strong></p>
+            <p>We selectively work with clients where the business impact justifies proper security handling.</p>
           </div>
         </div>
       </section>
@@ -319,7 +320,7 @@ export default function Home() {
       <FAQ items={faqs} />
 
       <CTA
-        title="Every hour increases risk and damage."
+        title="Every hour increases risk, damage, and recovery cost."
         subtitle="Request Emergency Assessment Now. Response within 30 minutes."
         btnText="Request Emergency Assessment Now"
         btnLink="/contact"
