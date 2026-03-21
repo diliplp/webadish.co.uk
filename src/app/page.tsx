@@ -120,8 +120,8 @@ export default function Home() {
       <section className={`${styles.servicesSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>This is not basic malware removal.</h2>
-            <p>We handle WordPress cyber incidents, not surface-level fixes.</p>
+            <h2>This is a security incident — not a simple fix</h2>
+            <p>Most providers treat symptoms. We eliminate the cause.</p>
           </div>
           <div className={styles.fourPointGrid}>
             {[
