@@ -7,9 +7,9 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 import { BLOG_POSTS } from '@/data/posts';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Blog | Expert Guides & Insights | WebAdish',
+  title: 'WordPress Security Blog UK | Malware, GDPR & Incident Response Insights',
   description:
-    'Expert WordPress security guides, malware removal tutorials, and maintenance best practices for UK businesses. Stay informed about the latest WordPress threats.',
+    'Expert WordPress security guides for UK businesses covering malware removal, incident response, GDPR exposure, audits, and ongoing protection.',
   path: '/blog',
 });
 

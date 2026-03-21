@@ -5,8 +5,8 @@ import styles from './page.module.scss';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-    title: 'Contact WebAdish | WordPress Security Experts UK',
-    description: 'Contact WebAdish for WordPress security audits, protection retainers, malware removal, and emergency hacked site recovery. WordPress security specialists serving UK businesses.',
+    title: 'Contact WebAdish UK | +44 7344 540450 | sales@webadish.co.uk',
+    description: 'Contact WebAdish UK for WordPress security audits, protection retainers, malware removal, and emergency hacked site recovery. Call +44 7344 540450 or email sales@webadish.co.uk.',
     path: '/contact',
 });
 
@@ -22,7 +22,7 @@ export default function Contact() {
         },
         {
             question: "How much does a security audit cost?",
-            answer: "Our basic security review is free for potential maintenance clients. Deep-dive forensic audits start at £1,499."
+            answer: "Our initial security review is free for qualified prospects. Standalone security audits typically start from £1,000, with deeper forensic audit work priced separately based on complexity."
         }
     ];
 

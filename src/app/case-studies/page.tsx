@@ -12,9 +12,9 @@ import CTA from '@/components/CTA';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Incident Response Case Study | eCommerce Recovery | WebAdish',
+  title: 'WordPress Security Case Studies UK | Verofax, Shivam Autozone, Crystal Group',
   description:
-    'Case study: how WebAdish recovered a compromised eCommerce website, removed hidden backdoors, restored operations, and prevented reinfection.',
+    'Real WebAdish case studies including Verofax, Shivam Autozone, and Crystal Group, covering incident response, security hardening, recovery, and ongoing WordPress protection.',
   path: '/case-studies',
 });
 
@@ -65,6 +65,9 @@ export default function CaseStudies() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <div style={{ marginBottom: '1.5rem', color: '#a1a1aa', lineHeight: 1.8 }}>
+              Trusted client work includes <strong style={{ color: 'var(--foreground)' }}>verofax.com</strong>, <strong style={{ color: 'var(--foreground)' }}>shivamautozone.com</strong>, and <strong style={{ color: 'var(--foreground)' }}>crystalgroup.in</strong>. Some UK-facing case-study details are anonymised where required, but these are real engagements.
+            </div>
             <h2 style={{ marginBottom: '1.5rem' }}>Snapshot</h2>
             <div
               style={{

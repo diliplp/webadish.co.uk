@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -46,6 +46,10 @@ const Footer = () => {
                     <div className={styles.column}>
                         <h4>Contact</h4>
                         <ul className={styles.contactList}>
+                            <li>
+                                <Phone size={16} />
+                                <a href="tel:+447344540450">+44 7344 540450</a>
+                            </li>
                             <li>
                                 <Mail size={16} />
                                 <a href="mailto:sales@webadish.co.uk">sales@webadish.co.uk</a>
