@@ -28,6 +28,18 @@
     }
 }
 
+.fourPointGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 980px;
+    margin: 0 auto;
+
+    @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .highTicketSection {
     background-color: var(--surface);
 }
@@ -42,21 +54,22 @@
 }
 
 .highlightCard {
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1.25rem;
     padding: 1.5rem;
-    background: #f8fafc;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    color: #0f172a;
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+    color: #f8fafc;
 
     p {
-        color: #475569;
+        color: #cbd5e1;
         margin: 0;
     }
 
     h3 {
         margin-top: 0;
         margin-bottom: 0.75rem;
+        color: #f8fafc;
     }
 }
 
@@ -93,21 +106,21 @@
 }
 
 .compactCard {
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1rem;
     padding: 1.5rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
 
     h3 {
         margin: 0 0 0.5rem;
-        color: #0f172a;
+        color: #f8fafc;
         font-size: 1.1rem;
     }
 
     p {
         margin: 0;
-        color: #475569;
+        color: #cbd5e1;
         line-height: 1.65;
     }
 }
@@ -119,8 +132,8 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 999px;
-    background: rgba(239, 68, 68, 0.12);
-    color: #dc2626;
+    background: rgba(239, 68, 68, 0.18);
+    color: #fca5a5;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.08em;

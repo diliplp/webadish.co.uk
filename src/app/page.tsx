@@ -122,7 +122,7 @@ export default function Home() {
             <h2>This is not basic malware removal.</h2>
             <p>We handle WordPress cyber incidents, not surface-level fixes.</p>
           </div>
-          <div className={styles.servicesGrid}>
+          <div className={styles.fourPointGrid}>
             {[
               'Manual forensic investigation',
               'Root cause identification',
