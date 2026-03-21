@@ -54,35 +54,34 @@
 }
 
 .highlightCard {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     border-radius: 1.25rem;
     padding: 1.5rem;
-    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
-    color: #f8fafc;
+    background: var(--surface);
+    color: var(--foreground);
 
     p {
-        color: #cbd5e1;
+        color: #a1a1aa;
         margin: 0;
     }
 
     h3 {
         margin-top: 0;
         margin-bottom: 0.75rem;
-        color: #f8fafc;
+        color: var(--foreground);
     }
 }
 
 .caseStudiesSection {
-    background-color: #fff;
+    background-color: var(--background);
 
     .sectionHeader {
         h2 {
-            color: #0f172a;
+            color: var(--foreground);
         }
 
         p {
-            color: #475569;
+            color: #a1a1aa;
         }
     }
 }
@@ -106,21 +105,20 @@
 }
 
 .compactCard {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     border-radius: 1rem;
     padding: 1.5rem;
-    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+    background: var(--surface);
 
     h3 {
         margin: 0 0 0.5rem;
-        color: #f8fafc;
+        color: #f4f4f5;
         font-size: 1.1rem;
     }
 
     p {
         margin: 0;
-        color: #cbd5e1;
+        color: #a1a1aa;
         line-height: 1.65;
     }
 }
@@ -132,8 +130,8 @@
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 999px;
-    background: rgba(239, 68, 68, 0.18);
-    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.08em;
