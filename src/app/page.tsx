@@ -66,6 +66,7 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2>For businesses where downtime, data loss, and security failure are not acceptable.</h2>
             <p>Response within 30 minutes for urgent assessments.</p>
+            <p>Led by 20+ years of experience in infrastructure, cybersecurity, and enterprise systems.</p>
           </div>
         </div>
       </section>
@@ -162,6 +163,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Select the Level of Response Your Situation Requires</h2>
+            <p>Based on your situation, we recommend the appropriate level of response.</p>
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
