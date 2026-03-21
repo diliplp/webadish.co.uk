@@ -12,6 +12,7 @@ interface HeroProps {
     subtitle: string;
     ctaText?: string;
     ctaLink?: string;
+    ctaNote?: string;
     showTrust?: boolean;
     showImage?: boolean;
     heroImage?: string;
@@ -23,6 +24,7 @@ const Hero: React.FC<HeroProps> = ({
     subtitle,
     ctaText = 'Request Incident Response',
     ctaLink = '/contact',
+    ctaNote,
     showTrust = true,
     showImage = false,
     heroImage = '/hero-security.svg',
@@ -81,6 +83,12 @@ const Hero: React.FC<HeroProps> = ({
                                 Emergency Help
                             </a>
                         </div>
+
+                        {ctaNote && (
+                            <div className={styles.ctaNote}>
+                                {ctaNote}
+                            </div>
+                        )}
 
                         {showTrust && (
                             <div className={styles.trustLabel}>

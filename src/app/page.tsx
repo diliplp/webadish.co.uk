@@ -55,6 +55,7 @@ export default function Home() {
         subtitle={heroSubtitle}
         ctaText="Request Emergency Assessment"
         ctaLink="/contact"
+        ctaNote="Active threats are contained immediately. Delays increase damage."
         showImage={false}
       />
 
