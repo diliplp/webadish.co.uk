@@ -46,7 +46,7 @@ export default function TrueCostBreachPage() {
     <BlogPostLayout
       title="The True Cost of a WordPress Security Breach for UK SMEs"
       lead="Beyond the ransom: quantifying the real financial impact of a WordPress breach including downtime, data loss, GDPR fines, and reputational damage for UK businesses."
-      datePublished="2026-03-03"
+      datePublished="2025-03-04"
       dateModified="2026-03-03"
       author="WebAdish"
       category="WordPress Security"
@@ -170,7 +170,7 @@ export default function TrueCostBreachPage() {
       </p>
       <ul>
         <li><strong>Safe Browsing warnings:</strong> Google displays a prominent warning page before users can access your site, reducing traffic by 90% or more.</li>
-        <li><strong>Search result warnings:</strong> A "This site may be hacked" label appears beneath your listings, causing most users to skip your result entirely.</li>
+        <li><strong>Search result warnings:</strong> A &quot;This site may be hacked&quot; label appears beneath your listings, causing most users to skip your result entirely.</li>
         <li><strong>Deindexing:</strong> In severe cases, Google removes your pages from its index completely.</li>
         <li><strong>Spam content dilution:</strong> Attackers often inject thousands of spam pages or links that dilute your site&apos;s topical authority and relevance.</li>
       </ul>

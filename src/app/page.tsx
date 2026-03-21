@@ -1,168 +1,236 @@
 import Hero from '@/components/Hero';
 import TrustSignals from '@/components/TrustSignals';
-import ServiceCard from '@/components/ServiceCard';
-import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import StructuredData from '@/components/StructuredData';
-import { Shield, Hammer, Search, Bug, Lock, Database } from 'lucide-react';
+import Link from 'next/link';
 import styles from './page.module.scss';
 import { generatePageMetadata } from '@/lib/seo';
 import { generateOrganizationSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata = generatePageMetadata({
-  title: 'WebAdish | High-Ticket WordPress Security & Maintenance UK',
+  title: 'WebAdish | Premium WordPress Incident Response & Security UK',
   description:
-    'Security-first WordPress retainers for UK businesses. 24/7 monitoring, emergency recovery, malware removal, and maintenance from a specialist WordPress security agency.',
+    'Premium WordPress incident response for UK businesses. We contain, recover, and secure compromised websites with root-cause-led remediation and long-term protection.',
   path: '/',
 });
 
-const caseStudies = [
-  {
-    title: 'UK Insurance Portal | Enterprise Security Overhaul',
-    summary:
-      'Migrated a boutique insurer onto a hardened WordPress stack with stringent compliance checks, uptime SLAs, and round-the-clock monitoring for their London team.',
-    results: '40% faster incident response | Zero downtime during peak renewal period'
-  },
-  {
-    title: 'London Creative Agency | Secure Membership Platform',
-    summary:
-      'Delivered an AI-powered membership portal with multi-layered caching, IP-based access rules, and daily security reviews for sensitive client data.',
-    results: '4-hour recovery guarantee | Automated weekly security scorecard'
-  },
-  {
-    title: 'E-Commerce Fashion Brand | WooCommerce Security',
-    summary:
-      'Complete WooCommerce security overhaul including PCI compliance, payment gateway hardening, and real-time fraud detection for a high-volume UK retailer.',
-    results: '99.99% uptime achieved | Zero security incidents in 12 months'
-  }
-];
-
 export default function Home() {
-  const services = [
-    {
-      title: 'WordPress Security Audit',
-      description: 'Comprehensive vulnerability assessment with detailed remediation report and risk scoring.',
-      icon: <Search size={24} />,
-      link: '/wordpress-security-audit'
-    },
-    {
-      title: 'WordPress Maintenance',
-      description: 'Comprehensive care plans including daily backups, weekly updates, and 24/7 monitoring.',
-      icon: <Hammer size={24} />,
-      link: '/wordpress-maintenance-uk'
-    },
-    {
-      title: 'Hacked Site Recovery',
-      description: 'Emergency malware removal and site restoration. We get you back online in hours, not days.',
-      icon: <Shield size={24} />,
-      link: '/hacked-website-recovery-uk'
-    },
-    {
-      title: 'Malware Removal',
-      description: 'Targeted malware scanning, backdoor removal, and site hardening against reinfection.',
-      icon: <Bug size={24} />,
-      link: '/wordpress-malware-removal'
-    },
-    {
-      title: 'Security Retainer',
-      description: 'Dedicated security team, SLA guarantees, and executive reporting for enterprise WordPress sites.',
-      icon: <Lock size={24} />,
-      link: '/wordpress-security-retainer'
-    },
-    {
-      title: 'Secure Hosting',
-      description: 'Hardened WordPress hosting with WAF, DDoS protection, and 99.99% uptime SLA.',
-      icon: <Database size={24} />,
-      link: '/web-hosting-email-services'
-    }
-  ];
-
   const faqs = [
     {
-      question: "How quickly can you fix a hacked WordPress website?",
+      question: 'How quickly can you respond to a hacked WordPress website?',
       answer:
-        "We typically start working immediately upon engagement. Most common malware infections are cleaned within 4-12 hours. Complex cases involving deeply embedded backdoors or database-level compromises may take up to 24 hours, but we prioritise getting your site back online safely."
+        'We prioritise active incidents immediately. The first goal is containment and risk reduction, followed by proper investigation and clean recovery.',
     },
     {
-      question: 'How much does WordPress security cost per month?',
+      question: 'Why do cheap malware cleanups often fail?',
       answer:
-        'Our WordPress maintenance plans start at \u00a3449 per month for standard coverage including daily backups, weekly updates, and 24/7 monitoring. For enterprise-grade security retainers with dedicated analysts and SLA guarantees, plans start at \u00a32,999 per month. One-time security audits are available from \u00a31,499.'
+        'Because they usually remove visible malware without identifying the original access point, hidden backdoors, compromised accounts, or infrastructure weaknesses that allow reinfection.',
     },
     {
-      question: 'What happens if my WordPress site gets hacked?',
+      question: 'Which recovery option do most businesses choose?',
       answer:
-        'If your site is hacked, we perform emergency containment to stop further damage, scan and remove all malware and backdoors, restore clean files from backups where possible, harden your site against future attacks, and monitor for 30 days post-recovery. Our fixed-fee emergency recovery service costs \u00a31,499.'
+        'Most commercial websites choose the Incident Response Program because it combines deep forensic investigation, root-cause remediation, and post-recovery monitoring to reduce the chance of repeat compromise.',
     },
     {
-      question: 'Do you work with agencies on a white-label basis?',
+      question: 'Who is this service for?',
       answer:
-        'Yes. A large portion of our clients are digital agencies who white-label our security and maintenance services. We handle the technical security so you can focus on client relationships and growth. All reporting is unbranded and ready for your clients.'
+        'We work with eCommerce businesses, agencies, membership platforms, and companies where downtime, reputation damage, or customer-data exposure have direct commercial consequences.',
     },
-    {
-      question: 'What is included in a WordPress security audit?',
-      answer:
-        'Our security audit includes vulnerability scanning of core, plugins, and themes, server configuration review, user permission analysis, database security assessment, SSL and HTTPS verification, malware scanning, and a detailed remediation report with risk scoring and prioritised recommendations.'
-    },
-    {
-      question: 'How do you prevent WordPress sites from being hacked?',
-      answer:
-        'We implement a multi-layered security approach: Web Application Firewall, automated malware scanning, real-time threat monitoring, regular security patching, hardened server configurations, two-factor authentication, login attempt limiting, and regular security audits. Prevention is always more cost-effective than recovery.'
-    },
-    {
-      question: 'Can you secure my WooCommerce store?',
-      answer:
-        'Absolutely. WooCommerce stores require additional security layers to protect customer data and payment information. We implement PCI-compliant configurations, secure payment gateway integration, order data encryption, and fraud detection systems alongside standard WordPress security measures.'
-    },
-    {
-      question: 'Are your services GDPR compliant?',
-      answer:
-        'Yes. All our services are fully GDPR compliant. We store backups in UK/EU data centres, use encrypted connections for all data transfers, and follow strict data handling procedures. We can also help ensure your WordPress site meets GDPR technical requirements.'
-    }
   ];
+
+  const schemas = [generateOrganizationSchema(), generateFAQSchema(faqs)];
 
   const heroTitle =
-    "High-ticket WordPress security for elite teams.<br /><span style='color: var(--primary)'>Stop worrying about WordPress security.</span>";
+    "Your WordPress Site Is Compromised.<br />We Contain, Recover, and Secure It <span style='color: var(--primary)'>Properly.</span>";
   const heroSubtitle =
-    'Security-first retainers for UK businesses. Limited intake so we can deliver enterprise-grade guardrails to every client.';
-
-  const highTicketHighlights = [
-    {
-      title: 'Selective client intake',
-      description:
-        'We only onboard a handful of high-trust clients each quarter so every engagement receives dedicated focus.'
-    },
-    {
-      title: 'Security-first playbooks',
-      description: 'Proactive tooling, compliance reviews, and executive reporting aligned with your risk posture.'
-    },
-    {
-      title: 'Always-on assurance',
-      description: '24/7 monitoring, emergency recovery, and definitive recovery time commitments for critical sites.'
-    }
-  ];
-
-  const schemas = [
-    generateOrganizationSchema(),
-    generateFAQSchema(faqs),
-  ];
+    'Expert incident response for business-critical websites. We eliminate threats at root level and ensure it doesn’t happen again.';
 
   return (
     <>
       <StructuredData schemas={schemas} />
 
-      <Hero title={heroTitle} subtitle={heroSubtitle} showImage={false} />
+      <Hero
+        title={heroTitle}
+        subtitle={heroSubtitle}
+        ctaText="Request Emergency Assessment"
+        ctaLink="/contact"
+        showImage={false}
+      />
 
       <TrustSignals />
 
       <section className={`${styles.highTicketSection} section-padding`}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Curated, high-ticket engagements</h2>
-            <p>We partner only with ambitious UK teams that value security, clarity, and lasting uptime.</p>
+            <h2>For businesses where downtime, data loss, and reputation damage are not acceptable.</h2>
+            <p>Response within 30 minutes for urgent assessments.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.caseStudiesSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Every minute your site stays compromised, the damage increases.</h2>
+          </div>
+          <div className={styles.caseStudyGrid}>
+            {[
+              'Revenue loss from downtime or broken transactions',
+              'SEO rankings dropping due to malware or blacklisting',
+              'Customer trust permanently damaged',
+              'Attackers may still have hidden access',
+            ].map((item) => (
+              <article key={item} className={styles.caseStudyCard}>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.sectionHeader} style={{ marginTop: '2rem' }}>
+            <p>
+              <strong>Most “quick fixes” don’t solve the real problem — they just delay the next attack.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.servicesSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>This is not basic malware removal.</h2>
+            <p>We handle WordPress cyber incidents, not surface-level fixes.</p>
+          </div>
+          <div className={styles.servicesGrid}>
+            {[
+              'Manual forensic investigation',
+              'Root cause identification',
+              'Complete backdoor elimination',
+              'Infrastructure-level security hardening',
+            ].map((item) => (
+              <article key={item} className={styles.highlightCard}>
+                <h3>{item}</h3>
+              </article>
+            ))}
+          </div>
+          <div className={styles.sectionHeader} style={{ marginTop: '2rem' }}>
+            <p><strong>We don’t just clean your site — we secure your business.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.processSection} section-padding`}>
+        <div className="container">
+          <div className={styles.processContent}>
+            <h2>What’s actually at stake?</h2>
+            <ul className={styles.benefitsList}>
+              <li><strong>Daily revenue loss:</strong> £1K–£10K+ depending on your business.</li>
+              <li><strong>SEO recovery time:</strong> Months of lost visibility and slower recovery after blacklisting.</li>
+              <li><strong>Customer data exposure:</strong> Potential legal, regulatory, and trust consequences.</li>
+              <li><strong>Brand damage:</strong> Reputation loss that can outlast the technical recovery.</li>
+            </ul>
+            <p>
+              <strong>Investing in proper recovery now prevents significantly larger losses later.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.highTicketSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Choose Your Level of Recovery &amp; Protection</h2>
           </div>
           <div className={styles.highTicketGrid}>
-            {highTicketHighlights.map((item) => (
+            <article className={styles.highlightCard}>
+              <h3>Emergency Containment</h3>
+              <p><strong>From £1,499</strong></p>
+              <p>For non-critical websites needing immediate cleanup.</p>
+              <p>Malware removal</p>
+              <p>Site restoration</p>
+              <p>Basic hardening</p>
+              <p><strong>Does not include deep forensic investigation.</strong></p>
+            </article>
+            <article className={styles.highlightCard}>
+              <h3>Incident Response Program</h3>
+              <p><strong>£4,999 – £7,499</strong></p>
+              <p>Complete recovery and protection against reinfection.</p>
+              <p>Deep forensic investigation</p>
+              <p>Root cause identification</p>
+              <p>Full malware &amp; backdoor removal</p>
+              <p>Database and file integrity validation</p>
+              <p>Hosting, DNS, and access audit</p>
+              <p>Advanced security hardening</p>
+              <p>60-day monitoring &amp; support</p>
+              <p><strong>Most businesses choose this to avoid repeat attacks.</strong></p>
+            </article>
+            <article className={styles.highlightCard}>
+              <h3>Business Continuity Protection</h3>
+              <p><strong>£8,000 – £12,000+</strong></p>
+              <p>For businesses that cannot afford another incident.</p>
+              <p>Everything in Incident Response</p>
+              <p>Disaster recovery architecture</p>
+              <p>Advanced monitoring &amp; alerting</p>
+              <p>Multi-layer security implementation</p>
+              <p>Backup system redesign</p>
+              <p>Team access &amp; workflow security</p>
+              <p>SLA-backed emergency response</p>
+              <p><strong>Designed for eCommerce, agencies &amp; high-revenue sites.</strong></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.caseStudiesSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>Why most hacked websites get compromised again</h2>
+          </div>
+          <div className={styles.caseStudyGrid}>
+            {[
+              'Only visible malware is removed',
+              'Hidden backdoors remain',
+              'No root cause identified',
+              'No long-term protection implemented',
+            ].map((item) => (
+              <article key={item} className={styles.caseStudyCard}>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.sectionHeader} style={{ marginTop: '2rem' }}>
+            <p><strong>That’s why reinfections are common with low-cost fixes.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.servicesSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>How we handle your incident</h2>
+          </div>
+          <div className={styles.servicesGrid}>
+            {[
+              {
+                title: 'Immediate Assessment',
+                description: 'Rapid diagnosis of severity and access points.',
+              },
+              {
+                title: 'Containment',
+                description: 'Stop active threats and prevent further damage.',
+              },
+              {
+                title: 'Recovery',
+                description: 'Clean, rebuild, and restore safely.',
+              },
+              {
+                title: 'Hardening',
+                description: 'Close all vulnerabilities and access points.',
+              },
+              {
+                title: 'Protection',
+                description: 'Ongoing monitoring and prevention strategy.',
+              },
+            ].map((item) => (
               <article key={item.title} className={styles.highlightCard}>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
@@ -172,67 +240,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`${styles.caseStudiesSection} section-padding`}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2>Case studies from retained clients</h2>
-            <p>Security playbooks, uptime SLAs, and measurable results for premium UK brands.</p>
-          </div>
-          <div className={styles.caseStudyGrid}>
-            {caseStudies.map((study) => (
-              <article key={study.title} className={styles.caseStudyCard}>
-                <h3>{study.title}</h3>
-                <p>{study.summary}</p>
-                <p className={styles.caseStudyResults}>{study.results}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={`${styles.servicesSection} section-padding`}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2>WordPress Security Services</h2>
-            <p>Everything you need to keep your WordPress site secure, fast, and resilient.</p>
-          </div>
-
-          <div className={styles.servicesGrid}>
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className={`${styles.processSection} section-padding`}>
         <div className="container">
           <div className={styles.processContent}>
-            <h2>The WebAdish Standard</h2>
-            <p>
-              We don&apos;t just fix problems; we prevent them. Our proactive approach combines enterprise-grade security
-              tools with expert human oversight.
-            </p>
+            <h2>Who this is for</h2>
             <ul className={styles.benefitsList}>
-              <li>
-                <strong>Security First:</strong> Every decision we make prioritises the safety of your data and your customers&apos; data.
-              </li>
-              <li>
-                <strong>Speed Obsessed:</strong> We optimise every line of code for maximum performance without compromising security.
-              </li>
-              <li>
-                <strong>Transparent Communication:</strong> No jargon, just clear updates, monthly reports, and honest assessments.
-              </li>
+              <li>Businesses generating revenue through their website</li>
+              <li>eCommerce and membership platforms</li>
+              <li>Agencies managing client websites</li>
+              <li>Companies where downtime has real financial impact</li>
             </ul>
+            <p><strong>Not suitable for hobby sites or low-risk projects.</strong></p>
           </div>
         </div>
       </section>
 
-      <Testimonials />
+      <section className={`${styles.highTicketSection} section-padding`}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2>After recovery, stay protected</h2>
+            <p>Once your website is secured, ongoing protection is critical.</p>
+            <p>
+              <Link href="https://webadish.com/" style={{ color: 'var(--primary)' }}>
+                Continue with our maintenance &amp; security plans
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
 
       <FAQ items={faqs} />
 
-      <CTA />
+      <CTA
+        title="Don’t wait until the damage spreads further."
+        subtitle="Request Emergency Assessment Now. Response within 30 minutes."
+        btnText="Request Emergency Assessment Now"
+        btnLink="/contact"
+      />
     </>
   );
 }

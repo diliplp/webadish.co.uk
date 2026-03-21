@@ -24,7 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'How Much Does WordPress Malware Removal Cost in the UK?',
     excerpt:
       'A transparent breakdown of WordPress malware removal pricing in the UK, what affects the cost, and how to avoid overpaying for emergency recovery services.',
-    datePublished: '2026-03-03',
+    datePublished: '2025-08-12',
     dateModified: '2026-03-03',
     category: 'Recovery',
     author: 'WebAdish',
@@ -34,7 +34,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Why WordPress Sites Get Hacked: 7 Most Common Vulnerabilities',
     excerpt:
       'Discover the seven most exploited WordPress vulnerabilities, how attackers find them, and the straightforward fixes that eliminate each risk.',
-    datePublished: '2026-03-03',
+    datePublished: '2024-10-22',
     dateModified: '2026-03-03',
     category: 'WordPress Security',
     author: 'WebAdish',
@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'WordPress Security for E-Commerce: Protecting WooCommerce Stores',
     excerpt:
       'WooCommerce stores process payments and store customer data, making them prime targets. Learn the essential security measures every WooCommerce site needs.',
-    datePublished: '2026-03-03',
+    datePublished: '2024-12-05',
     dateModified: '2026-03-03',
     category: 'WordPress Security',
     author: 'WebAdish',
@@ -54,7 +54,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'How to Choose a WordPress Security Agency (CTO Checklist)',
     excerpt:
       'A structured evaluation framework for CTOs and technical decision-makers assessing WordPress security providers. Covers SLAs, certifications, and red flags.',
-    datePublished: '2026-03-03',
+    datePublished: '2025-01-16',
     dateModified: '2026-03-03',
     category: 'Guides',
     author: 'WebAdish',
@@ -64,7 +64,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The True Cost of a WordPress Security Breach for UK SMEs',
     excerpt:
       'Beyond the ransom: quantifying the real financial impact of a WordPress breach including downtime, data loss, GDPR fines, and reputational damage for UK businesses.',
-    datePublished: '2026-03-03',
+    datePublished: '2025-03-04',
     dateModified: '2026-03-03',
     category: 'WordPress Security',
     author: 'WebAdish',
@@ -74,7 +74,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'GDPR and WordPress Security: What UK Business Owners Must Know',
     excerpt:
       'How GDPR intersects with WordPress security obligations. Covers data breach notification requirements, technical measures, and compliance strategies.',
-    datePublished: '2026-03-03',
+    datePublished: '2024-11-14',
     dateModified: '2026-03-03',
     category: 'WordPress Security',
     author: 'WebAdish',
@@ -84,7 +84,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Incident Response Plan Template for WordPress Website Owners',
     excerpt:
       'A ready-to-use incident response plan template specifically designed for WordPress sites, covering detection, containment, eradication, and recovery phases.',
-    datePublished: '2026-03-03',
+    datePublished: '2025-05-20',
     dateModified: '2026-03-03',
     category: 'Guides',
     author: 'WebAdish',
@@ -94,7 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "WordPress Maintenance Service UK: What's Included & How Much It Costs",
     excerpt:
       "Everything UK businesses need to know about WordPress maintenance services — what's included, what it costs, and how to choose the right plan.",
-    datePublished: '2026-03-09',
+    datePublished: '2026-01-15',
     dateModified: '2026-03-09',
     category: 'Maintenance',
     author: 'WebAdish',
@@ -104,7 +104,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "WordPress Site Keeps Getting Hacked? Here's Why & How to Stop It",
     excerpt:
       'If your WordPress site keeps getting hacked even after cleanup, backdoors are almost certainly the cause. Learn why repeat hacks happen and how to break the cycle permanently.',
-    datePublished: '2026-03-09',
+    datePublished: '2025-11-06',
     dateModified: '2026-03-09',
     category: 'Recovery',
     author: 'WebAdish',
@@ -115,7 +115,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Signs Your WordPress Website Has Been Hacked and What to Do Next',
     excerpt:
       'Early warning signs of a WordPress hack, immediate containment steps, and a response checklist for UK business owners.',
-    datePublished: '2025-06-15',
+    datePublished: '2024-09-10',
     dateModified: '2026-03-03',
     category: 'Recovery',
     author: 'WebAdish',
@@ -125,7 +125,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'A Practical Guide to Manually Restoring Your WordPress Website',
     excerpt:
       'Step-by-step walkthrough of manual WordPress restoration, from database recovery to file-level repair.',
-    datePublished: '2025-06-01',
+    datePublished: '2024-07-18',
     dateModified: '2026-03-03',
     category: 'Recovery',
     author: 'WebAdish',

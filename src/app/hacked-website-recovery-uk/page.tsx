@@ -13,9 +13,9 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'Hacked WordPress Site Recovery UK | Emergency Fix in Hours | WebAdish',
+  title: 'WordPress Incident Response UK | Hacked Site Recovery | WebAdish',
   description:
-    'Emergency hacked WordPress site recovery for UK businesses. We remove malware, close backdoors, get you off Google\'s blacklist, and restore your site within 4–24 hours. Fixed fee £1,499.',
+    'Premium WordPress incident response for UK businesses. We contain hacked sites, investigate root cause, eliminate persistence, and recover revenue-critical websites with executive-level care.',
   path: '/hacked-website-recovery-uk',
 });
 
@@ -23,51 +23,51 @@ const faqItems = [
   {
     question: 'How quickly can you start recovering my hacked WordPress site?',
     answer:
-      'We begin work within 2 hours of your request during UK business hours. For critical situations — site down, Google blacklisted, WooCommerce offline — we offer a priority emergency track that starts within 30 minutes.',
+      'We begin triage quickly because the first priority is containment. For revenue-critical incidents, we can move to an emergency track fast, but we do not promise a superficial cleanup just to hit an arbitrary clock.',
   },
   {
     question: 'How long does hacked WordPress site recovery take?',
     answer:
-      'Most sites are fully recovered within 4 to 12 hours. Severely compromised sites with multiple backdoors, database injections, or server-level compromise may take up to 24 hours for a thorough forensic cleanup.',
+      'That depends on the depth of compromise and the business constraints around recovery. Containment happens first; full eradication, validation, and relaunch planning can take longer for complex eCommerce, multi-site, or server-level incidents.',
   },
   {
     question: 'My site was hacked before and it came back. Why does this keep happening?',
     answer:
-      'Repeat hacks almost always mean a backdoor was missed during the previous cleanup. Attackers plant hidden PHP shells in unexpected locations — inside image upload folders, as fake plugin files, or injected directly into the database. Our forensic approach finds and removes all backdoors, not just the visible infection.',
+      'Repeat hacks usually mean the previous fix removed visible malware but missed the actual access path or persistence. Backdoors, compromised admin accounts, cron abuse, and unsafe plugins are common reasons cheap cleanups fail.',
   },
   {
     question: 'Will I lose any data during the recovery?',
     answer:
-      'No. We take a complete backup before touching anything. Our approach is surgical — we clean infected files rather than delete them, preserving all your content, media, and database records.',
+      'We work to preserve data and evidence. Before any major changes, we take a forensic baseline so recovery decisions are controlled, documented, and reversible wherever possible.',
   },
   {
-    question: 'Can you remove my site from Google\'s blacklist?',
+    question: 'Can you remove my site from Google blacklists?',
     answer:
-      'Yes. Once we confirm the site is clean, we submit a review request to Google Search Console. Most blacklist removals are approved within 24 to 72 hours. We also handle McAfee SiteAdvisor, Norton Safe Web, and other major blocklists.',
+      'Yes. Once the site is verified clean and stable, we support review requests and reputation recovery. That said, blacklist removal is the final step, not the first goal.',
   },
   {
     question: 'Do you fix the vulnerability that allowed the hack?',
     answer:
-      'Yes — closing the entry point is a core part of every recovery. We patch the specific vulnerability, update all outdated core files, plugins and themes, remove abandoned components, and harden your server configuration.',
+      'Yes. Root-cause remediation is central to the engagement. We close the entry point, remove unsafe components, harden access, and document the changes needed to reduce recurrence risk.',
   },
   {
     question: 'Does a WordPress hack trigger a GDPR breach notification to the ICO?',
     answer:
-      'If your compromised site was processing personal data (contact form submissions, customer accounts, order records), you may be required to notify the ICO within 72 hours under UK GDPR. We include a written forensic incident report with every recovery to support your compliance obligations.',
+      'Potentially, yes. If personal data may have been exposed, UK GDPR obligations can apply. We include an incident summary to support internal decision-making and follow-up with legal or compliance stakeholders.',
   },
   {
-    question: 'What is your 30-day guarantee?',
+    question: 'Why are your prices higher than basic malware removal services?',
     answer:
-      'If the same infection returns within 30 days of our cleanup, we re-clean your site at no additional charge. This covers the exact attack vector we remediated. For ongoing protection, we recommend pairing recovery with our WordPress maintenance plan.',
+      'Because we are not selling a basic malware sweep. We are handling business-critical incidents where incomplete work can lead to reinfection, lost revenue, compliance exposure, and reputational damage.',
   },
 ];
 
 export default function HackedWebsiteRecoveryUK() {
   const serviceSchema = generateServiceSchema(
     'Hacked WordPress Site Recovery UK',
-    'Emergency hacked WordPress site recovery for UK businesses. Malware removal, backdoor elimination, blacklist removal, and security hardening within 4–24 hours.',
+    'Premium WordPress incident response for UK businesses. Emergency containment, forensic recovery, root-cause analysis, and security remediation for revenue-critical websites.',
     '/hacked-website-recovery-uk',
-    'From £1,499'
+    'From £3,000'
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
@@ -81,35 +81,33 @@ export default function HackedWebsiteRecoveryUK() {
       <StructuredData schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
 
       <PageHeader
-        title="Hacked WordPress Site? <br /><span style='color: #ef4444'>We Fix It Fast.</span>"
-        subtitle="Emergency recovery service for UK businesses. We remove malware, close backdoors, get you off Google's blacklist, and restore your site — typically within 4 to 12 hours."
-        badge="Emergency Recovery Service"
+        title="WordPress Incident Response <br /><span style='color: #ef4444'>for Business-Critical Websites</span>"
+        subtitle="When a hacked site threatens leads, sales, client trust, or compliance exposure, we treat it as a live incident. We contain the damage, recover safely, and fix the conditions that allowed the breach."
+        badge="Premium Incident Response"
       />
 
       <TrustSignals />
 
-      {/* Signs of a hack */}
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            <h2>Signs Your WordPress Site Has Been Hacked</h2>
+            <h2>When to trigger incident response</h2>
             <p style={{ color: '#a1a1aa' }}>
-              Hacks are not always obvious. Look for these indicators — any one of them warrants immediate investigation.
+              If any of these are happening on a revenue-critical site, you are
+              beyond &quot;support ticket&quot; territory and into incident response.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
             {[
-              { icon: '🔴', sign: 'Google shows a "This site may be hacked" warning in search results' },
-              { icon: '🔴', sign: 'Visitors are redirected to spam, phishing, or adult sites' },
-              { icon: '🔴', sign: 'Your browser or antivirus flags the site as dangerous' },
-              { icon: '🔴', sign: 'You see unfamiliar admin users or plugins you did not install' },
-              { icon: '🔴', sign: 'Google Search Console shows a manual action or security issue' },
-              { icon: '🔴', sign: 'The site is slow, crashes, or shows unexpected content' },
-              { icon: '🔴', sign: 'Your hosting provider suspended the account for malware' },
-              { icon: '🔴', sign: 'You cannot log in to wp-admin even with the correct password' },
+              { icon: '01', sign: 'Google warnings, blacklist notifications, or browser malware alerts are damaging traffic and trust.' },
+              { icon: '02', sign: 'Visitors are being redirected to phishing, spam, or malicious destinations.' },
+              { icon: '03', sign: 'Checkout, lead forms, or client-facing functionality is disrupted or behaving abnormally.' },
+              { icon: '04', sign: 'Unfamiliar admin users, files, plugins, or cron activity suggest attacker persistence.' },
+              { icon: '05', sign: 'A previous cleanup failed and the compromise has returned.' },
+              { icon: '06', sign: 'Your hosting provider suspended the site or warned of malicious activity.' },
             ].map((item) => (
               <div key={item.sign} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '10px', padding: '1rem 1.25rem', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '2px' }}>{item.icon}</span>
+                <span style={{ fontSize: '1rem', flexShrink: 0, marginTop: '2px', color: '#ef4444', fontWeight: 800 }}>{item.icon}</span>
                 <span style={{ color: '#d4d4d8', fontSize: '0.9rem', lineHeight: 1.5 }}>{item.sign}</span>
               </div>
             ))}
@@ -117,20 +115,21 @@ export default function HackedWebsiteRecoveryUK() {
         </div>
       </section>
 
-      {/* Recovery process */}
       <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            <h2>Our Emergency WordPress Recovery Process</h2>
-            <p style={{ color: '#a1a1aa' }}>A structured, forensic approach — not a quick fix that leaves backdoors in place.</p>
+            <h2>Our WordPress incident response process</h2>
+            <p style={{ color: '#a1a1aa' }}>
+              Designed for organisations that need more than a cheap malware sweep.
+            </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
             {[
-              { step: '01', title: 'Triage', desc: 'We assess the damage, identify the infection type, and isolate the compromised components to stop further spread.' },
-              { step: '02', title: 'Backup', desc: 'A full backup is taken before we touch anything — preserving your data and creating a forensic baseline.' },
-              { step: '03', title: 'Deep Clean', desc: 'Every file, database table, and cron job is scanned and cleaned. We find backdoors that automated tools miss.' },
-              { step: '04', title: 'Harden', desc: 'We patch the entry point, update all software, tighten file permissions, and implement WAF rules to block repeat attacks.' },
-              { step: '05', title: 'Restore', desc: 'Your site goes back online clean. We submit blacklist removal requests and monitor for 30 days.' },
+              { step: '01', title: 'Contain', desc: 'We stabilise the environment, preserve evidence, and stop the compromise from spreading into revenue, users, or connected systems.' },
+              { step: '02', title: 'Investigate', desc: 'We trace the entry point, attacker persistence, affected components, and operational blind spots behind the breach.' },
+              { step: '03', title: 'Eradicate', desc: 'Files, database payloads, cron jobs, rogue users, and hidden backdoors are removed thoroughly, not cosmetically.' },
+              { step: '04', title: 'Remediate', desc: 'We close the root cause with patching, hardening, access control cleanup, and environment-level corrections.' },
+              { step: '05', title: 'Recover', desc: 'We restore service with validation, blacklist support, and a written incident summary stakeholders can act on.' },
             ].map((item) => (
               <div key={item.step} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '0.75rem', padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', fontWeight: 800, color: '#ef4444', marginBottom: '0.75rem' }}>{item.step}</div>
@@ -142,26 +141,36 @@ export default function HackedWebsiteRecoveryUK() {
         </div>
       </section>
 
-      {/* Pricing */}
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
-          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '760px', margin: '0 auto' }}>
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
-              <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Fixed Fee. 30-Day Guarantee.</h2>
-              <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>One fixed price covers everything — no hourly billing, no hidden extras.</p>
-              <div style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-                £1,499<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}> fixed fee</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', maxWidth: '440px', margin: '0 auto 2rem', textAlign: 'left' }}>
+              <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Premium engagement tiers</h2>
+              <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
+                Serious incidents need depth, accountability, and enough time to
+                remove the cause, not just the symptoms.
+              </p>
+              <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
                 {[
-                  'Full malware removal',
-                  'Backdoor detection & elimination',
-                  'Google blacklist removal',
-                  'McAfee & Norton blocklist removal',
-                  'Core, plugin & theme updates',
-                  'Security hardening',
-                  '30-day re-infection guarantee',
-                  'Written incident report (GDPR)',
+                  'Incident Recovery: from £3,000 for single-site compromise and forensic cleanup',
+                  'Revenue-Critical Response: from £6,000 for WooCommerce, lead-gen, and client-facing production websites',
+                  'Major Incident Engagement: £10,000+ for multi-site estates, agency portfolios, or deep persistence/server investigation',
+                ].map((tier) => (
+                  <div key={tier} style={{ color: '#d4d4d8', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '0.75rem', padding: '0.9rem 1rem' }}>
+                    {tier}
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', maxWidth: '500px', margin: '0 auto 2rem', textAlign: 'left' }}>
+                {[
+                  'Emergency containment',
+                  'Root-cause analysis',
+                  'Backdoor and persistence eradication',
+                  'Blacklist support',
+                  'Access control review',
+                  'Hardening and remediation',
+                  'Stakeholder-ready incident reporting',
+                  'Post-recovery monitoring window',
                 ].map((f) => (
                   <div key={f} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.875rem', color: '#d4d4d8' }}>
                     <span style={{ color: '#ef4444', flexShrink: 0 }}>✓</span> {f}
@@ -171,34 +180,37 @@ export default function HackedWebsiteRecoveryUK() {
               <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                 Need help right now? Call <strong style={{ color: '#fff' }}>+44 7344 540450</strong>
               </p>
-              <a href="#contact-section" className="btn btn-primary" style={{ display: 'inline-block' }}>Start Emergency Recovery</a>
+              <a href="#contact-section" className="btn btn-primary" style={{ display: 'inline-block' }}>Request Incident Response</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* UK context — GDPR */}
       <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
             <div>
-              <h2>UK Hacked Site Recovery — GDPR and the 72-Hour Rule</h2>
+              <h2>Business impact goes beyond the malware</h2>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
-                If your compromised WordPress site was handling personal data — contact form submissions, customer accounts, WooCommerce orders — you may have a legal obligation to notify the ICO within 72 hours of discovering the breach under UK GDPR.
+                A hacked WordPress site can mean lost transactions, suspended ad
+                campaigns, reputational damage, and internal escalation to legal
+                or compliance teams. Recovery has to account for those realities.
               </p>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
-                Every recovery we perform includes a written forensic incident report documenting what was found, what was removed, what data was potentially at risk, and the steps we took to remediate. This gives you the evidence trail you need if you face regulatory scrutiny.
+                For UK businesses handling personal data, a compromise may also
+                trigger regulatory decisions under UK GDPR. We provide an
+                evidence-led account of what happened and what was remediated.
               </p>
-              <Link href="/wordpress-maintenance-uk" style={{ color: '#ef4444', fontSize: '0.95rem' }}>
-                → After recovery: protect your site with a maintenance plan
+              <Link href="https://webadish.com/" style={{ color: '#ef4444', fontSize: '0.95rem' }}>
+                → After recovery: continue protection with our maintenance and security plans
               </Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {[
-                { stat: '30 min', label: 'Emergency priority track start time' },
-                { stat: '4–12 hrs', label: 'Typical full recovery time' },
-                { stat: '72 hrs', label: 'ICO breach notification window we help you meet' },
-                { stat: '30 days', label: 'Post-cleanup monitoring & guarantee' },
+                { stat: 'Fast', label: 'Initial triage and containment for urgent business incidents' },
+                { stat: 'Deep', label: 'Root-cause analysis, not just visible malware removal' },
+                { stat: 'Clear', label: 'Stakeholder-ready reporting for internal decision makers' },
+                { stat: 'Premium', label: 'Pricing aligned to business-critical recovery work' },
               ].map((item) => (
                 <div key={item.label} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '12px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
                   <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ef4444', minWidth: '90px' }}>{item.stat}</div>
@@ -210,7 +222,26 @@ export default function HackedWebsiteRecoveryUK() {
         </div>
       </section>
 
-      {/* Related reading */}
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
+            <h2>After recovery, continue protection with our maintenance and security plans</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
+              Most reinfections happen after a superficial cleanup, when the
+              site is put back online without fixing the operational weaknesses
+              that let the attacker in. Recovery is only the first phase.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+              For businesses that want ongoing protection after the incident,
+              continue with our maintenance and security plans on the main website.
+            </p>
+            <Link href="https://webadish.com/" className="btn btn-primary">
+              View Ongoing Protection Plans
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <h2 style={{ marginBottom: '1.5rem' }}>Further Reading</h2>
@@ -231,9 +262,9 @@ export default function HackedWebsiteRecoveryUK() {
       <FAQ items={faqItems} />
 
       <CTA
-        title="Don&apos;t Let Hackers Win"
-        subtitle="Every hour your site stays compromised costs you traffic, revenue, and customer trust. Let us fix it now."
-        btnText="Start Emergency Recovery"
+        title="Escalate before the incident gets more expensive"
+        subtitle="Every extra hour of compromise increases revenue loss, SEO damage, customer distrust, and regulatory exposure."
+        btnText="Request Incident Response"
         btnLink="#contact-section"
       />
 
@@ -244,9 +275,11 @@ export default function HackedWebsiteRecoveryUK() {
       >
         <div className="container">
           <div style={{ maxWidth: '600px', margin: '0 auto', background: 'var(--surface)', borderRadius: '1rem', border: '1px solid var(--border)', padding: '2rem' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Request Emergency Recovery</h2>
+            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Request WordPress Incident Response</h2>
             <p style={{ textAlign: 'center', color: '#a1a1aa', marginBottom: '2rem' }}>
-              Describe what you&apos;re seeing and we&apos;ll get started within hours.
+              Describe what is happening, what is at risk, and any previous
+              cleanup attempts. We&apos;ll triage the incident and advise on the
+              right engagement level.
             </p>
             <ContactForm />
           </div>

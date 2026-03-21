@@ -3,6 +3,7 @@ import { CheckCircle } from 'lucide-react';
 
 const TrustSignals = () => {
     const benefits = [
+        '20+ Years in Business',
         '24/7 Security Monitoring',
         'Daily Cloud Backups',
         'Uptime Guarantee',

@@ -46,7 +46,7 @@ export default function IncidentResponsePlanPage() {
     <BlogPostLayout
       title="Incident Response Plan Template for WordPress Website Owners"
       lead="A ready-to-use incident response plan template specifically designed for WordPress sites, covering detection, containment, eradication, and recovery phases."
-      datePublished="2026-03-03"
+      datePublished="2025-05-20"
       dateModified="2026-03-03"
       author="WebAdish"
       category="Guides"

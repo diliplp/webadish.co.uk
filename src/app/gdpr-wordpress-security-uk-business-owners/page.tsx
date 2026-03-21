@@ -46,7 +46,7 @@ export default function GDPRWordPressPage() {
     <BlogPostLayout
       title="GDPR and WordPress Security: What UK Business Owners Must Know"
       lead="How GDPR intersects with WordPress security obligations. Covers data breach notification requirements, technical measures, and practical compliance strategies for UK websites."
-      datePublished="2026-03-03"
+      datePublished="2024-11-14"
       dateModified="2026-03-03"
       author="WebAdish"
       category="WordPress Security"

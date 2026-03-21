@@ -15,7 +15,7 @@ export default function PostPage() {
     <BlogPostLayout
       title="A Practical Guide to Manually Restoring Your WordPress Website"
       lead="Manual restoration is sometimes the safest way to recover. Use this checklist to reduce risk and downtime."
-      datePublished="2025-06-01"
+      datePublished="2024-07-18"
       dateModified="2026-03-03"
       category="Recovery"
       slug="revive-your-site-a-practical-guide-to-manually-restoring-your-wordpress-website"

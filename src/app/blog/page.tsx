@@ -22,6 +22,9 @@ export default function BlogIndex() {
   ];
 
   const categories = ['All', ...Array.from(new Set(BLOG_POSTS.map((p) => p.category)))];
+  const sortedPosts = [...BLOG_POSTS].sort(
+    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
+  );
 
   return (
     <>
@@ -29,7 +32,7 @@ export default function BlogIndex() {
 
       <PageHeader
         title="WordPress Security <br /><span style='color: var(--primary)'>Blog</span>"
-        subtitle="Expert guides, threat analysis, and practical security advice for UK businesses running WordPress."
+        subtitle="Expert guides, threat analysis, and practical security advice informed by 20+ years in business and hands-on web operations."
         badge="Security Insights"
       />
 
@@ -60,7 +63,7 @@ export default function BlogIndex() {
             gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
             gap: '2rem',
           }}>
-            {BLOG_POSTS.map((post) => (
+            {sortedPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/${post.slug}`}

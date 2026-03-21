@@ -46,7 +46,7 @@ export default function WordPressSecurityEcommercePage() {
     <BlogPostLayout
       title="WordPress Security for E-Commerce: Protecting WooCommerce Stores"
       lead="WooCommerce stores process payments and store customer data, making them prime targets. Learn the essential security measures every WooCommerce site needs."
-      datePublished="2026-03-03"
+      datePublished="2024-12-05"
       dateModified="2026-03-03"
       author="WebAdish"
       category="WordPress Security"

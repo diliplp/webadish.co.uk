@@ -62,7 +62,7 @@ export default function PostPage() {
       <BlogPostLayout
         title="WordPress Site Keeps Getting Hacked? Here's Why & How to Stop It"
         lead="You cleaned the malware. You updated everything. A week later, it's back. If your WordPress site keeps getting hacked, you haven't found the backdoor — and until you do, the cycle will never stop."
-        datePublished="2026-03-09"
+        datePublished="2025-11-06"
         dateModified="2026-03-13"
         category="Recovery"
         slug="wordpress-site-keeps-getting-hacked"

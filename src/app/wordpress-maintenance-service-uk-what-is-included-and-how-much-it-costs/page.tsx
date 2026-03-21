@@ -62,7 +62,7 @@ export default function PostPage() {
       <BlogPostLayout
         title="WordPress Maintenance Service UK: What's Included & How Much It Costs"
         lead="If you run a WordPress site for your business, maintenance isn't optional — it's the difference between a site that works and one that gets hacked, goes down, or quietly loses rankings. Here's everything you need to know."
-        datePublished="2026-03-09"
+        datePublished="2026-01-15"
         dateModified="2026-03-13"
         category="Maintenance"
         slug="wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs"
@@ -116,15 +116,15 @@ export default function PostPage() {
         <p>Full-service plans including a dedicated account manager, staging environment for all updates, active speed optimisation, emergency recovery guarantee (typically 4–8 hours), SLA-backed uptime commitments, and monthly strategy calls. Some plans at this tier include a set number of development hours for small changes each month. Designed for businesses where the website is a primary revenue channel — e-commerce, professional services, lead generation.</p>
 
         <h3>Agency white-label plans</h3>
-        <p>UK digital agencies increasingly outsource WordPress maintenance to specialist providers under white-label arrangements. The agency retains the client relationship while the maintenance provider handles all technical work under the agency's branding. Pricing is typically lower per-site for volume arrangements, with wholesale rates that allow the agency to maintain their own margin.</p>
+        <p>UK digital agencies increasingly outsource WordPress maintenance to specialist providers under white-label arrangements. The agency retains the client relationship while the maintenance provider handles all technical work under the agency&apos;s branding. Pricing is typically lower per-site for volume arrangements, with wholesale rates that allow the agency to maintain their own margin.</p>
 
         <h2>UK-specific considerations when choosing a provider</h2>
         <p>When evaluating a WordPress maintenance service as a UK business, there are several factors that apply specifically to your context:</p>
         <ul>
           <li><strong>GDPR compliance</strong> — Backups containing personal data must be stored in the UK or EU, or with adequate safeguards in place. Ask explicitly where backups are stored and whether the provider can sign a Data Processing Agreement.</li>
           <li><strong>UK business hours support</strong> — If something goes wrong at 9am on a Tuesday, you want support available without waiting for a US timezone to wake up.</li>
-          <li><strong>ICO registration</strong> — A provider handling your site data should be registered with the Information Commissioner's Office as a data processor.</li>
-          <li><strong>Cyber Essentials alignment</strong> — If your business holds Cyber Essentials certification or is pursuing it, your maintenance provider's practices should align with the scheme's patching requirements.</li>
+          <li><strong>ICO registration</strong> — A provider handling your site data should be registered with the Information Commissioner&apos;s Office as a data processor.</li>
+          <li><strong>Cyber Essentials alignment</strong> — If your business holds Cyber Essentials certification or is pursuing it, your maintenance provider&apos;s practices should align with the scheme&apos;s patching requirements.</li>
         </ul>
 
         <h2>Questions to ask before signing up</h2>
@@ -140,7 +140,7 @@ export default function PostPage() {
 
         <h2>DIY maintenance vs professional service</h2>
         <p>Many business owners attempt to handle WordPress maintenance themselves to save money. The challenge is consistency — maintenance is not a one-time task but a continuous, recurring obligation that requires attention every week, indefinitely. A single missed security update is the vulnerability that exposes your site.</p>
-        <p>A competent DIY maintainer typically spends 2–4 hours per month on updates, backups, and monitoring. At most business owners' hourly rate, that time often exceeds the cost of a professional service. And when something goes wrong — a plugin update breaks the checkout on an e-commerce site at midnight — the cost of not having professional support becomes very real.</p>
+        <p>A competent DIY maintainer typically spends 2–4 hours per month on updates, backups, and monitoring. At most business owners&apos; hourly rate, that time often exceeds the cost of a professional service. And when something goes wrong — a plugin update breaks the checkout on an e-commerce site at midnight — the cost of not having professional support becomes very real.</p>
         <p>The case for professional maintenance is strongest when: your site generates revenue, you store customer data, you run WooCommerce, your site is business-critical, or you have been hacked before.</p>
 
         <h2>WordPress maintenance from WebAdish</h2>

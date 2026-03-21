@@ -9,12 +9,12 @@ import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Pricing UK | Transparent Plans | WebAdish',
+  title: 'WordPress Incident Response Pricing UK | Premium Engagements | WebAdish',
   description:
-    'Transparent WordPress security pricing for UK businesses. Security audits from £1,499, maintenance from £449/month, enterprise retainers from £2,999/month.',
+    'Premium WordPress incident response pricing for UK businesses. High-trust recovery engagements from £3,000 and retained protection for revenue-critical websites.',
   path: '/pricing',
 });
 
@@ -22,36 +22,36 @@ const faqItems = [
   {
     question: 'Are there any hidden fees or setup costs?',
     answer:
-      'No. Every price listed on this page is the full cost. There are no setup fees, onboarding charges, or hidden extras. If your site requires work outside the standard scope, we will provide a written quote before proceeding.',
+      'No. We scope engagements clearly before work starts. If the incident is materially broader than first reported, we explain the change in writing before expanding scope.',
   },
   {
-    question: 'What payment methods do you accept?',
+    question: 'Why are your prices higher than many WordPress cleanup services?',
     answer:
-      'We accept bank transfer (BACS), credit and debit cards, and direct debit for recurring plans. All invoices are raised in GBP. Monthly plans are billed on the first of each month.',
+      'Because we are not selling a commodity malware sweep. We are handling business-critical incidents where incomplete remediation can mean reinfection, lost revenue, client churn, and compliance exposure.',
   },
   {
-    question: 'Can I cancel my monthly plan at any time?',
+    question: 'Can I move from incident recovery into an ongoing plan?',
     answer:
-      'Yes. All monthly plans operate on a rolling basis with a 30-day notice period. There are no long-term contracts or early termination fees. We will ensure a smooth handover when you leave.',
+      'Yes. Many clients engage us for immediate recovery first, then continue into a retained protection arrangement once the incident is stabilised.',
   },
   {
     question: 'Do you offer custom pricing for large estates or agencies?',
     answer:
-      'Absolutely. If you manage more than 10 sites or require a bespoke service level, contact us for a tailored quote. We offer volume discounts and white-label arrangements for agency partners.',
+      'Yes. Agency portfolios, multi-site estates, and environments with white-label or stakeholder-reporting requirements are usually scoped as bespoke engagements.',
   },
   {
     question: 'Is VAT included in the prices shown?',
     answer:
-      'All prices listed are exclusive of VAT. VAT at the current UK rate of 20% will be added to your invoice. EU and international clients outside the UK may be exempt depending on their VAT status.',
+      'All prices listed are exclusive of VAT. VAT at the applicable UK rate will be added where required.',
   },
 ];
 
 export default function Pricing() {
   const serviceSchema = generateServiceSchema(
-    'WordPress Security Pricing',
-    'Transparent WordPress security pricing for UK businesses. Security audits, maintenance plans, and enterprise retainers.',
+    'WordPress Incident Response Pricing',
+    'Premium WordPress incident response pricing for UK businesses. Recovery engagements, retained security, and business-critical protection.',
     '/pricing',
-    '£449 - £4,999/month'
+    '£3,000 - £10,000+'
   );
 
   const faqSchema = generateFAQSchema(faqItems);
@@ -66,14 +66,13 @@ export default function Pricing() {
       <StructuredData schemas={[serviceSchema, faqSchema, breadcrumbSchema]} />
 
       <PageHeader
-        title="Transparent Security <br /><span style='color: var(--primary)'>Pricing</span>"
-        subtitle="No hidden fees. No surprise invoices. Straightforward pricing for every stage of your WordPress security journey."
-        badge="Transparent Pricing"
+        title="Premium Incident Response <br /><span style='color: var(--primary)'>Pricing</span>"
+        subtitle="Serious breaches need senior handling, forensic depth, and commercial awareness. Our pricing reflects business-critical work, not commodity cleanup."
+        badge="Premium Engagements"
       />
 
       <TrustSignals />
 
-      {/* Definition paragraph for AI search */}
       <section
         className="section-padding"
         style={{ backgroundColor: 'var(--background)' }}
@@ -88,19 +87,17 @@ export default function Pricing() {
                 marginBottom: '1rem',
               }}
             >
-              Our pricing philosophy is built on transparency and value. We
-              believe UK businesses should know exactly what they are paying
-              for before they commit, with no hidden fees, lock-in contracts,
-              or surprise surcharges. Whether you need a one-time security
-              audit, ongoing maintenance, or an enterprise-grade retainer,
-              every WebAdish plan is clearly scoped and fairly priced for the
-              level of expertise and protection you receive.
+              Most cheap fixes fail because they are scoped around malware
+              removal alone. We scope pricing around containment, root-cause
+              analysis, eradication, remediation, and the business pressure
+              surrounding the incident. That means fewer surprises, fewer
+              reinfections, and a more credible recovery path for high-value
+              websites.
             </p>
           </div>
         </div>
       </section>
 
-      {/* One-Time Services */}
       <section
         className="section-padding"
         style={{ backgroundColor: 'var(--surface)' }}
@@ -113,10 +110,11 @@ export default function Pricing() {
               margin: '0 auto 3rem',
             }}
           >
-            <h2>One-Time Services</h2>
+            <h2>Incident Response Engagements</h2>
             <p>
-              Fixed-fee engagements for specific security needs. No ongoing
-              commitment required.
+              These tiers are designed for organisations with business impact at
+              stake. Final scope depends on the depth of compromise and
+              environment complexity.
             </p>
           </div>
 
@@ -129,38 +127,38 @@ export default function Pricing() {
           >
             {[
               {
-                title: 'Security Audit',
-                price: '£1,499',
+                title: 'Incident Recovery',
+                price: '£3,000+',
                 features: [
-                  'Full vulnerability assessment',
-                  'Manual code review',
-                  'Configuration audit',
-                  'Risk-scored PDF report',
-                  '60-minute consultation',
+                  'Single-site compromise response',
+                  'Containment and eradication',
+                  'Root-cause analysis',
+                  'Security remediation plan',
+                  'Stakeholder incident summary',
                 ],
-                link: '/wordpress-security-audit',
+                link: '/hacked-website-recovery-uk',
               },
               {
-                title: 'Malware Removal',
-                price: '£1,499',
+                title: 'Revenue-Critical Response',
+                price: '£6,000+',
                 features: [
-                  'Complete malware cleanup',
-                  'Backdoor elimination',
-                  'Blacklist removal requests',
-                  'Security hardening',
-                  '30-day re-infection guarantee',
+                  'WooCommerce and lead-gen websites',
+                  'Deep persistence investigation',
+                  'Blacklist and reputation recovery support',
+                  'Priority communication during live incident',
+                  'Post-recovery monitoring window',
                 ],
                 link: '/wordpress-malware-removal',
               },
               {
-                title: 'Hacked Site Recovery',
-                price: '£1,499',
+                title: 'Major Incident Engagement',
+                price: '£10,000+',
                 features: [
-                  'Emergency site restoration',
-                  'Data recovery',
-                  'Malware removal',
-                  'Security hardening',
-                  '30-day guarantee',
+                  'Agency portfolios and multi-site estates',
+                  'Complex reinfection or server-level investigation',
+                  'Executive and client-facing reporting',
+                  'Cross-site remediation planning',
+                  'Bespoke recovery leadership',
                 ],
                 link: '/hacked-website-recovery-uk',
               },
@@ -217,7 +215,7 @@ export default function Pricing() {
                   className="btn btn-secondary"
                   style={{ width: '100%' }}
                 >
-                  Learn More
+                  View Scope
                 </a>
               </div>
             ))}
@@ -225,7 +223,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Maintenance Plans */}
       <section
         className="section-padding"
         style={{ backgroundColor: 'var(--background)' }}
@@ -238,10 +235,9 @@ export default function Pricing() {
               margin: '0 auto 3rem',
             }}
           >
-            <h2>Maintenance Plans</h2>
+            <h2>Retained Protection</h2>
             <p>
-              Ongoing protection, updates, and support billed monthly. Cancel
-              any time with 30 days notice.
+              Ongoing protection for teams that cannot afford another avoidable incident.
             </p>
           </div>
 
@@ -255,27 +251,27 @@ export default function Pricing() {
           >
             {[
               {
-                title: 'Standard',
-                price: '£449',
+                title: 'Business Critical',
+                price: '£3,000',
                 features: [
-                  'Weekly core & plugin updates',
-                  'Daily cloud backups',
-                  '24/7 uptime monitoring',
-                  'Monthly security report',
-                  'Email support',
+                  'Priority incident coverage',
+                  'Security-led maintenance oversight',
+                  '24/7 monitoring and alert triage',
+                  'Monthly risk reporting',
+                  'Direct senior contact',
                 ],
                 highlight: false,
               },
               {
-                title: 'Pro',
-                price: '£999',
+                title: 'Enterprise',
+                price: '£6,000',
                 features: [
-                  'Everything in Standard',
-                  'Daily updates',
-                  'Speed optimisation',
-                  'Unlimited small edits',
-                  'Priority support',
-                  'Quarterly security review',
+                  'Everything in Business Critical',
+                  'Faster critical-response SLA',
+                  'Deeper reporting cadence',
+                  'Agency and stakeholder support',
+                  'Quarterly hardening review',
+                  'Estate-wide security coordination',
                 ],
                 highlight: true,
               },
@@ -310,7 +306,7 @@ export default function Pricing() {
                       fontWeight: 600,
                     }}
                   >
-                    Most Popular
+                    Premium
                   </div>
                 )}
                 <h3
@@ -354,11 +350,11 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <a
-                  href="/wordpress-maintenance-uk"
+                  href="/wordpress-security-retainer"
                   className="btn btn-primary"
                   style={{ width: '100%' }}
                 >
-                  Get Started
+                  Discuss Retainer
                 </a>
               </div>
             ))}
@@ -366,7 +362,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Security Retainers */}
       <section
         className="section-padding"
         style={{ backgroundColor: 'var(--surface)' }}
@@ -379,10 +374,9 @@ export default function Pricing() {
               margin: '0 auto 3rem',
             }}
           >
-            <h2>Security Retainers</h2>
+            <h2>Senior-Led Security Retainers</h2>
             <p>
-              Enterprise-grade, SLA-backed security for businesses that
-              cannot afford downtime.
+              For organisations that need a closer operating partner after recovery.
             </p>
           </div>
 
@@ -397,28 +391,28 @@ export default function Pricing() {
             {[
               {
                 title: 'Professional',
-                price: '£2,999',
+                price: '£8,000',
                 features: [
-                  'Up to 5 WordPress sites',
-                  'Dedicated security analyst',
-                  '24/7 monitoring',
+                  'Up to 5 high-value WordPress sites',
+                  'Dedicated security lead',
+                  '24/7 monitoring and escalation',
                   '4-hour critical SLA',
-                  'Weekly + monthly reports',
-                  'Quarterly pen test',
+                  'Weekly incident and risk reporting',
+                  'Quarterly security review',
                 ],
               },
               {
                 title: 'Enterprise',
-                price: '£4,999',
+                price: '£10,000+',
                 features: [
-                  'Up to 15 WordPress sites',
-                  'Senior dedicated analyst',
+                  'Multi-site and agency estates',
+                  'Senior incident leadership',
                   '24/7 monitoring + weekend cover',
                   '1-hour critical SLA',
-                  'Real-time dashboard',
-                  'Quarterly pen test + board reports',
-                  'White-label included',
-                  'GDPR & PCI support',
+                  'Executive-ready reporting',
+                  'Quarterly strategic review',
+                  'White-label and stakeholder support',
+                  'GDPR and commercial-risk guidance',
                 ],
               },
             ].map((item, index) => (
@@ -482,7 +476,7 @@ export default function Pricing() {
                   className="btn btn-primary"
                   style={{ width: '100%' }}
                 >
-                  Learn More
+                  Talk to Us
                 </a>
               </div>
             ))}
@@ -490,235 +484,37 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Comparison Table */}
       <section
         className="section-padding"
         style={{ backgroundColor: 'var(--background)' }}
       >
         <div className="container">
-          <div
-            style={{
-              textAlign: 'center',
-              maxWidth: '700px',
-              margin: '0 auto 3rem',
-            }}
-          >
-            <h2>Compare All Plans</h2>
-            <p>A side-by-side view of features across every tier.</p>
-          </div>
-
-          <div style={{ overflowX: 'auto' }}>
-            <table
-              style={{
-                width: '100%',
-                borderCollapse: 'collapse',
-                minWidth: '700px',
-              }}
-            >
-              <thead>
-                <tr
-                  style={{
-                    borderBottom: '2px solid var(--border)',
-                  }}
-                >
-                  <th
-                    style={{
-                      textAlign: 'left',
-                      padding: '1rem',
-                      color: 'var(--foreground)',
-                    }}
-                  >
-                    Feature
-                  </th>
-                  <th style={{ padding: '1rem', color: 'var(--foreground)' }}>
-                    Standard
-                  </th>
-                  <th style={{ padding: '1rem', color: 'var(--foreground)' }}>
-                    Pro
-                  </th>
-                  <th style={{ padding: '1rem', color: 'var(--foreground)' }}>
-                    Professional Retainer
-                  </th>
-                  <th style={{ padding: '1rem', color: 'var(--foreground)' }}>
-                    Enterprise Retainer
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    feature: 'Monthly Price',
-                    standard: '£449',
-                    pro: '£999',
-                    profRetainer: '£2,999',
-                    enterprise: '£4,999',
-                  },
-                  {
-                    feature: 'Core & Plugin Updates',
-                    standard: 'Weekly',
-                    pro: 'Daily',
-                    profRetainer: 'Daily',
-                    enterprise: 'Daily',
-                  },
-                  {
-                    feature: 'Cloud Backups',
-                    standard: 'Daily',
-                    pro: 'Daily',
-                    profRetainer: 'Daily',
-                    enterprise: 'Real-time',
-                  },
-                  {
-                    feature: 'Uptime Monitoring',
-                    standard: '&#10003;',
-                    pro: '&#10003;',
-                    profRetainer: '24/7',
-                    enterprise: '24/7 + Weekend',
-                  },
-                  {
-                    feature: 'Security Monitoring',
-                    standard: '&#10007;',
-                    pro: 'Basic',
-                    profRetainer: '24/7',
-                    enterprise: '24/7 + Dedicated',
-                  },
-                  {
-                    feature: 'Incident Response SLA',
-                    standard: '&#10007;',
-                    pro: '&#10007;',
-                    profRetainer: '4 hours',
-                    enterprise: '1 hour',
-                  },
-                  {
-                    feature: 'Dedicated Analyst',
-                    standard: '&#10007;',
-                    pro: '&#10007;',
-                    profRetainer: '&#10003;',
-                    enterprise: 'Senior',
-                  },
-                  {
-                    feature: 'Penetration Testing',
-                    standard: '&#10007;',
-                    pro: '&#10007;',
-                    profRetainer: 'Quarterly',
-                    enterprise: 'Quarterly',
-                  },
-                  {
-                    feature: 'White-Label Reports',
-                    standard: '&#10007;',
-                    pro: '&#10007;',
-                    profRetainer: 'Add-on',
-                    enterprise: '&#10003;',
-                  },
-                  {
-                    feature: 'Speed Optimisation',
-                    standard: '&#10007;',
-                    pro: '&#10003;',
-                    profRetainer: '&#10003;',
-                    enterprise: '&#10003;',
-                  },
-                  {
-                    feature: 'Small Edits',
-                    standard: '&#10007;',
-                    pro: 'Unlimited',
-                    profRetainer: 'Security only',
-                    enterprise: 'Unlimited',
-                  },
-                ].map((row, i) => (
-                  <tr
-                    key={i}
-                    style={{
-                      borderBottom: '1px solid var(--border)',
-                      backgroundColor:
-                        i % 2 === 0 ? 'var(--surface)' : 'transparent',
-                    }}
-                  >
-                    <td
-                      style={{
-                        padding: '0.75rem 1rem',
-                        color: 'var(--foreground)',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {row.feature}
-                    </td>
-                    <td
-                      style={{
-                        padding: '0.75rem 1rem',
-                        textAlign: 'center',
-                        color: '#a1a1aa',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: row.standard }}
-                    />
-                    <td
-                      style={{
-                        padding: '0.75rem 1rem',
-                        textAlign: 'center',
-                        color: '#a1a1aa',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: row.pro }}
-                    />
-                    <td
-                      style={{
-                        padding: '0.75rem 1rem',
-                        textAlign: 'center',
-                        color: '#a1a1aa',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: row.profRetainer }}
-                    />
-                    <td
-                      style={{
-                        padding: '0.75rem 1rem',
-                        textAlign: 'center',
-                        color: '#a1a1aa',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: row.enterprise }}
-                    />
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div style={{ maxWidth: '820px', margin: '0 auto', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
+            <h2>After recovery, continue protection with our maintenance and security plans</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
+              Recovery is only the first step. The real cost reduction comes
+              from preventing the next incident with stronger oversight,
+              monitoring, and change control.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+              Continue protection with our maintenance and security plans on the
+              main website.
+            </p>
+            <Link href="https://webadish.com/" className="btn btn-primary">
+              View Protection Plans
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
       <FAQ items={faqItems} />
 
-      {/* CTA + Contact */}
       <CTA
-        title="Ready to Protect Your WordPress Site?"
-        subtitle="Choose the plan that fits your business. Not sure which one? We will help you decide."
-        btnText="Get a Custom Quote"
-        btnLink="#contact-section"
+        title="Need a premium response plan?"
+        subtitle="If your website is tied to revenue, clients, or compliance risk, we can scope the right level of support."
+        btnText="Discuss an Engagement"
+        btnLink="/contact"
       />
-
-      <section
-        id="contact-section"
-        className="section-padding"
-        style={{ backgroundColor: 'var(--background)' }}
-      >
-        <div className="container">
-          <div
-            style={{
-              maxWidth: '600px',
-              margin: '0 auto',
-              background: 'var(--surface)',
-              borderRadius: '1rem',
-              border: '1px solid var(--border)',
-              padding: '2rem',
-            }}
-          >
-            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>
-              Request a Custom Quote
-            </h2>
-            <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              Tell us about your site and requirements, and we will recommend
-              the right plan for your budget.
-            </p>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

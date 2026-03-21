@@ -57,7 +57,7 @@ export default function PostPage() {
       <BlogPostLayout
         title="Signs Your WordPress Website Has Been Hacked (And What to Do Next)"
         lead="If your WordPress site is behaving strangely, it may already be compromised. Early detection and fast action limits the damage — here is exactly what to look for and how to fix it."
-        datePublished="2025-06-15"
+        datePublished="2024-09-10"
         dateModified="2026-03-08"
         category="Recovery"
         slug="signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london"
@@ -74,8 +74,8 @@ export default function PostPage() {
         <p>Many hacks are designed to be invisible to site owners while actively harming visitors or exploiting your server. Watch for these signs:</p>
         <ol>
           <li><strong>Unexpected redirects</strong> — Visitors are sent to spam, gambling or adult sites instead of your pages.</li>
-          <li><strong>Google Safe Browsing warning</strong> — A red warning screen appears before your site saying "This site may harm your computer."</li>
-          <li><strong>"This site may be hacked"</strong> — Google shows this message beneath your listing in search results.</li>
+          <li><strong>Google Safe Browsing warning</strong> — A red warning screen appears before your site saying &quot;This site may harm your computer.&quot;</li>
+          <li><strong>&quot;This site may be hacked&quot;</strong> — Google shows this message beneath your listing in search results.</li>
           <li><strong>Unknown admin users</strong> — New WordPress administrator accounts appear that you did not create.</li>
           <li><strong>Sudden SEO ranking drop</strong> — Your positions fall sharply overnight without any site changes.</li>
           <li><strong>Hosting account suspended</strong> — Your host has taken the site offline due to malware or spam activity.</li>
@@ -96,7 +96,7 @@ export default function PostPage() {
           <li><strong>Scan for malware</strong> — Use Wordfence, MalCare or Sucuri to run a file scan and identify infected files.</li>
           <li><strong>Remove malicious files and backdoors</strong> — This is the hardest step — backdoors are often hidden in legitimate-looking files and will re-infect your site if missed.</li>
           <li><strong>Update everything</strong> — WordPress core, all plugins, all themes. Remove any you are not using.</li>
-          <li><strong>Request Google review</strong> — Once clean, submit your site in Google Search Console under Security Issues to request removal of the "hacked" label.</li>
+          <li><strong>Request Google review</strong> — Once clean, submit your site in Google Search Console under Security Issues to request removal of the &quot;hacked&quot; label.</li>
         </ol>
 
         <h2>Why DIY recovery often fails</h2>

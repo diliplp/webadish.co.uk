@@ -46,7 +46,7 @@ export default function WhyWordPressSitesGetHackedPage() {
     <BlogPostLayout
       title="Why WordPress Sites Get Hacked: 7 Most Common Vulnerabilities"
       lead="Discover the seven most exploited WordPress vulnerabilities, how attackers find them, and the straightforward fixes that eliminate each risk."
-      datePublished="2026-03-03"
+      datePublished="2024-10-22"
       dateModified="2026-03-03"
       author="WebAdish"
       category="WordPress Security"

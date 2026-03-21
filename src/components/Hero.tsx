@@ -21,7 +21,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
     title,
     subtitle,
-    ctaText = 'Request a Security Review',
+    ctaText = 'Request Incident Response',
     ctaLink = '/contact',
     showTrust = true,
     showImage = false,
@@ -62,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({
                     <div className={`${styles.heroText} ${!showImage ? styles.heroTextCentered : ''}`}>
                         <div className={styles.badge}>
                             <ShieldCheck size={16} className={styles.badgeIcon} />
-                            <span>#1 WordPress Security & Maintenance Agency</span>
+                            <span>Premium WordPress Incident Response & Security</span>
                         </div>
 
                         <h1 ref={titleRef} dangerouslySetInnerHTML={{ __html: title }}></h1>
@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({
 
                         {showTrust && (
                             <div className={styles.trustLabel}>
-                                Trusted by agencies and businesses across the United Kingdom
+                                Trusted by agencies and businesses across the United Kingdom, backed by 20+ years in business
                             </div>
                         )}
                     </div>

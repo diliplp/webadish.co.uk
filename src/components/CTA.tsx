@@ -10,9 +10,9 @@ interface CTAProps {
 }
 
 const CTA: React.FC<CTAProps> = ({
-    title = "Ready to Secure Your WordPress Site?",
-    subtitle = "Don't wait for a hack to happen. Proactive maintenance is 10x cheaper than recovery.",
-    btnText = "Get Started Now",
+    title = "Need WordPress Incident Response?",
+    subtitle = "When revenue, rankings, and customer trust are on the line, we move fast and fix the root cause.",
+    btnText = "Request a Response Call",
     btnLink = "/contact"
 }) => {
     return (

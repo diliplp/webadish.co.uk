@@ -46,7 +46,7 @@ export default function CTOChecklistPage() {
     <BlogPostLayout
       title="How to Choose a WordPress Security Agency (CTO Checklist)"
       lead="A structured evaluation framework for CTOs and technical decision-makers assessing WordPress security providers. Covers SLAs, certifications, response times, and red flags to watch for."
-      datePublished="2026-03-03"
+      datePublished="2025-01-16"
       dateModified="2026-03-03"
       author="WebAdish"
       category="Guides"
