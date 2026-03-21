@@ -300,6 +300,115 @@ export default function CaseStudies() {
         </div>
       </section>
 
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <h2>Additional engagements</h2>
+              <p style={{ color: '#a1a1aa', maxWidth: '720px', margin: '1rem auto 0' }}>
+                Alongside incident recovery, we also support retained security and hardening work for other high-value WordPress environments.
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '1.5rem',
+              }}
+            >
+              {[
+                {
+                  sector: 'Insurance & Finance',
+                  title: 'UK Insurance Portal Migration',
+                  challenge:
+                    'An insurance portal was running on an outdated WordPress environment with multiple known vulnerabilities while handling sensitive customer data.',
+                  solution:
+                    'We performed a full security audit, migrated the site onto a hardened stack, and introduced ongoing monitoring and access controls.',
+                  results: [
+                    '40% faster incident response',
+                    'Zero downtime since migration',
+                    'GDPR audit compliance improved',
+                  ],
+                },
+                {
+                  sector: 'Creative Agency',
+                  title: 'London Creative Agency AI Portal',
+                  challenge:
+                    'A fast-growing AI membership platform exposed security gaps that could have affected proprietary assets and client data.',
+                  solution:
+                    'We introduced custom WAF rules, deployment security reviews, and a higher-assurance recovery guarantee within a retained arrangement.',
+                  results: [
+                    '4-hour recovery guarantee',
+                    'Automated security scorecards',
+                    'Reduced deployment risk',
+                  ],
+                },
+                {
+                  sector: 'eCommerce Retail',
+                  title: 'WooCommerce Retail Security Overhaul',
+                  challenge:
+                    'A high-volume retailer needed stronger protection around checkout, customer data, and uptime during active trading periods.',
+                  solution:
+                    'We hardened the WooCommerce environment, improved monitoring, and layered protections around payment and admin access.',
+                  results: [
+                    '99.99% uptime target support',
+                    'No major security incidents during retained period',
+                    'Stronger operational resilience',
+                  ],
+                },
+              ].map((study) => (
+                <article
+                  key={study.title}
+                  style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '14px',
+                    padding: '1.5rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      alignSelf: 'flex-start',
+                      background: 'rgba(var(--primary-rgb), 0.12)',
+                      color: 'var(--primary)',
+                      padding: '0.3rem 0.75rem',
+                      borderRadius: '999px',
+                      fontSize: '0.78rem',
+                      fontWeight: 700,
+                    }}
+                  >
+                    {study.sector}
+                  </div>
+                  <h3 style={{ margin: 0 }}>{study.title}</h3>
+                  <div>
+                    <div style={{ color: '#f4f4f5', fontWeight: 700, marginBottom: '0.35rem' }}>Challenge</div>
+                    <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{study.challenge}</p>
+                  </div>
+                  <div>
+                    <div style={{ color: '#f4f4f5', fontWeight: 700, marginBottom: '0.35rem' }}>Solution</div>
+                    <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{study.solution}</p>
+                  </div>
+                  <div>
+                    <div style={{ color: '#f4f4f5', fontWeight: 700, marginBottom: '0.5rem' }}>Results</div>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.5rem' }}>
+                      {study.results.map((result) => (
+                        <li key={result} style={{ color: '#d4d4d8' }}>
+                          &#10003; {result}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FAQ items={faqItems} />
 
       <CTA
