@@ -6,7 +6,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
     title: 'Contact WebAdish | WordPress Security Experts UK',
-    description: 'Contact WebAdish for WordPress security audits, maintenance plans, malware removal, and emergency hacked site recovery. WordPress security specialists serving UK businesses.',
+    description: 'Contact WebAdish for WordPress security audits, protection retainers, malware removal, and emergency hacked site recovery. WordPress security specialists serving UK businesses.',
     path: '/contact',
 });
 
@@ -18,7 +18,7 @@ export default function Contact() {
         },
         {
             question: "Do you offer white-label services?",
-            answer: "Yes, we partner with many digital agencies to provide white-label WordPress maintenance and security services for their clients."
+            answer: "Yes, we partner with many digital agencies to provide white-label WordPress security protection and security services for their clients."
         },
         {
             question: "How much does a security audit cost?",

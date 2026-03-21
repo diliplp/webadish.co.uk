@@ -16,7 +16,18 @@ export const metadata: Metadata = {
   description:
     'Security-first WordPress retainers for UK businesses. 24/7 monitoring, emergency recovery, malware removal, and maintenance from a specialist WordPress security agency.',
   metadataBase: new URL('https://www.webadish.co.uk'),
-  manifest: '/manifest.json',
+  manifest: '/site.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+  },
+  appleWebApp: {
+    title: 'WebAdish',
+  },
 };
 
 export default function RootLayout({

@@ -33,7 +33,7 @@ const faqItems = [
   {
     question: 'My site was hacked before and it came back. Why does this keep happening?',
     answer:
-      'Repeat hacks usually mean the previous fix removed visible malware but missed the actual access path or persistence. Backdoors, compromised admin accounts, cron abuse, and unsafe plugins are common reasons cheap cleanups fail.',
+      'Repeat hacks usually mean the previous fix removed visible malware but missed the actual access path or persistence. Backdoors, compromised admin accounts, cron abuse, and unsafe plugins are common reasons low value cleanups fail.',
   },
   {
     question: 'Will I lose any data during the recovery?',
@@ -120,7 +120,7 @@ export default function HackedWebsiteRecoveryUK() {
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
             <h2>Our WordPress incident response process</h2>
             <p style={{ color: '#a1a1aa' }}>
-              Designed for organisations that need more than a cheap malware sweep.
+              Designed for organisations that need more than a low value malware sweep.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
@@ -253,7 +253,7 @@ export default function HackedWebsiteRecoveryUK() {
               → WordPress Malware Removal UK — Emergency Cleanup Service
             </Link>
             <Link href="/wordpress-maintenance-uk" style={{ color: '#ef4444', textDecoration: 'none', fontSize: '0.95rem' }}>
-              → WordPress Maintenance Service UK — Prevent Future Hacks
+              → WordPress Security Protection UK — Prevent Future Hacks
             </Link>
           </div>
         </div>

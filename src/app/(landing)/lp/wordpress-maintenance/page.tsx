@@ -3,8 +3,8 @@ import LandingContactForm from '@/components/LandingContactForm';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Maintenance Plans UK | From £449/month | WebAdish',
-  description: 'Proactive WordPress maintenance and security for UK businesses. Daily backups, weekly updates, 24/7 monitoring, and priority support from £449/month.',
+  title: 'WordPress Protection Retainers UK | From £1,000/month | WebAdish',
+  description: 'Proactive WordPress security protection and security for UK businesses. Daily backups, weekly updates, 24/7 monitoring, and priority support from £1,000/month.',
   path: '/lp/wordpress-maintenance',
   noIndex: true,
 });
@@ -23,7 +23,7 @@ export default function MaintenanceLP() {
     'Daily encrypted backups with 1-click restore',
     'Optimised performance boosting conversions',
     '24/7 uptime monitoring with instant alerts',
-    'Proactive security from £449/month',
+    'Proactive security from £1,000/month',
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function MaintenanceLP() {
             maxWidth: '600px',
             margin: '0 auto',
           }}>
-            Proactive WordPress maintenance that keeps your site secure, fast, and up-to-date. So you can focus on running your business.
+            Proactive WordPress security protection that keeps your site secure, fast, and up-to-date. So you can focus on running your business.
           </p>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function MaintenanceLP() {
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ color: 'var(--foreground)' }}>Standard</h3>
-                  <span style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '1.25rem' }}>£449/mo</span>
+                  <span style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '1.25rem' }}>£1,000/mo</span>
                 </div>
                 <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   Daily backups, weekly updates, 24/7 uptime monitoring, monthly security scan, and priority email support.
@@ -160,7 +160,7 @@ export default function MaintenanceLP() {
                 </span>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ color: 'var(--foreground)' }}>Pro</h3>
-                  <span style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '1.25rem' }}>£999/mo</span>
+                  <span style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '1.25rem' }}>£3,000/mo</span>
                 </div>
                 <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   Everything in Standard plus speed optimisation, weekly security scans, unlimited small edits, phone support, and quarterly security audit.
@@ -184,7 +184,7 @@ export default function MaintenanceLP() {
                     Prevention saves 6x the cost of recovery
                   </p>
                   <p style={{ color: '#a1a1aa', fontSize: '0.85rem' }}>
-                    Average hack recovery: £3,000+. Our maintenance: from £449/month.
+                    Average hack recovery: £3,000+. Our maintenance: from £1,000/month.
                   </p>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function MaintenanceLP() {
 
             {/* Right: form */}
             <LandingContactForm
-              formTitle="Start Your Maintenance Plan"
+              formTitle="Start Your Protection Retainer"
               buttonText="Get Started Today"
             />
           </div>

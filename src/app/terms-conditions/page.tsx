@@ -2,7 +2,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
     title: 'Terms & Conditions | WebAdish',
-    description: 'Terms and Conditions for WebAdish WordPress security and maintenance services.',
+    description: 'Terms and Conditions for WebAdish WordPress security and security protections.',
     path: '/terms-conditions',
 });
 

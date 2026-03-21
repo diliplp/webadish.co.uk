@@ -23,7 +23,7 @@ export default function Home() {
         'We prioritise active incidents immediately. The first goal is containment and risk reduction, followed by proper investigation and clean recovery.',
     },
     {
-      question: 'Why do cheap malware cleanups often fail?',
+      question: 'Why do basic malware cleanups often fail?',
       answer:
         'Because they usually remove visible malware without identifying the original access point, hidden backdoors, compromised accounts, or infrastructure weaknesses that allow reinfection.',
     },
@@ -173,7 +173,7 @@ export default function Home() {
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
               <h3>Emergency Containment</h3>
-              <p><strong>From £1,499</strong></p>
+              <p><strong>From £1,500</strong></p>
               <p>For non-critical websites needing immediate cleanup.</p>
               <p>Malware removal</p>
               <p>Site restoration</p>
@@ -183,7 +183,7 @@ export default function Home() {
             <article className={styles.highlightCard}>
               <div className={styles.planLabel}>Most clients choose this</div>
               <h3>Incident Response Program</h3>
-              <p><strong>£4,999 – £7,499</strong></p>
+              <p><strong>£3,000 – £8,000</strong></p>
               <p>Complete recovery and protection against reinfection.</p>
               <p>Deep forensic investigation</p>
               <p>Root cause identification</p>
@@ -317,7 +317,7 @@ export default function Home() {
             <p>Once your website is secured, ongoing protection is critical.</p>
             <p>
               <Link href="https://webadish.com/" style={{ color: 'var(--primary)' }}>
-                Continue with our maintenance &amp; security plans
+                Continue with our ongoing security protection
               </Link>
             </p>
           </div>

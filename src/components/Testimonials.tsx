@@ -12,7 +12,7 @@ const Testimonials = () => {
         {
             name: 'Michael Clarke',
             role: 'Founder, Clarke Digital',
-            content: 'The ongoing maintenance plans give me complete peace of mind. I no longer worry about updates breaking my client sites. fast, professional, and reliable.',
+            content: 'The ongoing protection retainers give me complete peace of mind. I no longer worry about updates breaking my client sites. fast, professional, and reliable.',
             rating: 5
         },
         {

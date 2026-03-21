@@ -113,11 +113,11 @@ export default function WhyWordPressSitesGetHackedPage() {
         Your hosting environment is the foundation your WordPress site sits on. If the server is misconfigured, running outdated software, or sharing resources with compromised neighbour sites, no amount of WordPress-level security will protect you.
       </p>
       <p>
-        On cheap shared hosting, a vulnerability in one site on the server can allow an attacker to traverse to other accounts. Outdated PHP versions (anything below 8.1 in 2026) contain known security vulnerabilities that are no longer patched. Missing server-level protections like a web application firewall leave your site exposed to attacks that could be blocked before they reach WordPress.
+        On low value shared hosting, a vulnerability in one site on the server can allow an attacker to traverse to other accounts. Outdated PHP versions (anything below 8.1 in 2026) contain known security vulnerabilities that are no longer patched. Missing server-level protections like a web application firewall leave your site exposed to attacks that could be blocked before they reach WordPress.
       </p>
       <h3>Why It Is So Common</h3>
       <p>
-        Hosting is often chosen on price alone. The cheapest shared hosting plans pack hundreds of sites onto a single server with minimal isolation between accounts. Site owners rarely check their PHP version, server software versions, or hosting security configuration after the initial setup.
+        Hosting is often chosen on price alone. The low valueest shared hosting plans pack hundreds of sites onto a single server with minimal isolation between accounts. Site owners rarely check their PHP version, server software versions, or hosting security configuration after the initial setup.
       </p>
       <h3>The Fix</h3>
       <ul>

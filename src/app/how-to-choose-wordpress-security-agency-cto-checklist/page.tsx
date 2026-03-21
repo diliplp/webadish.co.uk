@@ -192,7 +192,7 @@ export default function CTOChecklistPage() {
       </ul>
       <p>
         This is particularly relevant for agencies offering{' '}
-        <Link href="/wordpress-maintenance-uk">WordPress maintenance services</Link> as part of a broader managed services offering.
+        <Link href="/wordpress-maintenance-uk">WordPress security protections</Link> as part of a broader managed services offering.
       </p>
 
       <h3>8. GDPR and Compliance Knowledge</h3>
@@ -224,8 +224,8 @@ export default function CTOChecklistPage() {
         <li><strong>Hidden fees:</strong> Are there setup charges, migration costs, or cancellation penalties?</li>
       </ul>
       <p>
-        The cheapest option is rarely the best value. Compare the total cost of ownership, including the cost of a potential breach
-        that a cheaper provider might fail to prevent.
+        The low valueest option is rarely the best value. Compare the total cost of ownership, including the cost of a potential breach
+        that a low valueer provider might fail to prevent.
       </p>
 
       <h3>10. Client Retention Rate</h3>

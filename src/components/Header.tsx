@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 
 const SERVICE_LINKS = [
     { href: '/wordpress-security-audit', label: 'Security Audit' },
-    { href: '/wordpress-maintenance-uk', label: 'WordPress Maintenance' },
+    { href: '/wordpress-maintenance-uk', label: 'Security Protection' },
     { href: '/hacked-website-recovery-uk', label: 'Hacked Site Recovery' },
     { href: '/wordpress-malware-removal', label: 'Malware Removal' },
     { href: '/wordpress-security-retainer', label: 'Security Retainer' },

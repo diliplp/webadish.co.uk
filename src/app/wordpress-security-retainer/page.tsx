@@ -15,7 +15,7 @@ export const metadata = generatePageMetadata({
   title:
     'WordPress Security Retainer UK | Enterprise-Grade Protection | WebAdish',
   description:
-    'High-ticket WordPress security retainers for UK businesses and agencies. Dedicated security team, SLA guarantees, and executive reporting from £2,999/month.',
+    'High-ticket WordPress security retainers for UK businesses and agencies. Dedicated security team, SLA guarantees, and executive reporting from £1,000/month.',
   path: '/wordpress-security-retainer',
 });
 
@@ -67,7 +67,7 @@ export default function WordPressSecurityRetainer() {
     'WordPress Security Retainer',
     'Enterprise-grade WordPress security retainers for UK businesses and agencies. Dedicated security team, SLA guarantees, and executive reporting.',
     '/wordpress-security-retainer',
-    'From £2,999/month'
+    'From £1,000/month'
   );
 
   const faqSchema = generateFAQSchema(faqItems);

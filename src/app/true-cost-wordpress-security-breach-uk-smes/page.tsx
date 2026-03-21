@@ -107,7 +107,7 @@ export default function TrueCostBreachPage() {
       <p>
         The average downtime for a WordPress breach where professional help is engaged promptly is 24 to 72 hours. Without
         professional support or without adequate backups, downtime can extend to one or two weeks. For sites that rely on{' '}
-        <Link href="/wordpress-maintenance-uk">ongoing WordPress maintenance</Link> and monitoring, downtime is typically
+        <Link href="/wordpress-maintenance-uk">ongoing WordPress security protection</Link> and monitoring, downtime is typically
         reduced to hours rather than days.
       </p>
 

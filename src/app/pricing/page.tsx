@@ -24,7 +24,7 @@ const faqItems = [
       'Pricing depends on the level of compromise, business impact, website complexity, persistence or backdoors, and the recovery depth required to secure the environment properly.',
   },
   {
-    question: 'Do most clients choose the cheapest option?',
+    question: 'Do most clients choose the lowest cost option?',
     answer:
       'No. Most businesses choose the Incident Response Program because it combines investigation, eradication, and post-recovery protection against reinfection.',
   },
@@ -45,7 +45,7 @@ export default function Pricing() {
     'WordPress Incident Response & Security Pricing',
     'High-ticket WordPress incident response and security pricing for UK businesses. Response scope is based on incident severity, business risk, and recovery complexity.',
     '/pricing',
-    '£1,499 - £12,000+'
+    '£1,500 - £12,000+'
   );
 
   const faqSchema = generateFAQSchema(faqItems);
@@ -103,7 +103,7 @@ export default function Pricing() {
               We handle active security incidents, compromised infrastructure, and business-critical systems.
             </p>
             <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
-              If you are looking for the cheapest fix, we are not the right fit.
+              If you are looking for the lowest cost fix, we are not the right fit.
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function Pricing() {
               }}
             >
               <h3 style={{ marginBottom: '0.5rem' }}>Emergency Containment</h3>
-              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>Starting from £1,499</div>
+              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>From £1,500</div>
               <p style={{ color: '#a1a1aa' }}>Immediate cleanup for low-risk incidents.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[
@@ -214,7 +214,7 @@ export default function Pricing() {
                 MOST CLIENTS CHOOSE THIS
               </div>
               <h3 style={{ marginBottom: '0.5rem' }}>Incident Response Program</h3>
-              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£4,999 – £7,499</div>
+              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£3,000 – £8,000</div>
               <p style={{ color: '#a1a1aa' }}>Full recovery and protection against reinfection.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[
@@ -324,7 +324,7 @@ export default function Pricing() {
       >
         <div className="container">
           <div style={{ maxWidth: '820px', margin: '0 auto' }}>
-            <h2 style={{ marginBottom: '1rem' }}>Why cheap fixes fail</h2>
+            <h2 style={{ marginBottom: '1rem' }}>Why basic fixes fail</h2>
             <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.75rem', marginBottom: '1.5rem' }}>
               {[
                 'Visible malware removed, hidden access remains',

@@ -15,7 +15,7 @@ const Footer = () => {
                             <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={245} height={70} style={{ width: 'auto', height: '52px' }} />
                         </Link>
                         <p className={styles.description}>
-                            Specialist WordPress security agency for UK businesses. High-ticket security retainers, maintenance, and emergency recovery.
+                            Specialist WordPress security agency for UK businesses. High-ticket security retainers, ongoing protection, and emergency response.
                         </p>
                     </div>
 
@@ -23,7 +23,7 @@ const Footer = () => {
                         <h4>Services</h4>
                         <ul>
                             <li><Link href="/wordpress-security-audit">Security Audit</Link></li>
-                            <li><Link href="/wordpress-maintenance-uk">Maintenance</Link></li>
+                            <li><Link href="/wordpress-maintenance-uk">Security Protection</Link></li>
                             <li><Link href="/hacked-website-recovery-uk">Hacked Recovery</Link></li>
                             <li><Link href="/wordpress-malware-removal">Malware Removal</Link></li>
                             <li><Link href="/wordpress-security-retainer">Security Retainer</Link></li>

@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
     title: 'About WebAdish | UK WordPress Security Agency',
-    description: 'WebAdish is a specialist WordPress security agency serving UK businesses. Learn about our mission, team, and security-first approach to WordPress maintenance.',
+    description: 'WebAdish is a specialist WordPress security agency serving UK businesses. Learn about our mission, team, and security-first approach to WordPress security protection.',
     path: '/about-webadish-web-agency',
 });
 

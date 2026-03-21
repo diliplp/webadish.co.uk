@@ -163,7 +163,7 @@ export default function GDPRWordPressPage() {
         <li>Documented recovery procedures with defined Recovery Time Objectives (RTO).</li>
       </ul>
       <p>
-        A <Link href="/wordpress-maintenance-uk">WordPress maintenance plan</Link> that includes managed backups with tested
+        A <Link href="/wordpress-maintenance-uk">WordPress protection retainer</Link> that includes managed backups with tested
         restoration procedures directly supports GDPR compliance.
       </p>
 

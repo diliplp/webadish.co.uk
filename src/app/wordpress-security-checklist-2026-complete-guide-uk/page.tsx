@@ -235,7 +235,7 @@ export default function WordPressSecurityChecklist2026Page() {
         <li>Update your GDPR records of processing activities and data protection impact assessments.</li>
       </ul>
       <p>
-        For businesses that prefer to hand off this ongoing responsibility, our <Link href="/wordpress-maintenance-uk">WordPress maintenance service</Link> covers updates, monitoring, backups, and security hardening on a monthly retainer basis.
+        For businesses that prefer to hand off this ongoing responsibility, our <Link href="/wordpress-maintenance-uk">WordPress security protection</Link> covers updates, monitoring, backups, and security hardening on a monthly retainer basis.
       </p>
 
       <h2>Final Thoughts</h2>
