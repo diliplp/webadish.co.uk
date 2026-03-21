@@ -5,6 +5,9 @@ import Link from 'next/link';
 import styles from './CookieBanner.module.scss';
 
 const CONSENT_KEY = 'wa-cookie-consent';
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-NZLQFW58';
+const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17995549251';
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export function injectTrackingScripts() {
   if (typeof document === 'undefined') return;
@@ -17,33 +20,38 @@ export function injectTrackingScripts() {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NZLQFW58');`;
+})(window,document,'script','dataLayer','${GTM_ID}');`;
   document.head.appendChild(gtm);
 
-  // Google Ads
-  const adsJs = document.createElement('script');
-  adsJs.async = true;
-  adsJs.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17995549251';
-  document.head.appendChild(adsJs);
+  // Google Ads / GA4
+  if (GA_ID || ADS_ID) {
+    const gtagJs = document.createElement('script');
+    gtagJs.id = 'wa-gtag-js';
+    gtagJs.async = true;
+    gtagJs.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID || ADS_ID}`;
+    document.head.appendChild(gtagJs);
 
-  const adsConfig = document.createElement('script');
-  adsConfig.id = 'wa-gtag';
-  adsConfig.innerHTML = `window.dataLayer = window.dataLayer || [];
+    const trackingConfig = document.createElement('script');
+    trackingConfig.id = 'wa-gtag';
+    trackingConfig.innerHTML = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'AW-17995549251');`;
-  document.head.appendChild(adsConfig);
+${GA_ID ? `gtag('config', '${GA_ID}');` : ''}
+${ADS_ID ? `gtag('config', '${ADS_ID}');` : ''}`;
+    document.head.appendChild(trackingConfig);
+  }
 }
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !localStorage.getItem(CONSENT_KEY);
+  });
 
   useEffect(() => {
     const consent = localStorage.getItem(CONSENT_KEY);
     if (consent === 'accepted') {
       injectTrackingScripts();
-    } else if (!consent) {
-      setVisible(true);
     }
   }, []);
 
@@ -66,7 +74,7 @@ export default function CookieBanner() {
         <div className={styles.text}>
           <strong>Cookies &amp; Privacy</strong>
           <p>
-            We use cookies for analytics (Vercel) and advertising (Google Ads / GTM) to understand how visitors use our site and to measure ad performance. Strictly necessary cookies are always active.{' '}
+            We use cookies for analytics (Vercel and Google Analytics, if enabled) and advertising (Google Ads / GTM) to understand how visitors use our site and to measure ad performance. Strictly necessary cookies are always active.{' '}
             <Link href="/cookie-policy" className={styles.link}>Cookie Policy</Link>
           </p>
         </div>
