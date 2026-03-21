@@ -324,6 +324,14 @@ export default function Home() {
         btnText="Request Emergency Assessment Now"
         btnLink="/contact"
       />
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: 0 }}>
+        <div className="container">
+          <p style={{ textAlign: 'center', color: '#a1a1aa', maxWidth: '860px', margin: '0 auto' }}>
+            We specialize in WordPress security, incident response, and ongoing protection for business-critical websites.
+          </p>
+        </div>
+      </section>
     </>
   );
 }
