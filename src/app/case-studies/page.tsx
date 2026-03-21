@@ -414,6 +414,42 @@ export default function CaseStudies() {
 
       <FAQ items={faqItems} />
 
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)', paddingTop: 0 }}>
+        <div className="container">
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Continue to the Right Next Step</h2>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '1rem',
+              }}
+            >
+              {[
+                { href: '/pricing', label: 'View Pricing', desc: 'See incident response and monthly retainer ranges.' },
+                { href: '/wordpress-security-audit', label: 'Security Audit', desc: 'Best next step for non-urgent prospects.' },
+                { href: '/contact', label: 'Request Assessment', desc: 'Talk to the team about a similar issue.' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    background: 'var(--background)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <div style={{ color: 'var(--foreground)', fontWeight: 700, marginBottom: '0.35rem' }}>{item.label}</div>
+                  <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.6, fontSize: '0.92rem' }}>{item.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTA
         title="Facing a similar issue?"
         subtitle="Request Emergency Assessment. Response within 30 minutes."

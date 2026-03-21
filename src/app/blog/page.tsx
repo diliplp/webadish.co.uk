@@ -38,6 +38,36 @@ export default function BlogIndex() {
 
       <section className="section-padding">
         <div className="container">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1rem',
+              marginBottom: '2rem',
+            }}
+          >
+            {[
+              { href: '/wordpress-security-audit', label: 'Security Audit', desc: 'Start with a formal review of your risk posture.' },
+              { href: '/hacked-website-recovery-uk', label: 'Hacked Site Recovery', desc: 'For urgent malware, blacklist, and compromise response.' },
+              { href: '/wordpress-security-retainer', label: 'Security Retainer', desc: 'For ongoing monitoring and monthly security oversight.' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '12px',
+                  padding: '1.25rem',
+                  textDecoration: 'none',
+                }}
+              >
+                <div style={{ color: 'var(--foreground)', fontWeight: 700, marginBottom: '0.35rem' }}>{item.label}</div>
+                <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.6, fontSize: '0.92rem' }}>{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+
           {/* Category tags */}
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
             {categories.map((cat) => (
