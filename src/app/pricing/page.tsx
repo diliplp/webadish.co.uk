@@ -73,11 +73,17 @@ export default function Pricing() {
       >
         <div className="container">
           <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ marginBottom: '1rem', color: '#d4d4d8', fontWeight: 700 }}>
+              Led by 20+ years of experience in infrastructure, cybersecurity, and enterprise systems.
+            </p>
             <a href="#assessment-cta" className="btn btn-primary">
               Request Assessment
             </a>
             <p style={{ marginTop: '1rem', color: '#d4d4d8', fontWeight: 700 }}>
               Critical incidents are prioritized immediately upon confirmation.
+            </p>
+            <p style={{ marginTop: '0.5rem', color: '#a1a1aa' }}>
+              We prioritise a limited number of active incidents at a time.
             </p>
           </div>
         </div>
@@ -136,7 +142,7 @@ export default function Pricing() {
       >
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3rem' }}>
-            <h2>Service tiers</h2>
+            <h2>Based on your situation, we recommend the appropriate level of response.</h2>
           </div>
 
           <div
@@ -222,6 +228,9 @@ export default function Pricing() {
               </ul>
               <p style={{ color: 'var(--primary)', fontWeight: 700, margin: 0 }}>
                 Most clients choose this to avoid repeat incidents
+              </p>
+              <p style={{ color: '#d4d4d8', fontWeight: 700, marginTop: '0.75rem', marginBottom: 0 }}>
+                Best balance of recovery and long-term protection
               </p>
             </div>
 
