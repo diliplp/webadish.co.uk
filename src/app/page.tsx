@@ -317,7 +317,7 @@ export default function Home() {
       <FAQ items={faqs} />
 
       <CTA
-        title="Don’t wait until the damage spreads further."
+        title="Every hour increases risk and damage."
         subtitle="Request Emergency Assessment Now. Response within 30 minutes."
         btnText="Request Emergency Assessment Now"
         btnLink="/contact"
