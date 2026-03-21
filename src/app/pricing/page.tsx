@@ -76,6 +76,9 @@ export default function Pricing() {
             <a href="#assessment-cta" className="btn btn-primary">
               Request Assessment
             </a>
+            <p style={{ marginTop: '1rem', color: '#d4d4d8', fontWeight: 700 }}>
+              Critical incidents are prioritized immediately upon confirmation.
+            </p>
           </div>
         </div>
       </section>
@@ -197,7 +200,7 @@ export default function Pricing() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                RECOMMENDED
+                MOST CLIENTS CHOOSE THIS
               </div>
               <h3 style={{ marginBottom: '0.5rem' }}>Incident Response Program</h3>
               <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£4,999 – £7,499</div>
@@ -228,8 +231,26 @@ export default function Pricing() {
                 border: '1px solid var(--border)',
                 borderRadius: '1rem',
                 padding: '2rem',
+                position: 'relative',
               }}
             >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: '#ef4444',
+                  color: '#fff',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  padding: '4px 16px',
+                  borderRadius: '20px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                FOR BUSINESS-CRITICAL SYSTEMS
+              </div>
               <h3 style={{ marginBottom: '0.5rem' }}>Business Continuity Protection</h3>
               <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£8,000 – £12,000+</div>
               <p style={{ color: '#a1a1aa' }}>For businesses where downtime is not an option.</p>
