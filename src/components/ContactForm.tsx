@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { track } from '@vercel/analytics';
 import styles from './ContactForm.module.scss';
+import { trackEvent } from '@/lib/tracking';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -28,6 +29,7 @@ const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [hasTrackedStart, setHasTrackedStart] = useState(false);
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
@@ -43,8 +45,18 @@ const ContactForm = () => {
         });
     }, []);
 
+    const trackFormStart = () => {
+        if (hasTrackedStart) return;
+        setHasTrackedStart(true);
+        trackEvent('form_start', {
+            form_name: 'uk_contact',
+            page_path: utmData.landing_page || window.location.pathname,
+        });
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        trackFormStart();
         setIsSubmitting(true);
         setError(null);
         setIsSuccess(false);
@@ -75,13 +87,24 @@ const ContactForm = () => {
                 source: utmData.utm_source || 'direct',
                 medium: utmData.utm_medium || 'organic',
             });
+            trackEvent('form_submit_success', {
+                form_name: 'uk_contact',
+                page_path: utmData.landing_page || window.location.pathname,
+                source: utmData.utm_source || 'direct',
+                medium: utmData.utm_medium || 'organic',
+            });
             setFormData({ name: '', email: '', website: '', message: '', company: '' });
+            setHasTrackedStart(false);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
                 setError('Request timed out. Please try again in a moment.');
             } else {
                 setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
             }
+            trackEvent('form_submit_error', {
+                form_name: 'uk_contact',
+                page_path: utmData.landing_page || window.location.pathname,
+            });
         } finally {
             setIsSubmitting(false);
         }
@@ -113,6 +136,7 @@ const ContactForm = () => {
                     name="name"
                     required
                     value={formData.name}
+                    onFocus={trackFormStart}
                     onChange={handleChange}
                 />
             </div>
@@ -125,6 +149,7 @@ const ContactForm = () => {
                     name="email"
                     required
                     value={formData.email}
+                    onFocus={trackFormStart}
                     onChange={handleChange}
                 />
             </div>
@@ -136,6 +161,7 @@ const ContactForm = () => {
                     id="website"
                     name="website"
                     value={formData.website}
+                    onFocus={trackFormStart}
                     onChange={handleChange}
                 />
             </div>
@@ -148,6 +174,7 @@ const ContactForm = () => {
                     rows={5}
                     required
                     value={formData.message}
+                    onFocus={trackFormStart}
                     onChange={handleChange}
                 ></textarea>
             </div>

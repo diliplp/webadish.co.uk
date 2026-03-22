@@ -51,6 +51,7 @@ export default function GDPRWordPressPage() {
       author="WebAdish"
       category="WordPress Security"
       slug="gdpr-wordpress-security-uk-business-owners"
+      faqItems={faqItems}
       summaryPoints={[
         'UK GDPR requires WordPress site owners to implement appropriate technical security measures to protect personal data.',
         'Data breach notification to the ICO must occur within 72 hours, making rapid detection and response capabilities essential.',

@@ -1,8 +1,10 @@
 import ContactForm from '@/components/ContactForm';
 import FAQ from '@/components/FAQ';
+import StructuredData from '@/components/StructuredData';
 import { Mail, Phone, ShieldCheck } from 'lucide-react';
 import styles from './page.module.scss';
 import { generatePageMetadata } from '@/lib/seo';
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata = generatePageMetadata({
     title: 'Contact WebAdish UK | +44 7344 540450 | sales@webadish.co.uk',
@@ -26,8 +28,25 @@ export default function Contact() {
         }
     ];
 
+    const schemas = [
+        generateBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Contact', url: '/contact' },
+        ]),
+        generateFAQSchema(faqs),
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            name: 'Contact WebAdish UK',
+            url: 'https://www.webadish.co.uk/contact',
+            telephone: '+447344540450',
+            email: 'sales@webadish.co.uk',
+        },
+    ];
+
     return (
         <>
+            <StructuredData schemas={schemas} />
             <section className={styles.pageHeader}>
                 <div className="container">
                     <div className={styles.badge}>

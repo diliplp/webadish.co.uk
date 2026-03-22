@@ -51,6 +51,7 @@ export default function TrueCostBreachPage() {
       author="WebAdish"
       category="WordPress Security"
       slug="true-cost-wordpress-security-breach-uk-smes"
+      faqItems={faqItems}
       summaryPoints={[
         'The total cost of a WordPress breach for UK SMEs typically ranges from £5,000 to £50,000 or more when all direct and indirect costs are included.',
         'GDPR fines, even for small businesses, can reach tens of thousands of pounds, and the ICO is actively enforcing against organisations of all sizes.',

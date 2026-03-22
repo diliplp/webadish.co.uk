@@ -51,6 +51,7 @@ export default function WhyWordPressSitesGetHackedPage() {
       author="WebAdish"
       category="WordPress Security"
       slug="why-wordpress-sites-get-hacked-7-common-vulnerabilities"
+      faqItems={faqItems}
       summaryPoints={[
         'Outdated plugins and themes are responsible for the majority of WordPress compromises.',
         'Weak passwords without two-factor authentication are the easiest entry point for attackers.',

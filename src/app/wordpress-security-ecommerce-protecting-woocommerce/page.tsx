@@ -51,6 +51,7 @@ export default function WordPressSecurityEcommercePage() {
       author="WebAdish"
       category="WordPress Security"
       slug="wordpress-security-ecommerce-protecting-woocommerce"
+      faqItems={faqItems}
       summaryPoints={[
         'WooCommerce stores are high-value targets because they handle payment data and customer personal information.',
         'PCI DSS compliance is a contractual requirement, not optional, even when using hosted payment gateways.',

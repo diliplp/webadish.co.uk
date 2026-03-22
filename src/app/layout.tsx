@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CookieBanner from '@/components/CookieBanner';
 import { Analytics } from '@vercel/analytics/next';
+import TrackingListener from '@/components/TrackingListener';
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
+        <TrackingListener />
         <Header />
         <main>{children}</main>
         <Footer />

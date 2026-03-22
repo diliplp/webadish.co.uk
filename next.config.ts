@@ -63,6 +63,8 @@ const nextConfig: NextConfig = {
       // Old WordPress hacked-site post → new blog post (357 impressions, consolidate link equity)
       { source: '/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london', destination: '/wordpress-site-keeps-getting-hacked', permanent: true },
       { source: '/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london/', destination: '/wordpress-site-keeps-getting-hacked', permanent: true },
+      { source: '/gdpr-wordpress-security-uk-business-owners', destination: '/gdpr-wordpress-security', permanent: true },
+      { source: '/gdpr-wordpress-security-uk-business-owners/', destination: '/gdpr-wordpress-security', permanent: true },
 
       // WordPress-specific paths (from old WordPress site — fix 404s + 403s in GSC)
       { source: '/wp-login.php', destination: '/', permanent: true },

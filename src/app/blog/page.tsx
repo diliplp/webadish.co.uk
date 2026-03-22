@@ -14,17 +14,37 @@ export const metadata = generatePageMetadata({
 });
 
 export default function BlogIndex() {
+  const sortedPosts = [...BLOG_POSTS].sort(
+    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
+  );
+
   const schemas = [
     generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Blog', url: '/blog' },
     ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'WebAdish UK Blog',
+      url: 'https://www.webadish.co.uk/blog',
+      description:
+        'WordPress security, incident response, GDPR, and malware recovery insights for UK businesses.',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'WebAdish UK Blog Articles',
+      itemListElement: sortedPosts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `https://www.webadish.co.uk/${post.slug}`,
+        name: post.title,
+      })),
+    },
   ];
 
   const categories = ['All', ...Array.from(new Set(BLOG_POSTS.map((p) => p.category)))];
-  const sortedPosts = [...BLOG_POSTS].sort(
-    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
-  );
 
   return (
     <>

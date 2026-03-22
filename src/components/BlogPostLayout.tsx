@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import StructuredData from '@/components/StructuredData';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import styles from './BlogPostLayout.module.scss';
 
 interface BlogPostLayoutProps {
@@ -16,6 +16,7 @@ interface BlogPostLayoutProps {
   category?: string;
   slug?: string;
   summaryPoints?: string[];
+  faqItems?: { question: string; answer: string }[];
 }
 
 export default function BlogPostLayout({
@@ -30,6 +31,7 @@ export default function BlogPostLayout({
   category,
   slug,
   summaryPoints,
+  faqItems,
 }: BlogPostLayoutProps) {
   const schemas = [];
 
@@ -52,6 +54,10 @@ export default function BlogPostLayout({
       { name: title, url: `/${slug || ''}` },
     ])
   );
+
+  if (faqItems && faqItems.length > 0) {
+    schemas.push(generateFAQSchema(faqItems));
+  }
 
   return (
     <main className={styles.wrapper}>

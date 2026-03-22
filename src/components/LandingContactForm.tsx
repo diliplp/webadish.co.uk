@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { track } from '@vercel/analytics';
+import { trackEvent } from '@/lib/tracking';
 
 interface UTMParams {
   utm_source: string;
@@ -41,6 +41,7 @@ export default function LandingContactForm({
     referrer: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [hasTrackedStart, setHasTrackedStart] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -56,9 +57,19 @@ export default function LandingContactForm({
     });
   }, []);
 
+  const trackFormStart = () => {
+    if (hasTrackedStart) return;
+    setHasTrackedStart(true);
+    trackEvent('form_start', {
+      form_name: 'uk_landing_contact',
+      page_path: utmParams.landing_page || window.location.pathname,
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.company) return; // honeypot
+    trackFormStart();
 
     setStatus('loading');
     try {
@@ -70,18 +81,28 @@ export default function LandingContactForm({
 
       if (res.ok) {
         setStatus('success');
-        track('form_submission', {
-          page: utmParams.landing_page,
+        trackEvent('form_submit_success', {
+          form_name: 'uk_landing_contact',
+          page_path: utmParams.landing_page || window.location.pathname,
           source: utmParams.utm_source || 'direct',
           medium: utmParams.utm_medium || 'none',
           campaign: utmParams.utm_campaign || 'none',
         });
         setFormData({ name: '', email: '', website: '', message: '', company: '' });
+        setHasTrackedStart(false);
       } else {
         setStatus('error');
+        trackEvent('form_submit_error', {
+          form_name: 'uk_landing_contact',
+          page_path: utmParams.landing_page || window.location.pathname,
+        });
       }
     } catch {
       setStatus('error');
+      trackEvent('form_submit_error', {
+        form_name: 'uk_landing_contact',
+        page_path: utmParams.landing_page || window.location.pathname,
+      });
     }
   };
 
@@ -133,6 +154,7 @@ export default function LandingContactForm({
             placeholder="Your name"
             required
             value={formData.name}
+            onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             style={{
               background: 'var(--background)',
@@ -148,6 +170,7 @@ export default function LandingContactForm({
             placeholder="Email address"
             required
             value={formData.email}
+            onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             style={{
               background: 'var(--background)',
@@ -163,6 +186,7 @@ export default function LandingContactForm({
             placeholder="Website URL (https://...)"
             required
             value={formData.website}
+            onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, website: e.target.value })}
             style={{
               background: 'var(--background)',

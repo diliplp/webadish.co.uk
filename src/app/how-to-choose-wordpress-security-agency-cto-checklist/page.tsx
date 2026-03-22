@@ -51,6 +51,7 @@ export default function CTOChecklistPage() {
       author="WebAdish"
       category="Guides"
       slug="how-to-choose-wordpress-security-agency-cto-checklist"
+      faqItems={faqItems}
       summaryPoints={[
         'Security plugins alone are insufficient; CTOs need a dedicated security partner with enforceable SLAs.',
         'Evaluate providers across 10 structured criteria, from incident response times to GDPR compliance knowledge.',

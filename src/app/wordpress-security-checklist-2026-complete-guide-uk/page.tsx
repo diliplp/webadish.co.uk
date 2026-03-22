@@ -51,6 +51,7 @@ export default function WordPressSecurityChecklist2026Page() {
       author="WebAdish"
       category="WordPress Security"
       slug="wordpress-security-checklist-2026-complete-guide-uk"
+      faqItems={faqItems}
       summaryPoints={[
         'Cover every security layer from hosting infrastructure through to incident response planning.',
         'Outdated plugins remain the number one attack vector in 2026 — automated updates are essential.',

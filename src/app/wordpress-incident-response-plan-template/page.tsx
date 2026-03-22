@@ -51,6 +51,7 @@ export default function IncidentResponsePlanPage() {
       author="WebAdish"
       category="Guides"
       slug="wordpress-incident-response-plan-template"
+      faqItems={faqItems}
       summaryPoints={[
         'Every WordPress site needs a documented incident response plan before an incident occurs, not during one.',
         'The six phases of incident response (Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned) each have WordPress-specific actions.',

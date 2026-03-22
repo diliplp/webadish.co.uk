@@ -70,7 +70,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'WebAdish',
   },
   {
-    slug: 'gdpr-wordpress-security-uk-business-owners',
+    slug: 'gdpr-wordpress-security',
     title: 'GDPR and WordPress Security: What UK Business Owners Must Know',
     excerpt:
       'How GDPR intersects with WordPress security obligations. Covers data breach notification requirements, technical measures, and compliance strategies.',
