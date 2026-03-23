@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import '@/styles/globals.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,6 +9,7 @@ import { Analytics } from '@vercel/analytics/next';
 import TrackingListener from '@/components/TrackingListener';
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'vzlh3nm8uo';
 
 export const metadata: Metadata = {
   title: 'WebAdish | Premium WordPress Incident Response & Security UK',
@@ -35,7 +37,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <Script
+          id="wa-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "${CLARITY_ID}");`,
+          }}
+        />
+      </head>
       <body>
         <TrackingListener />
         <Header />
