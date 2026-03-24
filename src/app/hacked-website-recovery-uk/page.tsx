@@ -88,6 +88,59 @@ export default function HackedWebsiteRecoveryUK() {
 
       <TrustSignals />
 
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem' }}>
+        <div className="container">
+          <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: '1rem', padding: '2rem' }}>
+            <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'center' }}>
+              <div>
+                <h2 style={{ marginBottom: '0.75rem' }}>Need hacked website recovery right now?</h2>
+                <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  Start with a quick triage call so we can contain the incident, assess what is at risk, and tell you whether you need fixed-fee cleanup or deeper incident response.
+                </p>
+                <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
+                  {[
+                    'Initial triage within 30 minutes during active coverage',
+                    'Google blacklist, malware, and backdoor remediation support',
+                    'Clear next-step recommendation before deeper work begins',
+                  ].map((item) => (
+                    <div key={item} style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start', color: '#d4d4d8', fontSize: '0.95rem' }}>
+                      <span style={{ color: '#ef4444', flexShrink: 0 }}>✓</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '0.9rem', padding: '1.5rem' }}>
+                <p style={{ color: '#a1a1aa', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.5rem' }}>
+                  Emergency contact options
+                </p>
+                <div style={{ display: 'grid', gap: '0.75rem' }}>
+                  <a href="tel:+447344540450" className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>
+                    Call +44 7344 540450
+                  </a>
+                  <a
+                    href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ textAlign: 'center', justifyContent: 'center' }}
+                  >
+                    WhatsApp for Immediate Triage
+                  </a>
+                  <a href="#contact-section" className="btn btn-secondary" style={{ textAlign: 'center', justifyContent: 'center' }}>
+                    Request Recovery Assessment
+                  </a>
+                </div>
+                <p style={{ color: '#a1a1aa', fontSize: '0.9rem', margin: '1rem 0 0' }}>
+                  Prefer email? Contact <a href="mailto:sales@webadish.co.uk" style={{ color: '#ef4444' }}>sales@webadish.co.uk</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
@@ -144,15 +197,16 @@ export default function HackedWebsiteRecoveryUK() {
         <div className="container">
           <div style={{ maxWidth: '760px', margin: '0 auto' }}>
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
-              <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Premium engagement tiers</h2>
+              <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Recovery pricing and response options</h2>
               <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
-                Serious hacked website recovery work needs depth, accountability, and enough time to remove the cause, not just the visible symptoms.
+                Start with the right level of response for the incident in front of you. We keep the emergency path clear, then help you move onto stronger protection after recovery.
               </p>
               <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
                 {[
+                  'Fixed-Fee Malware Cleanup: from £1,499 for contained infections that do not require deep forensic investigation',
                   'Incident Recovery: from £3,000 for single-site compromise and forensic cleanup',
                   'Revenue-Critical Response: from £6,000 for WooCommerce, lead-gen, and client-facing production websites',
-                  'Major Incident Engagement: £10,000+ for multi-site estates, agency portfolios, or deep persistence/server investigation',
+                  'Major Incident Engagement: £10,000+ for multi-site estates, agency portfolios, or deep persistence and server investigation',
                 ].map((tier) => (
                   <div key={tier} style={{ color: '#d4d4d8', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '0.75rem', padding: '0.9rem 1rem' }}>
                     {tier}
@@ -176,10 +230,57 @@ export default function HackedWebsiteRecoveryUK() {
                 ))}
               </div>
               <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                Need help with a hacked website right now? Call <strong style={{ color: '#fff' }}>+44 7344 540450</strong>
+                Need help with a hacked website right now? Call <strong style={{ color: '#fff' }}>+44 7344 540450</strong> or message us on WhatsApp for immediate triage.
               </p>
-              <a href="#contact-section" className="btn btn-primary" style={{ display: 'inline-block' }}>Request Hacked Site Recovery</a>
+              <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <a href="tel:+447344540450" className="btn btn-primary" style={{ display: 'inline-block' }}>Call Now</a>
+                <a
+                  href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ display: 'inline-block' }}
+                >
+                  WhatsApp Now
+                </a>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
+            <h2>What happens in the first 30 minutes</h2>
+            <p style={{ color: '#a1a1aa' }}>
+              Emergency visitors need clarity fast. This is the initial triage sequence we use before any deeper engagement starts.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gap: '1.25rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+            {[
+              {
+                title: '1. Contain',
+                desc: 'We confirm whether the site is actively compromised, what should be frozen, and whether access or hosting action is needed immediately.',
+              },
+              {
+                title: '2. Scope',
+                desc: 'We identify whether you are dealing with malware cleanup, repeat compromise, blacklist recovery, or a broader business-critical incident.',
+              },
+              {
+                title: '3. Recommend',
+                desc: 'You get a practical next-step recommendation with the right response tier, estimated urgency, and the fastest contact path.',
+              },
+              {
+                title: '4. Escalate',
+                desc: 'If the site is revenue-critical, we move into incident recovery and prepare the evidence, remediation, and stakeholder communication plan.',
+              },
+            ].map((item) => (
+              <div key={item.title} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '0.75rem', padding: '1.5rem' }}>
+                <h3 style={{ color: '#ef4444', fontSize: '1.05rem', marginBottom: '0.75rem' }}>{item.title}</h3>
+                <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -223,19 +324,26 @@ export default function HackedWebsiteRecoveryUK() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', margin: '0 auto', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '2rem' }}>
-            <h2>After recovery, continue protection with our maintenance and security plans</h2>
+            <h2>Turn a one-off recovery into monthly protection</h2>
             <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
               Most reinfections happen after a superficial cleanup, when the
               site is put back online without fixing the operational weaknesses
               that let the attacker in. Recovery is only the first phase.
             </p>
             <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
-              For businesses that want ongoing protection after the incident,
-              continue with our maintenance and security plans on the main website.
+              Recovery clients often move straight onto a monthly retainer so
+              the same gap does not reopen next month. If you want ongoing
+              monitoring, patch oversight, and a priority escalation path, we
+              recommend continuing with a WordPress security retainer.
             </p>
-            <Link href="https://webadish.com/" className="btn btn-primary">
-              View Ongoing Protection Plans
-            </Link>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <Link href="/wordpress-security-retainer" className="btn btn-primary">
+                View Monthly Security Retainers
+              </Link>
+              <Link href="https://webadish.com/" className="btn btn-secondary">
+                View Global Protection Plans
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -260,9 +368,9 @@ export default function HackedWebsiteRecoveryUK() {
       <FAQ items={faqItems} />
 
       <CTA
-        title="Escalate before the incident gets more expensive"
-        subtitle="Every extra hour of compromise increases revenue loss, SEO damage, customer distrust, and regulatory exposure."
-        btnText="Request Incident Response"
+        title="Escalate before the hacked site costs you more"
+        subtitle="Every extra hour of compromise increases revenue loss, SEO damage, blacklist risk, customer distrust, and regulatory exposure."
+        btnText="Request Recovery Assessment"
         btnLink="#contact-section"
       />
 
@@ -273,11 +381,12 @@ export default function HackedWebsiteRecoveryUK() {
       >
         <div className="container">
           <div style={{ maxWidth: '600px', margin: '0 auto', background: 'var(--surface)', borderRadius: '1rem', border: '1px solid var(--border)', padding: '2rem' }}>
-            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Request WordPress Incident Response</h2>
+            <h2 style={{ textAlign: 'center', marginBottom: '0.5rem' }}>Request Hacked Website Recovery</h2>
             <p style={{ textAlign: 'center', color: '#a1a1aa', marginBottom: '2rem' }}>
-              Describe what is happening, what is at risk, and any previous
-              cleanup attempts. We&apos;ll triage the incident and advise on the
-              right engagement level.
+              Tell us what is happening, what is at risk, and whether there has
+              already been a failed cleanup. We&apos;ll triage the incident and
+              advise whether you need fixed-fee cleanup, incident recovery, or
+              a longer-term protection plan.
             </p>
             <ContactForm />
           </div>
