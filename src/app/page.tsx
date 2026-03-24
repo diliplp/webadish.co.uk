@@ -165,8 +165,8 @@ export default function Home() {
             <h2>Select the Level of Response Your Situation Requires</h2>
             <p>Based on your situation, we recommend the appropriate level of response.</p>
             <p>
-              <Link href="/case-studies" style={{ color: 'var(--primary)' }}>
-                See how we recovered a compromised eCommerce website
+              <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)' }}>
+                See our hacked website recovery UK service
               </Link>
             </p>
           </div>
@@ -253,6 +253,11 @@ export default function Home() {
           </div>
           <div className={styles.sectionHeader} style={{ marginTop: '2rem' }}>
             <p><strong>That’s why reinfections are common with low-cost fixes.</strong></p>
+            <p>
+              <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)' }}>
+                Read why WordPress sites keep getting hacked after cleanup
+              </Link>
+            </p>
           </div>
         </div>
       </section>

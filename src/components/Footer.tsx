@@ -24,8 +24,8 @@ const Footer = () => {
                         <ul>
                             <li><Link href="/wordpress-security-audit">Security Audit</Link></li>
                             <li><Link href="/wordpress-maintenance-uk">Security Protection</Link></li>
-                            <li><Link href="/hacked-website-recovery-uk">Hacked Recovery</Link></li>
-                            <li><Link href="/wordpress-malware-removal">Malware Removal</Link></li>
+                            <li><Link href="/hacked-website-recovery-uk">Hacked Website Recovery UK</Link></li>
+                            <li><Link href="/wordpress-malware-removal">WordPress Malware Removal</Link></li>
                             <li><Link href="/wordpress-security-retainer">Security Retainer</Link></li>
                             <li><Link href="/web-hosting-email-services">Secure Hosting</Link></li>
                         </ul>
