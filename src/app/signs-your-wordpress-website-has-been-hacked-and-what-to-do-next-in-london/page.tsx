@@ -3,8 +3,8 @@ import { generateBreadcrumbSchema, generateArticleSchema, generateFAQSchema } fr
 import BlogPostLayout from '@/components/BlogPostLayout';
 
 export const metadata = generatePageMetadata({
-  title: 'Signs Your WordPress Website Has Been Hacked & What to Do Next | WebAdish',
-  description: 'Spot the warning signs of a hacked WordPress site and learn exactly how to fix it. Step-by-step recovery guide for UK businesses — or get professional help within hours.',
+  title: 'How to Know If Your WordPress Site Has Been Hacked: 10 Signs to Check',
+  description: 'Learn how to tell if your WordPress site has been hacked, the 10 warning signs to check, and what UK businesses should do in the first hour after discovery.',
   path: '/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london',
   type: 'article',
   publishedTime: '2025-06-15',
@@ -18,8 +18,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 ]);
 
 const articleSchema = generateArticleSchema(
-  'Signs Your WordPress Website Has Been Hacked (And What to Do Next)',
-  'Spot the warning signs of a hacked WordPress site and learn exactly how to fix it. Step-by-step recovery guide for UK businesses.',
+  'How to Know If Your WordPress Site Has Been Hacked: 10 Signs to Check',
+  'Learn how to tell if your WordPress site has been hacked, the 10 warning signs to check, and what UK businesses should do in the first hour after discovery.',
   '2025-06-15',
   '2026-03-08',
   '/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london'
@@ -55,8 +55,8 @@ export default function PostPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlogPostLayout
-        title="Signs Your WordPress Website Has Been Hacked (And What to Do Next)"
-        lead="If your WordPress site is behaving strangely, it may already be compromised. Early detection and fast action limits the damage — here is exactly what to look for and how to fix it."
+        title="How to Know If Your WordPress Site Has Been Hacked"
+        lead="If your WordPress site is behaving strangely, it may already be compromised. These are the 10 signs to check first, plus what to do in the first hour to limit damage."
         datePublished="2024-09-10"
         dateModified="2026-03-08"
         category="Recovery"

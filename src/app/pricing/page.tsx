@@ -11,9 +11,9 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Incident Response & Security Pricing | WebAdish UK',
+  title: 'WordPress Security Pricing UK | Incident Response, Audits & Retainers',
   description:
-    'High-ticket WordPress incident response and security pricing for UK businesses. Most engagements range from £3,000 to £10,000+ depending on severity, access level, and business impact.',
+    'WordPress security pricing for UK businesses, including incident response, malware removal, security audits, and monthly retainers. See fixed-fee and monthly options.',
   path: '/pricing',
 });
 

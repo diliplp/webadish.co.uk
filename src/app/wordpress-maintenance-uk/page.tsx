@@ -12,9 +12,9 @@ import CTA from '@/components/CTA';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Protection UK | Plans from £1,000/mo | WebAdish',
+  title: 'WordPress Maintenance Service UK | Security, Updates & Backups from £449/mo',
   description:
-    'WordPress security protection and monitoring service for UK businesses. Plans from £1,000/month covering 24/7 uptime monitoring, daily backups, security updates, malware scanning, and UK-hours support.',
+    'WordPress maintenance service for UK businesses with security updates, daily backups, malware scanning, uptime monitoring, and support. Plans from £449/month.',
   path: '/wordpress-maintenance-uk',
 });
 

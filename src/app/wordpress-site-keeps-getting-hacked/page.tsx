@@ -4,8 +4,8 @@ import BlogPostLayout from '@/components/BlogPostLayout';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Site Keeps Getting Hacked? Here\'s Why & How to Stop It | WebAdish',
-  description: 'If your WordPress site keeps getting hacked even after cleanup, backdoors are almost certainly the cause. Learn why repeat hacks happen and how to break the cycle permanently.',
+  title: 'WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It',
+  description: 'If your WordPress site keeps getting hacked after cleanup, a backdoor or compromised hosting account is usually the cause. Learn how to stop repeat hacks permanently.',
   path: '/wordpress-site-keeps-getting-hacked',
   type: 'article',
   publishedTime: '2026-03-09',
@@ -19,8 +19,8 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 ]);
 
 const articleSchema = generateArticleSchema(
-  'WordPress Site Keeps Getting Hacked? Here\'s Why & How to Stop It',
-  'If your WordPress site keeps getting hacked even after cleanup, backdoors are almost certainly the cause. Learn why repeat hacks happen and how to break the cycle permanently.',
+  'WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It',
+  'If your WordPress site keeps getting hacked after cleanup, a backdoor or compromised hosting account is usually the cause. Learn how to stop repeat hacks permanently.',
   '2026-03-09',
   '2026-03-13',
   '/wordpress-site-keeps-getting-hacked'
@@ -60,8 +60,8 @@ export default function PostPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlogPostLayout
-        title="WordPress Site Keeps Getting Hacked? Here's Why & How to Stop It"
-        lead="You cleaned the malware. You updated everything. A week later, it's back. If your WordPress site keeps getting hacked, you haven't found the backdoor — and until you do, the cycle will never stop."
+        title="WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It"
+        lead="You cleaned the malware. You updated everything. A week later, it is back. If your WordPress site keeps getting hacked, a hidden backdoor or compromised access path is usually still open."
         datePublished="2025-11-06"
         dateModified="2026-03-13"
         category="Recovery"

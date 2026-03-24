@@ -13,9 +13,9 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Incident Response UK | Hacked Site Recovery | WebAdish',
+  title: 'Hacked Website Recovery UK | Fix a Hacked WordPress Site Fast',
   description:
-    'Premium WordPress incident response for UK businesses. We contain hacked sites, investigate root cause, eliminate persistence, and recover revenue-critical websites with executive-level care.',
+    'Hacked website recovery for UK businesses. We fix hacked WordPress sites, remove malware, find the root cause, and help recover rankings, trust, and conversions.',
   path: '/hacked-website-recovery-uk',
 });
 
