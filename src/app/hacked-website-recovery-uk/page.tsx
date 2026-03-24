@@ -81,9 +81,9 @@ export default function HackedWebsiteRecoveryUK() {
       <StructuredData schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
 
       <PageHeader
-        title="WordPress Incident Response <br /><span style='color: #ef4444'>for Business-Critical Websites</span>"
-        subtitle="When a hacked site threatens leads, sales, client trust, or compliance exposure, we treat it as a live incident. We contain the damage, recover safely, and fix the conditions that allowed the breach."
-        badge="Premium Incident Response"
+        title="Hacked Website Recovery UK <br /><span style='color: #ef4444'>for WordPress Sites Under Attack</span>"
+        subtitle="Emergency hacked WordPress site recovery for UK businesses. We remove malware, close backdoors, help with blacklist recovery, and fix the root cause so the infection does not return."
+        badge="Emergency Hacked Site Recovery"
       />
 
       <TrustSignals />
@@ -91,10 +91,9 @@ export default function HackedWebsiteRecoveryUK() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            <h2>When to trigger incident response</h2>
+            <h2>Signs your hacked WordPress site needs urgent recovery</h2>
             <p style={{ color: '#a1a1aa' }}>
-              If any of these are happening on a revenue-critical site, you are
-              beyond &quot;support ticket&quot; territory and into incident response.
+              If any of these are happening, your site likely needs more than a quick plugin scan or basic support ticket.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.25rem' }}>
@@ -118,9 +117,9 @@ export default function HackedWebsiteRecoveryUK() {
       <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-            <h2>Our WordPress incident response process</h2>
+            <h2>Our hacked website recovery process</h2>
             <p style={{ color: '#a1a1aa' }}>
-              Designed for organisations that need more than a low value malware sweep.
+              Designed for UK businesses that need a proper hacked WordPress site cleanup, not a superficial malware sweep.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
@@ -147,8 +146,7 @@ export default function HackedWebsiteRecoveryUK() {
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
               <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Premium engagement tiers</h2>
               <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
-                Serious incidents need depth, accountability, and enough time to
-                remove the cause, not just the symptoms.
+                Serious hacked website recovery work needs depth, accountability, and enough time to remove the cause, not just the visible symptoms.
               </p>
               <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
                 {[
@@ -178,9 +176,9 @@ export default function HackedWebsiteRecoveryUK() {
                 ))}
               </div>
               <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                Need help right now? Call <strong style={{ color: '#fff' }}>+44 7344 540450</strong>
+                Need help with a hacked website right now? Call <strong style={{ color: '#fff' }}>+44 7344 540450</strong>
               </p>
-              <a href="#contact-section" className="btn btn-primary" style={{ display: 'inline-block' }}>Request Incident Response</a>
+              <a href="#contact-section" className="btn btn-primary" style={{ display: 'inline-block' }}>Request Hacked Site Recovery</a>
             </div>
           </div>
         </div>
@@ -190,7 +188,7 @@ export default function HackedWebsiteRecoveryUK() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
             <div>
-              <h2>Business impact goes beyond the malware</h2>
+              <h2>Why hacked website recovery needs more than malware removal</h2>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
                 A hacked WordPress site can mean lost transactions, suspended ad
                 campaigns, reputational damage, and internal escalation to legal
