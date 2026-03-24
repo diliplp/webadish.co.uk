@@ -60,6 +60,55 @@ export default function BlogIndex() {
         <div className="container">
           <div
             style={{
+              background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(24, 24, 27, 0.95))',
+              border: '1px solid rgba(239, 68, 68, 0.35)',
+              borderRadius: '16px',
+              padding: '1.5rem',
+              marginBottom: '2rem',
+            }}
+          >
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ color: '#ef4444', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Hacked Site Recovery Resources
+              </div>
+              <h2 style={{ margin: '0.4rem 0 0.6rem' }}>Start here if your WordPress site may already be hacked</h2>
+              <p style={{ color: '#d4d4d8', lineHeight: 1.7, margin: 0 }}>
+                These are the core pages for hacked website recovery, repeat-hack diagnosis, malware cleanup, and urgent next steps for UK businesses.
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '1rem',
+              }}
+            >
+              {[
+                { href: '/hacked-website-recovery-uk', label: 'Hacked Website Recovery UK', desc: 'Commercial recovery page for urgent hacked site cleanup and root-cause remediation.' },
+                { href: '/wordpress-site-keeps-getting-hacked', label: 'Why a WordPress Site Keeps Getting Hacked', desc: 'Explains repeat hacks, backdoors, and why malware comes back after cleanup.' },
+                { href: '/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london', label: 'How to Know If Your Site Has Been Hacked', desc: 'Top warning signs to check and what to do in the first hour.' },
+                { href: '/wordpress-malware-removal', label: 'WordPress Malware Removal', desc: 'Fixed-fee malware cleanup page for businesses that need guaranteed removal.' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{
+                    background: 'rgba(24, 24, 27, 0.7)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: '12px',
+                    padding: '1rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <div style={{ color: 'var(--foreground)', fontWeight: 700, marginBottom: '0.35rem' }}>{item.label}</div>
+                  <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.6, fontSize: '0.92rem' }}>{item.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
               gap: '1rem',

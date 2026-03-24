@@ -112,6 +112,49 @@ export default function BlogPostLayout({
 
         <div className={styles.content}>{children}</div>
 
+        <div
+          style={{
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderRadius: '12px',
+            padding: '1.5rem',
+            marginTop: '2rem',
+          }}
+        >
+          <h3 style={{ marginTop: 0, marginBottom: '0.75rem' }}>Related Recovery Resources</h3>
+          <p style={{ color: '#a1a1aa', lineHeight: 1.6, marginTop: 0 }}>
+            If this article is part of an active incident, use these core pages next.
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '0.75rem',
+            }}
+          >
+            {[
+              { href: '/hacked-website-recovery-uk', label: 'Hacked Website Recovery UK' },
+              { href: '/wordpress-malware-removal', label: 'WordPress Malware Removal' },
+              { href: '/wordpress-site-keeps-getting-hacked', label: 'Why Sites Keep Getting Hacked' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{
+                  border: '1px solid var(--border)',
+                  borderRadius: '10px',
+                  padding: '0.9rem 1rem',
+                  textDecoration: 'none',
+                  color: 'var(--foreground)',
+                  fontWeight: 600,
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {ctaText ? <p className={styles.cta}>{ctaText}</p> : (
           <div style={{
             background: 'linear-gradient(135deg, var(--surface), rgba(99, 102, 241, 0.1))',

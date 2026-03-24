@@ -123,6 +123,9 @@ export default function PostPage() {
           <li>Run monthly security audits to catch vulnerabilities before attackers do</li>
           <li>Use a security retainer service for ongoing monitoring and peace of mind</li>
         </ul>
+        <p>
+          If you already know the site is compromised, move straight to our <a href="/hacked-website-recovery-uk">hacked website recovery UK</a> service page. If the malware keeps returning after cleanup, read <a href="/wordpress-site-keeps-getting-hacked">why WordPress sites keep getting hacked</a> to diagnose the likely backdoor or access path still being missed.
+        </p>
       </BlogPostLayout>
     </>
   );
