@@ -49,7 +49,7 @@ const faqSchema = generateFAQSchema([
   },
   {
     question: 'How much does it cost to permanently fix a repeatedly hacked WordPress site?',
-    answer: 'A professional forensic cleanup for a repeatedly hacked WordPress site in the UK typically costs £1,000–£2,000 for a thorough one-time fix. An ongoing security retainer (£150–£500/month) provides the best long-term protection, as it includes continuous monitoring, immediate response to new vulnerabilities, and a recovery guarantee.',
+    answer: 'A professional post-hack forensic and hardening engagement for a repeatedly hacked WordPress site in the UK typically starts around £3,000, depending on complexity. An ongoing security retainer then provides the best long-term protection, with continuous monitoring, immediate response to new vulnerabilities, and a recovery guarantee.',
   },
 ]);
 
@@ -162,8 +162,8 @@ export default function PostPage() {
 
         <h2>When to call a professional</h2>
         <p>If your site has been hacked more than once, or if you have tried to clean it yourself and the infection returned, the most cost-effective path is a professional forensic cleanup. Security specialists know exactly where backdoors hide — including locations that basic tools never check — and have the tooling to find them all, not just the obvious ones.</p>
-        <p>The cost of professional cleanup (typically £1,000–£2,000 for a repeat-hack situation) is almost always less than the cost of continued downtime, Google blacklisting, GDPR breach notification obligations, and repeat DIY cleanup attempts that do not resolve the root cause.</p>
-        <p>WebAdish provides <Link href="/hacked-website-recovery-uk">emergency hacked WordPress site recovery</Link> for UK businesses. Our process includes a full file-level forensic scan, complete backdoor removal, credential rotation guidance, WAF configuration, and a 30-day guarantee. If your site is reinfected within 30 days of our cleanup, we fix it again at no charge.</p>
+        <p>The cost of professional forensic recovery is almost always less than the cost of continued downtime, Google blacklisting, GDPR breach notification obligations, and repeat DIY cleanup attempts that do not resolve the root cause.</p>
+        <p>WebAdish provides <Link href="/hacked-website-recovery-uk">emergency hacked WordPress site recovery</Link> for UK businesses. For repeat-hack cases, the stronger option is our post-hack forensic and hardening package: full file-level investigation, complete backdoor removal, credential rotation guidance, WAF configuration, hardening priorities, and a clear roadmap into ongoing protection.</p>
         <p>If you are still confirming whether the site is compromised, check <Link href="/signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london">how to know if your WordPress site has been hacked</Link>. If you need a fixed-fee cleanup option, see our <Link href="/wordpress-malware-removal">WordPress malware removal service</Link>.</p>
       </BlogPostLayout>
     </>

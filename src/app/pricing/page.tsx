@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: 'Do most clients choose the lowest cost option?',
     answer:
-      'No. Most businesses choose the Incident Response Program because it combines investigation, eradication, and post-recovery protection against reinfection.',
+      'No. Most businesses choose the Post-Hack Forensic & Hardening Package because it combines investigation, eradication, structural hardening, and post-recovery protection against reinfection.',
   },
   {
     question: 'Why are low-cost cleanups risky?',
@@ -48,7 +48,7 @@ const faqItems = [
 export default function Pricing() {
   const serviceSchema = generateServiceSchema(
     'WordPress Incident Response & Security Pricing',
-    'High-ticket WordPress incident response and security pricing for UK businesses. Response scope is based on incident severity, business risk, and recovery complexity.',
+    'High-ticket WordPress incident response and security pricing for UK businesses. Response scope is based on incident severity, business risk, recovery complexity, and whether post-hack forensic hardening is required.',
     '/pricing',
     '£1,500 - £12,000+'
   );
@@ -218,17 +218,19 @@ export default function Pricing() {
               >
                 MOST CLIENTS CHOOSE THIS
               </div>
-              <h3 style={{ marginBottom: '0.5rem' }}>Incident Response Program</h3>
+              <h3 style={{ marginBottom: '0.5rem' }}>Post-Hack Forensic &amp; Hardening Package</h3>
               <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£3,000 – £8,000</div>
-              <p style={{ color: '#a1a1aa' }}>Full recovery and protection against reinfection.</p>
+              <p style={{ color: '#a1a1aa' }}>Full recovery, breach autopsy, and structural hardening against reinfection.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[
                   'Forensic investigation',
                   'Root cause identification',
+                  'Breach autopsy summary',
                   'Complete malware & backdoor removal',
                   'Database + file integrity validation',
                   'Hosting / DNS / access audit',
                   'Advanced hardening',
+                  '12-month hardening roadmap',
                   '60-day monitoring',
                 ].map((item) => (
                   <li key={item} style={{ marginBottom: '0.5rem', color: '#d4d4d8' }}>
@@ -240,7 +242,7 @@ export default function Pricing() {
                 Most clients choose this to avoid repeat incidents
               </p>
               <p style={{ color: '#d4d4d8', fontWeight: 700, marginTop: '0.75rem', marginBottom: 0 }}>
-                Best balance of recovery and long-term protection
+                Best balance of recovery, hardening, and long-term protection
               </p>
             </div>
 

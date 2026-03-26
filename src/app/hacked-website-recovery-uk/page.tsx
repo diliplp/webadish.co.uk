@@ -15,7 +15,7 @@ import Link from 'next/link';
 export const metadata = generatePageMetadata({
   title: 'Hacked Website Recovery UK | Fix a Hacked WordPress Site Fast',
   description:
-    'Hacked website recovery for UK businesses. We fix hacked WordPress sites, remove malware, find the root cause, and help recover rankings, trust, and conversions.',
+    'Hacked website recovery for UK businesses. We fix hacked WordPress sites, remove malware, find the root cause, and offer a post-hack forensic and hardening package to stop repeat compromise.',
   path: '/hacked-website-recovery-uk',
 });
 
@@ -59,6 +59,11 @@ const faqItems = [
     question: 'Why are your prices higher than basic malware removal services?',
     answer:
       'Because we are not selling a basic malware sweep. We are handling business-critical incidents where incomplete work can lead to reinfection, lost revenue, compliance exposure, and reputational damage.',
+  },
+  {
+    question: 'What is your post-hack forensic and hardening package?',
+    answer:
+      'It is the premium follow-on engagement for businesses that want more than cleanup. We investigate how the breach happened, document the likely entry point, close the vector, harden the stack, and map the next 12 months of protection so the same incident does not happen again.',
   },
 ];
 
@@ -199,13 +204,13 @@ export default function HackedWebsiteRecoveryUK() {
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
               <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Recovery pricing and response options</h2>
               <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
-                Start with the right level of response for the incident in front of you. We keep the emergency path clear, then help you move onto stronger protection after recovery.
+                Start with the right level of response for the incident in front of you. We keep the emergency path clear, then move serious clients into post-hack forensic and hardening work that reduces recurrence risk.
               </p>
               <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
                 {[
                   'Fixed-Fee Malware Cleanup: from £1,499 for contained infections that do not require deep forensic investigation',
-                  'Incident Recovery: from £3,000 for single-site compromise and forensic cleanup',
-                  'Revenue-Critical Response: from £6,000 for WooCommerce, lead-gen, and client-facing production websites',
+                  'Post-Hack Forensic & Hardening Package: from £3,000 for single-site compromise, root-cause analysis, hardening, and a 12-month protection roadmap',
+                  'Revenue-Critical Response: from £6,000 for WooCommerce, lead-gen, and client-facing production websites where downtime and trust loss carry direct financial risk',
                   'Major Incident Engagement: £10,000+ for multi-site estates, agency portfolios, or deep persistence and server investigation',
                 ].map((tier) => (
                   <div key={tier} style={{ color: '#d4d4d8', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '0.75rem', padding: '0.9rem 1rem' }}>
@@ -217,10 +222,12 @@ export default function HackedWebsiteRecoveryUK() {
                 {[
                   'Emergency containment',
                   'Root-cause analysis',
+                  'Breach autopsy summary',
                   'Backdoor and persistence eradication',
                   'Blacklist support',
                   'Access control review',
                   'Hardening and remediation',
+                  '12-month hardening roadmap',
                   'Stakeholder-ready incident reporting',
                   'Post-recovery monitoring window',
                 ].map((f) => (
@@ -245,6 +252,47 @@ export default function HackedWebsiteRecoveryUK() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '920px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2rem' }}>
+              <h2>Post-Hack Forensic &amp; Hardening Package</h2>
+              <p style={{ color: '#a1a1aa' }}>
+                Most hacked websites get cleaned cheaply and then compromised again because nobody performs a proper breach autopsy. This package is for businesses that want to know what happened, close the vector, and harden properly.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem' }}>
+              {[
+                {
+                  title: 'Breach autopsy',
+                  desc: 'We reconstruct the likely compromise path, identify what was exposed, and explain why the first line of defence failed.',
+                },
+                {
+                  title: 'Vector closure',
+                  desc: 'We close the specific access path behind the incident, whether that means plugin abuse, admin compromise, weak hosting controls, or hidden persistence.',
+                },
+                {
+                  title: 'Structural hardening',
+                  desc: 'We improve access controls, patch hygiene, monitoring, backups, and execution controls so the environment is harder to compromise again.',
+                },
+                {
+                  title: '12-month roadmap',
+                  desc: 'You get a prioritised protection plan that can stand alone or roll directly into a monthly security retainer.',
+                },
+              ].map((item) => (
+                <div key={item.title} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '0.9rem', padding: '1.5rem' }}>
+                  <h3 style={{ marginBottom: '0.6rem', color: '#fff' }}>{item.title}</h3>
+                  <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{ marginTop: '1.25rem', color: '#d4d4d8', textAlign: 'center' }}>
+              This is the right option when your site has been hacked before, your business depends on SEO or paid traffic, or you cannot afford another cleanup cycle.
+            </p>
           </div>
         </div>
       </section>
