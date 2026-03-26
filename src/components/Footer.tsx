@@ -15,7 +15,7 @@ const Footer = () => {
                             <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={245} height={70} style={{ width: 'auto', height: '52px' }} />
                         </Link>
                         <p className={styles.description}>
-                            Specialist WordPress security agency for UK businesses. High-ticket incident response, monthly security retainers, GDPR-aware recovery, and secure hosting.
+                            Built for serious WordPress operations. Specialist security for UK businesses, including high-ticket incident response, monthly retainers, GDPR-aware recovery, and secure hosting.
                         </p>
                     </div>
 
