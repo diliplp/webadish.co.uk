@@ -28,7 +28,7 @@ export default function LandingContactForm({
     email: '',
     website: '',
     message: '',
-    company: '', // honeypot
+    fax_number: '', // honeypot
   });
   const [utmParams, setUtmParams] = useState<UTMParams>({
     utm_source: '',
@@ -75,7 +75,7 @@ export default function LandingContactForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.company) return; // honeypot
+    if (formData.fax_number) return; // honeypot
     trackFormStart();
 
     setStatus('loading');
@@ -95,7 +95,7 @@ export default function LandingContactForm({
           medium: utmParams.utm_medium || 'none',
           campaign: utmParams.utm_campaign || 'none',
         });
-        setFormData({ name: '', email: '', website: '', message: '', company: '' });
+        setFormData({ name: '', email: '', website: '', message: '', fax_number: '' });
         setHasTrackedStart(false);
       } else {
         setStatus('error');
@@ -148,11 +148,11 @@ export default function LandingContactForm({
         <div style={{ display: 'none' }}>
           <input
             type="text"
-            name="company"
-            value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            name="fax_number"
+            value={formData.fax_number}
+            onChange={(e) => setFormData({ ...formData, fax_number: e.target.value })}
             tabIndex={-1}
-            autoComplete="off"
+            autoComplete="new-password"
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

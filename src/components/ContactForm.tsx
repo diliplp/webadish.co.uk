@@ -12,7 +12,7 @@ const ContactForm = () => {
         email: '',
         website: '',
         message: '',
-        company: ''
+        fax_number: ''
     });
 
     const [utmData, setUtmData] = useState({
@@ -100,7 +100,7 @@ const ContactForm = () => {
                 source: utmData.utm_source || 'direct',
                 medium: utmData.utm_medium || 'organic',
             });
-            setFormData({ name: '', email: '', website: '', message: '', company: '' });
+            setFormData({ name: '', email: '', website: '', message: '', fax_number: '' });
             setHasTrackedStart(false);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
@@ -189,14 +189,14 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.honeypotField} aria-hidden="true">
-                <label htmlFor="company">Company</label>
+                <label htmlFor="fax_number">Fax Number</label>
                 <input
                     type="text"
-                    id="company"
-                    name="company"
+                    id="fax_number"
+                    name="fax_number"
                     tabIndex={-1}
-                    autoComplete="off"
-                    value={formData.company}
+                    autoComplete="new-password"
+                    value={formData.fax_number}
                     onChange={handleChange}
                 />
             </div>

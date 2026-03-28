@@ -8,7 +8,7 @@ interface ContactPayload {
   email?: string;
   website?: string;
   message?: string;
-  company?: string; // honeypot
+  fax_number?: string; // honeypot
   // UTM tracking
   utm_source?: string;
   utm_medium?: string;
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     const email = body.email?.trim();
     const website = body.website?.trim() || 'Not provided';
     const message = body.message?.trim();
-    const honeypot = body.company?.trim();
+    const honeypot = body.fax_number?.trim();
     const ip = getClientIp(request);
 
     // Honeypot: pretend success to avoid teaching bots
