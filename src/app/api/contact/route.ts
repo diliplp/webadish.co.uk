@@ -54,6 +54,47 @@ function getResendClient() {
   return new Resend(apiKey);
 }
 
+function buildCustomerReplyHtml(name: string, message: string, replyToEmail: string) {
+  return `
+    <div style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#18181b;">
+      <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
+        <div style="background:#0b1220;border-radius:20px 20px 0 0;padding:24px 28px;text-align:left;">
+          <img src="https://www.webadish.co.uk/brand/webadish-logo-white.png" alt="WebAdish" style="height:42px;width:auto;display:block;" />
+        </div>
+        <div style="background:#ffffff;border:1px solid #e4e4e7;border-top:none;border-radius:0 0 20px 20px;padding:32px 28px;">
+          <p style="margin:0 0 16px;font-size:16px;line-height:1.7;">Hi ${name},</p>
+          <p style="margin:0 0 16px;font-size:16px;line-height:1.7;">
+            Thank you for contacting <strong>WebAdish</strong>. We have received your message and will review it shortly.
+          </p>
+          <p style="margin:0 0 16px;font-size:16px;line-height:1.7;">
+            If your request is urgent and relates to a hacked website or active security issue, you can reply to this email or call
+            <strong> +44 7344 540450</strong>.
+          </p>
+
+          <div style="margin:24px 0;padding:20px;border-radius:16px;background:#fafafa;border:1px solid #e4e4e7;">
+            <p style="margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#71717a;">Your Message</p>
+            <p style="margin:0;font-size:15px;line-height:1.8;color:#27272a;">${message}</p>
+          </div>
+
+          <div style="margin:24px 0;padding:20px;border-radius:16px;background:#fff7ed;border:1px solid #fdba74;">
+            <p style="margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9a3412;">What Happens Next</p>
+            <p style="margin:0;font-size:15px;line-height:1.8;color:#431407;">
+              We will review your enquiry and come back with the right next step, whether that is an audit, recovery assessment, protection retainer, or a direct response call.
+            </p>
+          </div>
+
+          <p style="margin:0 0 8px;font-size:15px;line-height:1.7;">Regards,</p>
+          <p style="margin:0;font-size:15px;line-height:1.7;">
+            <strong>WebAdish Team</strong><br />
+            <a href="mailto:${replyToEmail}" style="color:#dc2626;text-decoration:none;">${replyToEmail}</a><br />
+            <span style="color:#52525b;">+44 7344 540450</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactPayload;
@@ -145,12 +186,7 @@ export async function POST(request: Request) {
       replyTo: to,
       subject: 'Thanks for contacting WebAdish — we received your message',
       text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
-      html: `
-        <p>Hi ${safeName},</p>
-        <p>Thank you for contacting <strong>WebAdish</strong>. We have received your message and will get back to you shortly.</p>
-        <p><strong>Your message:</strong><br/>${safeMessage}</p>
-        <p>Regards,<br/>WebAdish Team</p>
-      `,
+      html: buildCustomerReplyHtml(safeName, safeMessage, to),
     });
 
     if (replyResult.error) {
