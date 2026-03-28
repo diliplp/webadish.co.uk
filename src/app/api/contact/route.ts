@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export const runtime = 'nodejs';
 
@@ -48,6 +48,12 @@ function escapeHtml(value: string) {
     .replace(/'/g, '&#039;');
 }
 
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactPayload;
@@ -74,28 +80,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
     }
 
-    const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT || 587);
-    const secure = process.env.SMTP_SECURE === 'true';
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const to = process.env.SMTP_TO || process.env.SMTP_FROM_EMAIL;
-    const fromName = process.env.SMTP_FROM_NAME || 'WebAdish Website';
-    const fromEmail = process.env.SMTP_FROM_EMAIL;
+    const resend = getResendClient();
+    const to = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL;
+    const fromName = process.env.CONTACT_FROM_NAME || 'WebAdish Website';
+    const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
-    if (!host || !user || !pass || !fromEmail || !to) {
-      return NextResponse.json({ error: 'SMTP is not fully configured.' }, { status: 500 });
+    if (!resend || !fromEmail || !to) {
+      return NextResponse.json({ error: 'Resend is not fully configured.' }, { status: 500 });
     }
-
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure,
-      auth: { user, pass },
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 15000,
-    });
 
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
@@ -126,9 +118,8 @@ export async function POST(request: Request) {
         <p><strong>Referrer:</strong> ${escapeHtml(referrer || 'direct')}</p>
     ` : '';
 
-    // 1) Notify team inbox
-    await transporter.sendMail({
-      from: `"${fromName}" <${fromEmail}>`,
+    const notifyResult = await resend.emails.send({
+      from: `${fromName} <${fromEmail}>`,
       to,
       replyTo: email,
       subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''}`,
@@ -144,10 +135,14 @@ export async function POST(request: Request) {
       `,
     });
 
-    // 2) Auto-reply to customer
-    await transporter.sendMail({
-      from: `"${fromName}" <${fromEmail}>`,
+    if (notifyResult.error) {
+      throw new Error(`Team email failed: ${notifyResult.error.message}`);
+    }
+
+    const replyResult = await resend.emails.send({
+      from: `${fromName} <${fromEmail}>`,
       to: email,
+      replyTo: to,
       subject: 'Thanks for contacting WebAdish — we received your message',
       text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
       html: `
@@ -157,6 +152,10 @@ export async function POST(request: Request) {
         <p>Regards,<br/>WebAdish Team</p>
       `,
     });
+
+    if (replyResult.error) {
+      console.error('Contact form auto-reply error:', replyResult.error.message, replyResult.error);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error: unknown) {

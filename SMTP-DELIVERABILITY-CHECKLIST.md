@@ -35,11 +35,7 @@ Use this checklist to improve inbox placement and trust.
 - Review provider logs for bounces/deferrals.
 
 ## Current app env variables
-- SMTP_HOST
-- SMTP_PORT
-- SMTP_SECURE
-- SMTP_USER
-- SMTP_PASS
-- SMTP_FROM_NAME
-- SMTP_FROM_EMAIL
-- SMTP_TO
+- RESEND_API_KEY
+- CONTACT_FROM_NAME
+- CONTACT_FROM_EMAIL
+- CONTACT_TO_EMAIL
