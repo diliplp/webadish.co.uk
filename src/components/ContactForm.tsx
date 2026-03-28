@@ -54,6 +54,13 @@ const ContactForm = () => {
         });
     };
 
+    const normalizeWebsite = (value: string) => {
+        const trimmed = value.trim();
+        if (!trimmed) return '';
+        if (/^[a-z]+:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         trackFormStart();
@@ -70,7 +77,7 @@ const ContactForm = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ ...formData, ...utmData }),
+                body: JSON.stringify({ ...formData, website: normalizeWebsite(formData.website), ...utmData }),
                 signal: controller.signal
             });
 
@@ -157,9 +164,11 @@ const ContactForm = () => {
             <div className={styles.group}>
                 <label htmlFor="website">Website URL (Optional)</label>
                 <input
-                    type="url"
+                    type="text"
                     id="website"
                     name="website"
+                    inputMode="url"
+                    placeholder="example.com"
                     value={formData.website}
                     onFocus={trackFormStart}
                     onChange={handleChange}

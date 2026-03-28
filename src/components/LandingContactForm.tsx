@@ -66,6 +66,13 @@ export default function LandingContactForm({
     });
   };
 
+  const normalizeWebsite = (value: string) => {
+    const trimmed = value.trim();
+    if (!trimmed) return '';
+    if (/^[a-z]+:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.company) return; // honeypot
@@ -76,7 +83,7 @@ export default function LandingContactForm({
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, ...utmParams }),
+        body: JSON.stringify({ ...formData, website: normalizeWebsite(formData.website), ...utmParams }),
       });
 
       if (res.ok) {
@@ -182,8 +189,9 @@ export default function LandingContactForm({
             }}
           />
           <input
-            type="url"
-            placeholder="Website URL (https://...)"
+            type="text"
+            inputMode="url"
+            placeholder="Website URL (example.com)"
             required
             value={formData.website}
             onFocus={trackFormStart}
