@@ -10,6 +10,16 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'do-you-need-to-report-a-hacked-website-to-the-ico',
+    title: 'Do You Need to Report a Hacked Website to the ICO?',
+    excerpt:
+      'A practical guide for UK businesses assessing whether a hacked WordPress site may trigger ICO breach reporting and what the 72-hour rule means operationally.',
+    datePublished: '2026-03-31',
+    dateModified: '2026-03-31',
+    category: 'Guides',
+    author: 'WebAdish',
+  },
+  {
     slug: 'wordpress-security-checklist-2026-complete-guide-uk',
     title: 'WordPress Security Checklist 2026: Complete Guide for UK Businesses',
     excerpt:
