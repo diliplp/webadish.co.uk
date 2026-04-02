@@ -10,6 +10,16 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'state-of-wordpress-security-2025-uk-business-takeaways',
+    title: 'What the State of WordPress Security in 2025 Means for UK Businesses',
+    excerpt:
+      'Patchstack’s latest WordPress ecosystem data shows why plugin sprawl, weak prioritisation, and cheap cleanup continue to leave UK businesses exposed.',
+    datePublished: '2026-04-02',
+    dateModified: '2026-04-02',
+    category: 'WordPress Security',
+    author: 'WebAdish',
+  },
+  {
     slug: 'do-you-need-to-report-a-hacked-website-to-the-ico',
     title: 'Do You Need to Report a Hacked Website to the ICO?',
     excerpt:
