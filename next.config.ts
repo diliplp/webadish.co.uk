@@ -57,8 +57,8 @@ const nextConfig: NextConfig = {
       { source: '/support-hosting/', destination: '/web-hosting-email-services', permanent: true },
 
       // Old WordPress blog posts & author archives (from GSC "Crawled not indexed" report 2026-03-11)
-      { source: '/10-common-web-design-mistakes-to-avoid', destination: '/blog', permanent: true },
-      { source: '/10-common-web-design-mistakes-to-avoid/', destination: '/blog', permanent: true },
+      { source: '/10-common-web-design-mistakes-to-avoid', destination: 'https://www.webadish.com/web-design', permanent: true },
+      { source: '/10-common-web-design-mistakes-to-avoid/', destination: 'https://www.webadish.com/web-design', permanent: true },
       { source: '/author/:path*', destination: '/about-webadish-web-agency', permanent: true },
 
       // Old WordPress hacked-site post → new blog post (357 impressions, consolidate link equity)
