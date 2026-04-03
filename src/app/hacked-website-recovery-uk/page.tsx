@@ -93,6 +93,23 @@ export default function HackedWebsiteRecoveryUK() {
 
       <TrustSignals />
 
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <div className="container">
+          <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.28)', borderRadius: '1rem', padding: '1.5rem 1.75rem' }}>
+            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+              Why repeat hacks keep happening
+            </p>
+            <p style={{ color: '#e4e4e7', lineHeight: 1.7, margin: 0 }}>
+              Patchstack reported <strong>7,966 WordPress ecosystem vulnerabilities</strong> in 2024, with <strong>96% found in plugins</strong> and a large share requiring no attacker login at all. For UK businesses, that is why cheap cleanup so often fails: the visible malware is removed, but the plugin risk, backdoor, or access path is still there. See our{' '}
+              <Link href="/state-of-wordpress-security-2025-uk-business-takeaways" style={{ color: '#818cf8', fontWeight: 600 }}>
+                UK WordPress security takeaways
+              </Link>{' '}
+              for the full breakdown.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem' }}>
         <div className="container">
           <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: '1rem', padding: '2rem' }}>

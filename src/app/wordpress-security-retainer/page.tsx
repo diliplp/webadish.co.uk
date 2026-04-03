@@ -10,6 +10,7 @@ import TrustSignals from '@/components/TrustSignals';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
   title:
@@ -91,6 +92,25 @@ export default function WordPressSecurityRetainer() {
       />
 
       <TrustSignals />
+
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1rem' }}
+      >
+        <div className="container">
+          <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.28)', borderRadius: '1rem', padding: '1.5rem 1.75rem' }}>
+            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+              Why retainers matter more now
+            </p>
+            <p style={{ color: '#e4e4e7', lineHeight: 1.7, margin: 0 }}>
+              Patchstack’s latest WordPress ecosystem review found <strong>7,966 vulnerabilities</strong> in 2024, with <strong>96% in plugins</strong>. That volume makes ad hoc updates and occasional checks a weak operating model for UK businesses. A retainer gives you prioritisation, faster patch decisions, and a named response path when the next disclosure cycle hits. Read our{' '}
+              <Link href="/state-of-wordpress-security-2025-uk-business-takeaways" style={{ color: '#818cf8', fontWeight: 600 }}>
+                UK business take on the 2025 WordPress security data
+              </Link>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Definition paragraph for AI search */}
       <section
