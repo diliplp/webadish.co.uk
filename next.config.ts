@@ -37,7 +37,8 @@ const nextConfig: NextConfig = {
       { source: '/web-design-blog', destination: '/blog', permanent: true },
 
       // Redirect generic web design blog posts to blog index
-      { source: '/10-inspiring-beautifully-designed-websites', destination: '/blog', permanent: true },
+      { source: '/10-inspiring-beautifully-designed-websites', destination: 'https://www.webadish.com/web-design', permanent: true },
+      { source: '/10-inspiring-beautifully-designed-websites/', destination: 'https://www.webadish.com/web-design', permanent: true },
       { source: '/the-top-web-design-trends-to-watch-in-2024', destination: '/blog', permanent: true },
       { source: '/a-comprehensive-website-solution-for-your-businesss-online-growth-waas', destination: '/blog', permanent: true },
 

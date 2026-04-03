@@ -131,16 +131,6 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   // Legacy posts (kept)
   {
-    slug: 'signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london',
-    title: 'Signs Your WordPress Website Has Been Hacked and What to Do Next',
-    excerpt:
-      'Early warning signs of a WordPress hack, immediate containment steps, and a response checklist for UK business owners.',
-    datePublished: '2024-09-10',
-    dateModified: '2026-03-03',
-    category: 'Recovery',
-    author: 'WebAdish',
-  },
-  {
     slug: 'revive-your-site-a-practical-guide-to-manually-restoring-your-wordpress-website',
     title: 'A Practical Guide to Manually Restoring Your WordPress Website',
     excerpt:
