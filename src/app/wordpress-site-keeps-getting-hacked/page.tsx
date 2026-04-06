@@ -62,7 +62,7 @@ export default function PostPage() {
       <BlogPostLayout
         title="WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It"
         lead="You cleaned the malware. You updated everything. A week later, it is back. If your WordPress site keeps getting hacked, a hidden backdoor or compromised access path is usually still open."
-        datePublished="2025-11-06"
+        datePublished="2026-03-09"
         dateModified="2026-03-13"
         category="Recovery"
         slug="wordpress-site-keeps-getting-hacked"

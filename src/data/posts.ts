@@ -124,7 +124,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "WordPress Site Keeps Getting Hacked? Here's Why & How to Stop It",
     excerpt:
       'If your WordPress site keeps getting hacked even after cleanup, backdoors are almost certainly the cause. Learn why repeat hacks happen and how to break the cycle permanently.',
-    datePublished: '2025-11-06',
+    datePublished: '2026-03-09',
     dateModified: '2026-03-09',
     category: 'Recovery',
     author: 'WebAdish',

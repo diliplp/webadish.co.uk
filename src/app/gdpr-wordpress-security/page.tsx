@@ -1,4 +1,5 @@
 import { generatePageMetadata } from '@/lib/seo';
+import GDPRWordPressArticle from './GDPRWordPressArticle';
 
 export const metadata = generatePageMetadata({
   title: 'GDPR and WordPress Security: What UK Business Owners Must Know | WebAdish',
@@ -10,4 +11,4 @@ export const metadata = generatePageMetadata({
   modifiedTime: '2026-03-03',
 });
 
-export { default } from '../gdpr-wordpress-security-uk-business-owners/page';
+export default GDPRWordPressArticle;

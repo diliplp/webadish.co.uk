@@ -58,11 +58,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <WhatsAppButton />
         <CookieBanner />
         <Analytics />
-        <Script
-          id="hs-script-loader"
-          src="https://js-na2.hs-scripts.com/242393531.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
