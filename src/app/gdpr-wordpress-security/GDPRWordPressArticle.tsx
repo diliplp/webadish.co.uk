@@ -1,4 +1,5 @@
 import BlogPostLayout from '@/components/BlogPostLayout';
+import FAQ from '@/components/FAQ';
 import Link from 'next/link';
 
 const faqItems = [
