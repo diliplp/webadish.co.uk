@@ -358,6 +358,9 @@ export default function WordPressSecurityAudit() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+              Security audits are also where we uncover the hidden plugin exposure, access control drift, and persistence issues behind repeat compromises. If you are trying to understand <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)', fontWeight: 600 }}>why WordPress keeps getting hacked</Link>, that article pairs well with this service page because it explains the operational patterns an audit is designed to surface.
+            </p>
             <h2 style={{ marginBottom: '1rem' }}>Further reading</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>

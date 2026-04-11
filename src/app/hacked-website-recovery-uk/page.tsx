@@ -307,8 +307,8 @@ export default function HackedWebsiteRecoveryUK() {
                 </div>
               ))}
             </div>
-            <p style={{ marginTop: '1.25rem', color: '#d4d4d8', textAlign: 'center' }}>
-              This is the right option when your site has been hacked before, your business depends on SEO or paid traffic, or you cannot afford another cleanup cycle.
+            <p style={{ marginTop: '1.25rem', color: '#d4d4d8', textAlign: 'center', lineHeight: 1.7 }}>
+              This is the right option when your site has been hacked before, your business depends on SEO or paid traffic, or you cannot afford another cleanup cycle. If you want a plain-English breakdown of the <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: '#ef4444', fontWeight: 600 }}>repeat hack root causes</Link> we see most often, start with that guide before comparing response options.
             </p>
           </div>
         </div>
