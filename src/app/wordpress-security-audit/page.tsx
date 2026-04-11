@@ -10,10 +10,10 @@ import TrustSignals from '@/components/TrustSignals';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title:
-    'WordPress Security Audit UK | Professional Vulnerability Assessment | WebAdish',
+  title: 'WordPress Security Audit UK | Vulnerability Assessment',
   description:
     'Comprehensive WordPress security audit for UK businesses. Identify vulnerabilities, get a detailed remediation report, and protect your website. From £1,499.',
   path: '/wordpress-security-audit',
@@ -350,6 +350,25 @@ export default function WordPressSecurityAudit() {
                   +44 7344 540450
                 </strong>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
+          <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <h2 style={{ marginBottom: '1rem' }}>Further reading</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+                → WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It
+              </Link>
+              <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+                → Hacked Website Recovery UK — Emergency Incident Response
+              </Link>
+              <Link href="/wordpress-malware-removal" style={{ color: 'var(--primary)', textDecoration: 'none', fontSize: '0.95rem' }}>
+                → WordPress Malware Removal UK — Fixed-Fee Cleanup Service
+              </Link>
             </div>
           </div>
         </div>

@@ -321,6 +321,11 @@ export default function Home() {
             <h2>After recovery, stay protected</h2>
             <p>Once your website is secured, ongoing protection is critical.</p>
             <p>
+              <Link href="/wordpress-security-audit" style={{ color: 'var(--primary)' }}>
+                Get a WordPress security audit to understand your current risk posture
+              </Link>
+            </p>
+            <p>
               <Link href="https://webadish.com/" style={{ color: 'var(--primary)' }}>
                 Continue with our ongoing security protection
               </Link>

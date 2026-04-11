@@ -1,5 +1,4 @@
 import { generatePageMetadata } from '@/lib/seo';
-import { generateBreadcrumbSchema, generateArticleSchema, generateFAQSchema } from '@/lib/schema';
 import BlogPostLayout from '@/components/BlogPostLayout';
 import Link from 'next/link';
 
@@ -12,21 +11,7 @@ export const metadata = generatePageMetadata({
   modifiedTime: '2026-03-13',
 });
 
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog' },
-  { name: 'WordPress Site Keeps Getting Hacked', url: '/wordpress-site-keeps-getting-hacked' },
-]);
-
-const articleSchema = generateArticleSchema(
-  'WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It',
-  'If your WordPress site keeps getting hacked after cleanup, a backdoor or compromised hosting account is usually the cause. Learn how to stop repeat hacks permanently.',
-  '2026-03-09',
-  '2026-03-13',
-  '/wordpress-site-keeps-getting-hacked'
-);
-
-const faqSchema = generateFAQSchema([
+const faqItems = [
   {
     question: 'Why does my WordPress site keep getting hacked?',
     answer: 'The most common reason a WordPress site keeps getting hacked is an undetected backdoor — a hidden file or code snippet that lets attackers re-enter even after you clean the site. Other causes include: a compromised hosting account, weak admin passwords, an outdated plugin that gets re-exploited, or a nulled theme with malware baked in.',
@@ -51,14 +36,11 @@ const faqSchema = generateFAQSchema([
     question: 'How much does it cost to permanently fix a repeatedly hacked WordPress site?',
     answer: 'A professional post-hack forensic and hardening engagement for a repeatedly hacked WordPress site in the UK typically starts around £3,000, depending on complexity. An ongoing security retainer then provides the best long-term protection, with continuous monitoring, immediate response to new vulnerabilities, and a recovery guarantee.',
   },
-]);
+];
 
 export default function PostPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlogPostLayout
         title="WordPress Site Keeps Getting Hacked? Why It Happens and How to Stop It"
         lead="You cleaned the malware. You updated everything. A week later, it is back. If your WordPress site keeps getting hacked, a hidden backdoor or compromised access path is usually still open."
@@ -66,6 +48,7 @@ export default function PostPage() {
         dateModified="2026-03-13"
         category="Recovery"
         slug="wordpress-site-keeps-getting-hacked"
+        faqItems={faqItems}
         summaryPoints={[
           'Repeat hacks almost always mean a backdoor was missed during the initial cleanup',
           'Backdoors survive reinstalls, password changes, and surface-level malware scans',

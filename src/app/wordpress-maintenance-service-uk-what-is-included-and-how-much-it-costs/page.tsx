@@ -1,10 +1,9 @@
 import { generatePageMetadata } from '@/lib/seo';
-import { generateBreadcrumbSchema, generateArticleSchema, generateFAQSchema } from '@/lib/schema';
 import BlogPostLayout from '@/components/BlogPostLayout';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Protection UK: What\'s Included & How Much It Costs | WebAdish',
+  title: 'WordPress Security Protection UK: What\'s Included & Cost',
   description: 'Everything UK businesses need to know about WordPress security protections — what\'s included, what it costs, and how to choose the right plan. Updated March 2026.',
   path: '/wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs',
   type: 'article',
@@ -12,21 +11,7 @@ export const metadata = generatePageMetadata({
   modifiedTime: '2026-03-13',
 });
 
-const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog' },
-  { name: 'WordPress Security Protection UK', url: '/wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs' },
-]);
-
-const articleSchema = generateArticleSchema(
-  'WordPress Security Protection UK: What\'s Included & How Much It Costs',
-  'Everything UK businesses need to know about WordPress security protections — what\'s included, what it costs, and how to choose the right plan.',
-  '2026-03-09',
-  '2026-03-13',
-  '/wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs'
-);
-
-const faqSchema = generateFAQSchema([
+const faqItems = [
   {
     question: 'What is included in a WordPress security protection?',
     answer: 'A professional WordPress security protection typically includes: core, plugin and theme updates; daily or weekly automated backups; uptime monitoring; security scanning and malware removal; performance optimisation; and a monthly report. Premium plans also include priority support, security hardening, staging environments, and emergency recovery.',
@@ -51,14 +36,11 @@ const faqSchema = generateFAQSchema([
     question: 'What questions should I ask a WordPress security protection provider?',
     answer: 'Ask: What is your response SLA if my site goes down? Do you test updates on a staging site first? Where are my backups stored, and are they GDPR-compliant? What happens if my site gets hacked while on your plan? Do you offer white-label services? Can I cancel monthly? The answers will tell you quickly whether the provider is serious about security or just running automated scripts.',
   },
-]);
+];
 
 export default function PostPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BlogPostLayout
         title="WordPress Security Protection UK: What's Included & How Much It Costs"
         lead="If you run a WordPress site for your business, maintenance isn't optional — it's the difference between a site that works and one that gets hacked, goes down, or quietly loses rankings. Here's everything you need to know."
@@ -66,6 +48,7 @@ export default function PostPage() {
         dateModified="2026-03-13"
         category="Maintenance"
         slug="wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs"
+        faqItems={faqItems}
         summaryPoints={[
           'Outdated plugins are the #1 cause of WordPress hacks — maintenance prevents this',
           'UK protection retainers range from £500/month (basic) to £750+/month (fully managed)',
