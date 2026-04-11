@@ -40,7 +40,7 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'WordPress Malware Removal',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-04-11',
   },
   {
     path: '/wordpress-security-retainer',
@@ -64,7 +64,7 @@ export const CONTENT_ROUTES: RouteConfig[] = [
     label: 'Pricing',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-04-11',
   },
   {
     path: '/gdpr-wordpress-security',

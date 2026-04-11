@@ -177,6 +177,11 @@ export default function Home() {
                 Compare the full emergency WordPress recovery process before choosing a response tier
               </Link>
             </p>
+            <p>
+              <Link href="/wordpress-malware-removal" style={{ color: 'var(--primary)' }}>
+                Need fixed-fee WordPress malware removal instead? Start with the cleanup service page
+              </Link>
+            </p>
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
@@ -264,6 +269,11 @@ export default function Home() {
             <p>
               <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)' }}>
                 Read why WordPress sites keep getting hacked after cleanup
+              </Link>
+            </p>
+            <p>
+              <Link href="/wordpress-malware-removal" style={{ color: 'var(--primary)' }}>
+                Compare our fixed-fee WordPress malware removal service
               </Link>
             </p>
           </div>

@@ -420,6 +420,13 @@ export default function Pricing() {
             <h2>Monthly Security Retainers</h2>
             <p>For teams that want ongoing monitoring, faster support, and stronger GDPR-ready operating discipline after recovery.</p>
             <p style={{ marginTop: '1rem' }}>
+              If you need a one-off fixed-fee cleanup instead of a monthly plan, use our{' '}
+              <a href="/wordpress-malware-removal" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                WordPress malware removal
+              </a>
+              {' '}service page.
+            </p>
+            <p style={{ marginTop: '1rem' }}>
               <a href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 700 }}>
                 Looking for affordable WordPress maintenance plans? Compare monthly care tiers here.
               </a>
