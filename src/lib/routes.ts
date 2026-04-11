@@ -12,7 +12,7 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'WordPress Security Audit',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-04-11',
   },
   {
     path: '/wordpress-maintenance-uk',
@@ -26,7 +26,7 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'Hacked Website Recovery',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-04-11',
   },
   {
     path: '/wordpress-malware-removal',
@@ -138,7 +138,7 @@ export const LEGAL_ROUTES: RouteConfig[] = [
 ];
 
 export const ALL_ROUTES = [
-  { path: '/', label: 'Home', priority: 1.0, changeFreq: 'weekly' as const, lastModified: '2026-03-03' },
+  { path: '/', label: 'Home', priority: 1.0, changeFreq: 'weekly' as const, lastModified: '2026-04-11' },
   ...SERVICE_ROUTES,
   ...CONTENT_ROUTES,
   ...SECONDARY_ROUTES,

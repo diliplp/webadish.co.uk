@@ -123,6 +123,9 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h2>This is a security incident — not a simple fix</h2>
             <p>Most providers remove symptoms. We eliminate the cause.</p>
+            <p>
+              If your site is stable but you need to understand hidden risk before attackers do, start with our <Link href="/wordpress-security-audit" style={{ color: 'var(--primary)' }}>WordPress security audit UK</Link> service.
+            </p>
           </div>
           <div className={styles.fourPointGrid}>
             {[

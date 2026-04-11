@@ -436,6 +436,9 @@ export default function HackedWebsiteRecoveryUK() {
                 trigger regulatory decisions under UK GDPR. We provide an
                 evidence-led account of what happened and what was remediated.
               </p>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+                If the incident is contained and you want to reduce the risk of the same weakness being exploited later, the next step after cleanup is a <Link href="/wordpress-security-audit" style={{ color: '#ef4444', fontWeight: 600 }}>WordPress security audit UK</Link> engagement. That is where we validate the wider environment, identify structural weaknesses, and turn emergency recovery into a proper prevention plan.
+              </p>
               <Link href="https://webadish.com/" style={{ color: '#ef4444', fontSize: '0.95rem' }}>
                 → After recovery: continue protection with our maintenance and security plans
               </Link>

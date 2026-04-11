@@ -17,6 +17,7 @@ export const metadata = generatePageMetadata({
   description:
     'Comprehensive WordPress security audit for UK businesses. Identify vulnerabilities, get a detailed remediation report, and protect your website. From £1,499.',
   path: '/wordpress-security-audit',
+  modifiedTime: '2026-04-11',
 });
 
 const faqItems = [
@@ -114,6 +115,32 @@ export default function WordPressSecurityAudit() {
               automated scans, combining manual code review with industry-
               leading tools to deliver actionable, risk-scored findings.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem' }}
+      >
+        <div className="container">
+          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+            <div
+              style={{
+                background: 'rgba(99, 102, 241, 0.08)',
+                border: '1px solid rgba(99, 102, 241, 0.28)',
+                borderRadius: '1rem',
+                padding: '1.75rem',
+              }}
+            >
+              <h2 style={{ marginBottom: '0.75rem' }}>Who this audit is for</h2>
+              <p style={{ color: '#d4d4d8', lineHeight: 1.8, marginBottom: '1rem' }}>
+                This service is built for UK businesses that cannot afford to guess about WordPress risk. If your website handles lead flow, revenue, customer data, member access, or regulated information, a proper audit gives you an evidence-based view of where attackers are most likely to get in and what needs fixing first.
+              </p>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, margin: 0 }}>
+                It is especially useful after a redesign, plugin-heavy growth period, hosting migration, recurring malware incident, or before moving onto a long-term protection retainer. If the site is already compromised, start with <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery UK</Link>. If the site is currently stable and you want to reduce the chance of a future breach, this <Link href="/wordpress-security-audit" style={{ color: 'var(--primary)', fontWeight: 600 }}>WordPress security audit UK</Link> page is the correct next step.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -358,6 +385,15 @@ export default function WordPressSecurityAudit() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+            <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '1.5rem' }}>
+              <h2 style={{ marginBottom: '0.75rem' }}>What you receive after the audit</h2>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '0.75rem' }}>
+                By the end of the engagement, you are not left with a generic scanner export. You receive a prioritised remediation document, clear severity scoring, implementation guidance for each issue, and a consultation call to decide what needs fixing now, what can wait, and what belongs in an ongoing security roadmap.
+              </p>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.8, margin: 0 }}>
+                That makes this page commercially different from a lightweight plugin scan. It is designed for decision-makers who need clarity on cost, urgency, and business impact before they commit engineering time or budget.
+              </p>
+            </div>
             <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1.25rem' }}>
               Security audits are also where we uncover the hidden plugin exposure, access control drift, and persistence issues behind repeat compromises. If you are trying to understand <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: 'var(--primary)', fontWeight: 600 }}>why WordPress keeps getting hacked</Link>, that article pairs well with this service page because it explains the operational patterns an audit is designed to surface.
             </p>
