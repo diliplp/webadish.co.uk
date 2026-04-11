@@ -171,6 +171,11 @@ export default function WordPressMaintenanceUK() {
             <p style={{ color: '#a1a1aa', maxWidth: '560px', margin: '1rem auto 0' }}>
               Transparent monthly pricing. No setup fees, no long-term contracts, no surprises.
             </p>
+            <p style={{ marginTop: '1rem' }}>
+              <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+                Compare all WordPress maintenance plans and monthly pricing
+              </Link>
+            </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '800px', margin: '0 auto' }}>
             {/* Standard */}
@@ -230,7 +235,9 @@ export default function WordPressMaintenanceUK() {
           <p style={{ textAlign: 'center', color: '#71717a', fontSize: '0.85rem', marginTop: '1.5rem' }}>
             Need enterprise-level protection? See our{' '}
             <Link href="/wordpress-security-retainer" style={{ color: 'var(--primary)' }}>WordPress Security Retainer</Link>
-            {' '}from £1,000/month.
+            {' '}from £1,000/month. If you are still comparing tiers, use our{' '}
+            <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)' }}>WordPress maintenance plans</Link>
+            {' '}page for a side-by-side monthly comparison.
           </p>
         </div>
       </section>

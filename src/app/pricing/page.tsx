@@ -419,6 +419,11 @@ export default function Pricing() {
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3rem' }}>
             <h2>Monthly Security Retainers</h2>
             <p>For teams that want ongoing monitoring, faster support, and stronger GDPR-ready operating discipline after recovery.</p>
+            <p style={{ marginTop: '1rem' }}>
+              <a href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                Looking for affordable WordPress maintenance plans? Compare monthly care tiers here.
+              </a>
+            </p>
           </div>
           <div
             style={{
