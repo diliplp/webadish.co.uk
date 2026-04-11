@@ -101,7 +101,32 @@
 
     @include respond-to('lg') {
         display: flex;
+        align-items: center;
         gap: 1rem;
+    }
+}
+
+.phoneLink {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--foreground);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    span {
+        letter-spacing: 0.01em;
     }
 }
 

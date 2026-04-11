@@ -101,11 +101,12 @@ const Header = () => {
                 </nav>
 
                 <div className={styles.ctaGroup}>
-                    <a href="https://wa.me/447344540450" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                        <Phone size={16} style={{ marginRight: '8px' }} /> Emergency Help
+                    <a href="tel:+447344540450" className={styles.phoneLink}>
+                        <Phone size={15} />
+                        <span>+44 7344 540450</span>
                     </a>
                     <Link href="/contact" className="btn btn-primary">
-                        <ShieldAlert size={16} style={{ marginRight: '8px' }} /> Security Review
+                        <ShieldAlert size={16} style={{ marginRight: '8px' }} /> Emergency Help
                     </Link>
                 </div>
 
@@ -128,7 +129,10 @@ const Header = () => {
                     <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
                     <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                     <Link href="/about-webadish-web-agency" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>
+                    <a href="tel:+447344540450" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Phone size={16} /> Call +44 7344 540450
+                    </a>
+                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-secondary" style={{ textAlign: 'center', justifyContent: 'center' }}>
                         Request Security Review
                     </Link>
                 </div>
