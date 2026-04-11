@@ -6,10 +6,10 @@ import StructuredData from '@/components/StructuredData';
 import Link from 'next/link';
 import styles from './page.module.scss';
 import { generatePageMetadata } from '@/lib/seo';
-import { generateOrganizationSchema, generateFAQSchema } from '@/lib/schema';
+import { generateFAQSchema } from '@/lib/schema';
 
 export const metadata = generatePageMetadata({
-  title: 'WebAdish | Premium WordPress Incident Response & Security UK',
+  title: 'WordPress Incident Response & Security UK | WebAdish',
   description:
     'Premium WordPress incident response for UK businesses. We contain, recover, and secure compromised websites with root-cause-led remediation and long-term protection.',
   path: '/',
@@ -39,7 +39,7 @@ export default function Home() {
     },
   ];
 
-  const schemas = [generateOrganizationSchema(), generateFAQSchema(faqs)];
+  const schemas = [generateFAQSchema(faqs)];
 
   const heroTitle =
     "Your WordPress Site Is Compromised.<br />We Contain, Recover, and Secure It <span style='color: var(--primary)'>— Completely.</span>";

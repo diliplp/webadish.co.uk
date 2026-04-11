@@ -3,10 +3,12 @@ import Script from 'next/script';
 import '@/styles/globals.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import StructuredData from '@/components/StructuredData';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CookieBanner from '@/components/CookieBanner';
 import { Analytics } from '@vercel/analytics/next';
 import TrackingListener from '@/components/TrackingListener';
+import { generateOrganizationSchema } from '@/lib/schema';
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'vzlh3nm8uo';
@@ -30,6 +32,8 @@ export const metadata: Metadata = {
   },
 };
 
+const sitewideSchemas = [generateOrganizationSchema()];
+
 export default function RootLayout({
   children,
 }: {
@@ -51,6 +55,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         />
       </head>
       <body>
+        <StructuredData schemas={sitewideSchemas} />
         <TrackingListener />
         <Header />
         <main>{children}</main>
