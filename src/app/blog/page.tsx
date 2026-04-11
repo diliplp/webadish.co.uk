@@ -84,7 +84,7 @@ export default function BlogIndex() {
               }}
             >
               {[
-                { href: '/hacked-website-recovery-uk', label: 'Hacked Website Recovery UK', desc: 'Commercial recovery page for urgent hacked site cleanup and root-cause remediation.' },
+                { href: '/hacked-website-recovery-uk', label: 'Hacked Website Recovery UK', desc: 'Commercial recovery page for urgent hacked site cleanup, emergency WordPress recovery, and root-cause remediation.' },
                 { href: '/wordpress-site-keeps-getting-hacked', label: 'Why a WordPress Site Keeps Getting Hacked', desc: 'Explains repeat hacks, backdoors, and why malware comes back after cleanup.' },
                 { href: '/wordpress-site-keeps-getting-hacked', label: 'How to Know If Your Site Has Been Hacked', desc: 'Top warning signs, repeat-hack clues, and what to do in the first hour.' },
                 { href: '/wordpress-malware-removal', label: 'WordPress Malware Removal', desc: 'Fixed-fee malware cleanup page for businesses that need guaranteed removal.' },

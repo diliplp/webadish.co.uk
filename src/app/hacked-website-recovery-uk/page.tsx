@@ -217,6 +217,68 @@ export default function HackedWebsiteRecoveryUK() {
 
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
+          <div style={{ maxWidth: '920px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2rem' }}>
+              <h2>How our recovery works</h2>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7 }}>
+                When someone searches for hacked website recovery UK, they usually want to know exactly what happens after the first call. This is the delivery sequence we use to move from panic to a stable, evidence-led recovery.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gap: '1rem' }}>
+              {[
+                {
+                  step: '1',
+                  title: 'Triage',
+                  desc: 'We confirm the symptoms, identify what is actively at risk, preserve key evidence, and decide whether the site needs emergency containment before any cleanup starts.',
+                },
+                {
+                  step: '2',
+                  title: 'Forensic scan',
+                  desc: 'We inspect files, database payloads, user accounts, cron activity, hosting access, and persistence points to find the real access path behind the incident.',
+                },
+                {
+                  step: '3',
+                  title: 'Malware removal',
+                  desc: 'Visible malware, hidden backdoors, spam injections, rogue users, and malicious redirects are removed completely so the compromise is not simply pushed out of view.',
+                },
+                {
+                  step: '4',
+                  title: 'Hardening',
+                  desc: 'We close the root cause with patching, access control cleanup, environment corrections, credential resets, and practical controls that reduce repeat-hack risk.',
+                },
+                {
+                  step: '5',
+                  title: 'Post-incident report',
+                  desc: 'You receive a clear summary of what happened, what was remediated, what still needs attention, and how to reduce the odds of the site being hacked again.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.step}
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '80px 1fr',
+                    gap: '1rem',
+                    alignItems: 'start',
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '0.9rem',
+                    padding: '1.25rem 1.5rem',
+                  }}
+                >
+                  <div style={{ color: '#ef4444', fontSize: '2rem', fontWeight: 800, lineHeight: 1 }}>{item.step}</div>
+                  <div>
+                    <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
+                    <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
+        <div className="container">
           <div style={{ maxWidth: '760px', margin: '0 auto' }}>
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
               <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Recovery pricing and response options</h2>
@@ -310,6 +372,15 @@ export default function HackedWebsiteRecoveryUK() {
             <p style={{ marginTop: '1.25rem', color: '#d4d4d8', textAlign: 'center', lineHeight: 1.7 }}>
               This is the right option when your site has been hacked before, your business depends on SEO or paid traffic, or you cannot afford another cleanup cycle. If you want a plain-English breakdown of the <Link href="/wordpress-site-keeps-getting-hacked" style={{ color: '#ef4444', fontWeight: 600 }}>repeat hack root causes</Link> we see most often, start with that guide before comparing response options.
             </p>
+            <div style={{ marginTop: '2rem', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '1rem', padding: '1.75rem' }}>
+              <h3 style={{ color: '#ef4444', marginBottom: '0.75rem' }}>What happens if we miss something?</h3>
+              <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                That is the exact question serious buyers should ask. If the root cause is missed, the site can look clean for a few days and still get hacked again. We do not position hacked website recovery as a surface cleanup or a quick malware sweep. The entire engagement is built around finding the access path, removing persistence, and reducing the chance of repeat compromise.
+              </p>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: 0 }}>
+                No credible provider can promise a site <em>won&apos;t get hacked again</em> under every future condition, because new vulnerabilities and unsafe changes can always be introduced later. What we do promise is root-cause-led remediation, a documented post-incident report, and a hardening plan that addresses more than the visible symptoms. If you are comparing options, that difference is what separates a proper <Link href="/hacked-website-recovery-uk" style={{ color: '#ef4444', fontWeight: 600 }}>hacked website recovery UK</Link> engagement from a cheap cleanup that leaves the same door open.
+              </p>
+            </div>
           </div>
         </div>
       </section>

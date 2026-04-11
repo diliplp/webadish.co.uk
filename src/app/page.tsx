@@ -169,6 +169,11 @@ export default function Home() {
                 See our hacked website recovery UK service
               </Link>
             </p>
+            <p>
+              <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)' }}>
+                Compare the full emergency WordPress recovery process before choosing a response tier
+              </Link>
+            </p>
           </div>
           <div className={styles.highTicketGrid}>
             <article className={styles.highlightCard}>
