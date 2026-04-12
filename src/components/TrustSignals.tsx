@@ -7,7 +7,7 @@ const TrustSignals = () => {
         '30-Minute Emergency Triage',
         'UK GDPR Security Focus',
         '24/7 Security Monitoring',
-        'BTL ITC Ltd UK Partner',
+        'Business Together Limited UK Partner',
         'Cyber Essentials Ready',
         'ICO Registration Support',
         'Working Towards ISO 27001'

@@ -16,7 +16,7 @@ export default function Contact() {
     const faqs = [
         {
             question: "What are your support hours?",
-            answer: "Our team provides support during UK business hours with 24/7 monitoring for critical issues. Emergency recovery requests are handled around the clock. UK services are delivered in partnership with BTL ITC Ltd."
+            answer: "Our team provides support during UK business hours with 24/7 monitoring for critical issues. Emergency recovery requests are handled around the clock. UK services are delivered in partnership with Business Together Limited."
         },
         {
             question: "Do you offer white-label services?",
@@ -89,7 +89,7 @@ export default function Contact() {
                             <div className={styles.trustList}>
                                 <p>✓ Response within 1 business hour</p>
                                 <p>✓ No long-term lock-in contracts</p>
-                                <p>✓ UK services via BTL ITC Ltd</p>
+                                <p>✓ UK services via Business Together Limited</p>
                             </div>
                         </div>
 

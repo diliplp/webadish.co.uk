@@ -58,8 +58,8 @@ function buildCustomerReplyHtml(name: string, message: string, replyToEmail: str
   return `
     <div style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#18181b;">
       <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
-        <div style="background:#0b1220;border-radius:20px 20px 0 0;padding:24px 28px;text-align:left;">
-          <img src="https://www.webadish.co.uk/brand/webadish-logo-white.png" alt="WebAdish" style="height:42px;width:auto;display:block;" />
+        <div style="background:#0b1220;border-radius:20px 20px 0 0;padding:22px 28px;text-align:left;">
+          <img src="https://www.webadish.co.uk/brand/webadish-logo-white.png" alt="WebAdish" style="width:140px;max-width:100%;height:auto;display:block;" />
         </div>
         <div style="background:#ffffff;border:1px solid #e4e4e7;border-top:none;border-radius:0 0 20px 20px;padding:32px 28px;">
           <p style="margin:0 0 16px;font-size:16px;line-height:1.7;">Hi ${name},</p>

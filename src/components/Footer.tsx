@@ -56,7 +56,7 @@ const Footer = () => {
                             </li>
                         </ul>
                         <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: '#71717a', lineHeight: '1.6' }}>
-                            <strong style={{ color: '#a1a1aa', display: 'block', marginBottom: '0.25rem' }}>BTL ITC Ltd (UK Partner)</strong>
+                            <strong style={{ color: '#a1a1aa', display: 'block', marginBottom: '0.25rem' }}>Business Together Limited (UK Partner)</strong>
                             Oak House, Central Park<br />
                             Reeds Crescent, Watford<br />
                             WD24 4QN
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>&copy; {currentYear} WebAdish. All rights reserved. UK services delivered in partnership with BTL ITC Ltd, a registered UK company.</p>
+                    <p>&copy; {currentYear} WebAdish. All rights reserved. UK services delivered in partnership with Business Together Limited, a registered UK company.</p>
                     <div className={styles.policies}>
                         <Link href="/privacy-policy">Privacy Policy</Link>
                         <Link href="/terms-conditions">Terms &amp; Conditions</Link>

@@ -19,7 +19,7 @@ export default function About() {
 
             <h2>Global Presence, Local Support</h2>
             <p style={{ marginBottom: '2rem' }}>
-                WebAdish UK services are delivered in partnership with BTL ITC Ltd, a registered UK company. Our expert team provides dedicated coverage during UK business hours with 24/7 monitoring and emergency response capabilities for critical security incidents.
+                WebAdish UK services are delivered in partnership with Business Together Limited, a registered UK company. Our expert team provides dedicated coverage during UK business hours with 24/7 monitoring and emergency response capabilities for critical security incidents.
                 When you talk to us, you&apos;re talking to a WordPress expert.
             </p>
 
