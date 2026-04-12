@@ -9,6 +9,7 @@ interface ContactPayload {
   website?: string;
   message?: string;
   fax_number?: string; // honeypot
+  form_started_at?: number | string;
   // UTM tracking
   utm_source?: string;
   utm_medium?: string;
@@ -22,6 +23,8 @@ interface ContactPayload {
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const RATE_LIMIT_MAX_REQUESTS = 5;
+const MIN_FORM_FILL_MS = 3000;
+const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1000;
 const ipHits = new Map<string, number[]>();
 
 function getClientIp(request: Request) {
@@ -52,6 +55,61 @@ function getResendClient() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return null;
   return new Resend(apiKey);
+}
+
+function hasMostlySafeCharacters(value: string) {
+  return /^[\p{L}\p{N}\s.,'’"!?():/&+@#%-]*$/u.test(value);
+}
+
+function countLetters(value: string) {
+  const matches = value.match(/\p{L}/gu);
+  return matches ? matches.length : 0;
+}
+
+function countWords(value: string) {
+  return value.trim().split(/\s+/).filter(Boolean).length;
+}
+
+function looksLikeRealName(value: string) {
+  if (value.length < 2 || value.length > 80) return false;
+  if (!/^[\p{L}\s.'’-]+$/u.test(value)) return false;
+  return countLetters(value) >= 2;
+}
+
+function looksLikeRealMessage(value: string) {
+  if (value.length < 12 || value.length > 4000) return false;
+  if (!hasMostlySafeCharacters(value)) return false;
+  if (countWords(value) < 3) return false;
+
+  const letters = countLetters(value);
+  const compactLength = value.replace(/\s+/g, '').length;
+  if (!compactLength || letters / compactLength < 0.45) return false;
+
+  if (/[A-Z]{5,}/.test(value) && !/\s/.test(value)) return false;
+  if (/[bcdfghjklmnpqrstvwxyz]{7,}/i.test(value)) return false;
+
+  return true;
+}
+
+function looksLikeValidWebsite(value: string) {
+  if (!value || value === 'Not provided') return true;
+
+  try {
+    const normalized = /^[a-z]+:\/\//i.test(value) ? value : `https://${value}`;
+    const url = new URL(normalized);
+    return Boolean(url.hostname && url.hostname.includes('.'));
+  } catch {
+    return false;
+  }
+}
+
+function parseStartedAt(value?: number | string) {
+  if (typeof value === 'number') return value;
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
 }
 
 function buildCustomerReplyHtml(name: string, message: string, replyToEmail: string) {
@@ -103,10 +161,18 @@ export async function POST(request: Request) {
     const website = body.website?.trim() || 'Not provided';
     const message = body.message?.trim();
     const honeypot = body.fax_number?.trim();
+    const startedAt = parseStartedAt(body.form_started_at);
     const ip = getClientIp(request);
 
-    // Honeypot: pretend success to avoid teaching bots
+    // Silent drop paths to avoid teaching bots how the filter works.
     if (honeypot) {
+      console.warn('Silently dropped contact form submission: honeypot hit', { ip });
+      return NextResponse.json({ success: true });
+    }
+
+    const now = Date.now();
+    if (!startedAt || now - startedAt < MIN_FORM_FILL_MS || now - startedAt > MAX_FORM_AGE_MS) {
+      console.warn('Silently dropped contact form submission: invalid timing', { ip });
       return NextResponse.json({ success: true });
     }
 
@@ -119,6 +185,15 @@ export async function POST(request: Request) {
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
+    }
+
+    if (!looksLikeRealName(name) || !looksLikeRealMessage(message) || !looksLikeValidWebsite(website)) {
+      console.warn('Silently dropped contact form submission: suspicious content', {
+        ip,
+        email,
+        landingPage: body.landing_page,
+      });
+      return NextResponse.json({ success: true });
     }
 
     const resend = getResendClient();

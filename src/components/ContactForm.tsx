@@ -12,7 +12,8 @@ const ContactForm = () => {
         email: '',
         website: '',
         message: '',
-        fax_number: ''
+        fax_number: '',
+        form_started_at: Date.now()
     });
 
     const [utmData, setUtmData] = useState({
@@ -100,7 +101,7 @@ const ContactForm = () => {
                 source: utmData.utm_source || 'direct',
                 medium: utmData.utm_medium || 'organic',
             });
-            setFormData({ name: '', email: '', website: '', message: '', fax_number: '' });
+            setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now() });
             setHasTrackedStart(false);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
@@ -145,6 +146,9 @@ const ContactForm = () => {
                     value={formData.name}
                     onFocus={trackFormStart}
                     onChange={handleChange}
+                    minLength={2}
+                    maxLength={80}
+                    autoComplete="name"
                 />
             </div>
 
@@ -158,6 +162,7 @@ const ContactForm = () => {
                     value={formData.email}
                     onFocus={trackFormStart}
                     onChange={handleChange}
+                    autoComplete="email"
                 />
             </div>
 
@@ -172,6 +177,7 @@ const ContactForm = () => {
                     value={formData.website}
                     onFocus={trackFormStart}
                     onChange={handleChange}
+                    autoComplete="url"
                 />
             </div>
 
@@ -185,6 +191,8 @@ const ContactForm = () => {
                     value={formData.message}
                     onFocus={trackFormStart}
                     onChange={handleChange}
+                    minLength={12}
+                    placeholder="Tell us what you need help with, what happened, or what you'd like us to review."
                 ></textarea>
             </div>
 

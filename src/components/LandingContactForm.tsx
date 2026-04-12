@@ -29,6 +29,7 @@ export default function LandingContactForm({
     website: '',
     message: '',
     fax_number: '', // honeypot
+    form_started_at: Date.now(),
   });
   const [utmParams, setUtmParams] = useState<UTMParams>({
     utm_source: '',
@@ -95,7 +96,7 @@ export default function LandingContactForm({
           medium: utmParams.utm_medium || 'none',
           campaign: utmParams.utm_campaign || 'none',
         });
-        setFormData({ name: '', email: '', website: '', message: '', fax_number: '' });
+        setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now() });
         setHasTrackedStart(false);
       } else {
         setStatus('error');
@@ -163,6 +164,9 @@ export default function LandingContactForm({
             value={formData.name}
             onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            minLength={2}
+            maxLength={80}
+            autoComplete="name"
             style={{
               background: 'var(--background)',
               border: '1px solid var(--border)',
@@ -179,6 +183,7 @@ export default function LandingContactForm({
             value={formData.email}
             onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            autoComplete="email"
             style={{
               background: 'var(--background)',
               border: '1px solid var(--border)',
@@ -196,6 +201,7 @@ export default function LandingContactForm({
             value={formData.website}
             onFocus={trackFormStart}
             onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+            autoComplete="url"
             style={{
               background: 'var(--background)',
               border: '1px solid var(--border)',
@@ -203,6 +209,25 @@ export default function LandingContactForm({
               padding: '0.85rem 1rem',
               color: 'var(--foreground)',
               fontSize: '0.95rem',
+            }}
+          />
+          <textarea
+            placeholder="What would you like us to review or fix?"
+            required
+            minLength={12}
+            rows={4}
+            value={formData.message}
+            onFocus={trackFormStart}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            style={{
+              background: 'var(--background)',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              padding: '0.85rem 1rem',
+              color: 'var(--foreground)',
+              fontSize: '0.95rem',
+              resize: 'vertical',
+              fontFamily: 'inherit',
             }}
           />
           <button
