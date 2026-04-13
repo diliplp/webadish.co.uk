@@ -30,6 +30,11 @@ interface TurnstileFieldProps {
 export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFieldProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const onTokenChangeRef = useRef(onTokenChange);
+
+  useEffect(() => {
+    onTokenChangeRef.current = onTokenChange;
+  }, [onTokenChange]);
 
   useEffect(() => {
     if (!siteKey) return;
@@ -42,9 +47,9 @@ export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFiel
       widgetIdRef.current = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
         theme: 'auto',
-        callback: (token) => onTokenChange(token),
-        'expired-callback': () => onTokenChange(''),
-        'error-callback': () => onTokenChange(''),
+        callback: (token) => onTokenChangeRef.current(token),
+        'expired-callback': () => onTokenChangeRef.current(''),
+        'error-callback': () => onTokenChangeRef.current(''),
       });
     };
 
@@ -74,7 +79,7 @@ export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFiel
         widgetIdRef.current = null;
       }
     };
-  }, [siteKey, onTokenChange]);
+  }, [siteKey]);
 
   if (!siteKey) return null;
 
