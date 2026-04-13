@@ -10,6 +10,7 @@ interface ContactPayload {
   message?: string;
   fax_number?: string; // honeypot
   form_started_at?: number | string;
+  turnstile_token?: string;
   // UTM tracking
   utm_source?: string;
   utm_medium?: string;
@@ -55,6 +56,30 @@ function getResendClient() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return null;
   return new Resend(apiKey);
+}
+
+async function verifyTurnstileToken(token: string, ip: string) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return true;
+  if (!token) return false;
+
+  const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      secret,
+      response: token,
+      remoteip: ip,
+    }),
+    cache: 'no-store',
+  });
+
+  if (!response.ok) return false;
+
+  const data = (await response.json()) as { success?: boolean };
+  return Boolean(data.success);
 }
 
 function hasMostlySafeCharacters(value: string) {
@@ -162,6 +187,7 @@ export async function POST(request: Request) {
     const message = body.message?.trim();
     const honeypot = body.fax_number?.trim();
     const startedAt = parseStartedAt(body.form_started_at);
+    const turnstileToken = body.turnstile_token?.trim() || '';
     const ip = getClientIp(request);
 
     // Silent drop paths to avoid teaching bots how the filter works.
@@ -189,6 +215,16 @@ export async function POST(request: Request) {
 
     if (!looksLikeRealName(name) || !looksLikeRealMessage(message) || !looksLikeValidWebsite(website)) {
       console.warn('Silently dropped contact form submission: suspicious content', {
+        ip,
+        email,
+        landingPage: body.landing_page,
+      });
+      return NextResponse.json({ success: true });
+    }
+
+    const isTurnstileValid = await verifyTurnstileToken(turnstileToken, ip);
+    if (!isTurnstileValid) {
+      console.warn('Silently dropped contact form submission: turnstile failed', {
         ip,
         email,
         landingPage: body.landing_page,

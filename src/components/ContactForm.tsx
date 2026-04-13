@@ -5,15 +5,18 @@ import { Send } from 'lucide-react';
 import { track } from '@vercel/analytics';
 import styles from './ContactForm.module.scss';
 import { trackEvent } from '@/lib/tracking';
+import TurnstileField from './TurnstileField';
 
 const ContactForm = () => {
+    const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         website: '',
         message: '',
         fax_number: '',
-        form_started_at: Date.now()
+        form_started_at: Date.now(),
+        turnstile_token: ''
     });
 
     const [utmData, setUtmData] = useState({
@@ -69,6 +72,12 @@ const ContactForm = () => {
         setError(null);
         setIsSuccess(false);
 
+        if (turnstileSiteKey && !formData.turnstile_token) {
+            setError('Please complete the security check and try again.');
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 20000);
@@ -101,7 +110,7 @@ const ContactForm = () => {
                 source: utmData.utm_source || 'direct',
                 medium: utmData.utm_medium || 'organic',
             });
-            setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now() });
+            setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
             setHasTrackedStart(false);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
@@ -209,7 +218,12 @@ const ContactForm = () => {
                 />
             </div>
 
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+            <TurnstileField
+                siteKey={turnstileSiteKey}
+                onTokenChange={(token) => setFormData((current) => ({ ...current, turnstile_token: token }))}
+            />
+
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting || (Boolean(turnstileSiteKey) && !formData.turnstile_token)}>
                 {isSubmitting ? 'Sending...' : (
                     <>Send Message <Send size={18} style={{ marginLeft: '8px' }} /></>
                 )}

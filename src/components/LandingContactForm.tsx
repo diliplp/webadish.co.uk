@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { trackEvent } from '@/lib/tracking';
+import TurnstileField from '@/components/TurnstileField';
 
 interface UTMParams {
   utm_source: string;
@@ -23,6 +24,7 @@ export default function LandingContactForm({
   formTitle = 'Get Your Free Security Assessment',
   buttonText = 'Request Security Audit',
 }: LandingContactFormProps) {
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,6 +32,7 @@ export default function LandingContactForm({
     message: '',
     fax_number: '', // honeypot
     form_started_at: Date.now(),
+    turnstile_token: '',
   });
   const [utmParams, setUtmParams] = useState<UTMParams>({
     utm_source: '',
@@ -79,6 +82,11 @@ export default function LandingContactForm({
     if (formData.fax_number) return; // honeypot
     trackFormStart();
 
+    if (turnstileSiteKey && !formData.turnstile_token) {
+      setStatus('error');
+      return;
+    }
+
     setStatus('loading');
     try {
       const res = await fetch('/api/contact', {
@@ -96,7 +104,7 @@ export default function LandingContactForm({
           medium: utmParams.utm_medium || 'none',
           campaign: utmParams.utm_campaign || 'none',
         });
-        setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now() });
+        setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
         setHasTrackedStart(false);
       } else {
         setStatus('error');
@@ -230,9 +238,13 @@ export default function LandingContactForm({
               fontFamily: 'inherit',
             }}
           />
+          <TurnstileField
+            siteKey={turnstileSiteKey}
+            onTokenChange={(token) => setFormData((current) => ({ ...current, turnstile_token: token }))}
+          />
           <button
             type="submit"
-            disabled={status === 'loading'}
+            disabled={status === 'loading' || (Boolean(turnstileSiteKey) && !formData.turnstile_token)}
             className="btn btn-primary"
             style={{ width: '100%', justifyContent: 'center', padding: '1rem' }}
           >
