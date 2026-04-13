@@ -240,6 +240,7 @@ export default function LandingContactForm({
           />
           <TurnstileField
             siteKey={turnstileSiteKey}
+            theme="dark"
             onTokenChange={(token) => setFormData((current) => ({ ...current, turnstile_token: token }))}
           />
           <button

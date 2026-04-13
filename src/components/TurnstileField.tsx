@@ -25,9 +25,14 @@ declare global {
 interface TurnstileFieldProps {
   siteKey: string;
   onTokenChange: (token: string) => void;
+  theme?: 'light' | 'dark' | 'auto';
 }
 
-export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFieldProps) {
+export default function TurnstileField({
+  siteKey,
+  onTokenChange,
+  theme = 'auto',
+}: TurnstileFieldProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   const onTokenChangeRef = useRef(onTokenChange);
@@ -46,7 +51,7 @@ export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFiel
 
       widgetIdRef.current = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
-        theme: 'auto',
+        theme,
         callback: (token) => onTokenChangeRef.current(token),
         'expired-callback': () => onTokenChangeRef.current(''),
         'error-callback': () => onTokenChangeRef.current(''),
@@ -79,7 +84,7 @@ export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFiel
         widgetIdRef.current = null;
       }
     };
-  }, [siteKey]);
+  }, [siteKey, theme]);
 
   if (!siteKey) return null;
 
@@ -89,7 +94,7 @@ export default function TurnstileField({ siteKey, onTokenChange }: TurnstileFiel
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
       />
-      <div style={{ marginTop: '0.25rem' }}>
+      <div style={{ marginTop: '0.25rem', minHeight: '72px' }}>
         <div ref={containerRef} />
       </div>
     </>
