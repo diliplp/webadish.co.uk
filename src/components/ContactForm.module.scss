@@ -59,3 +59,46 @@
     opacity: 0;
     pointer-events: none;
 }
+
+.helperCard {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1rem 1rem 1.1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(239, 68, 68, 0.28);
+    background: linear-gradient(180deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.05));
+
+    strong {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: #fff;
+        font-size: 0.95rem;
+    }
+
+    p {
+        margin: 0;
+        color: #d4d4d8;
+        line-height: 1.6;
+        font-size: 0.92rem;
+    }
+}
+
+.securityHint {
+    margin: 0.35rem 0 1rem;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.fallbackLinks {
+    margin: 1rem 0 0;
+    text-align: center;
+    color: #a1a1aa;
+    font-size: 0.92rem;
+    line-height: 1.6;
+
+    a {
+        color: #f87171;
+        text-decoration: none;
+        font-weight: 600;
+    }
+}

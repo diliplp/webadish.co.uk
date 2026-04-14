@@ -13,22 +13,23 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'Hacked Website Recovery UK | Fix a Hacked WordPress Site Fast',
+  title: 'Hacked Website Recovery UK | Emergency WordPress Fix',
   description:
-    'Hacked website recovery for UK businesses. We fix hacked WordPress sites, remove malware, find the root cause, and offer a post-hack forensic and hardening package to stop repeat compromise.',
+    'Your WordPress site has been hacked. We contain the damage, remove malware, close the backdoor, and restore it. Fixed fee from £1,499, 30-minute triage.',
   path: '/hacked-website-recovery-uk',
+  modifiedTime: '2026-04-14',
 });
 
 const faqItems = [
   {
     question: 'How quickly can you start recovering my hacked WordPress site?',
     answer:
-      'We begin triage quickly because the first priority is containment. For revenue-critical incidents, we can move to an emergency track fast, but we do not promise a superficial cleanup just to hit an arbitrary clock.',
+      'We begin triage within 30 minutes during active coverage hours. For revenue-critical sites — WooCommerce, lead generation, membership platforms — we can move to emergency containment the same day. Call or WhatsApp for the fastest response.',
   },
   {
     question: 'How long does hacked WordPress site recovery take?',
     answer:
-      'That depends on the depth of compromise and the business constraints around recovery. Containment happens first; full eradication, validation, and relaunch planning can take longer for complex eCommerce, multi-site, or server-level incidents.',
+      'A contained infection typically takes 1–3 days from engagement to clean confirmation. Complex incidents — repeat hacks, WooCommerce sites, multi-site estates, or server-level access — take longer. We scope that clearly before work begins.',
   },
   {
     question: 'My site was hacked before and it came back. Why does this keep happening?',
@@ -217,68 +218,6 @@ export default function HackedWebsiteRecoveryUK() {
 
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
-          <div style={{ maxWidth: '920px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2rem' }}>
-              <h2>How our recovery works</h2>
-              <p style={{ color: '#a1a1aa', lineHeight: 1.7 }}>
-                When someone searches for hacked website recovery UK, they usually want to know exactly what happens after the first call. This is the delivery sequence we use to move from panic to a stable, evidence-led recovery.
-              </p>
-            </div>
-            <div style={{ display: 'grid', gap: '1rem' }}>
-              {[
-                {
-                  step: '1',
-                  title: 'Triage',
-                  desc: 'We confirm the symptoms, identify what is actively at risk, preserve key evidence, and decide whether the site needs emergency containment before any cleanup starts.',
-                },
-                {
-                  step: '2',
-                  title: 'Forensic scan',
-                  desc: 'We inspect files, database payloads, user accounts, cron activity, hosting access, and persistence points to find the real access path behind the incident.',
-                },
-                {
-                  step: '3',
-                  title: 'Malware removal',
-                  desc: 'Visible malware, hidden backdoors, spam injections, rogue users, and malicious redirects are removed completely so the compromise is not simply pushed out of view.',
-                },
-                {
-                  step: '4',
-                  title: 'Hardening',
-                  desc: 'We close the root cause with patching, access control cleanup, environment corrections, credential resets, and practical controls that reduce repeat-hack risk.',
-                },
-                {
-                  step: '5',
-                  title: 'Post-incident report',
-                  desc: 'You receive a clear summary of what happened, what was remediated, what still needs attention, and how to reduce the odds of the site being hacked again.',
-                },
-              ].map((item) => (
-                <div
-                  key={item.step}
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '80px 1fr',
-                    gap: '1rem',
-                    alignItems: 'start',
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    borderRadius: '0.9rem',
-                    padding: '1.25rem 1.5rem',
-                  }}
-                >
-                  <div style={{ color: '#ef4444', fontSize: '2rem', fontWeight: 800, lineHeight: 1 }}>{item.step}</div>
-                  <div>
-                    <h3 style={{ marginBottom: '0.5rem' }}>{item.title}</h3>
-                    <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
-        <div className="container">
           <div style={{ maxWidth: '760px', margin: '0 auto' }}>
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
               <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Recovery pricing and response options</h2>
@@ -423,39 +362,24 @@ export default function HackedWebsiteRecoveryUK() {
 
       <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
-            <div>
-              <h2>Why hacked website recovery needs more than malware removal</h2>
-              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
-                A hacked WordPress site can mean lost transactions, suspended ad
-                campaigns, reputational damage, and internal escalation to legal
-                or compliance teams. Recovery has to account for those realities.
-              </p>
-              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
-                For UK businesses handling personal data, a compromise may also
-                trigger regulatory decisions under UK GDPR. We provide an
-                evidence-led account of what happened and what was remediated.
-              </p>
-              <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
-                If the incident is contained and you want to reduce the risk of the same weakness being exploited later, the next step after cleanup is a <Link href="/wordpress-security-audit" style={{ color: '#ef4444', fontWeight: 600 }}>WordPress security audit UK</Link> engagement. That is where we validate the wider environment, identify structural weaknesses, and turn emergency recovery into a proper prevention plan.
-              </p>
-              <Link href="https://webadish.com/" style={{ color: '#ef4444', fontSize: '0.95rem' }}>
-                → After recovery: continue protection with our maintenance and security plans
-              </Link>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {[
-                { stat: 'Fast', label: 'Initial triage and containment for urgent business incidents' },
-                { stat: 'Deep', label: 'Root-cause analysis, not just visible malware removal' },
-                { stat: 'Clear', label: 'Stakeholder-ready reporting for internal decision makers' },
-                { stat: 'Premium', label: 'Pricing aligned to business-critical recovery work' },
-              ].map((item) => (
-                <div key={item.label} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '12px', padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-                  <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ef4444', minWidth: '90px' }}>{item.stat}</div>
-                  <div style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>{item.label}</div>
-                </div>
-              ))}
-            </div>
+          <div style={{ maxWidth: '760px', margin: '0 auto' }}>
+            <h2>Why hacked website recovery needs more than malware removal</h2>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0' }}>
+              A hacked WordPress site can mean lost transactions, suspended ad
+              campaigns, reputational damage, and internal escalation to legal
+              or compliance teams. Recovery has to account for those realities.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+              For UK businesses handling personal data, a compromise may also
+              trigger regulatory decisions under UK GDPR. We provide an
+              evidence-led account of what happened and what was remediated.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
+              If the incident is contained and you want to reduce the risk of the same weakness being exploited later, the next step after cleanup is a <Link href="/wordpress-security-audit" style={{ color: '#ef4444', fontWeight: 600 }}>WordPress security audit UK</Link> engagement. That is where we validate the wider environment, identify structural weaknesses, and turn emergency recovery into a proper prevention plan.
+            </p>
+            <Link href="https://webadish.com/" style={{ color: '#ef4444', fontSize: '0.95rem' }}>
+              → After recovery: continue protection with our maintenance and security plans
+            </Link>
           </div>
         </div>
       </section>
@@ -527,6 +451,41 @@ export default function HackedWebsiteRecoveryUK() {
               advise whether you need fixed-fee cleanup, incident recovery, or
               a longer-term protection plan.
             </p>
+            <div
+              style={{
+                display: 'grid',
+                gap: '0.85rem',
+                marginBottom: '1.5rem',
+                padding: '1rem',
+                borderRadius: '0.9rem',
+                background: 'rgba(239, 68, 68, 0.08)',
+                border: '1px solid rgba(239, 68, 68, 0.28)',
+              }}
+            >
+              <p style={{ margin: 0, color: '#f5f5f5', fontWeight: 700 }}>
+                If the form feels slow or the incident is active, use the fastest route below.
+              </p>
+              <div style={{ display: 'grid', gap: '0.75rem', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
+                <a href="tel:+447344540450" className="btn btn-primary" style={{ justifyContent: 'center' }}>
+                  Call Now
+                </a>
+                <a
+                  href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ justifyContent: 'center' }}
+                >
+                  WhatsApp Triage
+                </a>
+                <a href="mailto:sales@webadish.co.uk?subject=Urgent%20Hacked%20Website%20Recovery" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
+                  Email Incident
+                </a>
+              </div>
+              <p style={{ margin: 0, color: '#a1a1aa', fontSize: '0.92rem', lineHeight: 1.6 }}>
+                Paid traffic running, leads failing, or malware warnings showing? Call or WhatsApp is the safest path for immediate triage.
+              </p>
+            </div>
             <ContactForm />
           </div>
         </div>

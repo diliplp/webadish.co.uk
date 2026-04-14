@@ -34,6 +34,7 @@ const ContactForm = () => {
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [hasTrackedStart, setHasTrackedStart] = useState(false);
+    const [showTurnstilePrompt, setShowTurnstilePrompt] = useState(false);
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
@@ -74,6 +75,7 @@ const ContactForm = () => {
 
         if (turnstileSiteKey && !formData.turnstile_token) {
             setError('Please complete the security check and try again.');
+            setShowTurnstilePrompt(true);
             setIsSubmitting(false);
             return;
         }
@@ -99,6 +101,7 @@ const ContactForm = () => {
             }
 
             setIsSuccess(true);
+            setShowTurnstilePrompt(false);
             track('form_submission', {
                 page: utmData.landing_page,
                 source: utmData.utm_source || 'direct',
@@ -205,6 +208,14 @@ const ContactForm = () => {
                 ></textarea>
             </div>
 
+            <div className={styles.helperCard}>
+                <strong>Best for urgent recovery requests</strong>
+                <p>
+                    Include the website URL, what visitors are seeing, whether leads or ads are being affected,
+                    and whether anyone already attempted a cleanup. We prioritise active hacked-site enquiries.
+                </p>
+            </div>
+
             <div className={styles.honeypotField} aria-hidden="true">
                 <label htmlFor="fax_number">Fax Number</label>
                 <input
@@ -221,14 +232,39 @@ const ContactForm = () => {
             <TurnstileField
                 siteKey={turnstileSiteKey}
                 theme="dark"
-                onTokenChange={(token) => setFormData((current) => ({ ...current, turnstile_token: token }))}
+                onTokenChange={(token) => {
+                    setFormData((current) => ({ ...current, turnstile_token: token }));
+                    if (token) {
+                        setError(null);
+                        setShowTurnstilePrompt(false);
+                    }
+                }}
             />
 
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting || (Boolean(turnstileSiteKey) && !formData.turnstile_token)}>
+            {Boolean(turnstileSiteKey) && (
+                <p className={styles.securityHint} aria-live="polite">
+                    {showTurnstilePrompt
+                        ? 'Complete the security check above, then send your request.'
+                        : 'Quick security check to block spam. If it does not load, call or WhatsApp us instead.'}
+                </p>
+            )}
+
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : (
                     <>Send Message <Send size={18} style={{ marginLeft: '8px' }} /></>
                 )}
             </button>
+
+            <p className={styles.fallbackLinks}>
+                Urgent incident? <a href="tel:+447344540450">Call +44 7344 540450</a> or{' '}
+                <a
+                    href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    open WhatsApp triage
+                </a>.
+            </p>
         </form>
     );
 };
