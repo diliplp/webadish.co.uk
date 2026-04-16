@@ -10,6 +10,16 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'wordpress-hacked-what-to-do',
+    title: 'WordPress Hacked: What To Do Right Now',
+    excerpt:
+      'Your WordPress site has been hacked. Here is the exact sequence to follow — contain first, investigate second, clean third — so you do not make the situation worse before you make it better.',
+    datePublished: '2026-04-17',
+    dateModified: '2026-04-17',
+    category: 'Recovery',
+    author: 'WebAdish',
+  },
+  {
     slug: 'state-of-wordpress-security-2025-uk-business-takeaways',
     title: 'What the State of WordPress Security in 2025 Means for UK Businesses',
     excerpt:
