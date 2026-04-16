@@ -344,7 +344,7 @@ export default function Home() {
               </Link>
             </p>
             <p>
-              <Link href="https://webadish.com/" style={{ color: 'var(--primary)' }}>
+              <Link href="https://www.webadish.com/" style={{ color: 'var(--primary)' }}>
                 Continue with our ongoing security protection
               </Link>
             </p>
