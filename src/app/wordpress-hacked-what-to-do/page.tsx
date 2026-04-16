@@ -7,6 +7,7 @@ export const metadata = generatePageMetadata({
   description:
     'Your WordPress site has been hacked. Here is what to do in the first hour — contain the damage, protect your data, and decide whether you can fix it yourself.',
   path: '/wordpress-hacked-what-to-do',
+  ogImage: '/og-wordpress-hacked-what-to-do.png',
   type: 'article',
   publishedTime: '2026-04-17',
   modifiedTime: '2026-04-17',
