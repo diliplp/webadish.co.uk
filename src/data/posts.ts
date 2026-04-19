@@ -10,6 +10,16 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'wordpress-care-plans-uk',
+    title: "WordPress Care Plans UK: What's Included and Which Plan Is Right for You",
+    excerpt:
+      "A practical guide to WordPress care plans for UK businesses — what should be included, what to avoid, how much to pay, and how to choose between a care plan and a security retainer.",
+    datePublished: '2026-04-19',
+    dateModified: '2026-04-19',
+    category: 'Maintenance',
+    author: 'WebAdish',
+  },
+  {
     slug: 'wordpress-hacked-what-to-do',
     title: 'WordPress Hacked: What To Do Right Now',
     excerpt:
