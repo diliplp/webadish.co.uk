@@ -91,6 +91,93 @@ export default function WordPressSecurityRetainer() {
         badge="From £250/month"
       />
 
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1.25rem' }}
+      >
+        <div className="container">
+          <div
+            style={{
+              maxWidth: '1080px',
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem',
+              alignItems: 'stretch',
+            }}
+          >
+            <div
+              style={{
+                background: 'rgba(99, 102, 241, 0.08)',
+                border: '1px solid rgba(99, 102, 241, 0.28)',
+                borderRadius: '1rem',
+                padding: '1.5rem',
+              }}
+            >
+              <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+                Quick buyer summary
+              </p>
+              <h2 style={{ marginBottom: '0.75rem' }}>From £250/month for ongoing protection</h2>
+              <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                This page is for buyers who need monitoring, escalation, patch prioritisation, and a named security path. If you want routine upkeep only, compare our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link> instead.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.55rem' }}>
+                {[
+                  'Essential Monitoring: £250/mo',
+                  'Business Protection: £500/mo',
+                  'Continuity Retainer: £800/mo',
+                  'Best for higher-risk, higher-stakes WordPress operations',
+                ].map((item) => (
+                  <li key={item} style={{ color: '#e4e4e7' }}>
+                    <span style={{ color: 'var(--primary)', marginRight: '0.5rem' }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              style={{
+                background: 'var(--background)',
+                border: '1px solid var(--border)',
+                borderRadius: '1rem',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+                  Talk to us
+                </p>
+                <h3 style={{ marginBottom: '0.5rem' }}>Need the right retainer, not guesswork?</h3>
+                <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  Call if you want a fast conversation about risk level, response expectation, and whether a retainer is the right fit versus a maintenance plan or one-off audit.
+                </p>
+                <p style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
+                  <a href="tel:+447344540450" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                    +44 7344 540450
+                  </a>
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '0.75rem' }}>
+                <a href="tel:+447344540450" className="btn btn-primary" style={{ justifyContent: 'center' }}>
+                  Call Now
+                </a>
+                <a href="#contact-section" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
+                  Discuss Your Retainer
+                </a>
+                <a href="#retainer-tiers" style={{ color: 'var(--primary)', textAlign: 'center', fontWeight: 600 }}>
+                  Compare retainer tiers below
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TrustSignals />
 
       <section
@@ -114,6 +201,7 @@ export default function WordPressSecurityRetainer() {
 
       {/* Definition paragraph for AI search */}
       <section
+        id="retainer-tiers"
         className="section-padding"
         style={{ backgroundColor: 'var(--background)' }}
       >

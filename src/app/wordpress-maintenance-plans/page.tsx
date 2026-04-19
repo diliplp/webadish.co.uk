@@ -126,6 +126,93 @@ export default function WordPressMaintenancePlans() {
         badge="Plans from £149/month"
       />
 
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1.25rem' }}
+      >
+        <div className="container">
+          <div
+            style={{
+              maxWidth: '1080px',
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem',
+              alignItems: 'stretch',
+            }}
+          >
+            <div
+              style={{
+                background: 'rgba(99, 102, 241, 0.08)',
+                border: '1px solid rgba(99, 102, 241, 0.28)',
+                borderRadius: '1rem',
+                padding: '1.5rem',
+              }}
+            >
+              <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+                Quick buyer summary
+              </p>
+              <h2 style={{ marginBottom: '0.75rem' }}>From £149/month with clear scope</h2>
+              <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                These plans are for live, stable WordPress sites that need updates, backups, uptime monitoring, malware scanning, and a dependable support path without jumping straight into a security retainer.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.55rem' }}>
+                {[
+                  'Essentials: £149/mo',
+                  'Pro: £349/mo',
+                  'Enterprise: from £749/mo',
+                  'Best for brochure, lead-gen, and revenue-critical sites at different stages',
+                ].map((item) => (
+                  <li key={item} style={{ color: '#e4e4e7' }}>
+                    <span style={{ color: 'var(--primary)', marginRight: '0.5rem' }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              style={{
+                background: 'var(--background)',
+                border: '1px solid var(--border)',
+                borderRadius: '1rem',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+                  Talk to us
+                </p>
+                <h3 style={{ marginBottom: '0.5rem' }}>Need help choosing the right plan?</h3>
+                <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
+                  Call if you want a quick recommendation, or use the contact page if you want us to review your site complexity before suggesting a tier.
+                </p>
+                <p style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
+                  <a href="tel:+447344540450" style={{ color: 'var(--primary)', fontWeight: 700 }}>
+                    +44 7344 540450
+                  </a>
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '0.75rem' }}>
+                <a href="tel:+447344540450" className="btn btn-primary" style={{ justifyContent: 'center' }}>
+                  Call Now
+                </a>
+                <Link href="/contact" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
+                  Request Plan Recommendation
+                </Link>
+                <a href="#plan-tiers" style={{ color: 'var(--primary)', textAlign: 'center', fontWeight: 600 }}>
+                  Compare plan tiers below
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TrustSignals />
 
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
@@ -141,7 +228,7 @@ export default function WordPressMaintenancePlans() {
         </div>
       </section>
 
-      <section className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
+      <section id="plan-tiers" className="section-padding" style={{ backgroundColor: 'var(--surface)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 2.5rem' }}>
             <h2>Choose the right monthly plan</h2>
