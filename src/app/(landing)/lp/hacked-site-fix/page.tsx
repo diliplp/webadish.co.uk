@@ -82,18 +82,38 @@ export default function HackedSiteLP() {
             flexWrap: 'wrap',
           }}>
             <a
-              href="https://wa.me/447344540450"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+447344540450"
               className="btn btn-emergency"
-              style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}
+              style={{
+                fontSize: '1.25rem',
+                padding: '1.25rem 2.5rem',
+                background: '#ef4444',
+                color: 'white',
+                boxShadow: '0 10px 25px rgba(239,68,68,0.4)',
+                width: '100%',
+                maxWidth: '400px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
             >
-              <Phone size={20} style={{ marginRight: '8px' }} />
-              Emergency WhatsApp
+              <Phone size={24} style={{ marginRight: '12px' }} />
+              Call Specialist Now
             </a>
-            <a href="#contact-form" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-              Submit Details Below
-            </a>
+            <div style={{ display: 'flex', gap: '1rem', width: '100%', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a
+                href="https://wa.me/447344540450"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+                style={{ fontSize: '1rem', padding: '0.75rem 1.5rem', borderColor: '#22c55e', color: '#16a34a' }}
+              >
+                WhatsApp Triage
+              </a>
+              <a href="#contact-form" className="btn btn-primary" style={{ fontSize: '1rem', padding: '0.75rem 1.5rem' }}>
+                Submit Form
+              </a>
+            </div>
           </div>
         </div>
       </section>
