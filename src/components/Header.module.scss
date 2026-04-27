@@ -133,6 +133,8 @@
 .mobileMenuBtn {
     display: block;
     color: var(--foreground);
+    position: relative;
+    z-index: 1010;
 
     @include respond-to('lg') {
         display: none;
@@ -141,6 +143,7 @@
 
 .mobileMenu {
     position: fixed;
+    z-index: 1005;
     top: 73px; // Adjust based on header height
     left: 0;
     width: 100%;
