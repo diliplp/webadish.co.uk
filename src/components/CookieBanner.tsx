@@ -6,7 +6,7 @@ import styles from './CookieBanner.module.scss';
 
 const CONSENT_KEY = 'wa-cookie-consent';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-NZLQFW58';
-const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17995549251';
+const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-16853874312';
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-DCRMYLPQFR';
 
 export function injectTrackingScripts() {
