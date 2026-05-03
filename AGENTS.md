@@ -21,6 +21,7 @@ Only sync infrastructure-level or genuinely shared brand behavior. Do not sync p
 - Next.js 15, TypeScript, SCSS Modules
 - Vercel Analytics + GTM (GTM-NZLQFW58) + Google Ads (AW-16853874312) — consent-gated via CookieBanner
 - Resend-powered contact form at `/api/contact`
+- Optional lead webhook bridge via `CONTACT_WEBHOOK_URL` for Google Sheets or other lead stores
 
 ## Focus
 UK audience. Premium WordPress incident response and security retainers. Emergency-driven tone.

@@ -69,6 +69,31 @@ function parseRecipientList(...values: Array<string | undefined>) {
   );
 }
 
+async function sendLeadWebhook(payload: Record<string, unknown>) {
+  const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
+  if (!webhookUrl) return { sent: false as const, skipped: true as const };
+
+  const secret = process.env.CONTACT_WEBHOOK_SECRET || '';
+  const response = await fetch(webhookUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(secret ? { 'x-webhook-secret': secret } : {}),
+    },
+    body: JSON.stringify(payload),
+    cache: 'no-store',
+  });
+
+  if (!response.ok) {
+    const responseText = await response.text().catch(() => '');
+    throw new Error(
+      `Lead webhook failed: ${response.status} ${response.statusText}${responseText ? ` - ${responseText.slice(0, 200)}` : ''}`
+    );
+  }
+
+  return { sent: true as const, skipped: false as const };
+}
+
 async function verifyTurnstileToken(token: string, ip: string) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) return true;
@@ -308,6 +333,26 @@ export async function POST(request: Request) {
       recipients: internalRecipients,
     });
 
+    const webhookResult = await sendLeadWebhook({
+      submissionId,
+      submittedAt: new Date().toISOString(),
+      source: 'webadish-co-uk-contact',
+      name,
+      email,
+      website,
+      message,
+      landingPage,
+      referrer,
+      utm: {
+        source: utmSource || 'direct',
+        medium: utmMedium || 'organic',
+        campaign: utmCampaign || '',
+        term: utmTerm || '',
+        content: utmContent || '',
+        gclid: gclid || '',
+      },
+    });
+
     const notifyResult = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: internalRecipients,
@@ -345,6 +390,8 @@ export async function POST(request: Request) {
 
     console.info('Contact form submission delivered', {
       submissionId,
+      webhookSent: webhookResult.sent,
+      webhookSkipped: webhookResult.skipped,
       notifyMessageId: notifyResult.data?.id || null,
       replyMessageId: replyResult.data?.id || null,
       recipients: internalRecipients,
