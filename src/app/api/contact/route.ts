@@ -24,7 +24,7 @@ interface ContactPayload {
 
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const RATE_LIMIT_MAX_REQUESTS = 5;
-const MIN_FORM_FILL_MS = 3000;
+const MIN_FORM_FILL_MS = 1500;
 const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1000;
 const ipHits = new Map<string, number[]>();
 
@@ -198,8 +198,11 @@ export async function POST(request: Request) {
 
     const now = Date.now();
     if (!startedAt || now - startedAt < MIN_FORM_FILL_MS || now - startedAt > MAX_FORM_AGE_MS) {
-      console.warn('Silently dropped contact form submission: invalid timing', { ip });
-      return NextResponse.json({ success: true });
+      console.warn('Rejected contact form submission: invalid timing', { ip });
+      return NextResponse.json(
+        { error: 'Please wait a moment and try again.' },
+        { status: 400 }
+      );
     }
 
     if (isRateLimited(ip)) {
@@ -214,22 +217,28 @@ export async function POST(request: Request) {
     }
 
     if (!looksLikeRealName(name) || !looksLikeRealMessage(message) || !looksLikeValidWebsite(website)) {
-      console.warn('Silently dropped contact form submission: suspicious content', {
+      console.warn('Rejected contact form submission: suspicious content', {
         ip,
         email,
         landingPage: body.landing_page,
       });
-      return NextResponse.json({ success: true });
+      return NextResponse.json(
+        { error: 'Please add a little more detail so we can assess the request properly.' },
+        { status: 400 }
+      );
     }
 
     const isTurnstileValid = await verifyTurnstileToken(turnstileToken, ip);
     if (!isTurnstileValid) {
-      console.warn('Silently dropped contact form submission: turnstile failed', {
+      console.warn('Rejected contact form submission: turnstile failed', {
         ip,
         email,
         landingPage: body.landing_page,
       });
-      return NextResponse.json({ success: true });
+      return NextResponse.json(
+        { error: 'The security check expired or failed. Please complete it again.' },
+        { status: 400 }
+      );
     }
 
     const resend = getResendClient();
