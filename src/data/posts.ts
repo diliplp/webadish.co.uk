@@ -10,6 +10,46 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'wordpress-shared-hosting-risks-uk',
+    title: 'WordPress on Shared Hosting: Security Risks UK Businesses Need to Understand',
+    excerpt:
+      'Shared hosting is the most common WordPress setup for UK SMEs — and the most misunderstood from a security perspective. What the shared environment actually means for your risk exposure.',
+    datePublished: '2026-05-02',
+    dateModified: '2026-05-02',
+    category: 'WordPress Security',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'woocommerce-store-hacked-recovery',
+    title: 'My WooCommerce Store Has Been Hacked: Emergency Recovery Guide (UK)',
+    excerpt:
+      'WooCommerce stores are targeted at a higher rate than standard WordPress sites. Disable checkout immediately, notify your payment processor, and follow this forensic recovery guide — with GDPR breach assessment.',
+    datePublished: '2026-04-29',
+    dateModified: '2026-04-29',
+    category: 'Recovery',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'wordpress-blacklisted-by-google',
+    title: 'WordPress Blacklisted by Google: How to Remove the Warning (UK Guide)',
+    excerpt:
+      'A Google Safe Browsing warning cuts organic traffic by 90% or more within hours. Here is the exact process to clean the infection, submit a review request, and get the warning removed — with UK business context.',
+    datePublished: '2026-04-28',
+    dateModified: '2026-04-28',
+    category: 'Recovery',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'wordpress-xmlrpc-security-uk',
+    title: 'WordPress XML-RPC: The Attack Vector UK Business Sites Should Close',
+    excerpt:
+      'XML-RPC is enabled by default on every WordPress site and almost no UK business needs it. Here is how attackers exploit it to bypass login protection, and how to disable it safely in five minutes.',
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-24',
+    category: 'WordPress Security',
+    author: 'WebAdish',
+  },
+  {
     slug: 'wordpress-care-plans-uk',
     title: "WordPress Care Plans UK: What's Included and Which Plan Is Right for You",
     excerpt:
