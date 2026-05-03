@@ -52,7 +52,7 @@ export default function CookiePolicy() {
 
           <h3>Advertising cookies (Google Ads / GTM)</h3>
           <p>
-            Set only if you accept cookies. We use <strong>Google Tag Manager</strong> (GTM-NZLQFW58) and <strong>Google Ads</strong> (AW-17995549251) to measure the performance of our advertising campaigns. These services may set their own cookies to track conversions and retarget visitors across the web.
+            Set only if you accept cookies. We use <strong>Google Tag Manager</strong> (GTM-NZLQFW58) and <strong>Google Ads</strong> (AW-16853874312) to measure the performance of our advertising campaigns. These services may set their own cookies to track conversions and retarget visitors across the web.
           </p>
           <p>
             Google&apos;s use of advertising cookies is governed by{' '}
