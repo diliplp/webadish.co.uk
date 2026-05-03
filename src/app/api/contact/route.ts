@@ -74,13 +74,21 @@ async function sendLeadWebhook(payload: Record<string, unknown>) {
   if (!webhookUrl) return { sent: false as const, skipped: true as const };
 
   const secret = process.env.CONTACT_WEBHOOK_SECRET || '';
-  const response = await fetch(webhookUrl, {
+  const targetUrl = new URL(webhookUrl);
+  if (secret) {
+    targetUrl.searchParams.set('secret', secret);
+  }
+
+  const response = await fetch(targetUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       ...(secret ? { 'x-webhook-secret': secret } : {}),
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({
+      ...payload,
+      webhookSecret: secret || undefined,
+    }),
     cache: 'no-store',
   });
 
