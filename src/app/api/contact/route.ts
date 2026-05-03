@@ -58,6 +58,17 @@ function getResendClient() {
   return new Resend(apiKey);
 }
 
+function parseRecipientList(...values: Array<string | undefined>) {
+  return Array.from(
+    new Set(
+      values
+        .flatMap((value) => (value || '').split(','))
+        .map((value) => value.trim())
+        .filter(Boolean)
+    )
+  );
+}
+
 async function verifyTurnstileToken(token: string, ip: string) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) return true;
@@ -242,11 +253,16 @@ export async function POST(request: Request) {
     }
 
     const resend = getResendClient();
-    const to = process.env.CONTACT_TO_EMAIL || process.env.RESEND_TO_EMAIL;
+    const internalRecipients = parseRecipientList(
+      process.env.CONTACT_TO_EMAIL,
+      process.env.CONTACT_BACKUP_TO_EMAIL,
+      process.env.RESEND_TO_EMAIL
+    );
     const fromName = process.env.CONTACT_FROM_NAME || 'WebAdish Website';
     const fromEmail = process.env.CONTACT_FROM_EMAIL;
+    const submissionId = `uk-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 
-    if (!resend || !fromEmail || !to) {
+    if (!resend || !fromEmail || !internalRecipients.length) {
       return NextResponse.json({ error: 'Resend is not fully configured.' }, { status: 500 });
     }
 
@@ -279,14 +295,28 @@ export async function POST(request: Request) {
         <p><strong>Referrer:</strong> ${escapeHtml(referrer || 'direct')}</p>
     ` : '';
 
+    console.info('Contact form submission accepted', {
+      submissionId,
+      name,
+      email,
+      website,
+      landingPage,
+      utmSource: utmSource || 'direct',
+      utmMedium: utmMedium || 'organic',
+      utmCampaign: utmCampaign || '',
+      gclid: gclid || '',
+      recipients: internalRecipients,
+    });
+
     const notifyResult = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
-      to,
+      to: internalRecipients,
       replyTo: email,
       subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''}`,
-      text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}${hasUtm ? `\n\nSource: ${utmSource}\nMedium: ${utmMedium}\nCampaign: ${utmCampaign}\nLanding Page: ${landingPage}` : ''}`,
+      text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}${hasUtm ? `\n\nSource: ${utmSource}\nMedium: ${utmMedium}\nCampaign: ${utmCampaign}\nLanding Page: ${landingPage}` : ''}`,
       html: `
         <h2>New contact form enquiry</h2>
+        <p><strong>Submission ID:</strong> ${escapeHtml(submissionId)}</p>
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
         <p><strong>Website:</strong> ${safeWebsite}</p>
@@ -303,17 +333,24 @@ export async function POST(request: Request) {
     const replyResult = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: email,
-      replyTo: to,
+      replyTo: internalRecipients[0],
       subject: 'Thanks for contacting WebAdish — we received your message',
       text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
-      html: buildCustomerReplyHtml(safeName, safeMessage, to),
+      html: buildCustomerReplyHtml(safeName, safeMessage, internalRecipients[0]),
     });
 
     if (replyResult.error) {
       console.error('Contact form auto-reply error:', replyResult.error.message, replyResult.error);
     }
 
-    return NextResponse.json({ success: true });
+    console.info('Contact form submission delivered', {
+      submissionId,
+      notifyMessageId: notifyResult.data?.id || null,
+      replyMessageId: replyResult.data?.id || null,
+      recipients: internalRecipients,
+    });
+
+    return NextResponse.json({ success: true, submissionId });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
     console.error('Contact form mail error:', message, error);

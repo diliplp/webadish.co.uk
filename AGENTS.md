@@ -20,7 +20,7 @@ Only sync infrastructure-level or genuinely shared brand behavior. Do not sync p
 ## Stack
 - Next.js 15, TypeScript, SCSS Modules
 - Vercel Analytics + GTM (GTM-NZLQFW58) + Google Ads (AW-16853874312) — consent-gated via CookieBanner
-- Nodemailer contact form at `/api/contact`
+- Resend-powered contact form at `/api/contact`
 
 ## Focus
 UK audience. Premium WordPress incident response and security retainers. Emergency-driven tone.
