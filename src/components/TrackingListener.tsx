@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { trackEvent, trackPageView } from '@/lib/tracking';
+import { trackEvent, trackPageView, trackPhoneConversion } from '@/lib/tracking';
 
 const SCROLL_THRESHOLDS = [25, 50, 75, 90];
 
@@ -55,6 +55,7 @@ export default function TrackingListener() {
 
       if (href.startsWith('tel:')) {
         trackEvent('phone_click', { label, href, page_path: pathname });
+        trackPhoneConversion({ label, href, page_path: pathname });
         return;
       }
 

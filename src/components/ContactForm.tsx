@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { track } from '@vercel/analytics';
 import styles from './ContactForm.module.scss';
-import { trackEvent } from '@/lib/tracking';
+import { trackEvent, trackLeadConversion } from '@/lib/tracking';
 import TurnstileField from './TurnstileField';
 
 const ContactForm = () => {
@@ -108,6 +108,12 @@ const ContactForm = () => {
                 medium: utmData.utm_medium || 'organic',
             });
             trackEvent('form_submit_success', {
+                form_name: 'uk_contact',
+                page_path: utmData.landing_page || window.location.pathname,
+                source: utmData.utm_source || 'direct',
+                medium: utmData.utm_medium || 'organic',
+            });
+            trackLeadConversion({
                 form_name: 'uk_contact',
                 page_path: utmData.landing_page || window.location.pathname,
                 source: utmData.utm_source || 'direct',

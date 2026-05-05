@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { trackEvent } from '@/lib/tracking';
+import { trackEvent, trackLeadConversion } from '@/lib/tracking';
 import TurnstileField from '@/components/TurnstileField';
 
 interface UTMParams {
@@ -98,6 +98,13 @@ export default function LandingContactForm({
       if (res.ok) {
         setStatus('success');
         trackEvent('form_submit_success', {
+          form_name: 'uk_landing_contact',
+          page_path: utmParams.landing_page || window.location.pathname,
+          source: utmParams.utm_source || 'direct',
+          medium: utmParams.utm_medium || 'none',
+          campaign: utmParams.utm_campaign || 'none',
+        });
+        trackLeadConversion({
           form_name: 'uk_landing_contact',
           page_path: utmParams.landing_page || window.location.pathname,
           source: utmParams.utm_source || 'direct',
