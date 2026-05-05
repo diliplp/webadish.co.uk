@@ -19,7 +19,7 @@ Only sync infrastructure-level or genuinely shared brand behavior. Do not sync p
 
 ## Stack
 - Next.js 15, TypeScript, SCSS Modules
-- Vercel Analytics + GTM (GTM-NZLQFW58) + Google Ads (AW-16853874312) — consent-gated via CookieBanner
+- Vercel Analytics + GTM (GTM-NZLQFW58) + Google Ads (AW-18133913810) — consent-gated via CookieBanner
 - Resend-powered contact form at `/api/contact`
 - Optional lead webhook bridge via `CONTACT_WEBHOOK_URL` for Google Sheets or other lead stores
 

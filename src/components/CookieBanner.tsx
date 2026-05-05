@@ -6,7 +6,11 @@ import styles from './CookieBanner.module.scss';
 
 const CONSENT_KEY = 'wa-cookie-consent';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-NZLQFW58';
-const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-16853874312';
+const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-18133913810';
+const PHONE_CONVERSION_LABEL =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_LABEL || 'MMwcCIj95qccENKh9sZD';
+const PHONE_CONVERSION_NUMBER =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_NUMBER || '+44 7344 540450';
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-DCRMYLPQFR';
 
 export function injectTrackingScripts() {
@@ -29,7 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const gtagJs = document.createElement('script');
     gtagJs.id = 'wa-gtag-js';
     gtagJs.async = true;
-    gtagJs.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID || ADS_ID}`;
+    gtagJs.src = `https://www.googletagmanager.com/gtag/js?id=${ADS_ID || GA_ID}`;
     document.head.appendChild(gtagJs);
 
     const trackingConfig = document.createElement('script');
@@ -38,7 +42,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 ${GA_ID ? `gtag('config', '${GA_ID}');` : ''}
-${ADS_ID ? `gtag('config', '${ADS_ID}');` : ''}`;
+${ADS_ID ? `gtag('config', '${ADS_ID}');` : ''}
+${ADS_ID && PHONE_CONVERSION_LABEL ? `gtag('config', '${ADS_ID}/${PHONE_CONVERSION_LABEL}', { phone_conversion_number: '${PHONE_CONVERSION_NUMBER}' });` : ''}`;
     document.head.appendChild(trackingConfig);
   }
 
