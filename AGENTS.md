@@ -23,6 +23,12 @@ Only sync infrastructure-level or genuinely shared brand behavior. Do not sync p
 - Resend-powered contact form at `/api/contact`
 - Optional lead webhook bridge via `CONTACT_WEBHOOK_URL` for Google Sheets or other lead stores
 
+## Google Ads account split
+- Manager account: WebAdish — 268-488-3023
+- UK account for `webadish.co.uk`: WA UK (GBP) — 959-371-2233
+- India account for `webadish.com`: WA IN - webadish.com — 333-719-5111
+- Customer IDs identify Ads accounts. Conversion tracking uses separate `AW-...` Google tag IDs from each account; do not reuse UK and India conversion tags across sites.
+
 ## Focus
 UK audience. Premium WordPress incident response and security retainers. Emergency-driven tone.
 All content references UK context: GDPR, ICO, £GBP pricing, "UK businesses".
