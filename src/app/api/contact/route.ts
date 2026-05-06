@@ -69,6 +69,52 @@ function parseRecipientList(...values: Array<string | undefined>) {
   );
 }
 
+function normaliseAttributionValue(value: string | undefined) {
+  return (value || '').trim().toLowerCase();
+}
+
+function inferLeadChannel({
+  utmSource,
+  utmMedium,
+  gclid,
+  referrer,
+}: {
+  utmSource: string;
+  utmMedium: string;
+  gclid: string;
+  referrer: string;
+}) {
+  const source = normaliseAttributionValue(utmSource);
+  const medium = normaliseAttributionValue(utmMedium);
+  const ref = normaliseAttributionValue(referrer);
+
+  if (gclid) {
+    return 'Google Ads (paid click detected via GCLID)';
+  }
+
+  if (source === 'google' && ['cpc', 'ppc', 'paid', 'paidsearch'].includes(medium)) {
+    return 'Google Ads / paid search';
+  }
+
+  if (['meta', 'facebook', 'instagram'].includes(source) && ['cpc', 'paid', 'paid-social', 'social-paid'].includes(medium)) {
+    return 'Paid social campaign';
+  }
+
+  if (source || medium) {
+    return `Campaign traffic (${source || 'unknown source'} / ${medium || 'unknown medium'})`;
+  }
+
+  if (ref.includes('google.')) {
+    return 'Organic Google or untagged Google traffic';
+  }
+
+  if (ref) {
+    return 'Referral or untagged external traffic';
+  }
+
+  return 'Direct / unknown';
+}
+
 async function sendLeadWebhook(payload: Record<string, unknown>) {
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
   if (!webhookUrl) return { sent: false as const, skipped: true as const };
@@ -318,19 +364,21 @@ export async function POST(request: Request) {
     const landingPage = body.landing_page || '';
     const referrer = body.referrer || '';
 
-    const hasUtm = utmSource || utmMedium || utmCampaign || gclid;
-    const utmSection = hasUtm ? `
+    const inferredChannel = inferLeadChannel({ utmSource, utmMedium, gclid, referrer });
+    const hasAttributionData = utmSource || utmMedium || utmCampaign || gclid || landingPage || referrer;
+    const attributionSection = `
         <hr/>
-        <h3>Attribution Data</h3>
+        <h3>Lead Attribution</h3>
+        <p><strong>Likely Channel:</strong> ${escapeHtml(inferredChannel)}</p>
         <p><strong>Source:</strong> ${escapeHtml(utmSource || 'direct')}</p>
         <p><strong>Medium:</strong> ${escapeHtml(utmMedium || 'none')}</p>
         <p><strong>Campaign:</strong> ${escapeHtml(utmCampaign || 'none')}</p>
         ${utmTerm ? `<p><strong>Term:</strong> ${escapeHtml(utmTerm)}</p>` : ''}
         ${utmContent ? `<p><strong>Content:</strong> ${escapeHtml(utmContent)}</p>` : ''}
         ${gclid ? `<p><strong>GCLID:</strong> ${escapeHtml(gclid)}</p>` : ''}
-        <p><strong>Landing Page:</strong> ${escapeHtml(landingPage)}</p>
+        <p><strong>Landing Page:</strong> ${escapeHtml(landingPage || 'unknown')}</p>
         <p><strong>Referrer:</strong> ${escapeHtml(referrer || 'direct')}</p>
-    ` : '';
+    `;
 
     console.info('Contact form submission accepted', {
       submissionId,
@@ -370,7 +418,7 @@ export async function POST(request: Request) {
       to: internalRecipients,
       replyTo: email,
       subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''} [${submissionId}]`,
-      text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}${hasUtm ? `\n\nSource: ${utmSource}\nMedium: ${utmMedium}\nCampaign: ${utmCampaign}\nLanding Page: ${landingPage}` : ''}`,
+      text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}\n\nLead Attribution:\nLikely Channel: ${inferredChannel}\nSource: ${utmSource || 'direct'}\nMedium: ${utmMedium || 'none'}\nCampaign: ${utmCampaign || 'none'}${utmTerm ? `\nTerm: ${utmTerm}` : ''}${utmContent ? `\nContent: ${utmContent}` : ''}${gclid ? `\nGCLID: ${gclid}` : ''}\nLanding Page: ${landingPage || 'unknown'}\nReferrer: ${referrer || 'direct'}`,
       html: `
         <h2>New contact form enquiry</h2>
         <p><strong>Submission ID:</strong> ${escapeHtml(submissionId)}</p>
@@ -379,7 +427,7 @@ export async function POST(request: Request) {
         <p><strong>Website:</strong> ${safeWebsite}</p>
         <p><strong>Message:</strong></p>
         <p>${safeMessage}</p>
-        ${utmSection}
+        ${attributionSection}
       `,
     });
 
