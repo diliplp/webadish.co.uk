@@ -181,7 +181,7 @@ function parseStartedAt(value?: number | string) {
   return null;
 }
 
-function buildCustomerReplyHtml(name: string, message: string, replyToEmail: string) {
+function buildCustomerReplyHtml(name: string, message: string, replyToEmail: string, submissionId: string) {
   return `
     <div style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#18181b;">
       <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
@@ -209,6 +209,10 @@ function buildCustomerReplyHtml(name: string, message: string, replyToEmail: str
               We will review your enquiry and come back with the right next step, whether that is an audit, recovery assessment, protection retainer, or a direct response call.
             </p>
           </div>
+
+          <p style="margin:0 0 16px;font-size:14px;line-height:1.7;color:#52525b;">
+            Reference: <strong>${submissionId}</strong>
+          </p>
 
           <p style="margin:0 0 8px;font-size:15px;line-height:1.7;">Regards,</p>
           <p style="margin:0;font-size:15px;line-height:1.7;">
@@ -365,7 +369,7 @@ export async function POST(request: Request) {
       from: `${fromName} <${fromEmail}>`,
       to: internalRecipients,
       replyTo: email,
-      subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''}`,
+      subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''} [${submissionId}]`,
       text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}${hasUtm ? `\n\nSource: ${utmSource}\nMedium: ${utmMedium}\nCampaign: ${utmCampaign}\nLanding Page: ${landingPage}` : ''}`,
       html: `
         <h2>New contact form enquiry</h2>
@@ -386,10 +390,11 @@ export async function POST(request: Request) {
     const replyResult = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: email,
+      bcc: internalRecipients,
       replyTo: internalRecipients[0],
-      subject: 'Thanks for contacting WebAdish — we received your message',
-      text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
-      html: buildCustomerReplyHtml(safeName, safeMessage, internalRecipients[0]),
+      subject: `Thanks for contacting WebAdish — we received your message [${submissionId}]`,
+      text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nReference: ${submissionId}\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
+      html: buildCustomerReplyHtml(safeName, safeMessage, internalRecipients[0], submissionId),
     });
 
     if (replyResult.error) {
