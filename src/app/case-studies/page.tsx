@@ -65,8 +65,46 @@ export default function CaseStudies() {
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
           <div style={{ maxWidth: '980px', margin: '0 auto' }}>
-            <div style={{ marginBottom: '1.5rem', color: '#a1a1aa', lineHeight: 1.8 }}>
-              Trusted client work includes <strong style={{ color: 'var(--foreground)' }}>verofax.com</strong>, <strong style={{ color: 'var(--foreground)' }}>shivamautozone.com</strong>, and <strong style={{ color: 'var(--foreground)' }}>crystalgroup.in</strong>. Some UK-facing case-study details are anonymised where required, but these are real engagements.
+            <div style={{ marginBottom: '1rem', color: '#a1a1aa', lineHeight: 1.8 }}>
+              Trusted client work includes <strong style={{ color: 'var(--foreground)' }}>verofax.com</strong>, <strong style={{ color: 'var(--foreground)' }}>shivamautozone.com</strong>, and <strong style={{ color: 'var(--foreground)' }}>crystalgroup.in</strong>. Some UK-facing case-study details are anonymised where required, but these are real engagements involving incident cleanup, hardening, recovery, and ongoing protection work.
+            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '1rem',
+                marginBottom: '2rem',
+              }}
+            >
+              {[
+                {
+                  title: 'verofax.com',
+                  text: 'Approached us after a compromise and stability concerns. We traced the root cause, removed the malicious foothold, and closed the access path so the site could return to normal operation without immediate reinfection.',
+                },
+                {
+                  title: 'shivamautozone.com',
+                  text: 'Worked on recovery and trust restoration after a security issue disrupted normal business use. The engagement focused on cleanup, hardening, and making sure the environment was safe to keep running.',
+                },
+                {
+                  title: 'crystalgroup.in',
+                  text: 'Handled website protection and operational hardening work for a real business environment where reliability and clean administration mattered more than a cosmetic one-time fix.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
+                  }}
+                >
+                  <h3 style={{ marginTop: 0, marginBottom: '0.65rem', fontSize: '1rem', color: 'var(--foreground)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ margin: 0, color: '#d4d4d8', lineHeight: 1.7, fontSize: '0.95rem' }}>{item.text}</p>
+                </div>
+              ))}
             </div>
             <h2 style={{ marginBottom: '1.5rem' }}>Snapshot</h2>
             <div

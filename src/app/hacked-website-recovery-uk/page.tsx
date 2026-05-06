@@ -111,6 +111,40 @@ export default function HackedWebsiteRecoveryUK() {
         </div>
       </section>
 
+      <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <div className="container">
+          <div
+            style={{
+              maxWidth: '920px',
+              margin: '0 auto',
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
+              borderRadius: '1rem',
+              padding: '1.5rem 1.75rem',
+            }}
+          >
+            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+              Real engagement trust signals
+            </p>
+            <p style={{ color: '#e4e4e7', lineHeight: 1.7, marginBottom: '1rem' }}>
+              This service is not based on theoretical cleanup checklists. Trusted client work includes <strong>verofax.com</strong>, <strong>shivamautozone.com</strong>, and <strong>crystalgroup.in</strong>, where the work involved real compromise investigation, cleanup, hardening, and post-incident protection.
+            </p>
+            <div style={{ display: 'grid', gap: '0.75rem' }}>
+              {[
+                'verofax.com approached us after a compromise. We traced the root cause, removed the malicious foothold, and closed the path that could have allowed reinfection.',
+                'Other client work has involved recovering business sites after failed low-cost cleanup attempts, then hardening the stack so the issue does not simply return a week later.',
+                'Some UK-facing details are anonymised where needed, but the engagements themselves are real and the recovery approach described on this page reflects actual delivery work.',
+              ].map((item) => (
+                <div key={item} style={{ color: '#d4d4d8', display: 'flex', gap: '0.65rem', alignItems: 'flex-start', lineHeight: 1.7 }}>
+                  <span style={{ color: '#ef4444', flexShrink: 0 }}>✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem' }}>
         <div className="container">
           <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: '1rem', padding: '2rem' }}>
