@@ -12,9 +12,9 @@ import CTA from '@/components/CTA';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Maintenance Plans UK | Monthly Care from £149/mo',
+  title: 'WordPress Maintenance Plans UK | Security-Led Monthly Support',
   description:
-    'Affordable WordPress maintenance plans for UK businesses with updates, backups, uptime monitoring, malware scanning, and support. Compare Essentials, Pro, and Enterprise.',
+    'Security-led WordPress maintenance plans for UK businesses with updates, backups, monitoring, malware checks, and support tiers for commercially important sites.',
   path: '/wordpress-maintenance-plans',
   modifiedTime: '2026-04-11',
 });
@@ -121,9 +121,9 @@ export default function WordPressMaintenancePlans() {
       <StructuredData schemas={[serviceSchema, faqSchema, breadcrumbSchema]} />
 
       <PageHeader
-        title="WordPress Maintenance Plans UK <br /><span style='color: var(--primary)'>Monthly Care with Clear Pricing</span>"
-        subtitle="Compare affordable WordPress maintenance plans for UK businesses. Fixed-fee monthly care, transparent inclusions, and support tiers that match site complexity."
-        badge="Plans from £149/month"
+        title="WordPress Maintenance Plans UK <br /><span style='color: var(--primary)'>for Sites That Matter Commercially</span>"
+        subtitle="Security-led monthly support for UK WordPress sites that need reliable updates, backups, monitoring, and accountable operational care, not just a cheap plugin-update service."
+        badge="Security-led plans from £149/month"
       />
 
       <section
@@ -152,16 +152,16 @@ export default function WordPressMaintenancePlans() {
               <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                 Quick buyer summary
               </p>
-              <h2 style={{ marginBottom: '0.75rem' }}>From £149/month with clear scope</h2>
+              <h2 style={{ marginBottom: '0.75rem' }}>Monthly care that is built to reduce avoidable outages and security drift</h2>
               <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
-                These plans are for live, stable WordPress sites that need updates, backups, uptime monitoring, malware scanning, and a dependable support path without jumping straight into a security retainer.
+                These plans are for live WordPress sites that need disciplined upkeep, clean change handling, and a support path you can rely on. The goal is not just to keep plugins updated. It is to stop neglected maintenance from turning into broken pages, silent plugin risk, malware exposure, or expensive recovery work later.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.55rem' }}>
                 {[
                   'Essentials: £149/mo',
                   'Pro: £349/mo',
                   'Enterprise: from £749/mo',
-                  'Best for brochure, lead-gen, and revenue-critical sites at different stages',
+                  'Best fit depends on commercial importance, site complexity, and response expectations',
                 ].map((item) => (
                   <li key={item} style={{ color: '#e4e4e7' }}>
                     <span style={{ color: 'var(--primary)', marginRight: '0.5rem' }}>✓</span>
@@ -186,9 +186,9 @@ export default function WordPressMaintenancePlans() {
                 <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                   Talk to us
                 </p>
-                <h3 style={{ marginBottom: '0.5rem' }}>Need help choosing the right plan?</h3>
+                <h3 style={{ marginBottom: '0.5rem' }}>Not sure whether you need care plans, a security retainer, or recovery work?</h3>
                 <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Call if you want a quick recommendation, or use the contact page if you want us to review your site complexity before suggesting a tier.
+                  We can usually tell quickly whether your site fits a standard maintenance tier or whether the real issue is higher risk: repeat breakages, risky plugin sprawl, performance instability, or prior compromise history.
                 </p>
                 <p style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
                   <a href="tel:+447344540450" style={{ color: 'var(--primary)', fontWeight: 700 }}>
@@ -199,7 +199,7 @@ export default function WordPressMaintenancePlans() {
 
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <a href="tel:+447344540450" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                  Call Now
+                  Call for a Recommendation
                 </a>
                 <Link href="/contact" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
                   Request Plan Recommendation
@@ -217,13 +217,66 @@ export default function WordPressMaintenancePlans() {
 
       <section className="section-padding" style={{ backgroundColor: 'var(--background)' }}>
         <div className="container">
-          <div style={{ maxWidth: '840px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '920px', margin: '0 auto', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '1.75rem' }}>
+            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+              Why buyers choose this over generic care plans
+            </p>
             <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--foreground)', marginBottom: '1rem' }}>
-              If you are comparing affordable WordPress maintenance plans, the real question is not just price. It is whether the monthly plan covers the operational basics that stop small problems turning into outages, SEO loss, or emergency recovery work later.
+              If you are comparing WordPress maintenance plans, the real decision is not just monthly price. It is whether the provider is reducing operational risk, or simply running updates and hoping nothing breaks.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>
+              Low-cost maintenance often looks fine until a plugin conflict, missed backup, silent malware issue, or poorly handled update causes real commercial damage. Our positioning is different: updates, backups, monitoring, and support are treated as part of operational protection, not a commodity checklist.
             </p>
             <p style={{ color: '#a1a1aa', lineHeight: 1.8, margin: 0 }}>
-              This page is designed for businesses that want visible GBP pricing, clear scope, and an honest comparison between low-cost upkeep and a more proactive monthly care model. If your site is already hacked, use <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery UK</Link> first. If the site is stable and you want ongoing cover, choose the plan tier below.
+              This page is for businesses that want visible GBP pricing, clear scope, and a stronger monthly support model. If your site is already hacked, start with <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery UK</Link>. If the site is stable and you want ongoing cover, the plan tiers below are the right next step.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <div className="container">
+          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 2rem' }}>
+              <h2>What this monthly support is designed to protect</h2>
+              <p style={{ color: '#a1a1aa', lineHeight: 1.7 }}>
+                These plans make the most sense when the website is commercially important enough that careless maintenance would be expensive.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+              {[
+                {
+                  title: 'Lead generation sites',
+                  text: 'Where broken forms, failed pages, or missed downtime alerts translate directly into missed enquiries.',
+                },
+                {
+                  title: 'Marketing-led business sites',
+                  text: 'Where frequent plugin changes, landing pages, and campaigns create more update risk than a brochure site normally carries.',
+                },
+                {
+                  title: 'Previously hacked sites',
+                  text: 'Where ongoing discipline matters because neglect or sloppy updates can reopen the conditions that attackers previously exploited.',
+                },
+                {
+                  title: 'Revenue-critical estates',
+                  text: 'Where a site outage or bad release becomes an operational problem, not just a minor website inconvenience.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  style={{
+                    background: 'var(--background)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '0.9rem',
+                    padding: '1.25rem',
+                  }}
+                >
+                  <h3 style={{ marginBottom: '0.6rem', fontSize: '1rem' }}>{item.title}</h3>
+                  <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: 0, fontSize: '0.95rem' }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
