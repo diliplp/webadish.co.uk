@@ -14,9 +14,9 @@ import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
   title:
-    'WordPress Security Retainer UK | Monthly Protection for UK Businesses | WebAdish',
+    'WordPress Security Retainer UK | Security Ownership Without In-House Hire',
   description:
-    'Monthly WordPress security retainers for UK businesses and agencies. Monitoring, audits, GDPR-aware support, and priority incident response from £250/month.',
+    'WordPress security retainers for UK businesses that need monitoring, escalation, audits, and a stronger response posture than standard maintenance can provide.',
   path: '/wordpress-security-retainer',
 });
 
@@ -86,9 +86,9 @@ export default function WordPressSecurityRetainer() {
       <StructuredData schemas={[serviceSchema, faqSchema, breadcrumbSchema]} />
 
       <PageHeader
-        title="Enterprise WordPress <br /><span style='color: var(--primary)'>Security Retainer</span>"
-        subtitle="Monthly WordPress security retainers for UK businesses that need continuous monitoring, clearer escalation, and a stronger response posture without hiring in-house."
-        badge="From £250/month"
+        title="WordPress Security Retainer UK <br /><span style='color: var(--primary)'>for Higher-Risk Business Sites</span>"
+        subtitle="A stronger monthly protection model for UK WordPress sites that need monitoring, risk prioritisation, and an accountable response path beyond routine maintenance."
+        badge="Security retainers from £250/month"
       />
 
       <section
@@ -117,16 +117,16 @@ export default function WordPressSecurityRetainer() {
               <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                 Quick buyer summary
               </p>
-              <h2 style={{ marginBottom: '0.75rem' }}>From £250/month for ongoing protection</h2>
+              <h2 style={{ marginBottom: '0.75rem' }}>For businesses that need more than upkeep and want a named protection path</h2>
               <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
-                This page is for buyers who need monitoring, escalation, patch prioritisation, and a named security path. If you want routine upkeep only, compare our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link> instead.
+                This page is for buyers who do not want security handled as an afterthought. A retainer gives you monitoring, prioritisation, escalation, and a clearer operating model when suspicious behaviour, risky plugin disclosures, or real incidents appear. If you want routine upkeep only, compare our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link> instead.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '0.55rem' }}>
                 {[
                   'Essential Monitoring: £250/mo',
                   'Business Protection: £500/mo',
                   'Continuity Retainer: £800/mo',
-                  'Best for higher-risk, higher-stakes WordPress operations',
+                  'Best fit depends on commercial exposure, site complexity, and response expectations',
                 ].map((item) => (
                   <li key={item} style={{ color: '#e4e4e7' }}>
                     <span style={{ color: 'var(--primary)', marginRight: '0.5rem' }}>✓</span>
@@ -151,9 +151,9 @@ export default function WordPressSecurityRetainer() {
                 <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
                   Talk to us
                 </p>
-                <h3 style={{ marginBottom: '0.5rem' }}>Need the right retainer, not guesswork?</h3>
+                <h3 style={{ marginBottom: '0.5rem' }}>Need to know whether a retainer is justified for your site?</h3>
                 <p style={{ color: '#d4d4d8', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Call if you want a fast conversation about risk level, response expectation, and whether a retainer is the right fit versus a maintenance plan or one-off audit.
+                  We can usually tell quickly whether your environment needs a genuine security retainer or whether a maintenance plan, security audit, or one-off remediation engagement would be the more sensible commercial choice.
                 </p>
                 <p style={{ marginBottom: '1rem', fontSize: '1.1rem' }}>
                   <a href="tel:+447344540450" style={{ color: 'var(--primary)', fontWeight: 700 }}>
@@ -164,7 +164,7 @@ export default function WordPressSecurityRetainer() {
 
               <div style={{ display: 'grid', gap: '0.75rem' }}>
                 <a href="tel:+447344540450" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                  Call Now
+                  Call for a Recommendation
                 </a>
                 <a href="#contact-section" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
                   Discuss Your Retainer
@@ -190,7 +190,7 @@ export default function WordPressSecurityRetainer() {
               Why retainers matter more now
             </p>
             <p style={{ color: '#e4e4e7', lineHeight: 1.7, margin: 0 }}>
-              Patchstack’s latest WordPress ecosystem review found <strong>7,966 vulnerabilities</strong> in 2024, with <strong>96% in plugins</strong>. That volume makes ad hoc updates and occasional checks a weak operating model for UK businesses. A retainer gives you prioritisation, faster patch decisions, and a named response path when the next disclosure cycle hits. Read our{' '}
+              Patchstack’s latest WordPress ecosystem review found <strong>7,966 vulnerabilities</strong> in 2024, with <strong>96% in plugins</strong>. That volume makes casual upkeep and occasional checks a weak operating model for commercially important WordPress sites. A retainer gives you prioritisation, faster patch decisions, and a named response path when the next disclosure cycle hits. Read our{' '}
               <Link href="/state-of-wordpress-security-2025-uk-business-takeaways" style={{ color: '#818cf8', fontWeight: 600 }}>
                 UK business take on the 2025 WordPress security data
               </Link>.
@@ -206,7 +206,10 @@ export default function WordPressSecurityRetainer() {
         style={{ backgroundColor: 'var(--background)' }}
       >
         <div className="container">
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '920px', margin: '0 auto', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '1rem', padding: '1.75rem' }}>
+            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
+              Why buyers choose a retainer over generic maintenance
+            </p>
             <p
               style={{
                 fontSize: '1.15rem',
@@ -215,95 +218,66 @@ export default function WordPressSecurityRetainer() {
                 marginBottom: '1rem',
               }}
             >
-              A WordPress security retainer is an ongoing protection
-              engagement for your WordPress environment. Unlike a one-off
-              cleanup, a retainer gives your business continuous monitoring,
-              regular reviews, and a named escalation path when suspicious
-              activity or a live incident appears. WebAdish retainers are
-              built for UK businesses, agencies, and eCommerce teams that
-              need stronger operational protection without building an
-              in-house security function.
+              A WordPress security retainer is an ongoing protection engagement for sites where failure costs more than inconvenience. Unlike a one-off cleanup or a basic maintenance plan, a retainer gives your business continuous monitoring, structured risk review, and a named escalation path when suspicious activity or a live incident appears.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: '1.8', marginBottom: '1rem' }}>
+              It is a better fit when the site has meaningful commercial value, prior compromise history, sensitive user data, stakeholder pressure, or a plugin stack that changes often enough to create real risk. In other words, this is about security ownership without having to build an in-house WordPress security function.
+            </p>
+            <p style={{ color: '#a1a1aa', lineHeight: '1.8', margin: 0 }}>
+              If your main need is routine updates and backups, start with our <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>maintenance plans</Link>. If the site is already compromised, start with <Link href="/hacked-website-recovery-uk" style={{ color: 'var(--primary)', fontWeight: 600 }}>hacked website recovery</Link>. A retainer sits in the middle: stronger than upkeep, more proactive than ad hoc emergency work.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What's Included */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--surface)' }}
-      >
+      <section className="section-padding" style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1rem' }}>
         <div className="container">
           <div
             style={{
-              textAlign: 'center',
-              maxWidth: '700px',
+              maxWidth: '980px',
               margin: '0 auto 3rem',
             }}
           >
-            <h2>What&apos;s Included</h2>
-            <p>
-              Every retainer comes with a comprehensive suite of security
-              services designed to keep your WordPress estate protected.
-            </p>
-          </div>
+            <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 2rem' }}>
+              <h2>What this is designed to protect</h2>
+              <p style={{ color: '#a1a1aa' }}>
+                These retainers make most sense when the WordPress environment is commercially important enough that delayed response, unclear ownership, or weak escalation becomes expensive.
+              </p>
+            </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.5rem',
-            }}
-          >
-            {[
-              {
-                title: 'Named Security Contact',
-                desc: 'A named point of contact who understands your WordPress environment and can coordinate response with context rather than starting from scratch each time.',
-              },
-              {
-                title: '24/7 Security Monitoring',
-                desc: 'Round-the-clock monitoring of your WordPress installations for intrusion attempts, file changes, brute-force attacks, and anomalous activity.',
-              },
-              {
-                title: 'Priority Incident Escalation',
-                desc: 'Defined response expectations for suspicious behaviour, urgent patching, and live incidents, with stronger response on higher tiers.',
-              },
-              {
-                title: 'Monthly Reporting',
-                desc: 'Clear summaries covering threats reviewed, updates completed, backlog items, and recommended risk-reduction actions.',
-              },
-              {
-                title: 'GDPR-Aware Guidance',
-                desc: 'Where relevant, we flag breach-notification readiness, access control gaps, and data-handling concerns that affect UK GDPR exposure.',
-              },
-              {
-                title: 'Priority Support',
-                desc: 'Skip the standard queue for urgent security questions, suspicious behaviour, and small security-focused changes.',
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  background: 'var(--background)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '0.75rem',
-                  padding: '1.5rem',
-                }}
-              >
-                <h3
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+              {[
+                {
+                  title: 'Lead and revenue flow',
+                  desc: 'Where broken journeys, compromised landing pages, or hidden malicious behaviour directly affect enquiries or sales.',
+                },
+                {
+                  title: 'Customer trust',
+                  desc: 'Where browser warnings, spam pages, or security incidents would damage confidence far beyond the technical fix itself.',
+                },
+                {
+                  title: 'Stakeholder accountability',
+                  desc: 'Where someone needs a named path for escalation, visibility, and decision support instead of reactive guesswork.',
+                },
+                {
+                  title: 'Operational continuity',
+                  desc: 'Where WordPress is important enough that security issues need structured handling before they become outages or compliance problems.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
                   style={{
-                    color: 'var(--primary)',
-                    fontSize: '1.15rem',
-                    marginBottom: '0.75rem',
+                    background: 'var(--background)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '0.9rem',
+                    padding: '1.25rem',
                   }}
                 >
-                  {item.title}
-                </h3>
-                <p style={{ color: '#a1a1aa', marginBottom: 0 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+                  <h3 style={{ color: 'var(--primary)', fontSize: '1rem', marginBottom: '0.6rem' }}>{item.title}</h3>
+                  <p style={{ color: '#a1a1aa', marginBottom: 0, lineHeight: 1.7, fontSize: '0.95rem' }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
