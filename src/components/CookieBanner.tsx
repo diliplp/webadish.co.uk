@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './CookieBanner.module.scss';
+import { CONSENT_EVENT, CONSENT_KEY, hasAcceptedConsent } from '@/lib/consent';
 
-const CONSENT_KEY = 'wa-cookie-consent';
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-NZLQFW58';
 const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-18133913810';
 const PHONE_CONVERSION_LABEL =
@@ -12,6 +12,7 @@ const PHONE_CONVERSION_LABEL =
 const PHONE_CONVERSION_NUMBER =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_NUMBER || '+44 7344 540450';
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-DCRMYLPQFR';
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'vzlh3nm8uo';
 
 export function injectTrackingScripts() {
   if (typeof document === 'undefined') return;
@@ -47,6 +48,16 @@ ${ADS_ID && PHONE_CONVERSION_LABEL ? `gtag('config', '${ADS_ID}/${PHONE_CONVERSI
     document.head.appendChild(trackingConfig);
   }
 
+  if (CLARITY_ID && !document.getElementById('wa-clarity')) {
+    const clarity = document.createElement('script');
+    clarity.id = 'wa-clarity';
+    clarity.innerHTML = `(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "${CLARITY_ID}");`;
+    document.head.appendChild(clarity);
+  }
 }
 
 export default function CookieBanner() {
@@ -56,20 +67,21 @@ export default function CookieBanner() {
   });
 
   useEffect(() => {
-    const consent = localStorage.getItem(CONSENT_KEY);
-    if (consent === 'accepted') {
+    if (hasAcceptedConsent()) {
       injectTrackingScripts();
     }
   }, []);
 
   function accept() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
     injectTrackingScripts();
   }
 
   function decline() {
     localStorage.setItem(CONSENT_KEY, 'declined');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   }
 

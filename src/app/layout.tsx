@@ -1,17 +1,13 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import '@/styles/globals.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import CookieBanner from '@/components/CookieBanner';
-import { Analytics } from '@vercel/analytics/next';
+import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics';
 import TrackingListener from '@/components/TrackingListener';
 import { generateOrganizationSchema } from '@/lib/schema';
-
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'vzlh3nm8uo';
 
 export const metadata: Metadata = {
   title: 'WebAdish | Premium WordPress Incident Response & Security UK',
@@ -41,19 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          id="wa-clarity"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "${CLARITY_ID}");`,
-          }}
-        />
-      </head>
+      <head />
       <body>
         <StructuredData schemas={sitewideSchemas} />
         <TrackingListener />
@@ -62,7 +46,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <Footer />
         <WhatsAppButton />
         <CookieBanner />
-        <Analytics />
+        <ConsentAwareAnalytics />
       </body>
     </html>
   );
