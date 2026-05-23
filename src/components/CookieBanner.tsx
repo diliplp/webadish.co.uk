@@ -14,22 +14,22 @@ const PHONE_CONVERSION_NUMBER =
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-DCRMYLPQFR';
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'vzlh3nm8uo';
 
-export function injectTrackingScripts() {
-  if (typeof document === 'undefined') return;
-
-  // Google Tag Manager
-  if (!document.getElementById('wa-gtm')) {
-    const gtm = document.createElement('script');
-    gtm.id = 'wa-gtm';
-    gtm.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+function loadGTM() {
+  if (typeof document === 'undefined' || document.getElementById('wa-gtm')) return;
+  const gtm = document.createElement('script');
+  gtm.id = 'wa-gtm';
+  gtm.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`;
-    document.head.appendChild(gtm);
-  }
+  document.head.appendChild(gtm);
+}
 
-  // Google Ads / GA4
+export function injectTrackingScripts() {
+  if (typeof document === 'undefined') return;
+
+  // Google Ads / GA4 direct tags (belt-and-suspenders after consent)
   if ((GA_ID || ADS_ID) && !document.getElementById('wa-gtag-js')) {
     const gtagJs = document.createElement('script');
     gtagJs.id = 'wa-gtag-js';
@@ -67,13 +67,32 @@ export default function CookieBanner() {
   });
 
   useEffect(() => {
+    // GTM always loads (restricted mode via consent defaults set in layout.tsx)
+    loadGTM();
     if (hasAcceptedConsent()) {
+      // Returning visitor who already accepted — grant consent signals and load direct tags
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          ad_storage: 'granted',
+          analytics_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+        });
+      }
       injectTrackingScripts();
     }
   }, []);
 
   function accept() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+      });
+    }
     window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
     injectTrackingScripts();
@@ -81,6 +100,14 @@ export default function CookieBanner() {
 
   function decline() {
     localStorage.setItem(CONSENT_KEY, 'declined');
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+    }
     window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   }

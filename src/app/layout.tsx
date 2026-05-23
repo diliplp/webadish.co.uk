@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import '@/styles/globals.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -38,6 +39,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
+      {/* Consent Mode v2 defaults — must fire before GTM loads */}
+      <Script id="wa-consent-defaults" strategy="beforeInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          analytics_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          wait_for_update: 500
+        });
+      `}</Script>
       <body>
         <StructuredData schemas={sitewideSchemas} />
         <TrackingListener />
