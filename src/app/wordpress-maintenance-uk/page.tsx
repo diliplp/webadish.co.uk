@@ -211,7 +211,7 @@ export default function WordPressMaintenanceUK() {
               <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Pro</h3>
               <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>For revenue-critical WordPress sites</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-                £5,999<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
+                £999<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {[
