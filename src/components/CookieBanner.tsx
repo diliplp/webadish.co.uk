@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 export function injectTrackingScripts() {
   if (typeof document === 'undefined') return;
 
-  // Google Ads / GA4 direct tags (belt-and-suspenders after consent)
+  // Google Ads / GA4 direct tags (Always load for Consent Mode v2 support)
   if ((GA_ID || ADS_ID) && !document.getElementById('wa-gtag-js')) {
     const gtagJs = document.createElement('script');
     gtagJs.id = 'wa-gtag-js';
@@ -67,10 +67,12 @@ export default function CookieBanner() {
   });
 
   useEffect(() => {
-    // GTM always loads (restricted mode via consent defaults set in layout.tsx)
+    // Load tracking scripts immediately for Consent Mode pings
     loadGTM();
+    injectTrackingScripts();
+
     if (hasAcceptedConsent()) {
-      // Returning visitor who already accepted — grant consent signals and load direct tags
+      // Update signals if already accepted
       if (typeof window.gtag === 'function') {
         window.gtag('consent', 'update', {
           ad_storage: 'granted',
@@ -79,7 +81,6 @@ export default function CookieBanner() {
           ad_personalization: 'granted',
         });
       }
-      injectTrackingScripts();
     }
   }, []);
 

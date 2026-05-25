@@ -14,7 +14,7 @@ const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-18133913810';
 const GOOGLE_ADS_PHONE_CONVERSION_LABEL =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_LABEL || 'MMwcCIj95qccENKh9sZD';
 const GOOGLE_ADS_LEAD_CONVERSION_LABEL =
-  process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL || 'djnACM3JqZYcEMOU-YRD';
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_CONVERSION_LABEL || '-zWcCJHk2rIcENKh9sZD';
 
 function cleanParams(params: TrackingParams = {}) {
   return Object.fromEntries(
@@ -24,7 +24,6 @@ function cleanParams(params: TrackingParams = {}) {
 
 export function trackEvent(name: string, params: TrackingParams = {}) {
   if (typeof window === 'undefined') return;
-  if (!hasAcceptedConsent()) return;
 
   const payload = cleanParams(params);
   window.dataLayer = window.dataLayer || [];
@@ -34,11 +33,14 @@ export function trackEvent(name: string, params: TrackingParams = {}) {
     window.gtag('event', name, payload);
   }
 
-  track(name, payload);
+  // Vercel analytics still requires explicit consent check if handled manually
+  if (hasAcceptedConsent()) {
+    track(name, payload);
+  }
 }
 
 export function trackPageView(path: string, title: string) {
-  if (typeof window === 'undefined' || !hasAcceptedConsent() || typeof window.gtag !== 'function') return;
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
 
   window.gtag('event', 'page_view', {
     page_title: title,
@@ -48,7 +50,7 @@ export function trackPageView(path: string, title: string) {
 }
 
 export function trackGoogleAdsConversion(label: string, params: TrackingParams = {}) {
-  if (typeof window === 'undefined' || !hasAcceptedConsent() || typeof window.gtag !== 'function') return;
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
   if (!GOOGLE_ADS_ID || !label) return;
 
   window.gtag('event', 'conversion', {
