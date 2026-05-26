@@ -23,7 +23,7 @@ const Footer = () => {
                         <h4>Services</h4>
                         <ul>
                             <li><Link href="/wordpress-security-audit">Security Audit</Link></li>
-                            <li><Link href="/wordpress-maintenance-uk">Security Protection</Link></li>
+                            <li><Link href="/wordpress-maintenance-uk">WordPress Maintenance</Link></li>
                             <li><Link href="/hacked-website-recovery-uk">Hacked Website Recovery UK</Link></li>
                             <li><Link href="/wordpress-malware-removal">WordPress Malware Removal</Link></li>
                             <li><Link href="/wordpress-security-retainer">Security Retainer</Link></li>

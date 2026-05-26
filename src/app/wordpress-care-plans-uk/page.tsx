@@ -26,7 +26,7 @@ const faqItems = [
   {
     question: 'How much does a WordPress care plan cost in the UK?',
     answer:
-      'Basic plans start from around £49–£99 per month for simple brochure sites. Mid-tier plans covering WooCommerce, staging testing, and priority support typically run £150–£300 per month. Security-focused retainers for revenue-critical sites range from £500–£1,500+ per month depending on complexity and SLA requirements.',
+      'Professional WordPress care plans in the UK typically range from £100–£500+ per month. WebAdish plans start at £149 per month for Essentials, £349 per month for Pro (covering WooCommerce and active lead-gen sites), and from £749 per month for Enterprise-level protection. Security-focused retainers for highly sensitive sites can range from £1,000–£3,000+ per month.',
   },
   {
     question: 'Is a WordPress care plan worth it?',
@@ -134,19 +134,19 @@ export default function WordPressCareePlansUKPage() {
         <li>
           <strong>Brochure and informational sites</strong> — a basic plan covering updates, backups, and
           uptime monitoring is usually sufficient. These sites carry lower risk and lower breach impact.
-          Budget: £49–£99/month.
+          Budget: £149/month (Essentials tier).
         </li>
         <li>
           <strong>Lead-generation sites</strong> — sites that capture contact forms, enquiries, or
           appointments are storing personal data and generating direct commercial value. They need staging-
           tested updates, daily backups, security scanning, and faster response SLAs.
-          Budget: £150–£300/month.
+          Budget: £349/month (Pro tier).
         </li>
         <li>
           <strong>WooCommerce and ecommerce sites</strong> — payment processing, customer accounts, and
           order history create GDPR obligations and higher breach consequences. These sites need security
           hardening, checkout regression testing after updates, and ideally a provider with ecommerce
-          experience. Budget: £200–£500/month or a full security retainer.
+          experience. Budget: £749+/month (Enterprise tier) or a full security retainer.
         </li>
         <li>
           <strong>Membership and subscription sites</strong> — ongoing user access, payment data, and

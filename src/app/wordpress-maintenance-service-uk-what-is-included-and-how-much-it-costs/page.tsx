@@ -18,7 +18,7 @@ const faqItems = [
   },
   {
     question: 'How much does WordPress security protection cost in the UK?',
-    answer: 'WordPress security protections in the UK range from £500/month for basic plans (updates and backups only) to £750+/month for fully managed, security-focused retainers. Most UK businesses on a professional site pay between £150–£450/month for a comprehensive plan that includes security, updates, backups and support.',
+    answer: 'WordPress security protections in the UK typically range from £100/month for basic maintenance to £1,000+/month for enterprise-grade security retainers. WebAdish plans are priced at £149/month (Essentials), £349/month (Pro), and from £749/month (Enterprise). Each tier is designed to match different levels of site complexity and commercial risk.',
   },
   {
     question: 'Do I need a WordPress security protection?',
@@ -87,16 +87,16 @@ export default function PostPage() {
         <p>A good maintenance partner provides a clear monthly report showing exactly what was updated, whether any security events were detected, uptime statistics for the month, current performance scores, and any recommended improvements. This gives you visibility without requiring technical knowledge, and provides documentation that is useful for insurance purposes and GDPR compliance records.</p>
 
         <h2>How much does WordPress security protection cost in the UK?</h2>
-        <p>Prices vary significantly based on the scope of the service, the size and complexity of your site, and the level of human oversight included. Here is a realistic breakdown of the UK market in 2026:</p>
+        <p>Prices vary significantly based on the scope of the service, the size and complexity of your site, and the level of human oversight included. Here is a realistic breakdown of how we structure our service tiers in 2026:</p>
 
-        <h3>Basic plans — £50–£150/month</h3>
-        <p>Typically covers plugin and theme updates (often automated), basic weekly backups, and uptime monitoring with email alerts. Little to no human oversight. Suitable for simple brochure sites with low traffic that are not business-critical. At this price point, check whether backups are genuinely off-site and whether updates are tested before deployment — many basic services skip both.</p>
+        <h3>Essentials — £149/month</h3>
+        <p>This tier covers the core operational requirements for a business website: monthly core, plugin, and theme updates; daily off-site backups with 30-day retention; 24/7 uptime monitoring; and weekly malware scanning. It provides a solid foundation for brochure sites and stable business websites that need reliable upkeep without daily intervention.</p>
 
-        <h3>Standard plans — £150–£450/month</h3>
-        <p>Covers everything in basic plus daily backups, daily security scanning, malware removal if needed, performance monitoring, and priority support with a defined response time. A competent person reviews updates before deployment. This is the right tier for most UK small businesses running active WordPress sites with regular content updates and e-commerce functionality.</p>
+        <h3>Pro — £349/month</h3>
+        <p>Designed for active lead-generation sites, marketing-led business websites, and growing SMEs. The Pro tier adds weekly updates with staging-environment tests for risky plugins, daily malware monitoring, monthly performance reviews, and 30 minutes of small content edits per month. It also includes a hack recovery guarantee and priority support during UK business hours.</p>
 
-        <h3>Premium and managed plans — £450–£750+/month</h3>
-        <p>Full-service plans including a dedicated account manager, staging environment for all updates, active speed optimisation, emergency recovery guarantee (typically 4–8 hours), SLA-backed uptime commitments, and monthly strategy calls. Some plans at this tier include a set number of development hours for small changes each month. Designed for businesses where the website is a primary revenue channel — e-commerce, professional services, lead generation.</p>
+        <h3>Enterprise — from £749/month</h3>
+        <p>Our highest maintenance tier is built for WooCommerce stores, membership platforms, and revenue-critical websites. It includes high-frequency security updates, enhanced staging and rollback checks, active speed optimisation, a dedicated technical contact, and a priority 2-hour response SLA. Enterprise clients also receive advanced reporting and quarterly security review calls to ensure the site evolves with their business.</p>
 
         <h3>Agency white-label plans</h3>
         <p>UK digital agencies increasingly outsource WordPress security protection to specialist providers under white-label arrangements. The agency retains the client relationship while the maintenance provider handles all technical work under the agency&apos;s branding. Pricing is typically lower per-site for volume arrangements, with wholesale rates that allow the agency to maintain their own margin.</p>

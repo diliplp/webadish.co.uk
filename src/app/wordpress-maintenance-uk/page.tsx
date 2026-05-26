@@ -12,47 +12,47 @@ import CTA from '@/components/CTA';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Maintenance Service UK | Security, Updates & Backups from £449/mo',
+  title: 'WordPress Maintenance Service UK | Security, Updates & Support from £149/mo',
   description:
-    'WordPress maintenance service for UK businesses with security updates, daily backups, malware scanning, uptime monitoring, and support. Plans from £449/month.',
+    'Reliable WordPress maintenance service for UK businesses. Proactive security updates, daily off-site backups, 24/7 uptime monitoring, and expert UK support. Plans from £149/month.',
   path: '/wordpress-maintenance-uk',
 });
 
 const faqItems = [
   {
-    question: 'What does WordPress monitoring include?',
+    question: 'What does your WordPress maintenance service include?',
     answer:
-      'WordPress monitoring covers several layers: uptime monitoring checks your site is responding every 60 seconds and alerts you within seconds if it goes down; performance monitoring tracks page load times and flags slowdowns; SSL certificate monitoring warns you before your certificate expires; malware monitoring scans files and database entries daily for injected code; and login monitoring detects brute-force attempts. WebAdish provides all of these on every protection retainer, with 24/7 alerting and a documented incident response process.',
+      'Our WordPress maintenance service covers the technical tasks required to keep your site secure, fast, and available. This includes applying WordPress core, plugin, and theme updates; running daily off-site backups; monitoring uptime 24/7; scanning for malware; optimising database performance; and providing a monthly health report. We offer three tiers of care: Essentials, Pro, and Enterprise.',
   },
   {
-    question: 'What does a WordPress security protection include?',
+    question: 'How much does WordPress maintenance cost in the UK?',
     answer:
-      'A WordPress security protection covers the ongoing tasks required to keep your site secure, fast, and available. This includes applying WordPress core, plugin, and theme updates; running daily backups stored off-site; monitoring uptime 24/7; scanning for malware; optimising database performance; and providing a monthly health report. Higher-tier plans add daily updates, speed optimisation, and unlimited small content edits.',
+      'WordPress maintenance service pricing in the UK typically ranges from £50/month for basic updates to £750+/month for fully managed security retainers. WebAdish plans start at £149/month for the Essentials plan, £349/month for the Pro plan, and from £749/month for the Enterprise tier.',
   },
   {
-    question: 'How much does WordPress security protection cost in the UK?',
+    question: 'Why do I need a professional WordPress maintenance service?',
     answer:
-      'WordPress protection retainers in the UK typically range from £500/month for basic update-only packages to £3,000+/month for fully managed plans with security monitoring and priority support. WebAdish plans start at £1,000/month for the Standard plan and £3,000/month for the Pro plan which adds daily updates, speed optimisation, and unlimited small edits.',
+      'Without regular maintenance, WordPress sites become vulnerable to security threats, performance degradation, and data loss. 96% of hacked sites are running outdated software. A professional service ensures your site is updated safely (tested on staging where needed), backed up reliably, and monitored 24/7, reducing the risk of expensive downtime or recovery costs.',
   },
   {
-    question: "What's the difference between a protection retainer and a security retainer?",
+    question: "What's the difference between a maintenance plan and a security retainer?",
     answer:
-      'A protection retainer handles routine upkeep — updates, backups, monitoring — and is suitable for most business websites. A security retainer is a higher-tier engagement designed for businesses with elevated risk: it includes proactive penetration testing, real-time threat monitoring, incident response with SLA guarantees, and a dedicated security analyst. If your site processes payments, stores personal data, or is a critical revenue driver, a retainer offers significantly stronger protection.',
+      'A maintenance plan handles routine upkeep — updates, backups, monitoring — and is suitable for most business websites. A security retainer is a higher-tier engagement designed for businesses with elevated risk: it includes proactive penetration testing, real-time threat monitoring, incident response with SLA guarantees, and a dedicated security analyst. If your site processes payments or stores sensitive personal data, a retainer offers significantly stronger protection.',
   },
   {
     question: 'Do you offer white-label plans for UK agencies?',
     answer:
-      'Yes. We work with a number of UK digital agencies under white-label arrangements. All reports are branded with your agency logo, client communications go through your channels, and your clients never see our name. White-label is available on both Standard and Pro plans.',
+      'Yes. We work with several UK digital agencies under white-label arrangements. All reports are branded with your agency logo, and client communications go through your channels. White-label is available on our Pro and Enterprise plans.',
   },
   {
     question: 'How often do you apply WordPress updates?',
     answer:
-      'On the Standard plan, updates are applied weekly during a maintenance window. On the Pro plan, updates are applied daily. Critical security patches are applied immediately on all plans. For plugins with a history of breaking changes, we test on a staging copy before deploying to your live site.',
+      'Update frequency depends on your plan. Essentials plans receive monthly updates, Pro plans receive weekly updates (with staging tests for risky plugins), and Enterprise plans receive high-frequency or daily updates. Critical security patches are applied immediately across all tiers.',
   },
   {
-    question: 'What happens if my site gets hacked while on a protection retainer?',
+    question: 'What happens if my site gets hacked while on a maintenance plan?',
     answer:
-      'If your site is compromised while under an active protection retainer, we begin the recovery process immediately at no additional charge. This covers malware removal, backdoor identification, blacklist removal, and restoring from a clean backup if required. The Pro plan includes an enhanced hack guarantee covering all attack vectors.',
+      'If your site is compromised while under an active maintenance plan, we begin the recovery process immediately. Our Pro and Enterprise plans include a hack recovery guarantee, meaning we clean and restore your site at no additional charge. For Essentials clients, we provide a priority path to recovery.',
   },
   {
     question: 'Are your services GDPR compliant?',
@@ -62,21 +62,21 @@ const faqItems = [
   {
     question: 'Can I upgrade or cancel my plan at any time?',
     answer:
-      'Plans are rolling monthly with no minimum term. You can upgrade from Standard to Pro at any point — the difference is prorated. To cancel, provide 30 days written notice. On cancellation we provide a full handover document including backup archives, update history, and a site health summary.',
+      'Plans are rolling monthly with no long-term lock-in. You can upgrade or downgrade between tiers at any point. To cancel, we require 30 days written notice. On cancellation, we provide a full handover document including backup archives and a site health summary.',
   },
 ];
 
 export default function WordPressMaintenanceUK() {
   const serviceSchema = generateServiceSchema(
-    'WordPress Security Protection UK',
-    'WordPress security protection and monitoring service for UK businesses. 24/7 uptime monitoring, file integrity checks, SSL monitoring, daily backups, security updates, malware scanning, and UK-hours support.',
+    'WordPress Maintenance Service UK',
+    'Professional WordPress maintenance service and security protection for UK businesses. 24/7 uptime monitoring, daily backups, security updates, malware scanning, and expert UK support.',
     '/wordpress-maintenance-uk',
-    'From £1,000/month'
+    'From £149/month'
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Services', url: '/#services' },
-    { name: 'WordPress Security Protection UK', url: '/wordpress-maintenance-uk' },
+    { name: 'WordPress Maintenance Service UK', url: '/wordpress-maintenance-uk' },
   ]);
   const faqSchema = generateFAQSchema(faqItems);
 
@@ -85,9 +85,9 @@ export default function WordPressMaintenanceUK() {
       <StructuredData schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
 
       <PageHeader
-        title="WordPress Security Protection <br /><span style='color: var(--primary)'>Service UK</span>"
-        subtitle="Proactive protection retainers for UK businesses. We handle updates, backups, monitoring, and security — so your site stays online and your team stays focused."
-        badge="Plans from £1,000/month"
+        title="WordPress Maintenance <br /><span style='color: var(--primary)'>Service UK</span>"
+        subtitle="Proactive security-led maintenance for UK businesses. We handle updates, backups, and 24/7 monitoring — so your site stays online and your team stays focused."
+        badge="Plans from £149/month"
       />
 
       <TrustSignals />
@@ -96,9 +96,9 @@ export default function WordPressMaintenanceUK() {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2>Everything Your WordPress Site Needs</h2>
+            <h2>Comprehensive WordPress Maintenance & Protection</h2>
             <p style={{ color: '#a1a1aa', maxWidth: '600px', margin: '1rem auto 0' }}>
-              Every plan covers the six core areas that keep a WordPress site secure, fast, and available.
+              We cover the core areas that keep a WordPress site secure, fast, and available for your customers.
             </p>
           </div>
           <div style={{
@@ -107,11 +107,11 @@ export default function WordPressMaintenanceUK() {
             gap: '1.5rem',
           }}>
             {[
-              { icon: '🔒', title: 'Security Updates', desc: 'WordPress core, plugin, and theme updates applied weekly (Standard) or daily (Pro), with staging tests for high-risk changes.' },
-              { icon: '💾', title: 'Daily Cloud Backups', desc: 'Full-site backups every 24 hours, stored encrypted on UK/EU servers. 30-day retention with one-click restore.' },
-              { icon: '📡', title: '24/7 Uptime Monitoring', desc: 'We monitor your site every minute. If it goes down you get an alert within 60 seconds and we begin investigating immediately.' },
+              { icon: '🔒', title: 'Security Updates', desc: 'WordPress core, plugin, and theme updates applied on your plan schedule, with staging tests for high-risk changes on Pro and Enterprise tiers.' },
+              { icon: '💾', title: 'Daily Cloud Backups', desc: 'Full-site backups every 24 hours, stored encrypted on UK/EU servers. 30-day retention with one-click restore functionality.' },
+              { icon: '📡', title: '24/7 Uptime Monitoring', desc: 'We monitor your site every minute. If it goes down, we are alerted within 60 seconds and begin investigating immediately.' },
               { icon: '🛡️', title: 'Malware Scanning', desc: 'Automated malware scans run daily. Any infection is flagged and quarantined before it affects your visitors or SEO rankings.' },
-              { icon: '⚡', title: 'Performance Checks', desc: 'Monthly speed audits with Core Web Vitals tracking. Pro plan includes active optimisation: image compression, caching, and database cleanup.' },
+              { icon: '⚡', title: 'Performance Checks', desc: 'Regular speed audits with Core Web Vitals tracking. Higher tiers include active optimisation: image compression and database cleanup.' },
               { icon: '📊', title: 'Monthly Health Report', desc: 'A clear monthly report covering updates applied, backup status, uptime percentage, security scan results, and performance scores.' },
             ].map((item) => (
               <div key={item.title} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '12px', padding: '1.75rem' }}>
@@ -134,10 +134,10 @@ export default function WordPressMaintenanceUK() {
               </span>
               <h2>24/7 WordPress Monitoring — Not Just Uptime Checks</h2>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '1rem 0 1.5rem' }}>
-                Most hosting providers offer basic uptime monitoring. We go further — monitoring every layer of your WordPress site around the clock, from server response to file integrity to login security.
+                Most hosting providers offer basic uptime monitoring. Our WordPress maintenance service goes further — monitoring every layer of your site, from server response to file integrity to login security.
               </p>
               <p style={{ color: '#a1a1aa', lineHeight: 1.7, margin: '0 0 1.5rem' }}>
-                When something changes — whether it&apos;s a malware injection at 3am or an SSL certificate nearing expiry — we&apos;re alerted before you are, and we act immediately. UK businesses on our plans have averaged{' '}
+                When something changes — whether it&apos;s a malware injection or an SSL certificate nearing expiry — we&apos;re alerted before you are. UK businesses on our plans have averaged{' '}
                 <strong style={{ color: '#fff' }}>99.9% uptime</strong> across all monitored sites.
               </p>
               <Link href="/contact" className="btn btn-primary">Get Monitoring Set Up</Link>
@@ -163,37 +163,35 @@ export default function WordPressMaintenanceUK() {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing Tiers */}
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2>WordPress Protection Retainers UK</h2>
+            <h2>WordPress Maintenance Service Pricing</h2>
             <p style={{ color: '#a1a1aa', maxWidth: '560px', margin: '1rem auto 0' }}>
-              Transparent monthly pricing. No setup fees, no long-term contracts, no surprises.
+              Transparent monthly tiers built for different business needs. No setup fees, no long-term contracts.
             </p>
             <p style={{ marginTop: '1rem' }}>
               <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>
-                Compare all WordPress maintenance plans and monthly pricing
+                Compare all WordPress maintenance plans and full monthly pricing
               </Link>
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-            {/* Standard */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+            {/* Essentials */}
             <div style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2rem' }}>
-              <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Standard</h3>
-              <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Solid protection for business websites</p>
+              <h3 style={{ marginBottom: '0.5rem' }}>Essentials</h3>
+              <p style={{ color: '#a1a1aa', fontSize: '0.85rem', marginBottom: '1.5rem' }}>Best for simple brochure and business sites</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-                £449<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
+                £149<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {[
-                  'Weekly core, plugin & theme updates',
-                  'Daily cloud backups (30-day retention)',
+                  'Monthly core, plugin & theme updates',
+                  'Daily off-site backups',
                   '24/7 uptime monitoring',
-                  'Daily malware scanning',
-                  'Monthly performance check',
-                  'Monthly health report',
-                  'Hack recovery guarantee',
+                  'Weekly malware scanning',
+                  'Monthly site health summary',
                   'UK business hours support',
                 ].map((f) => (
                   <li key={f} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: '#d4d4d8' }}>
@@ -209,20 +207,19 @@ export default function WordPressMaintenanceUK() {
                 MOST POPULAR
               </div>
               <h3 style={{ color: 'var(--primary)', marginBottom: '0.5rem' }}>Pro</h3>
-              <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '1.5rem' }}>For revenue-critical WordPress sites</p>
+              <p style={{ color: '#a1a1aa', fontSize: '0.85rem', marginBottom: '1.5rem' }}>For active lead-gen and marketing sites</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
-                £999<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
+                £349<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {[
-                  'Everything in Standard',
-                  'Daily core, plugin & theme updates',
-                  'Staging environment for update testing',
-                  'Active speed optimisation',
-                  'Unlimited small content edits',
-                  'Priority 2-hour response',
-                  'Enhanced hack guarantee (all vectors)',
-                  'White-label reports available',
+                  'Weekly updates with staging checks',
+                  'Daily backups and rollback support',
+                  '24/7 uptime & malware monitoring',
+                  'Monthly performance review',
+                  'Small content edits (30 mins/mo)',
+                  'Priority UK business hours support',
+                  'Hack recovery guarantee',
                 ].map((f) => (
                   <li key={f} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: '#d4d4d8' }}>
                     <span style={{ color: 'var(--primary)', flexShrink: 0 }}>✓</span> {f}
@@ -231,13 +228,35 @@ export default function WordPressMaintenanceUK() {
               </ul>
               <Link href="/contact" className="btn btn-primary" style={{ display: 'block', textAlign: 'center' }}>Get Started</Link>
             </div>
+            {/* Enterprise */}
+            <div style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '16px', padding: '2rem' }}>
+              <h3 style={{ marginBottom: '0.5rem' }}>Enterprise</h3>
+              <p style={{ color: '#a1a1aa', fontSize: '0.85rem', marginBottom: '1.5rem' }}>For WooCommerce and revenue-critical sites</p>
+              <div style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
+                £749<span style={{ fontSize: '1rem', fontWeight: 400, color: '#a1a1aa' }}>/mo</span>
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {[
+                  'High-frequency security updates',
+                  'Enhanced staging & rollback checks',
+                  'Active speed optimisation',
+                  'Dedicated technical contact',
+                  'Quarterly security review calls',
+                  'Priority 2-hour response SLA',
+                  'Advanced reporting for stakeholders',
+                ].map((f) => (
+                  <li key={f} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: '#d4d4d8' }}>
+                    <span style={{ color: 'var(--primary)', flexShrink: 0 }}>✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/contact" className="btn btn-secondary" style={{ display: 'block', textAlign: 'center' }}>Contact Us</Link>
+            </div>
           </div>
           <p style={{ textAlign: 'center', color: '#71717a', fontSize: '0.85rem', marginTop: '1.5rem' }}>
-            Need enterprise-level protection? See our{' '}
+            Looking for enterprise-grade security hardening? See our{' '}
             <Link href="/wordpress-security-retainer" style={{ color: 'var(--primary)' }}>WordPress Security Retainer</Link>
-            {' '}from £1,000/month. If you are still comparing tiers, use our{' '}
-            <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)' }}>WordPress maintenance plans</Link>
-            {' '}page for a side-by-side monthly comparison.
+            {' '}from £1,000/month.
           </p>
         </div>
       </section>
