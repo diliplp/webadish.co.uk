@@ -10,6 +10,26 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'how-to-choose-wordpress-maintenance-service-uk',
+    title: "How to Choose a WordPress Maintenance Service UK: What Agencies Don't Tell You",
+    excerpt:
+      "Most WordPress maintenance services in the UK look identical on paper. Here is what actually separates them — and the seven questions you need answered in writing before you commit.",
+    datePublished: '2026-05-27',
+    dateModified: '2026-05-27',
+    category: 'Maintenance',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'wordpress-management-services-uk',
+    title: "WordPress Management Services UK: What's Included and Who Needs One",
+    excerpt:
+      "A WordPress management service takes every ongoing technical task off your plate — updates, security, backups, monitoring, support. Here is what UK businesses should expect at each price point.",
+    datePublished: '2026-05-27',
+    dateModified: '2026-05-27',
+    category: 'Maintenance',
+    author: 'WebAdish',
+  },
+  {
     slug: 'wordpress-shared-hosting-risks-uk',
     title: 'WordPress on Shared Hosting: Security Risks UK Businesses Need to Understand',
     excerpt:
