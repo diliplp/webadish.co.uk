@@ -12,6 +12,7 @@ const ContactForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '',
         website: '',
         message: '',
         fax_number: '',
@@ -119,7 +120,7 @@ const ContactForm = () => {
                 source: utmData.utm_source || 'direct',
                 medium: utmData.utm_medium || 'organic',
             });
-            setFormData({ name: '', email: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
+            setFormData({ name: '', email: '', phone: '', website: '', message: '', fax_number: '', form_started_at: Date.now(), turnstile_token: '' });
             setHasTrackedStart(false);
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
@@ -181,6 +182,20 @@ const ContactForm = () => {
                     onFocus={trackFormStart}
                     onChange={handleChange}
                     autoComplete="email"
+                />
+            </div>
+
+            <div className={styles.group}>
+                <label htmlFor="phone">Phone / WhatsApp (Optional)</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+44 7XXX XXXXXX"
+                    value={formData.phone}
+                    onFocus={trackFormStart}
+                    onChange={handleChange}
+                    autoComplete="tel"
                 />
             </div>
 

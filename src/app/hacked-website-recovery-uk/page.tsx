@@ -71,9 +71,9 @@ const faqItems = [
 export default function HackedWebsiteRecoveryUK() {
   const serviceSchema = generateServiceSchema(
     'Hacked WordPress Site Recovery UK',
-    'Premium WordPress incident response for UK businesses. Emergency containment, forensic recovery, root-cause analysis, and security remediation for revenue-critical websites.',
+    'WordPress hacked site recovery for UK businesses. Quick Site Restore from £499 for brochure sites. Full forensic incident response from £1,500 for revenue-generating sites.',
     '/hacked-website-recovery-uk',
-    'From £3,000'
+    'From £499'
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },

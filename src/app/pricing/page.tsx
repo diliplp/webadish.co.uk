@@ -11,9 +11,9 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Pricing UK | Incident Response, Audits & Retainers',
+  title: 'WordPress Security Pricing UK | From £499 Cleanup to Full Incident Response',
   description:
-    'WordPress security pricing for UK businesses, including incident response, malware removal, security audits, and monthly retainers. See fixed-fee and monthly options.',
+    'WordPress security pricing for UK businesses. Quick Site Restore from £499 for brochure sites. Full incident response from £1,500. Forensic packages from £3,000. Fixed-fee options.',
   path: '/pricing',
 });
 
@@ -24,14 +24,19 @@ const faqItems = [
       'Pricing depends on the level of compromise, business impact, website complexity, persistence or backdoors, and the recovery depth required to secure the environment properly.',
   },
   {
-    question: 'Do most clients choose the lowest cost option?',
+    question: 'Who is the £499 Quick Site Restore suitable for?',
     answer:
-      'No. Most businesses choose the Post-Hack Forensic & Hardening Package because it combines investigation, eradication, structural hardening, and post-recovery protection against reinfection.',
+      'The £499 option is designed for simple brochure sites, portfolios, and blogs that do not take payments, capture leads, or store customer data. It removes detected malware and gets the site back online, but does not include root cause investigation, backdoor verification, or a re-infection guarantee. If your site generates revenue or processes personal data, choose Emergency Containment or the Forensic Package.',
   },
   {
-    question: 'Why are low-cost cleanups risky?',
+    question: 'Do most clients choose the lowest cost option?',
     answer:
-      'Because they often remove visible malware without closing the original access path, validating file and database integrity, or implementing ongoing protection.',
+      'No. Most businesses with revenue-generating sites choose the Post-Hack Forensic & Hardening Package because it combines investigation, eradication, structural hardening, and post-recovery protection against reinfection. The £499 option is appropriate only for low-stakes sites with no customer data.',
+  },
+  {
+    question: 'Why are low-cost cleanups risky for business sites?',
+    answer:
+      'Because they often remove visible malware without closing the original access path, validating file and database integrity, or implementing ongoing protection. That is why the £499 Quick Site Restore explicitly excludes root cause investigation and re-infection warranty — it is transparent about its scope rather than overpromising.',
   },
   {
     question: 'Who is this service suitable for?',
@@ -50,7 +55,7 @@ export default function Pricing() {
     'WordPress Incident Response & Security Pricing',
     'High-ticket WordPress incident response and security pricing for UK businesses. Response scope is based on incident severity, business risk, recovery complexity, and whether post-hack forensic hardening is required.',
     '/pricing',
-    '£1,500 - £12,000+'
+    '£499 - £12,000+'
   );
 
   const faqSchema = generateFAQSchema(faqItems);
@@ -162,6 +167,66 @@ export default function Pricing() {
               gap: '1.5rem',
             }}
           >
+            <div
+              style={{
+                background: 'var(--background)',
+                border: '1px solid var(--border)',
+                borderRadius: '1rem',
+                padding: '2rem',
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: '#52525b',
+                  color: '#fff',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  padding: '4px 16px',
+                  borderRadius: '20px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                BROCHURE &amp; BLOG SITES ONLY
+              </div>
+              <h3 style={{ marginBottom: '0.5rem' }}>Quick Site Restore</h3>
+              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£499</div>
+              <p style={{ color: '#a1a1aa' }}>Site cleaned and back online. No forensic investigation — not suitable if you store customer data or generate revenue.</p>
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
+                {[
+                  'Full malware scan (files + database)',
+                  'Detected malware removed',
+                  'WordPress core integrity restore',
+                  'Passwords + security keys reset',
+                  'Google blacklist review request',
+                  'Cleanup report',
+                ].map((item) => (
+                  <li key={item} style={{ marginBottom: '0.5rem', color: '#d4d4d8' }}>
+                    &#10003; {item}
+                  </li>
+                ))}
+              </ul>
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
+                {[
+                  'No root cause investigation',
+                  'No backdoor guarantee',
+                  'No ICO / GDPR assessment',
+                  'No re-infection warranty',
+                ].map((item) => (
+                  <li key={item} style={{ marginBottom: '0.4rem', color: '#71717a', fontSize: '0.875rem' }}>
+                    ✕ {item}
+                  </li>
+                ))}
+              </ul>
+              <p style={{ color: '#f59e0b', fontWeight: 700, marginTop: '1rem', marginBottom: 0, fontSize: '0.875rem' }}>
+                If your site takes payments or captures leads, choose Emergency Containment or above.
+              </p>
+            </div>
+
             <div
               style={{
                 background: 'var(--background)',

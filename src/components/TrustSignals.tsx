@@ -5,12 +5,12 @@ const TrustSignals = () => {
     const benefits = [
         '20+ Years in Business',
         '30-Minute Emergency Triage',
-        'UK GDPR Security Focus',
+        'UK GDPR & ICO Compliance',
         '24/7 Security Monitoring',
-        'Business Together Limited UK Partner',
-        'Cyber Essentials Ready',
-        'ICO Registration Support',
-        'Working Towards ISO 27001'
+        'UK Registered Company',
+        'Cyber Essentials Aligned',
+        'Fixed-Fee Incident Response',
+        'No Recovery, No Invoice'
     ];
 
     return (

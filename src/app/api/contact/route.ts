@@ -6,6 +6,7 @@ export const runtime = 'nodejs';
 interface ContactPayload {
   name?: string;
   email?: string;
+  phone?: string;
   website?: string;
   message?: string;
   fax_number?: string; // honeypot
@@ -277,6 +278,7 @@ export async function POST(request: Request) {
     const body = (await request.json()) as ContactPayload;
     const name = body.name?.trim();
     const email = body.email?.trim();
+    const phone = body.phone?.trim() || '';
     const website = body.website?.trim() || 'Not provided';
     const message = body.message?.trim();
     const honeypot = body.fax_number?.trim();
@@ -424,6 +426,7 @@ export async function POST(request: Request) {
         <p><strong>Submission ID:</strong> ${escapeHtml(submissionId)}</p>
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Email:</strong> ${safeEmail}</p>
+        ${phone ? `<p><strong>Phone/WhatsApp:</strong> ${escapeHtml(phone)}</p>` : ''}
         <p><strong>Website:</strong> ${safeWebsite}</p>
         <p><strong>Message:</strong></p>
         <p>${safeMessage}</p>
