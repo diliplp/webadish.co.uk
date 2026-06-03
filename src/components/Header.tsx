@@ -94,6 +94,7 @@ const Header = () => {
                             </div>
                         )}
                     </div>
+                    <Link href="/wordpress-security-scanner">Free Scan</Link>
                     <Link href="/pricing">Pricing</Link>
                     <Link href="/case-studies">Case Studies</Link>
                     <Link href="/blog">Blog</Link>
@@ -125,6 +126,7 @@ const Header = () => {
                             {link.label}
                         </Link>
                     ))}
+                    <Link href="/wordpress-security-scanner" onClick={() => setIsMobileMenuOpen(false)}>Free Scan</Link>
                     <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
                     <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
                     <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>

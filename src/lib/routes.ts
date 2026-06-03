@@ -105,6 +105,13 @@ export const CONTENT_ROUTES: RouteConfig[] = [
 
 export const SECONDARY_ROUTES: RouteConfig[] = [
   {
+    path: '/wordpress-security-scanner',
+    label: 'Free WordPress Security Scanner',
+    priority: 0.9,
+    changeFreq: 'monthly',
+    lastModified: '2026-06-03',
+  },
+  {
     path: '/web-design-services',
     label: 'Secure WordPress Design',
     priority: 0.7,

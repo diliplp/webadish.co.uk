@@ -1,5 +1,6 @@
 import { generatePageMetadata } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
+import ScannerCTA from '@/components/ScannerCTA';
 import {
   generateServiceSchema,
   generateFAQSchema,
@@ -461,6 +462,8 @@ export default function HackedWebsiteRecoveryUK() {
           </div>
         </div>
       </section>
+
+      <ScannerCTA />
 
       <FAQ items={faqItems} />
 
