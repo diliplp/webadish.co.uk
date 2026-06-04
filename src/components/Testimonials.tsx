@@ -2,23 +2,26 @@ import { Star } from 'lucide-react';
 import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
+    // Real WebAdish client reviews. Keep these genuine — do not add fabricated
+    // testimonials. New reviews come from the Google review flywheel (see
+    // REVIEW_REQUEST_PLAYBOOK.md). UK GBP review link: https://g.page/r/CQS-1nwWqWtFEBM/review
     const testimonials = [
         {
-            name: 'Sarah Jenkins',
-            role: 'Marketing Director, TechGrowth UK',
-            content: 'Webadish saved our agency site after a severe malware attack. They restored everything within 4 hours and secured it against future threats. Absolutely invaluable service.',
+            name: 'Vashishtha Luxury Fashion',
+            role: 'Fashion brand · 3+ years with WebAdish',
+            content: 'Webadish is undoubtedly the best service provider in today’s digital industry. From the last 3 years we are extremely happy with their prompt and timely services.',
             rating: 5
         },
         {
-            name: 'Michael Clarke',
-            role: 'Founder, Clarke Digital',
-            content: 'The ongoing protection retainers give me complete peace of mind. I no longer worry about updates breaking my client sites. fast, professional, and reliable.',
+            name: 'Shivam Autozone',
+            role: 'Automotive dealership',
+            content: 'We are really impressed with the amazing website. Such a great company to work with and highly recommended to everyone.',
             rating: 5
         },
         {
-            name: 'Emma Thompson',
-            role: 'CEO, Creative London',
-            content: 'Their security review was an eye-opener. We implemented all recommendations and site speed improved by 40% as a bonus. Highly recommended for any serious business.',
+            name: 'Triton',
+            role: 'eCommerce store',
+            content: 'Just wanted to thank you for helping us with the website. You did an amazing job guiding me through the whole process.',
             rating: 5
         }
     ];
