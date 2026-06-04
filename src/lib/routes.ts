@@ -112,6 +112,13 @@ export const SECONDARY_ROUTES: RouteConfig[] = [
     lastModified: '2026-06-03',
   },
   {
+    path: '/partners',
+    label: 'Partner Programme',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    lastModified: '2026-06-04',
+  },
+  {
     path: '/web-design-services',
     label: 'Secure WordPress Design',
     priority: 0.7,

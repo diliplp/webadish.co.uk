@@ -37,6 +37,7 @@ const Footer = () => {
                             <li><Link href="/pricing">Pricing</Link></li>
                             <li><Link href="/case-studies">Case Studies</Link></li>
                             <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/partners">Partner Programme</Link></li>
                             <li><Link href="/google-penalty-recovery">Google Penalty Recovery</Link></li>
                             <li><Link href="/gdpr-wordpress-security">GDPR Security</Link></li>
                             <li><Link href="/about-webadish-web-agency">About Us</Link></li>
