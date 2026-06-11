@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Script from 'next/script';
 
 declare global {
@@ -36,13 +36,34 @@ export default function TurnstileField({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   const onTokenChangeRef = useRef(onTokenChange);
+  // Turnstile costs ~450 KB; only load it once the form is near the viewport
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
     onTokenChangeRef.current = onTokenChange;
   }, [onTokenChange]);
 
   useEffect(() => {
-    if (!siteKey) return;
+    if (!siteKey || shouldLoad) return;
+    const el = containerRef.current;
+    if (!el || window.turnstile || !('IntersectionObserver' in window)) {
+      const timeout = window.setTimeout(() => setShouldLoad(true), 0);
+      return () => window.clearTimeout(timeout);
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoad(true);
+        }
+      },
+      { rootMargin: '600px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [siteKey, shouldLoad]);
+
+  useEffect(() => {
+    if (!siteKey || !shouldLoad) return;
 
     let cancelled = false;
 
@@ -84,16 +105,18 @@ export default function TurnstileField({
         widgetIdRef.current = null;
       }
     };
-  }, [siteKey, theme]);
+  }, [siteKey, theme, shouldLoad]);
 
   if (!siteKey) return null;
 
   return (
     <>
-      <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-        strategy="afterInteractive"
-      />
+      {shouldLoad && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+        />
+      )}
       <div style={{ marginTop: '0.25rem', minHeight: '72px' }}>
         <div ref={containerRef} />
       </div>

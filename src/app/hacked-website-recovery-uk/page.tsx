@@ -14,11 +14,11 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'Hacked Website Recovery UK | Emergency WordPress Fix',
+  title: 'Hacked WordPress Site? Fixed-Fee Recovery UK — 30-Min Triage',
   description:
-    'Your WordPress site has been hacked. We contain the damage, remove malware, close the backdoor, and restore it. Fixed fee from £1,499, 30-minute triage.',
+    'Hacked site? UK team responds in 30 minutes. We remove malware, close the backdoor and fix the root cause. Fixed fee from £1,499 — call or WhatsApp now.',
   path: '/hacked-website-recovery-uk',
-  modifiedTime: '2026-04-14',
+  modifiedTime: '2026-06-11',
 });
 
 const faqItems = [
