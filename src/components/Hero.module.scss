@@ -1,5 +1,22 @@
 @import '../styles/mixins.scss';
 
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animTitle {
+    animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.animSubtitle {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+.animCta {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
+}
+
 .hero {
     position: relative;
     min-height: 80vh;

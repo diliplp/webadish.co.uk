@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ShieldAlert, Phone, ChevronDown } from 'lucide-react';
 import styles from './Header.module.scss';
-import { gsap } from 'gsap';
 
 const SERVICE_LINKS = [
     { href: '/wordpress-security-audit', label: 'Security Audit' },
@@ -33,15 +32,7 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-            gsap.fromTo(`.${styles.mobileMenu} a`,
-                { x: 50, opacity: 0 },
-                { x: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power2.out' }
-            );
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
     }, [isMobileMenuOpen]);
 
     useEffect(() => {

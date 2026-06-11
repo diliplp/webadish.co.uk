@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShieldCheck, ShieldAlert, Phone } from 'lucide-react';
-import { gsap } from 'gsap';
 import styles from './Hero.module.scss';
 
 interface HeroProps {
@@ -30,35 +29,8 @@ const Hero: React.FC<HeroProps> = ({
     heroImage = '/hero-security.svg',
     heroImageAlt = 'Security review illustration'
 }) => {
-    const heroRef = useRef<HTMLElement>(null);
-    const titleRef = useRef<HTMLHeadingElement>(null);
-    const subtitleRef = useRef<HTMLParagraphElement>(null);
-    const ctaRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-        tl.fromTo(
-            titleRef.current,
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, delay: 0.2 }
-        )
-            .fromTo(
-                subtitleRef.current,
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8 },
-                '-=0.6'
-            )
-            .fromTo(
-                ctaRef.current,
-                { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8 },
-                '-=0.6'
-            );
-    }, []);
-
     return (
-        <section className={styles.hero} ref={heroRef}>
+        <section className={styles.hero}>
             <div className={styles.container}>
                 <div className={`${styles.heroGrid} ${!showImage ? styles.heroGridSingle : ''}`}>
                     <div className={`${styles.heroText} ${!showImage ? styles.heroTextCentered : ''}`}>
@@ -67,13 +39,13 @@ const Hero: React.FC<HeroProps> = ({
                             <span>Premium WordPress Incident Response & Security</span>
                         </div>
 
-                        <h1 ref={titleRef} dangerouslySetInnerHTML={{ __html: title }}></h1>
+                        <h1 className={styles.animTitle} dangerouslySetInnerHTML={{ __html: title }}></h1>
 
-                        <p ref={subtitleRef} className={styles.subtitle}>
+                        <p className={`${styles.subtitle} ${styles.animSubtitle}`}>
                             {subtitle}
                         </p>
 
-                        <div ref={ctaRef} className={styles.ctaGroup}>
+                        <div className={`${styles.ctaGroup} ${styles.animCta}`}>
                             <Link href={ctaLink} className="btn btn-primary">
                                 <ShieldAlert size={18} style={{ marginRight: '8px' }} />
                                 {ctaText}
