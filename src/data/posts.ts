@@ -10,6 +10,16 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'wordpress-security-audit-vs-malware-scan',
+    title: "Why a Free Malware Scan Isn't a Security Audit: A Decision Guide for CTOs",
+    excerpt:
+      "Most security plugins show a green tick even when your site is vulnerable. Learn the five critical things a professional audit finds that automated scans miss — and the ROI of prevention.",
+    datePublished: '2026-06-14',
+    dateModified: '2026-06-14',
+    category: 'WordPress Security',
+    author: 'WebAdish',
+  },
+  {
     slug: 'how-to-choose-wordpress-maintenance-service-uk',
     title: "How to Choose a WordPress Maintenance Service UK: What Agencies Don't Tell You",
     excerpt:
