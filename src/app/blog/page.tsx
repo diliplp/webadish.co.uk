@@ -52,7 +52,7 @@ export default function BlogIndex() {
 
       <PageHeader
         title="WordPress Security <br /><span style='color: var(--primary)'>Blog</span>"
-        subtitle="Expert guides, threat analysis, and practical security advice informed by 20+ years in business and hands-on web operations."
+        subtitle="Expert guides, threat analysis, and practical security advice informed by 20+ years of hands-on security and web operations experience."
         badge="Security Insights"
       />
 

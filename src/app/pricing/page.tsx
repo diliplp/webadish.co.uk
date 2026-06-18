@@ -11,9 +11,9 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
 export const metadata = generatePageMetadata({
-  title: 'WordPress Security Pricing UK | From £499 Cleanup to Full Incident Response',
+  title: 'WordPress Security Pricing UK | From £299 Cleanup to Full Incident Response',
   description:
-    'WordPress security pricing for UK businesses. Quick Site Restore from £499 for brochure sites. Full incident response from £1,500. Forensic packages from £3,000. Fixed-fee options.',
+    'WordPress security pricing for UK businesses. Emergency cleanup from £299 for small sites with a 30-day re-clean guarantee. Full incident response from £1,499. Forensic packages from £3,000. Fixed-fee options.',
   path: '/pricing',
 });
 
@@ -24,19 +24,19 @@ const faqItems = [
       'Pricing depends on the level of compromise, business impact, website complexity, persistence or backdoors, and the recovery depth required to secure the environment properly.',
   },
   {
-    question: 'Who is the £499 Quick Site Restore suitable for?',
+    question: 'Who is the £299 Quick Site Restore suitable for?',
     answer:
-      'The £499 option is designed for simple brochure sites, portfolios, and blogs that do not take payments, capture leads, or store customer data. It removes detected malware and gets the site back online, but does not include root cause investigation, backdoor verification, or a re-infection guarantee. If your site generates revenue or processes personal data, choose Emergency Containment or the Forensic Package.',
+      'The £299 option is designed for simple brochure sites, portfolios, and blogs that do not take payments, capture leads, or store customer data. It removes detected malware, gets the site back online, and includes a 30-day re-clean guarantee, but does not include root cause investigation or backdoor verification. If your site generates revenue or processes personal data, choose Emergency Containment or the Forensic Package.',
   },
   {
     question: 'Do most clients choose the lowest cost option?',
     answer:
-      'No. Most businesses with revenue-generating sites choose the Post-Hack Forensic & Hardening Package because it combines investigation, eradication, structural hardening, and post-recovery protection against reinfection. The £499 option is appropriate only for low-stakes sites with no customer data.',
+      'No. Most businesses with revenue-generating sites choose the Post-Hack Forensic & Hardening Package because it combines investigation, eradication, structural hardening, and post-recovery protection against reinfection. The £299 option is appropriate only for low-stakes sites with no customer data.',
   },
   {
     question: 'Why are low-cost cleanups risky for business sites?',
     answer:
-      'Because they often remove visible malware without closing the original access path, validating file and database integrity, or implementing ongoing protection. That is why the £499 Quick Site Restore explicitly excludes root cause investigation and re-infection warranty — it is transparent about its scope rather than overpromising.',
+      'Because they often remove visible malware without closing the original access path, validating file and database integrity, or implementing ongoing protection. That is why the £299 Quick Site Restore explicitly excludes root-cause investigation and backdoor verification — it is transparent about its scope rather than overpromising.',
   },
   {
     question: 'Who is this service suitable for?',
@@ -55,7 +55,7 @@ export default function Pricing() {
     'WordPress Incident Response & Security Pricing',
     'High-ticket WordPress incident response and security pricing for UK businesses. Response scope is based on incident severity, business risk, recovery complexity, and whether post-hack forensic hardening is required.',
     '/pricing',
-    '£499 - £12,000+'
+    '£299 - £12,000+'
   );
 
   const faqSchema = generateFAQSchema(faqItems);
@@ -194,7 +194,7 @@ export default function Pricing() {
                 BROCHURE &amp; BLOG SITES ONLY
               </div>
               <h3 style={{ marginBottom: '0.5rem' }}>Quick Site Restore</h3>
-              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£499</div>
+              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>£299</div>
               <p style={{ color: '#a1a1aa' }}>Site cleaned and back online. No forensic investigation — not suitable if you store customer data or generate revenue.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[
@@ -204,6 +204,7 @@ export default function Pricing() {
                   'Passwords + security keys reset',
                   'Google blacklist review request',
                   'Cleanup report',
+                  '30-day re-clean guarantee',
                 ].map((item) => (
                   <li key={item} style={{ marginBottom: '0.5rem', color: '#d4d4d8' }}>
                     &#10003; {item}
@@ -215,7 +216,6 @@ export default function Pricing() {
                   'No root cause investigation',
                   'No backdoor guarantee',
                   'No ICO / GDPR assessment',
-                  'No re-infection warranty',
                 ].map((item) => (
                   <li key={item} style={{ marginBottom: '0.4rem', color: '#71717a', fontSize: '0.875rem' }}>
                     ✕ {item}
@@ -236,7 +236,7 @@ export default function Pricing() {
               }}
             >
               <h3 style={{ marginBottom: '0.5rem' }}>Emergency Containment</h3>
-              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>From £1,500</div>
+              <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>From £1,499</div>
               <p style={{ color: '#a1a1aa' }}>Immediate cleanup for low-risk incidents.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[

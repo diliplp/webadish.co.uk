@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({
 
                         {showTrust && (
                             <div className={styles.trustLabel}>
-                                Trusted by agencies and businesses across the United Kingdom, backed by 20+ years in business
+                                Trusted by agencies and businesses across the United Kingdom, backed by 20+ years of hands-on security and web experience
                             </div>
                         )}
                     </div>

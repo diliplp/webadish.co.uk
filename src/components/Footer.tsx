@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>&copy; {currentYear} WebAdish. All rights reserved. UK services delivered in partnership with Business Together Limited, a registered UK company.</p>
+                    <p>&copy; {currentYear} WebAdish. All rights reserved. UK services delivered in partnership with Business Together Limited, a UK-registered company (no. 9593738).</p>
                     <div className={styles.policies}>
                         <Link href="/privacy-policy">Privacy Policy</Link>
                         <Link href="/terms-conditions">Terms &amp; Conditions</Link>

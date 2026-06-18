@@ -8,17 +8,19 @@ import {
 } from '@/lib/schema';
 import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
+import BackedByBTLITC from '@/components/BackedByBTLITC';
+import RecoveryCaseStudies from '@/components/RecoveryCaseStudies';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'Hacked WordPress Site? Fixed-Fee Recovery UK — 30-Min Triage',
+  title: 'Hacked WordPress Site? UK Recovery from £299 — 30-Min Triage',
   description:
-    'Hacked site? UK team responds in 30 minutes. We remove malware, close the backdoor and fix the root cause. Fixed fee from £1,499 — call or WhatsApp now.',
+    'Hacked WordPress site? UK team triages in 30 minutes. Emergency malware removal from £299 for small sites; full forensic recovery for business-critical sites. No recovery, no invoice — call or WhatsApp now.',
   path: '/hacked-website-recovery-uk',
-  modifiedTime: '2026-06-11',
+  modifiedTime: '2026-06-18',
 });
 
 const faqItems = [
@@ -72,9 +74,9 @@ const faqItems = [
 export default function HackedWebsiteRecoveryUK() {
   const serviceSchema = generateServiceSchema(
     'Hacked WordPress Site Recovery UK',
-    'WordPress hacked site recovery for UK businesses. Quick Site Restore from £499 for brochure sites. Full forensic incident response from £1,500 for revenue-generating sites.',
+    'WordPress hacked site recovery for UK businesses. Emergency malware removal from £299 for small and brochure sites, backed by a 30-day reinfection guarantee. Full forensic incident response from £1,499 for revenue-generating sites.',
     '/hacked-website-recovery-uk',
-    'From £499'
+    'From £299'
   );
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
@@ -95,6 +97,8 @@ export default function HackedWebsiteRecoveryUK() {
 
       <TrustSignals />
 
+      <BackedByBTLITC />
+
       <section className="section-padding" style={{ backgroundColor: 'var(--surface)', paddingTop: '1rem', paddingBottom: '1rem' }}>
         <div className="container">
           <div style={{ maxWidth: '920px', margin: '0 auto', background: 'rgba(99, 102, 241, 0.08)', border: '1px solid rgba(99, 102, 241, 0.28)', borderRadius: '1rem', padding: '1.5rem 1.75rem' }}>
@@ -112,39 +116,7 @@ export default function HackedWebsiteRecoveryUK() {
         </div>
       </section>
 
-      <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem', paddingBottom: '1rem' }}>
-        <div className="container">
-          <div
-            style={{
-              maxWidth: '920px',
-              margin: '0 auto',
-              background: 'var(--surface)',
-              border: '1px solid var(--border)',
-              borderRadius: '1rem',
-              padding: '1.5rem 1.75rem',
-            }}
-          >
-            <p style={{ color: '#a1a1aa', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
-              Real engagement trust signals
-            </p>
-            <p style={{ color: '#e4e4e7', lineHeight: 1.7, marginBottom: '1rem' }}>
-              This service is not based on theoretical cleanup checklists. Trusted client work includes <strong>verofax.com</strong>, <strong>shivamautozone.com</strong>, and <strong>crystalgroup.in</strong>, where the work involved real compromise investigation, cleanup, hardening, and post-incident protection.
-            </p>
-            <div style={{ display: 'grid', gap: '0.75rem' }}>
-              {[
-                'verofax.com approached us after a compromise. We traced the root cause, removed the malicious foothold, and closed the path that could have allowed reinfection.',
-                'Other client work has involved recovering business sites after failed low-cost cleanup attempts, then hardening the stack so the issue does not simply return a week later.',
-                'Some UK-facing details are anonymised where needed, but the engagements themselves are real and the recovery approach described on this page reflects actual delivery work.',
-              ].map((item) => (
-                <div key={item} style={{ color: '#d4d4d8', display: 'flex', gap: '0.65rem', alignItems: 'flex-start', lineHeight: 1.7 }}>
-                  <span style={{ color: '#ef4444', flexShrink: 0 }}>✓</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RecoveryCaseStudies />
 
       <section className="section-padding" style={{ backgroundColor: 'var(--background)', paddingTop: '1rem' }}>
         <div className="container">
@@ -166,6 +138,10 @@ export default function HackedWebsiteRecoveryUK() {
                       <span>{item}</span>
                     </div>
                   ))}
+                </div>
+                <div style={{ display: 'inline-flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.4)', borderRadius: '0.6rem', padding: '0.6rem 0.9rem' }}>
+                  <span style={{ color: '#4ade80', fontWeight: 700 }}>From £299</span>
+                  <span style={{ color: '#d4d4d8', fontSize: '0.9rem' }}>small-site emergency cleanup · <strong style={{ color: '#fff' }}>No recovery, no invoice</strong></span>
                 </div>
               </div>
 
@@ -257,11 +233,12 @@ export default function HackedWebsiteRecoveryUK() {
             <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid #ef4444', borderRadius: '1rem', padding: '2.5rem', textAlign: 'center' }}>
               <h2 style={{ color: '#ef4444', marginBottom: '0.5rem' }}>Recovery pricing and response options</h2>
               <p style={{ color: '#a1a1aa', marginBottom: '1.5rem' }}>
-                Start with the right level of response for the incident in front of you. We keep the emergency path clear, then move serious clients into post-hack forensic and hardening work that reduces recurrence risk.
+                Emergency cleanups start from <strong style={{ color: '#fff' }}>£299</strong> for small sites, backed by a 30-day reinfection guarantee. Business-critical sites move into deeper forensic and hardening work that reduces recurrence risk. Either way — <strong style={{ color: '#fff' }}>no recovery, no invoice</strong>.
               </p>
               <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
                 {[
-                  'Fixed-Fee Malware Cleanup: from £1,499 for contained infections that do not require deep forensic investigation',
+                  'Emergency Malware Removal: from £299 for small and brochure WordPress sites — malware removal, Google blacklist removal support, and basic hardening, backed by a 30-day reinfection guarantee',
+                  'Fixed-Fee Forensic Cleanup: from £1,499 for contained infections on business sites that need root-cause investigation, not just a malware sweep',
                   'Post-Hack Forensic & Hardening Package: from £3,000 for single-site compromise, root-cause analysis, hardening, and a 12-month protection roadmap',
                   'Revenue-Critical Response: from £6,000 for WooCommerce, lead-gen, and client-facing production websites where downtime and trust loss carry direct financial risk',
                   'Major Incident Engagement: £10,000+ for multi-site estates, agency portfolios, or deep persistence and server investigation',

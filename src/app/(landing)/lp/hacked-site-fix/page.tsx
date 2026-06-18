@@ -4,7 +4,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
   title: 'WordPress Site Hacked? Emergency Fix | WebAdish',
-  description: 'WordPress site hacked? We fix it in hours, not days. Emergency malware removal, backdoor cleanup, and site hardening. Fixed fee £1,499 with 30-day guarantee.',
+  description: 'WordPress site hacked? We fix it in hours, not days. Emergency malware removal, backdoor cleanup, and site hardening. Fixed fee from £299 for small sites, with a 30-day re-clean guarantee.',
   path: '/lp/hacked-site-fix',
   noIndex: true,
 });
@@ -203,10 +203,10 @@ export default function HackedSiteLP() {
                 borderRadius: '12px',
               }}>
                 <p style={{ color: 'var(--foreground)', fontWeight: 600, marginBottom: '0.25rem' }}>
-                  £1,499 Fixed Fee | 30-Day Guarantee
+                  From £299 small sites · £1,499 business sites · 30-Day Guarantee
                 </p>
                 <p style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
-                  If malware returns within 30 days, we clean it again at no extra cost.
+                  Fixed fee, no hourly billing. If malware returns within 30 days, we clean it again at no extra cost.
                 </p>
               </div>
             </div>
