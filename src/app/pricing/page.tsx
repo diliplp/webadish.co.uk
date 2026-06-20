@@ -105,15 +105,15 @@ export default function Pricing() {
       >
         <div className="container">
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h2 style={{ marginBottom: '1rem' }}>Important context</h2>
+            <h2 style={{ marginBottom: '1rem' }}>What we handle</h2>
             <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>
-              This is not basic malware cleanup.
+              From a £299 brochure-site cleanup to a £12,000+ forensic response for business-critical infrastructure — the right scope depends on what your site does and what is at risk.
             </p>
             <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '1rem' }}>
-              We handle active security incidents, compromised infrastructure, and business-critical systems.
+              If your site takes payments, captures leads, or stores customer data, a surface-level cleanup is not enough — and we will tell you that upfront rather than take your money for a fix that does not hold.
             </p>
             <p style={{ color: 'var(--foreground)', fontWeight: 700, margin: 0 }}>
-              If you are looking for the lowest cost fix, we are not the right fit.
+              What we do not do: half-fixed jobs that leave the access path open and have you back here in six weeks.
             </p>
           </div>
         </div>
@@ -233,27 +233,59 @@ export default function Pricing() {
                 border: '1px solid var(--border)',
                 borderRadius: '1rem',
                 padding: '2rem',
+                position: 'relative',
               }}
             >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: '#1d4ed8',
+                  color: '#fff',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  padding: '4px 16px',
+                  borderRadius: '20px',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                BUSINESS SITES
+              </div>
               <h3 style={{ marginBottom: '0.5rem' }}>Emergency Containment</h3>
               <div style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>From £1,499</div>
-              <p style={{ color: '#a1a1aa' }}>Immediate cleanup for low-risk incidents.</p>
+              <p style={{ color: '#a1a1aa' }}>Same-day priority response for business sites that cannot stay offline.</p>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1.25rem' }}>
                 {[
-                  'Malware removal',
-                  'Basic restoration',
-                  'Minimal hardening',
+                  'Same-day priority response',
+                  'Full malware scan + removal (files, database, uploads)',
+                  'Backdoor scan & removal',
+                  'WordPress core + plugin integrity check',
+                  'Security plugin setup + WAF configuration',
+                  'Vulnerable plugin/theme audit',
+                  'Passwords & access credentials reset',
+                  'Google blacklist removal request',
+                  'Cleanup report with access-path summary',
+                  '60-day re-clean guarantee',
                 ].map((item) => (
                   <li key={item} style={{ marginBottom: '0.5rem', color: '#d4d4d8' }}>
                     &#10003; {item}
                   </li>
                 ))}
               </ul>
-              <p style={{ color: '#f59e0b', fontWeight: 700, marginBottom: '0.5rem' }}>
-                Does NOT include deep investigation
-              </p>
-              <p style={{ color: '#f59e0b', fontWeight: 700, margin: 0 }}>
-                Not suitable for business-critical sites
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
+                {[
+                  'No deep forensic investigation',
+                  'No ICO / GDPR breach assessment',
+                ].map((item) => (
+                  <li key={item} style={{ marginBottom: '0.4rem', color: '#71717a', fontSize: '0.875rem' }}>
+                    ✕ {item}
+                  </li>
+                ))}
+              </ul>
+              <p style={{ color: '#f59e0b', fontWeight: 700, marginTop: '1rem', marginBottom: 0, fontSize: '0.875rem' }}>
+                If your site processes payments or customer data, choose the Forensic Package.
               </p>
             </div>
 
