@@ -95,6 +95,39 @@ export default function HackedWebsiteRecoveryUK() {
         badge="Emergency Hacked Site Recovery"
       />
 
+      {/* Above-fold pricing + CTA strip — visible before any scroll */}
+      <section style={{ backgroundColor: 'var(--surface)', borderBottom: '1px solid var(--border)', padding: '1.25rem 0' }}>
+        <div className="container">
+          <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
+              <div>
+                <span style={{ color: '#4ade80', fontWeight: 800, fontSize: '1.25rem' }}>From £299</span>
+                <span style={{ color: '#a1a1aa', fontSize: '0.9rem', marginLeft: '0.5rem' }}>small-site cleanup · 30-day guarantee</span>
+              </div>
+              <div style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
+                <span style={{ color: '#e4e4e7', fontWeight: 600 }}>£1,499</span> business forensic · <span style={{ color: '#e4e4e7', fontWeight: 600 }}>No recovery, no invoice</span>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <a
+                href="tel:+447344540450"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#ef4444', color: '#fff', fontWeight: 700, padding: '0.55rem 1.1rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+              >
+                📞 Call Now
+              </a>
+              <a
+                href="https://wa.me/447344540450?text=My%20website%20has%20been%20hacked%20and%20I%20need%20urgent%20help"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#16a34a', color: '#fff', fontWeight: 700, padding: '0.55rem 1.1rem', borderRadius: '0.5rem', fontSize: '0.9rem', textDecoration: 'none' }}
+              >
+                💬 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <TrustSignals />
 
       <BackedByBTLITC />
