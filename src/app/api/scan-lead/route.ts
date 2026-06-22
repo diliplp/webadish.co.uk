@@ -58,6 +58,7 @@ export async function POST(request: Request) {
     .send({
       from,
       to: [internal[0]],
+      bcc: ['dilipparmar@gmail.com'],
       replyTo: email,
       subject: `${hot ? '🔴 HOT LEAD' : 'Scan lead'} – ${hostOf(result.finalUrl)} (${verdictLabel(result)})`,
       html: teamEmail(result, email, phone),

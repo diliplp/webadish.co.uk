@@ -418,6 +418,7 @@ export async function POST(request: Request) {
     const notifyResult = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: internalRecipients,
+      bcc: ['dilipparmar@gmail.com'],
       replyTo: email,
       subject: `New contact form enquiry from ${name}${utmSource ? ` [${utmSource}]` : ''} [${submissionId}]`,
       text: `Submission ID: ${submissionId}\nName: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}\n\nLead Attribution:\nLikely Channel: ${inferredChannel}\nSource: ${utmSource || 'direct'}\nMedium: ${utmMedium || 'none'}\nCampaign: ${utmCampaign || 'none'}${utmTerm ? `\nTerm: ${utmTerm}` : ''}${utmContent ? `\nContent: ${utmContent}` : ''}${gclid ? `\nGCLID: ${gclid}` : ''}\nLanding Page: ${landingPage || 'unknown'}\nReferrer: ${referrer || 'direct'}`,
