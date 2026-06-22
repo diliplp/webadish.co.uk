@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import MobileStickyCTA from '@/components/MobileStickyCTA';
 import CookieBanner from '@/components/CookieBanner';
 import ConsentAwareAnalytics from '@/components/ConsentAwareAnalytics';
 import TrackingListener from '@/components/TrackingListener';
@@ -58,6 +59,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <MobileStickyCTA />
         <CookieBanner />
         <ConsentAwareAnalytics />
       </body>
