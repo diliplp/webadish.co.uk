@@ -5,6 +5,7 @@ import {
   generateServiceSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  generateHowToSchema,
 } from '@/lib/schema';
 import PageHeader from '@/components/PageHeader';
 import TrustSignals from '@/components/TrustSignals';
@@ -16,11 +17,11 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'Hacked WordPress Site? UK Recovery from £299 — 30-Min Triage',
+  title: 'WordPress Hacked Website Repair & Recovery UK | 30-Min Triage',
   description:
-    'Hacked WordPress site? UK team triages in 30 minutes. Emergency malware removal from £299 for small sites; full forensic recovery for business-critical sites. No recovery, no invoice — call or WhatsApp now.',
+    'Hacked WordPress site? UK team begins triage in 30 mins. Emergency malware removal & forensic recovery services. No recovery, no fee. Call or WhatsApp now!',
   path: '/hacked-website-recovery-uk',
-  modifiedTime: '2026-06-18',
+  modifiedTime: '2026-06-28',
 });
 
 const faqItems = [
@@ -71,6 +72,25 @@ const faqItems = [
   },
 ];
 
+const firstThirtyMinuteSteps = [
+  {
+    name: 'Contain',
+    text: 'Confirm whether the site is actively compromised, what should be frozen, and whether access or hosting action is needed immediately.',
+  },
+  {
+    name: 'Scope',
+    text: 'Identify whether the incident is malware cleanup, repeat compromise, blacklist recovery, or a broader business-critical hacked website incident.',
+  },
+  {
+    name: 'Recommend',
+    text: 'Give the business a practical next-step recommendation with the right response tier, estimated urgency, and the fastest contact path.',
+  },
+  {
+    name: 'Escalate',
+    text: 'For revenue-critical sites, move into incident recovery and prepare the evidence, remediation, and stakeholder communication plan.',
+  },
+];
+
 export default function HackedWebsiteRecoveryUK() {
   const serviceSchema = generateServiceSchema(
     'Hacked WordPress Site Recovery UK',
@@ -84,10 +104,15 @@ export default function HackedWebsiteRecoveryUK() {
     { name: 'Hacked Website Recovery UK', url: '/hacked-website-recovery-uk' },
   ]);
   const faqSchema = generateFAQSchema(faqItems);
+  const howToSchema = generateHowToSchema(
+    'What happens in the first 30 minutes of hacked website recovery',
+    'Initial triage sequence for UK businesses dealing with an actively hacked WordPress website.',
+    firstThirtyMinuteSteps
+  );
 
   return (
     <>
-      <StructuredData schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
+      <StructuredData schemas={[serviceSchema, breadcrumbSchema, faqSchema, howToSchema]} />
 
       <PageHeader
         title="Hacked Website Recovery UK <br /><span style='color: #ef4444'>for WordPress Sites Under Attack</span>"
@@ -378,27 +403,10 @@ export default function HackedWebsiteRecoveryUK() {
             </p>
           </div>
           <div style={{ display: 'grid', gap: '1.25rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-            {[
-              {
-                title: '1. Contain',
-                desc: 'We confirm whether the site is actively compromised, what should be frozen, and whether access or hosting action is needed immediately.',
-              },
-              {
-                title: '2. Scope',
-                desc: 'We identify whether you are dealing with malware cleanup, repeat compromise, blacklist recovery, or a broader business-critical incident.',
-              },
-              {
-                title: '3. Recommend',
-                desc: 'You get a practical next-step recommendation with the right response tier, estimated urgency, and the fastest contact path.',
-              },
-              {
-                title: '4. Escalate',
-                desc: 'If the site is revenue-critical, we move into incident recovery and prepare the evidence, remediation, and stakeholder communication plan.',
-              },
-            ].map((item) => (
-              <div key={item.title} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '0.75rem', padding: '1.5rem' }}>
-                <h3 style={{ color: '#ef4444', fontSize: '1.05rem', marginBottom: '0.75rem' }}>{item.title}</h3>
-                <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.desc}</p>
+            {firstThirtyMinuteSteps.map((item, index) => (
+              <div key={item.name} style={{ background: 'var(--background)', border: '1px solid var(--border)', borderRadius: '0.75rem', padding: '1.5rem' }}>
+                <h3 style={{ color: '#ef4444', fontSize: '1.05rem', marginBottom: '0.75rem' }}>{index + 1}. {item.name}</h3>
+                <p style={{ color: '#a1a1aa', margin: 0, lineHeight: 1.7 }}>{item.text}</p>
               </div>
             ))}
           </div>

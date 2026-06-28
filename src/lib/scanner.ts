@@ -205,7 +205,7 @@ async function checkSafeBrowsing(url: string, apiKey?: string): Promise<Finding 
         signal: controller.signal,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          client: { clientId: 'wordpressrecovery-in', clientVersion: '1.0' },
+          client: { clientId: 'webadish-uk', clientVersion: '1.0' },
           threatInfo: {
             threatTypes: ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE', 'POTENTIALLY_HARMFUL_APPLICATION'],
             platformTypes: ['ANY_PLATFORM'],
@@ -272,10 +272,15 @@ export async function runScan(rawUrl: string, opts: { safeBrowsingKey?: string }
   const isWordPress = !blocked && detectWordPress(html, headers);
 
   // Probe a few WordPress paths in parallel (cheap, polite set).
-  const [readme, uploads, configBak] = await Promise.all([
+  const [readme, uploads, configBak, usersApi, xmlrpc, debugLog, gitHead, envFile] = await Promise.all([
     safeFetch(`${base}/readme.html`, 'GET'),
     safeFetch(`${base}/wp-content/uploads/`, 'GET'),
     safeFetch(`${base}/wp-config.php.bak`, 'GET'),
+    safeFetch(`${base}/wp-json/wp/v2/users`, 'GET'),
+    safeFetch(`${base}/xmlrpc.php`, 'GET'),
+    safeFetch(`${base}/wp-content/debug.log`, 'GET'),
+    safeFetch(`${base}/.git/HEAD`, 'GET'),
+    safeFetch(`${base}/.env`, 'GET'),
   ]);
 
   const sb = await checkSafeBrowsing(target.href, opts.safeBrowsingKey);
@@ -374,6 +379,61 @@ export async function runScan(rawUrl: string, opts: { safeBrowsingKey?: string }
         recommendation: 'Delete the exposed backup immediately and rotate your database password and WordPress salts.',
       });
     }
+
+    // User enumeration via the REST API — leaks login usernames for brute-forcing.
+    if (usersApi.ok && /"slug"\s*:|"name"\s*:/i.test(usersApi.body) && /^\s*\[/.test(usersApi.body)) {
+      const names = [...usersApi.body.matchAll(/"slug"\s*:\s*"([^"]+)"/g)].map((m) => m[1]).slice(0, 5);
+      findings.push({
+        category: 'wordpress',
+        severity: 'warning',
+        title: 'Usernames exposed via REST API',
+        detail: `Your site lists WordPress usernames publicly at /wp-json/wp/v2/users${names.length ? ` (e.g. ${names.join(', ')})` : ''}. Attackers harvest these to brute-force the login, since they then only need to guess the password.`,
+        recommendation: 'Block or restrict the REST users endpoint and the ?author= redirect, and enforce strong passwords with login rate-limiting / 2FA.',
+      });
+    }
+
+    // xmlrpc.php — brute-force amplification and pingback DDoS vector.
+    if ((xmlrpc.status === 405 || xmlrpc.ok) && /XML-RPC server accepts POST requests only|methodResponse|xmlrpc/i.test(xmlrpc.body)) {
+      findings.push({
+        category: 'wordpress',
+        severity: 'warning',
+        title: 'XML-RPC enabled',
+        detail: 'The /xmlrpc.php endpoint is active. It is widely abused for password brute-forcing (system.multicall lets attackers try thousands of passwords in one request) and for pingback-based DDoS attacks.',
+        recommendation: 'Disable XML-RPC if you do not use the Jetpack or mobile apps, or block access to xmlrpc.php at the server / firewall level.',
+      });
+    }
+
+    // Exposed WordPress debug log — leaks server paths, errors, sometimes secrets.
+    if (debugLog.ok && /PHP (Notice|Warning|Fatal error|Deprecated)|Stack trace|\bwp-content\b/i.test(debugLog.body)) {
+      findings.push({
+        category: 'wordpress',
+        severity: 'critical',
+        title: 'Debug log publicly readable',
+        detail: 'Your /wp-content/debug.log file is publicly downloadable. Debug logs leak server file paths, plugin errors and sometimes credentials or tokens — exactly the reconnaissance an attacker wants.',
+        recommendation: 'Delete debug.log, turn off WP_DEBUG_LOG in production, and block direct access to .log files.',
+      });
+    }
+  }
+
+  // --- Exposed source / secrets (not WordPress-specific) ---
+  if (gitHead.ok && /^ref:\s|^[0-9a-f]{40}\s*$/im.test(gitHead.body)) {
+    findings.push({
+      category: 'wordpress',
+      severity: 'critical',
+      title: 'Exposed .git repository',
+      detail: 'Your /.git/ directory is publicly accessible. Attackers can download the entire repository — including source code, configuration and historic secrets — and reconstruct your site to find vulnerabilities.',
+      recommendation: 'Block all access to /.git/ at the server level and rotate any credentials that were ever committed to the repository.',
+    });
+  }
+
+  if (envFile.ok && /^[A-Z0-9_]+\s*=/m.test(envFile.body) && /DB_|API|SECRET|KEY|PASSWORD|TOKEN/i.test(envFile.body)) {
+    findings.push({
+      category: 'wordpress',
+      severity: 'critical',
+      title: 'Exposed .env file',
+      detail: 'Your /.env file is publicly downloadable and appears to contain credentials (database, API keys or secrets). This is a severe exposure that typically leads to full compromise.',
+      recommendation: 'Block access to .env immediately and rotate every credential it contains — assume they are already compromised.',
+    });
   }
 
   // --- Malware / injection signals in the HTML (only on a genuine page load) ---

@@ -13,10 +13,9 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title:
-    'WordPress Security Retainer UK | Security Ownership Without In-House Hire',
+  title: 'WordPress Retainer UK | Monthly WordPress Support & Security Plans',
   description:
-    'WordPress security retainers for UK businesses that need monitoring, escalation, audits, and a stronger response posture than standard maintenance can provide.',
+    'Premium WordPress security retainers & monthly support plans for UK businesses. Uptime monitoring, hack protection, and priority emergency response starting from £250/mo.',
   path: '/wordpress-security-retainer',
 });
 

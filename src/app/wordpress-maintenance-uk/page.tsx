@@ -64,6 +64,11 @@ const faqItems = [
     answer:
       'Plans are rolling monthly with no long-term lock-in. You can upgrade or downgrade between tiers at any point. To cancel, we require 30 days written notice. On cancellation, we provide a full handover document including backup archives and a site health summary.',
   },
+  {
+    question: 'Do you offer ad-hoc WordPress support alongside monthly maintenance packages?',
+    answer:
+      'Yes. While our monthly WordPress maintenance packages in the UK cover proactive updates, uptime checks, and security monitoring, we also provide support hours for ad-hoc website tasks, content updates, plugin adjustments, and custom development to ensure your site continues to run smoothly.',
+  },
 ];
 
 export default function WordPressMaintenanceUK() {
@@ -86,7 +91,7 @@ export default function WordPressMaintenanceUK() {
 
       <PageHeader
         title="WordPress Maintenance <br /><span style='color: var(--primary)'>Service UK</span>"
-        subtitle="Proactive security-led maintenance for UK businesses. We handle updates, backups, and 24/7 monitoring — so your site stays online and your team stays focused."
+        subtitle="Professional WordPress maintenance services and support for UK businesses. We handle daily backups, core/plugin updates, and 24/7 uptime monitoring so your website stays secure."
         badge="Plans from £149/month"
       />
 
@@ -96,7 +101,7 @@ export default function WordPressMaintenanceUK() {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2>Comprehensive WordPress Maintenance & Protection</h2>
+            <h2>WordPress Website Maintenance Services & Packages</h2>
             <p style={{ color: '#a1a1aa', maxWidth: '600px', margin: '1rem auto 0' }}>
               We cover the core areas that keep a WordPress site secure, fast, and available for your customers.
             </p>
@@ -167,13 +172,13 @@ export default function WordPressMaintenanceUK() {
       <section className="section-padding">
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2>WordPress Maintenance Service Pricing</h2>
+            <h2>WordPress Maintenance Packages & Support Pricing</h2>
             <p style={{ color: '#a1a1aa', maxWidth: '560px', margin: '1rem auto 0' }}>
-              Transparent monthly tiers built for different business needs. No setup fees, no long-term contracts.
+              Transparent monthly WordPress maintenance plans built for different business needs. No setup fees, no long-term contracts.
             </p>
             <p style={{ marginTop: '1rem' }}>
               <Link href="/wordpress-maintenance-plans" style={{ color: 'var(--primary)', fontWeight: 600 }}>
-                Compare all WordPress maintenance plans and full monthly pricing
+                Compare all UK WordPress support plans and monthly pricing
               </Link>
             </p>
           </div>

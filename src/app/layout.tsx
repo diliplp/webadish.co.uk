@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import '@/styles/globals.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -39,9 +38,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
-      {/* Consent Mode v2 defaults — must fire before GTM loads */}
-      <Script id="wa-consent-defaults" strategy="beforeInteractive">{`
+      <head>
+        {/* Consent Mode v2 defaults — must fire before GTM loads. Plain inline
+            script in <head> so it executes first, in order (matches Google's
+            recommended snippet and avoids next/script beforeInteractive ordering
+            warnings outside the document body). */}
+        <script
+          id="wa-consent-defaults"
+          dangerouslySetInnerHTML={{
+            __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('consent', 'default', {
@@ -51,7 +56,10 @@ export default function RootLayout({
           ad_personalization: 'denied',
           wait_for_update: 500
         });
-      `}</Script>
+      `,
+          }}
+        />
+      </head>
       <body>
         <StructuredData schemas={sitewideSchemas} />
         <TrackingListener />

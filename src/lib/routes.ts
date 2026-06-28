@@ -19,7 +19,7 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'WordPress Maintenance',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-06-28',
   },
   {
     path: '/wordpress-maintenance-plans',
@@ -33,21 +33,21 @@ export const SERVICE_ROUTES: RouteConfig[] = [
     label: 'Hacked Website Recovery',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-04-11',
+    lastModified: '2026-06-28',
   },
   {
     path: '/wordpress-malware-removal',
     label: 'WordPress Malware Removal',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-04-11',
+    lastModified: '2026-06-28',
   },
   {
     path: '/wordpress-security-retainer',
     label: 'Security Retainer',
     priority: 0.9,
     changeFreq: 'monthly',
-    lastModified: '2026-03-03',
+    lastModified: '2026-06-28',
   },
   {
     path: '/web-hosting-email-services',

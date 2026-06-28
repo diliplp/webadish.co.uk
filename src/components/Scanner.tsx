@@ -40,6 +40,16 @@ export default function Scanner() {
   const showGate = result && issues > 0 && !unlocked;
   const showFindings = result && (unlocked || issues === 0);
 
+  // A confirmed infection (malware signature, injected spam, blacklist flag, or
+  // any critical finding) routes the CTA to the dedicated malware-removal page —
+  // the more specific, higher-intent landing page — rather than generic recovery.
+  const infected =
+    !!result &&
+    (result.verdict === 'infected' ||
+      result.findings.some((f) => (f.category === 'malware' || f.category === 'blacklist') && f.severity !== 'ok'));
+  const fixHref = infected ? '/wordpress-malware-removal' : '/hacked-website-recovery-uk';
+  const fixLabel = infected ? 'Malware Removal' : 'Recovery Service';
+
   async function handleScan(e: React.FormEvent) {
     e.preventDefault();
     setError('');
@@ -266,17 +276,22 @@ export default function Scanner() {
           {/* Recovery CTA */}
           {showFindings && issues > 0 && (
             <div style={{ background: 'linear-gradient(135deg, #4338ca, #312e81)', borderRadius: 16, padding: '1.8rem', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '0 0 0.5rem' }}>Want us to fix this for you?</h2>
+              <h2 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '0 0 0.5rem' }}>
+                {infected ? 'We can clean this infection for you' : 'Want us to fix this for you?'}
+              </h2>
               <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', maxWidth: '30rem', margin: '0 auto 1.3rem' }}>
-                Expert malware removal and full recovery — fixed fee with a 30-day guarantee. Same-day emergency response available.
+                {infected
+                  ? 'Complete malware removal and backdoor cleanup, plus a Google blacklist reconsideration if needed — fixed fee with a 30-day guarantee. Same-day emergency response available.'
+                  : 'Expert WordPress security hardening and recovery — fixed fee with a 30-day guarantee. Same-day emergency response available.'}
               </p>
               <div style={{ display: 'flex', gap: '0.7rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href={WA} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('whatsapp_click', { source: 'scanner' })}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#22c55e', color: '#fff', fontWeight: 700, textDecoration: 'none', padding: '0.7rem 1.4rem', borderRadius: 12 }}>
                   WhatsApp Our Team
                 </a>
-                <a href="/hacked-website-recovery-uk" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255,255,255,0.12)', color: '#fff', fontWeight: 700, textDecoration: 'none', padding: '0.7rem 1.4rem', borderRadius: 12 }}>
-                  Recovery Service <ArrowRight size={16} />
+                <a href={fixHref} onClick={() => trackEvent('scanner_cta_click', { target: fixHref, infected })}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255,255,255,0.12)', color: '#fff', fontWeight: 700, textDecoration: 'none', padding: '0.7rem 1.4rem', borderRadius: 12 }}>
+                  {fixLabel} <ArrowRight size={16} />
                 </a>
               </div>
             </div>
